@@ -1,0 +1,138 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+.btn
+{
+    font-family: 'gilroy';
+    cursor: pointer;
+    transition: all .2s;
+    background-color:#fff;
+    border:none;
+    font-size: 26px;
+}
+
+
+    .noborder
+    {
+        font-weight: 900;
+
+        &.workshop
+        {
+            color:$workshopTextColor;
+        &:hover
+        {
+            text-shadow:$workshopTextShadow;
+        }
+    }
+
+        &.talk
+        {
+            color:$talkTextColor;
+        &:hover
+        {
+            text-shadow:$talkTextShadow;
+        }
+    }
+
+        &.stella
+        {
+            color:$stellaTextColor;
+        &:hover
+        {
+            text-shadow:$stellaTextShadow;
+        }
+    }
+        &.event
+        {
+            color:$eventTextColor;
+        &:hover
+        {
+            text-shadow:$eventTextShadow;
+        }
+        }
+    }
+
+
+    .colored {
+        height: 50px;
+        width: 300px;
+        color: white;
+        border-radius: 24px;
+        border: none;
+
+        &.stella
+        {
+            background-image:$stellaGradient;
+            -moz-box-shadow:    $stellaShadow;
+            -webkit-box-shadow: $stellaShadow;
+            box-shadow:         $stellaShadow;
+
+            &:hover
+            {
+                -moz-box-shadow:$stellaShadowHover;
+            -webkit-box-shadow: $stellaShadowHover;
+            box-shadow:         $stellaShadowHover;
+            }
+        }
+
+        &.event
+        {
+            background-image:$eventGradient;
+            -moz-box-shadow:    $eventShadow;
+            -webkit-box-shadow: $eventShadow;
+            box-shadow:         $eventShadow;
+
+            &:hover
+            {
+                -moz-box-shadow:$eventShadowHover;
+            -webkit-box-shadow: $eventShadowHover;
+            box-shadow:         $eventShadowHover;
+            }
+        }
+
+        &.talk
+        {
+            background-image:$talkGradient;
+            -moz-box-shadow:    $talkShadow;
+            -webkit-box-shadow: $talkShadow;
+            box-shadow:         $talkShadow;
+
+            &:hover
+            {
+                -moz-box-shadow:$talkShadowHover;
+            -webkit-box-shadow: $talkShadowHover;
+            box-shadow:         $talkShadowHover;
+            }
+        }
+
+        &.workshop
+        {
+            background-image:$workshopGradient;
+            -moz-box-shadow:    $workshopShadow;
+            -webkit-box-shadow: $workshopShadow;
+            box-shadow:         $workshopShadow;
+
+            &:hover
+            {
+                -moz-box-shadow:$workshopShadowHover;
+            -webkit-box-shadow: $workshopShadowHover;
+            box-shadow:         $workshopShadowHover;
+            }
+        }
+
+        &.calltoAction
+        {
+            background-image:$calltoActionGradient;
+            -moz-box-shadow:    $calltoActionShadow;
+            -webkit-box-shadow: $calltoActionShadow;
+            box-shadow:         $calltoActionShadow;
+
+            &:hover
+            {
+                -moz-box-shadow:$calltoActionShadowHover;
+            -webkit-box-shadow: $calltoActionShadowHover;
+            box-shadow:         $calltoActionShadowHover;
+            }
+        }
+    }

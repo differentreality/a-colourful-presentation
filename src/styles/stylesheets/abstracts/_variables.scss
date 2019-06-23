@@ -1,0 +1,103 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+
+
+
+
+/// Regular font family
+/// @type List
+$text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+
+/// Code (monospace) font family
+/// @type List
+$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
+
+
+
+
+
+/// Copy text color
+/// @type Color
+$text-color: rgb(34, 34, 34) !default;
+
+/// Main brand color
+/// @type Color
+$brand-color: rgb(229, 0, 80) !default;
+
+/// Light grey
+/// @type Color
+$light-grey: rgb(237, 237, 237) !default;
+
+/// Medium grey
+/// @type Color
+$mid-grey: rgb(153, 153, 153) !default;
+
+/// Dark grey
+/// @type Color
+$dark-grey: rgb(68, 68, 68) !default;
+
+
+
+
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1180px !default;
+
+
+
+
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+  'small': 320px,
+  'medium': 768px,
+  'large': 1024px,
+) !default;
+
+
+
+
+
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://cdn.example.com/assets/';
+$base-url: '/assets/' !default;
+
+
+//buttons
+$workshopGradient: linear-gradient(to right, rgb(72, 139, 228), #2feba3de);
+$workshopShadow:0px 5px 20px 2px rgba(59, 246, 174, 0.402);
+$workshopShadowHover:0px 6px 20px 5px rgba(59, 246, 174, 0.502);
+
+$talkGradient: linear-gradient(to right, #FF0844, #FFB199);
+$talkShadow:0px 5px 20px 2px rgba(255, 154, 126, 0.692);
+$talkShadowHover:0px 6px 20px 5px rgba(255, 154, 126, 0.792);
+
+$stellaGradient: linear-gradient(to right, #9B4EA1, #DC51AF);
+$stellaShadow:0px 5px 20px 2px rgba(220, 81, 175, 0.5);
+$stellaShadowHover:0px 6px 20px 5px rgba(220, 81, 175, 0.6);
+
+$eventGradient: linear-gradient(to right, rgb(238, 142, 116), rgb(252, 189, 96));
+$eventShadow:0px 5px 20px 2px rgba(255, 184, 78, .5);
+$eventShadowHover:0px 6px 20px 5px rgba(255, 184, 78, .6);
+
+$calltoActionGradient: linear-gradient(to right, #28B781, #63D8B4);
+$calltoActionShadow:0px 5px 20px 2px rgba(40, 183, 129, .4);
+$calltoActionShadowHover:0px 6px 20px 5px rgba(40, 183, 129, .5);
+
+//primary for text
+$talkTextColor : #FF0844;
+$talkTextShadow : 1px 1px 20px rgba(252, 65, 40, 0.534);
+$stellaTextColor : #9B4EA1;
+$stellaTextShadow : 1px 1px 40px rgba(159, 25, 248, 0.473);
+$eventTextColor : #FF9A7D;
+$eventTextShadow : 1px 1px 20px rgba(248, 170, 25, 0.711);
+$workshopTextColor : #4464AD;
+$workshopTextShadow : 1px 1px 20px rgba(88, 161, 230, 0.541);

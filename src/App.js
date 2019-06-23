@@ -2,7 +2,7 @@ import React from 'react';
 import './styles/App.css';
 import DualButtons from './Components/parts/DualButtons';
 import Button from 'react-bootstrap/Button';
-import './sass-boilerplate/stylesheets/main.scss';
+import './styles/stylesheets/main.scss';
 
 function App() {
   return (
