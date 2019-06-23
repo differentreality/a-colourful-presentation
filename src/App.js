@@ -1,24 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './styles/App.css';
+import DualButtons from './Components/parts/DualButtons';
+import Button from 'react-bootstrap/Button';
+import './sass-boilerplate/stylesheets/main.scss';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <DualButtons group='workshop' firstButtonText='Learn More' secondButtonText='Browse Workshops'/>
+    <DualButtons group='talk' firstButtonText='Learn More' secondButtonText='Browse Talks'/>
+    <DualButtons group='event' firstButtonText='Learn More' secondButtonText='Browse Events'/>
+    <DualButtons group='stella' firstButtonText='Learn More' secondButtonText="Browse Stella's Facts"/>
+    <div style={{marginTop:'50px'}}>
+       <Button className={'colored calltoAction'} >Book an Event!</Button>
+      </div>
     </div>
   );
 }
