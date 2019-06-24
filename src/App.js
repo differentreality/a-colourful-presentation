@@ -4,6 +4,7 @@ import DualButtons from './Components/parts/DualButtons';
 import SidebarMenu from './Components/parts/SidebarMenu';
 import Button from 'react-bootstrap/Button';
 import './styles/stylesheets/main.scss';
+import './styles/bootstrap.css'
 import { Container, Col, Row } from 'react-bootstrap';
 
 function App() {

@@ -7,7 +7,7 @@ import { Col } from 'react-bootstrap';
 const SidebarMenu = () => {
     return <Col className='sideMenu' xs={1}>
         <Col className='inBorder' xs={12}>
-            <h1>LOGO</h1>
+            <h3>LOGO</h3>
             <a className='vertical-text' href="https://www.github.com/"> MENU </a>
         </Col>
 
