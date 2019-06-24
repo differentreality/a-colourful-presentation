@@ -10,7 +10,12 @@
     transition: all .2s;
     background-color: #fff;
     border: none;
-    font-size: 26px;
+    font-size: 20px;
+
+    &:hover
+    {
+        background-color:#fff;
+    }
 }
 
 
@@ -54,7 +59,7 @@
 
 .colored {
     height: 50px;
-    width: 300px;
+    width: 250px;
     color: white;
     border-radius: 24px;
     border: none;
@@ -129,15 +134,15 @@
     border-left: 1px solid #000;
     min-height: 60px;
     display: inline-block;
-    margin-bottom: -1%;
+    margin-bottom: -3%;
     margin-left: 1%;
-    margin-right: 2%;
+    margin-right: 4%;
 }
 
 
 @media (max-width:720px) {
     .btn {
-        font-size: 17px;
+        font-size: 15px;
     }
 
     .colored {

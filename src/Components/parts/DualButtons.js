@@ -4,7 +4,7 @@ import {Col} from 'react-bootstrap';
 
 const DualButtons = (props) =>
 {
-    return <Col md={{span:4}}>
+    return <Col xs={12}>
             <div style={{marginTop:'50px'}}>
         <Button className={'noborder '+props.group}>{props.firstButtonText}</Button> <span className='verticalLine'/> <Button className={'colored '+props.group} >{props.secondButtonText}</Button>
       </div>

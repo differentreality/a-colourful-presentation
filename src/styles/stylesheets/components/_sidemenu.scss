@@ -1,0 +1,31 @@
+.sideMenu {
+    position: fixed;
+
+    .inBorder {
+        position: absolute;
+        padding-bottom: 100%;
+        border-right: 1px solid black;
+
+        .vertical-text {
+            color: #000;
+            display: block;
+            font-size: 25px;
+            margin-top: 200%;
+            transform: rotate(270deg);
+            -ms-transform: rotate(270deg);
+            -webkit-transform: rotate(270deg);
+
+            &:hover {
+                color: #000;
+                transition: all .2s;
+                text-decoration: none;
+                text-shadow: $stellaTextShadow;
+            }
+        }
+    }
+
+
+    .outofBorder {
+        margin-top: 550%;
+    }
+}
