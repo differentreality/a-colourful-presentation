@@ -1,0 +1,12 @@
+@mixin coloredButton($gradient, $shadow, $shadowHover) {
+        background-image: $gradient;
+        -moz-box-shadow: $shadow;
+        -webkit-box-shadow: $shadow;
+        box-shadow: $shadow;
+
+        &:hover {
+            -moz-box-shadow: $shadowHover;
+            -webkit-box-shadow: $shadowHover;
+            box-shadow: $shadowHover;
+        }
+  }

@@ -5,13 +5,12 @@
 
 // ta buttons exoun 2 katigories, me xroma kai xoris
 .btn {
-    font-family: 'gilroy';
-    cursor: pointer;
-    transition: all .2s;
-    background-color: #fff;
     border: none;
     font-size: 20px;
-
+    cursor: pointer;
+    transition: all .2s;
+    font-family: 'gilroy';
+    background-color: #fff;
     &:hover
     {
         background-color:#fff;
@@ -58,85 +57,43 @@
 
 
 .colored {
+    border: none;
     height: 50px;
     width: 250px;
     color: white;
     border-radius: 24px;
-    border: none;
-
     &.stella {
-        background-image: $stellaGradient;
-        -moz-box-shadow: $stellaShadow;
-        -webkit-box-shadow: $stellaShadow;
-        box-shadow: $stellaShadow;
-
-        &:hover {
-            -moz-box-shadow: $stellaShadowHover;
-            -webkit-box-shadow: $stellaShadowHover;
-            box-shadow: $stellaShadowHover;
-        }
+       @include coloredButton($stellaGradient,$stellaShadow,$stellaShadowHover)
     }
 
     &.event {
-        background-image: $eventGradient;
-        -moz-box-shadow: $eventShadow;
-        -webkit-box-shadow: $eventShadow;
-        box-shadow: $eventShadow;
-
-        &:hover {
-            -moz-box-shadow: $eventShadowHover;
-            -webkit-box-shadow: $eventShadowHover;
-            box-shadow: $eventShadowHover;
-        }
+        @include coloredButton($eventGradient,$eventShadow,$eventShadowHover)
+      
     }
 
     &.talk {
-        background-image: $talkGradient;
-        -moz-box-shadow: $talkShadow;
-        -webkit-box-shadow: $talkShadow;
-        box-shadow: $talkShadow;
-
-        &:hover {
-            -moz-box-shadow: $talkShadowHover;
-            -webkit-box-shadow: $talkShadowHover;
-            box-shadow: $talkShadowHover;
-        }
+        @include coloredButton($talkGradient,$talkShadow,$talkShadowHover)
+        
     }
 
     &.workshop {
-        background-image: $workshopGradient;
-        -moz-box-shadow: $workshopShadow;
-        -webkit-box-shadow: $workshopShadow;
-        box-shadow: $workshopShadow;
-
-        &:hover {
-            -moz-box-shadow: $workshopShadowHover;
-            -webkit-box-shadow: $workshopShadowHover;
-            box-shadow: $workshopShadowHover;
-        }
+        @include coloredButton($workshopGradient,$workshopShadow,$workshopShadowHover)
+        
     }
 
     &.calltoAction {
-        background-image: $calltoActionGradient;
-        -moz-box-shadow: $calltoActionShadow;
-        -webkit-box-shadow: $calltoActionShadow;
-        box-shadow: $calltoActionShadow;
-
-        &:hover {
-            -moz-box-shadow: $calltoActionShadowHover;
-            -webkit-box-shadow: $calltoActionShadowHover;
-            box-shadow: $calltoActionShadowHover;
-        }
+        @include coloredButton($calltoActionGradient,$calltoActionShadow,$calltoActionShadow)
+       
     }
 }
 
 .verticalLine {
-    border-left: 1px solid #000;
     min-height: 60px;
-    display: inline-block;
-    margin-bottom: -3%;
     margin-left: 1%;
     margin-right: 4%;
+    margin-bottom: -3%;
+    display: inline-block;
+    border-left: 1px solid #000;
 }
 
 
@@ -150,10 +107,10 @@
     }
 
     .verticalLine {
-        border-left: 1px solid #000;
         min-height: 60px;
-        margin-bottom: -10px !important;
         margin-left: 2% !important;
         margin-right: 6% !important;
+        margin-bottom: -10px !important;
+        border-left: 1px solid #000;
     }
 }
