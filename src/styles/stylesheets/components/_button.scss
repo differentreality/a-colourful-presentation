@@ -82,7 +82,7 @@
     }
 
     &.calltoAction {
-        @include coloredButton($calltoActionGradient,$calltoActionShadow,$calltoActionShadow)
+        @include coloredButton($calltoActionGradient,$calltoActionShadow,$calltoActionShadowHover)
        
     }
 }

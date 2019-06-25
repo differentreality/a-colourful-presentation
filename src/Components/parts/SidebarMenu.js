@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
 import { Col } from 'react-bootstrap';
 
 
@@ -7,7 +6,7 @@ import { Col } from 'react-bootstrap';
 const SidebarMenu = () => {
     return <Col className='sideMenu' xs={1}>
         <Col className='inBorder' xs={12}>
-            <h3>LOGO</h3>
+            <h5>LOGO</h5>
             <a className='vertical-text' href="https://www.github.com/"> MENU </a>
         </Col>
 

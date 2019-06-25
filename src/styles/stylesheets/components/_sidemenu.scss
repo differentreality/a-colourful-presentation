@@ -3,7 +3,7 @@
 
     .inBorder {
         position: absolute;
-        padding-bottom: 100%;
+        padding-bottom: 300%;
         border-right: 1px solid black;
 
         .vertical-text {
@@ -11,6 +11,7 @@
             display: block;
             font-size: 25px;
             margin-top: 200%;
+            margin-left:-25%!important;
             transform: rotate(270deg);
             -ms-transform: rotate(270deg);
             -webkit-transform: rotate(270deg);
@@ -28,4 +29,16 @@
     .outofBorder {
         margin-top: 550%;
     }
+}
+
+@media (max-width:map-get($breakpoints, 'large')) {
+    .sideMenu , .vertical-text {
+        font-size: 16px !important;
+
+        
+    }
+
+        .outofBorder {
+            margin-top: 1050%!important;
+        }
 }
