@@ -1,6 +1,6 @@
 import React from 'react';
 const Pen = () => {
-    return <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="94.85" height="99.736" viewBox="0 0 94.85 99.736">
+    return <svg id='penSvg' xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="94.85" height="99.736" viewBox="0 0 94.85 99.736">
     <defs>
       <linearGradient  x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
         <stop offset="0" stop-color="#ff0844"/>

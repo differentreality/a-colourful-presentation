@@ -1,0 +1,24 @@
+.socialCol {
+    margin-top: 2% !important;
+
+    a
+    {
+        margin: 0% 5% 0% 3%;
+
+        .socialIcon {
+            
+            transition: all .5s;
+            transform-origin: 50% 50%;
+            width:28.095px;
+            height:29.065px;
+            
+            &:hover
+            {
+
+                transform:scale(0.9);
+            }
+        }
+    }
+
+    
+}

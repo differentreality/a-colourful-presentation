@@ -1,6 +1,6 @@
 import React from 'react';
 const Cog = () => {
-    return<svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="125.628" height="129.139" viewBox="0 0 125.628 129.139">
+    return<svg id='confCard' xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink"width="156.869" height="156.133" viewBox="0 0 125.628 129.139">
     <defs>
       <linearGradient id="Event-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
         <stop offset="0" stop-color="#ff9a7d"/>

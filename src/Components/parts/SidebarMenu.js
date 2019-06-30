@@ -11,9 +11,9 @@ const SidebarMenu = () => {
         </Col>
 
         <Col className='outofBorder' xs={12}>
-            <div className='colorName'>
-                <span >Color Name</span>
-            </div>
+                <div className='colourBubble'/>
+                <span className='colourCode'>#C0D3</span>
+                <span className='colourName'>Grape</span>
         </Col>
     </Col>
 }

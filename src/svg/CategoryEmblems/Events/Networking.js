@@ -2,7 +2,7 @@
 
 import React from 'react';
 const Networking = () => {
-    return <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="169.085" height="126.757" viewBox="0 0 169.085 126.757">
+    return <svg id='networkingSvg' xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="169.085" height="126.757" viewBox="0 0 169.085 126.757">
 
     <g id="Group_42" data-name="Group 42" transform="matrix(0.985, -0.174, 0.174, 0.985, -875.513, -390.362)">
       <path id="Path_235" data-name="Path 235" d="M338.722,444.869h-63.4c-2.338-14.169,9.376-29.166,23.584-29.947a89.137,89.137,0,0,1,18.747.5C330.953,417.539,340.457,431.18,338.722,444.869Z" transform="translate(561.134 227.665)" fill="url(#Event-gradient)"/>

@@ -7,7 +7,7 @@ class Menu extends Component {
   constructor() {
     super();
     this.state = {
-      menu: <SidebarMenu />
+      menu: <SidebarMenu/>
     };
   }
 

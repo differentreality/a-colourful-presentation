@@ -27,18 +27,84 @@
 
 
     .outofBorder {
-        margin-top: 550%;
+        font-size:15px;
+        margin-top: 650%;
+        color:$stellaTextColor;
+
+
+        
+        .colourBubble,.colourCode,.colourName
+        {
+            position: absolute;
+        }
+        .colourBubble
+        {
+            width:20px;
+            height:20px;
+            opacity:0.8;
+            position:absolute;
+            margin-right:15px;
+            border-radius: 50%;
+            display:inline-block;
+            background-image:$stellaGradientVertical;
+        }
+
+        .colourCode
+        {
+            margin-left:30px;
+            font-weight: 900;
+            position:absolute;
+        }
+
+        .colourName
+        {
+            font-weight:100;
+            margin-top:20px;
+            margin-left:50px;
+        }
+
+        
+
+
     }
 }
 
-@media (max-width:map-get($breakpoints, 'large')) {
-    .sideMenu , .vertical-text {
-        font-size: 16px !important;
+
+
+@media (max-width:1500px) {
+    .sideMenu , .vertical-text , .outofBorder {
+        font-size: 15px !important;
 
         
     }
 
         .outofBorder {
+            margin-left: -20px;
+            margin-top: 850%!important;
+        }
+
+        .colourBubble
+        {
+            width:15px!important;
+            height:15px!important;
+
+        }
+
+        .colourName{
+        margin-left:20px!important;
+        }
+}
+
+
+
+@media (max-width:870px) {
+
+
+        .outofBorder {
+            font-size:13px!important;
             margin-top: 1050%!important;
         }
 }
+
+
+
