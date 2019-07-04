@@ -2,114 +2,100 @@
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
 
-
 // ta buttons exoun 2 katigories, me xroma kai xoris
-.btn {
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-    transition: all .2s;
-    background-color: #fff;
-    &:hover
-    {
-        background-color:#fff;
-    }
-}
-
-
 //oi katigories vasizontai sto group pou anikoun,me vasi xroma [Stella,event,talk,workshop]
-.noborder {
+.myButton {
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  background-color: #fff;
+  text-align: center;
+  display: inline-block;
+
+  &--colourless {
     font-weight: 900;
 
-    &.workshop {
-        color: $workshopTextColor;
+    &--workshop {
+      color: $workshopTextColor;
 
-        &:hover {
-            text-shadow: $workshopTextShadow;
-        }
+      &:hover {
+        text-shadow: $workshopTextShadow;
+      }
     }
 
-    &.talk {
-        color: $talkTextColor;
+    &--talk {
+      color: $talkTextColor;
 
-        &:hover {
-            text-shadow: $talkTextShadow;
-        }
+      &:hover {
+        text-shadow: $talkTextShadow;
+      }
     }
 
-    &.stella {
-        color: $stellaTextColor;
+    &--stella {
+      color: $stellaTextColor;
 
-        &:hover {
-            text-shadow: $stellaTextShadow;
-        }
+      &:hover {
+        text-shadow: $stellaTextShadow;
+      }
     }
 
-    &.event {
-        color: $eventTextColor;
+    &--event {
+      color: $eventTextColor;
 
-        &:hover {
-            text-shadow: $eventTextShadow;
-        }
+      &:hover {
+        text-shadow: $eventTextShadow;
+      }
     }
-}
+  }
 
-
-.colored {
-    border: none;
-    height: 50px;
+  &--colored {
+    padding: 10px 0px 10px 0px;
+    color: #fff;
     width: 250px;
-    color: white;
     border-radius: 24px;
-    &.stella {
-       @include coloredButton($stellaGradient,$stellaShadow,$stellaShadowHover)
+    &--stella {
+      @include coloredButton($stellaGradient, $stellaShadow, $stellaShadowHover);
     }
 
-    &.event {
-        @include coloredButton($eventGradient,$eventShadow,$eventShadowHover)
-      
+    &--event {
+      @include coloredButton($eventGradient, $eventShadow, $eventShadowHover);
     }
 
-    &.talk {
-        @include coloredButton($talkGradient,$talkShadow,$talkShadowHover)
-        
+    &--talk {
+      @include coloredButton($talkGradient, $talkShadow, $talkShadowHover);
     }
 
-    &.workshop {
-        @include coloredButton($workshopGradient,$workshopShadow,$workshopShadowHover)
-        
+    &--workshop {
+      @include coloredButton($workshopGradient, $workshopShadow, $workshopShadowHover);
     }
 
-    &.calltoAction {
-        @include coloredButton($calltoActionGradient,$calltoActionShadow,$calltoActionShadowHover)
-       
+    &--calltoAction {
+      @include coloredButton($calltoActionGradient, $calltoActionShadow, $calltoActionShadowHover);
     }
+  }
 }
 
 .verticalLine {
-    min-height: 60px;
-    margin-left: 1%;
-    margin-right: 4%;
-    margin-bottom: -2%;
-    display: inline-block;
-    border-left: 1px solid #000;
+  min-height: 60px;
+  margin:0 2% -2% 2%;
+  display: inline-block;
+  border-left: 1px solid #000;
 }
 
+@media (max-width: 720px) {
+  .myButton {
+    font-size: 13px;
 
-@media (max-width:720px) {
-    .btn {
-        font-size: 15px;
+    &--colored {
+      width: 150px;
     }
+  }
 
-    .colored {
-        width: 150px !important;
-    }
-
-    .verticalLine {
-        min-height: 60px;
-        margin-left: 2% !important;
-        margin-right: 6% !important;
-        margin-bottom: -10px !important;
-        border-left: 1px solid #000;
-    }
+  .verticalLine {
+    min-height: 60px;
+    margin-left: 4%;
+    margin-right: 6%;
+    margin-bottom: -10px;
+    border-left: 1px solid #000;
+  }
 }

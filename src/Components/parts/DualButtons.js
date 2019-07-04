@@ -6,7 +6,9 @@ const DualButtons = (props) =>
 {
     return <Col xs={12}>
             <div style={{marginTop:'50px'}}>
-        <Button className={'noborder '+props.group}>{props.firstButtonText}</Button> <span className='verticalLine'/> <Button className={'colored '+props.group} >{props.secondButtonText}</Button>
+        <div className={'myButton myButton--colourless myButton--colourless--'+props.group}>{props.firstButtonText}</div> 
+        <span className='verticalLine'/> 
+        <div className={'myButton myButton--colored myButton--colored--'+props.group} >{props.secondButtonText}</div>
       </div>
       
         </Col>

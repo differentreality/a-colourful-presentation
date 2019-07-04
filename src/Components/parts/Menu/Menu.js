@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import SidebarMenu from '../SidebarMenu';
-import MobileHeader from '../MobileHeader';
+import SidebarMenu from './SidebarMenu';
+import MobileHeader from './MobileHeader';
 
 class Menu extends Component {
 

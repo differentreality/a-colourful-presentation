@@ -28,7 +28,7 @@ componentDidMount()
 {
   anime({
     
-    targets: '.socialCol',
+    targets: '',
     translateX:100,
     direction: 'alternate',
     loop: true,
@@ -64,7 +64,7 @@ resize() {
                 <DualButtons group='event' firstButtonText='Learn More' secondButtonText='Browse Events' />
                 <DualButtons group='stella' firstButtonText='Learn More' secondButtonText="Browse Stella's Facts" />
                 <div style={{ marginTop: '50px' }}>
-                  <Button className={'colored calltoAction'} >Book an Event!</Button>
+                  <div className={'myButton myButton--colored myButton--colored--calltoAction'} >Book an Event!</div>
                 </div>   
               </Row>
             </Col>
