@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './styles/App.css';
 import DualButtons from './Components/parts/DualButtons';
 import Menu from './Components/parts/Menu/Menu';
-import Button from 'react-bootstrap/Button';
 import './styles/stylesheets/main.scss';
 // import Cog from './svg/CategoryEmblems/Workshops/Cog';
 // import Code from './svg/CategoryEmblems/Workshops/Code';
@@ -13,7 +12,7 @@ import './styles/stylesheets/main.scss';
 // import MicrophoneOutlineSvg from './svg/CategoryEmblems/Talks/MicrophoneOutline'
 import { Container, Col, Row } from 'react-bootstrap';
 import anime from 'animejs/lib/anime.es.js';
-import SocialBar from  './Components/parts/Menu/SocialBar'
+import SocialBar from './Components/parts/Menu/SocialBar'
 class App extends Component {
 
   constructor() {
@@ -24,40 +23,39 @@ class App extends Component {
     };
   }
 
-componentDidMount()
-{
-  anime({
-    
-    targets: '',
-    translateX:100,
-    direction: 'alternate',
-    loop: true,
-    rotate: {
-      value: 360,
-      duration:1000,
+  componentDidMount() {
+    anime({
+
+      targets: '',
+      translateX: 100,
+      direction: 'alternate',
       loop: true,
-    },
-    easing: 'linear'
-      });
-  
-      window.addEventListener("resize", this.resize.bind(this));
-      this.resize();
-}
+      rotate: {
+        value: 360,
+        duration: 1000,
+        loop: true,
+      },
+      easing: 'linear'
+    });
+
+    window.addEventListener("resize", this.resize.bind(this));
+    this.resize();
+  }
 
 
 
-resize() {
-  window.innerWidth <= 770 ? this.setState({ SocialBar: '' }) : this.setState({ SocialBar: <SocialBar /> })
-}
+  resize() {
+    window.innerWidth <= 770 ? this.setState({ SocialBar: '' }) : this.setState({ SocialBar: <SocialBar /> })
+  }
 
   render() {
     return (
       <div className="App">
         <Container fluid='true'>
           <Row>
-            <Menu colour={this.state.colour}/>
+            <Menu colour={this.state.colour} />
             <Col md={{ span: 9, offset: 2 }} xs={12}>
-            {this.state.SocialBar}
+              {this.state.SocialBar}
               <Row>
                 <DualButtons group='workshop' firstButtonText='Learn More' secondButtonText='Browse Workshops' />
                 <DualButtons group='talk' firstButtonText='Learn More' secondButtonText='Browse Talks' />
@@ -65,7 +63,7 @@ resize() {
                 <DualButtons group='stella' firstButtonText='Learn More' secondButtonText="Browse Stella's Facts" />
                 <div style={{ marginTop: '50px' }}>
                   <div className={'myButton myButton--colored myButton--colored--calltoAction'} >Book an Event!</div>
-                </div>   
+                </div>
               </Row>
             </Col>
           </Row>

@@ -1,0 +1,53 @@
+.socialCol {
+    margin-top: 2% !important;
+
+    a
+    {
+        margin: 0% 5% 0% 3%;
+
+        .socialIcon {
+            
+            transition: all .5s;
+            transform-origin: 50% 50%;
+            width:28.095px;
+            height:29.065px;
+            
+            &:hover
+            {
+                transform:scale(0.9);   
+            }
+        }
+    }
+
+
+    #workshopSvgGradient
+    {
+        --color1:#4d70c1;
+        --color2:#5fa9b8;
+    }
+
+
+    #stellaSvgGradient
+    {
+        --color1:#9b4ea1;
+        --color2:#dc51af;
+    }
+
+    #talkSvgGradient
+    {
+        --color1:#ff0844;
+        --color2:#ffb199;
+    }
+
+    #contactSvgGradient
+    {
+        --color1:#2b5876;
+        --color2:#4e4376;
+    }
+
+    #eventSvgGradient
+    {
+        --color1:#ff9a7d;
+        --color2:#ffb84e;
+    }
+}

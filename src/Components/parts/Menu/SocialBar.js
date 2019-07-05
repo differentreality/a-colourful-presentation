@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Facebook from '../../../svg/Social/Facebook';
 import Instagram from '../../../svg/Social/Instagram';
 import Github from '../../../svg/Social/Github';
 import Gitlab from '../../../svg/Social/Gitlab';
 import LinkedIn from '../../../svg/Social/LinkedIn';
-import { Col, Row } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 
+// TODO: analoga me to router,allakse xroma
 const SocialBar = () => {
     var social = [
         {

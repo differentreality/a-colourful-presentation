@@ -1,17 +1,16 @@
 .sideMenu {
     position: fixed;
 
-    .inBorder {
+    &__insideBorderContent {
         position: absolute;
-        padding-bottom: 300%;
+        padding-bottom: 200%;
         border-right: 1px solid black;
 
-        .vertical-text {
+        &__vertical-text {
             color: #000;
-            display: block;
             font-size: 25px;
-            margin-top: 200%;
-            margin-left:-25%!important;
+            margin-top: 250%;
+            display: inline-block;
             transform: rotate(270deg);
             -ms-transform: rotate(270deg);
             -webkit-transform: rotate(270deg);
@@ -26,18 +25,46 @@
     }
 
 
-    .outofBorder {
-        font-size:15px;
-        margin-top: 650%;
+    &__outofBorderContent {
+        font-size:13px;
+        margin-top: 600%;
         color:$stellaTextColor;
+
+        &-talk
+        {
+            color:$talkTextColor;
+        }
+
+        &-stella
+        {
+            color:$stellaTextColor;
+        }
+
+        &-event
+        {
+            color:$eventTextColor;
+        }
+
+        &-workshop
+        {
+            color:$workshopTextColor;
+        }
+
+        &-contact
+        {
+            color:$contactTextColor;
+        }
+
+
 
 
         
-        .colourBubble,.colourCode,.colourName
+        &__colourBubble,&__colourCode,&__colourName
         {
             position: absolute;
         }
-        .colourBubble
+
+        &__colourBubble
         {
             width:20px;
             height:20px;
@@ -46,17 +73,45 @@
             margin-right:15px;
             border-radius: 50%;
             display:inline-block;
-            background-image:$stellaGradientVertical;
+
+            &-talk
+            {
+                @extend .sideMenu__outofBorderContent__colourBubble;
+                background-image:$talkGradientVertical;
+            }
+
+            &-event
+            {
+                @extend .sideMenu__outofBorderContent__colourBubble;
+                background-image:$eventGradientVertical;
+            }
+
+            &-workshop
+            {
+                @extend .sideMenu__outofBorderContent__colourBubble;
+                background-image:$workshopGradientVertical;
+            }
+            &-stella
+            {
+                @extend .sideMenu__outofBorderContent__colourBubble;
+                background-image:$stellaGradientVertical;
+            }
+            &-contact
+            {
+                @extend .sideMenu__outofBorderContent__colourBubble;
+                background-image:$contactGradientVertical;
+            }
+
         }
 
-        .colourCode
+        &__colourCode
         {
             margin-left:30px;
             font-weight: 900;
             position:absolute;
         }
 
-        .colourName
+        &__colourName
         {
             font-weight:100;
             margin-top:20px;
@@ -72,38 +127,53 @@
 
 
 @media (max-width:1500px) {
-    .sideMenu , .vertical-text , .outofBorder {
-        font-size: 15px !important;
+    .sideMenu {
+        font-size: 13px;
 
-        
-    }
 
-        .outofBorder {
-            margin-left: -20px;
-            margin-top: 850%!important;
-        }
-
-        .colourBubble
+        &__insideBorderContent__vertical-text
         {
-            width:15px!important;
-            height:15px!important;
-
+                margin-left:-25%;   
         }
+        &__outofBorderContent 
+        {
+            margin-left: -20px;
+            margin-top: 850%;
+            
+            
 
-        .colourName{
-        margin-left:20px!important;
+            &__colourBubble
+            {
+                width:15px;
+                height:15px;
+            }
+
+            &__colourName{
+            margin-left:20px;
+            }
         }
+    }
 }
+
 
 
 
 @media (max-width:870px) {
 
 
-        .outofBorder {
-            font-size:13px!important;
-            margin-top: 1050%!important;
+    .sideMenu
+    {
+            
+        &__insideBorderContent__vertical-text
+        {
+                margin-left:-50%;   
         }
+
+        &__outofBorderContent {
+                font-size:11px;
+                margin-top: 1050%;
+        }
+    }
 }
 
 
