@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent  } from 'react';
 import SidebarMenu from './SidebarMenu';
 import MobileHeader from './MobileHeader';
 
-class Menu extends Component {
+class Menu extends PureComponent  {
 
   constructor() {
     super();

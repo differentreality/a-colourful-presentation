@@ -21,12 +21,12 @@
 // 4. Layout-related sections
 @import
   'layout/header',
-  'layout/footer';
+  'layout/footer',
+  'layout/sidemenu';
 
 // 5. Components
 @import
   'components/button',
-  'components/sidemenu',
   'components/mobileHeader',
   'components/icons/socialIcons.scss';
 // 6. Page-specific styles
