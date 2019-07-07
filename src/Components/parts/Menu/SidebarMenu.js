@@ -1,4 +1,4 @@
-import React, { PureComponent  } from 'react';
+import React, { Component  } from 'react';
 import { Col } from 'react-bootstrap';
 
 var colours = [
@@ -30,7 +30,7 @@ var colours = [
 ]
 
 //TODO: analoga me to router,allakse xroma & periexomeno
-class SidebarMenu extends PureComponent  {
+class SidebarMenu extends Component  {
 
     constructor() {
         super();
@@ -52,7 +52,8 @@ class SidebarMenu extends PureComponent  {
                 <Col className='sideMenu' xs={1}>
                     <Col className='sideMenu__insideBorderContent' xs={12}>
                         <h5>LOGO</h5>
-                            <a className='v-link'  onClick={this.clicked}> {this.state.isOpen? 'CLOSE' : 'MENU'}
+                            <a className='v-link'  onClick={this.clicked}>
+                                 {this.state.isOpen? <span className='fade-in v-link__text'>CLOSE</span> : <span className='puff-in-center v-link__text'>MENU</span>}
                                 <div className='v-link__v-lines'>
                                     <div className={this.state.isOpen? 'v-link__v-line-1 v-link__v-line-1--closed' : 'v-link__v-line-1'}/>
                                     <div className={this.state.isOpen? 'v-link__v-line-2 v-link__v-line-2--closed' : 'v-link__v-line-2'}/>

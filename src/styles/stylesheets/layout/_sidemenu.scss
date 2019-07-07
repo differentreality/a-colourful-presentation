@@ -26,7 +26,7 @@
             transform: rotate(270deg);
             -ms-transform: rotate(270deg);
             -webkit-transform: rotate(270deg);
-            
+
             &__v-lines
             {
                 display: inline-block;
@@ -36,9 +36,9 @@
             {
                 width: 20px;
                 height: 2px;
+                transition: 0.4s;
                 background-color: #333;
                 margin: 6px 0px 3px 10px;
-                transition: 0.4s;
 
                 &-1
                 {
