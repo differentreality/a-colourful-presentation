@@ -7,7 +7,7 @@
 }
 
 .v-link {
-    color:#252525;
+    color:$paragraphColour;
     cursor:pointer;
     display: inline-block;
 
@@ -22,7 +22,7 @@
         width: 20px;
         height: 2px;
         transition: 0.4s;
-        background-color: #333;
+        background-color:$borderColour;
         margin: 6px 0px 3px 10px;
 
         &-1
@@ -54,12 +54,11 @@
     &__insideBorderContent {
         position: absolute;
         padding-bottom: 200%;
-        border-right: 1px solid black;
+        border-right: 1px solid $borderColour;
 
         
 
         &:hover {
-            color: #000;
             transition: all .2s;
             text-decoration: none;
             text-shadow: $stellaTextShadow;

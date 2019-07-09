@@ -38,17 +38,7 @@ $breakpoints: (
 ) !default;
 
 
-
-
-
-
-/// Relative or absolute URL where all assets are served from
-/// @type String
-/// @example scss - When using a CDN
-///   $base-url: 'http://cdn.example.com/assets/';
-$base-url: '/assets/' !default;
-
-
+$borderColour:rgb(114, 114, 114);
 //buttons
 $workshopGradient: linear-gradient(to right, #488be4, #2feba3de);
 $workshopGradientVertical: linear-gradient( #488be4, #2feba3de);
@@ -78,13 +68,14 @@ $contactGradientVertical: linear-gradient( #2b5876, #4e4376);
 $contactTextColor:#4e4376;
 
 //primary for text
+$paragraphColour: #2b2b2b;
 $talkTextColor : #FF0844;
-$talkTextShadow : 1px 1px 20px rgba(252, 65, 40, 0.534);
 $stellaTextColor : #9B4EA1;
-$stellaTextShadow : 1px 1px 40px rgba(159, 25, 248, 0.473);
 $eventTextColor : #FF9A7D;
-$eventTextShadow : 1px 1px 20px rgba(248, 170, 25, 0.711);
 $workshopTextColor : #4464AD;
+$talkTextShadow : 1px 1px 20px rgba(252, 65, 40, 0.534);
+$stellaTextShadow : 1px 1px 40px rgba(159, 25, 248, 0.473);
+$eventTextShadow : 1px 1px 20px rgba(248, 170, 25, 0.711);
 $workshopTextShadow : 1px 1px 20px rgba(88, 161, 230, 0.541);
 
 
