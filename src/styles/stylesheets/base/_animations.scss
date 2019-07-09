@@ -1,6 +1,6 @@
 .fade-in {
-	-webkit-animation: fade-in 1.2s ease-out ;
-	        animation: fade-in 1.2s ease-out ;
+	-webkit-animation: fade-in 2.5s ease-out ;
+	        animation: fade-in 2.5s ease-out ;
 }
 
 /* ----------------------------------------------
@@ -31,8 +31,8 @@
   }
   
   .puff-in-center {
-    -webkit-animation: puff-in-center 0.7s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-            animation: puff-in-center 0.7s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+    -webkit-animation: puff-in-center 1.1s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+            animation: puff-in-center 1.1s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
   }
 
   /* ----------------------------------------------
