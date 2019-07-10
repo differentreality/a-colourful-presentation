@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
 import { Button } from '../../Components/parts/Buttons';
+import CallToActionSvg from '../../svg/CallToActionSvg';
 class Home extends Component {
 
     render() {
@@ -32,7 +33,7 @@ class Home extends Component {
                     </Col>
 
                     <Col md='6'>
-                        <h1 className='home__scrollAction'>Scroll and Roll!</h1>
+                        <span className='home__scrollAction'>Scroll and Roll!</span> <CallToActionSvg/>
                     </Col>
                 </Row>
             </Container>

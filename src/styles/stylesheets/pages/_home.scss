@@ -53,8 +53,9 @@
 
     &__scrollAction
     {
+        font-size: 45px;
         font-weight: 100;
-        text-align: center;
+        margin-left: 15%;
         color: $stellaTextColor;
         text-shadow: $stellaTextShadowHarder;
     }
