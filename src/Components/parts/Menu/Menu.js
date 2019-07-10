@@ -29,7 +29,7 @@ var colours = [
     }
 ]
 
-class Logo_Menu extends Component {
+class LogoMenu extends Component {
 
     constructor() {
         super();
@@ -64,7 +64,7 @@ class Logo_Menu extends Component {
 const SidebarMenu = () => {
     return <Col className='sideMenu' xs={1}>
         <Col className='sideMenu__insideBorderContent' xs={12}>
-            <Logo_Menu />
+            <LogoMenu />
         </Col>
 
         <Col className='sideMenu__outofBorderContent sideMenu__outofBorderContent-stella' xs={12}>
@@ -79,7 +79,7 @@ const SidebarMenu = () => {
 const MobileHeader = () => {
     return <Col className='mobileHeader' xs={12}>
         <Col xs={10} id='mobileHeader-bordered'>
-            <Logo_Menu />
+            <LogoMenu />
         </Col>
     </Col>
 }
@@ -112,3 +112,4 @@ class Menu extends PureComponent {
 }
 
 export default Menu;
+ 

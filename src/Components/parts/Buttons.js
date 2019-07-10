@@ -13,4 +13,9 @@ const DualButtons = (props) =>
         </Col>
 }
 
-export default DualButtons;
+const Button = (props) =>
+{
+    return <div className={'myButton myButton--colored myButton--colored--'+props.group} >{props.secondButtonText}</div>
+}
+
+export {Button, DualButtons};
