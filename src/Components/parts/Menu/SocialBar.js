@@ -30,7 +30,7 @@ const SocialBar = () => {
     ]
     return <Col className='socialCol' xl={{ span: 5, offset: 7 }} lg={{ span: 6, offset: 6 }} md={{ span:7, offset: 5 }}  >
 
-    {social.map((smedia)=><a rel="noopener noreferrer" target="_blank" href={smedia.link}><smedia.icon group='workshopSvgGradient'/></a>)}
+    {social.map((smedia,i)=><a rel="noopener noreferrer" key={i} target="_blank" href={smedia.link}><smedia.icon group='workshopSvgGradient'/></a>)}
     </Col>
 }
 

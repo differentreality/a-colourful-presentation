@@ -4,11 +4,9 @@ import { DualButtons } from './Components/parts/Buttons';
 import Menu from './Components/parts/Menu/Menu';
 import './styles/stylesheets/main.scss';
 import { Container, Col, Row } from 'react-bootstrap';
-import anime from 'animejs/lib/anime.es.js';
 import SocialBar from './Components/parts/Menu/SocialBar'
 import Home from './Components/pages/Home'
 import WorkshopHome from './Components/pages/Categories/WorkshopHome'
-import { Papyrus } from './svg/Contact'
 class App extends Component {
 
   constructor() {
@@ -20,29 +18,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    anime({
-
-      targets: '.svgFam__topLeft',
-      translateX: {
-        value: -150
-      },
-      translateY: {
-        value: -150
-      },
-      easing: 'linear',
-      complete: function () {
-        anime({
-          targets: '.svgFam__topLeft',
-          rotate: {
-            value: 360,
-            duration: 10000,
-            loop: true,
-          },
-          loop: true,
-          easing: 'linear'
-        });
-      }
-    })
 
     window.addEventListener("resize", this.resize.bind(this));
     this.resize();
@@ -73,7 +48,6 @@ class App extends Component {
                     <div style={{ marginTop: '50px' }}>
                       <div className={'myButton myButton--colored myButton--colored--calltoAction'} >Book an Event!</div>
                     </div>
-                    <Papyrus />
                   </Row>
                 </Col>
               </Row>

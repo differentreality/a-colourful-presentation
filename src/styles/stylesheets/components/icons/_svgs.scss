@@ -3,7 +3,10 @@
     position: relative;
     margin-top:3%;
     left:5%;
-    
+
+    &__topLeft{
+        z-index: 100;
+    }
     &__topLeft,
     &__botLeft,
     &__topRight,
