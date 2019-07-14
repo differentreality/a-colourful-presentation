@@ -29,9 +29,11 @@
 @import
   'components/button',
   'components/mobileHeader',
-  'components/icons/socialIcons.scss';
+  'components/icons/socialIcons.scss',
+  'components/icons/svgs.scss';
 // 6. Page-specific styles
 @import
+  'pages/workshopHome',
   'pages/home';
 
 // 7. Themes

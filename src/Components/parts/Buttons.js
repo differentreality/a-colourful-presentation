@@ -15,7 +15,7 @@ const DualButtons = (props) =>
 
 const Button = (props) =>
 {
-    return <div className={'myButton myButton--colored myButton--colored--'+props.group} >{props.secondButtonText}</div>
+    return <div className={'myButton myButton--colored myButton--colored--'+props.group} >{props.buttonText}</div>
 }
 
 export {Button, DualButtons};
