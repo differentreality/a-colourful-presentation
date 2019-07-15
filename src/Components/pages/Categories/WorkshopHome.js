@@ -6,7 +6,6 @@ import {Coffee,Idea,IdeaOutline,Smile,Reading} from '../../../svg/StellasFacts'
 import { Container, Col, Row } from 'react-bootstrap';
 import { Button } from '../../parts/Buttons'
 import anime from 'animejs/lib/anime.es.js';
-import { thisExpression } from '@babel/types';
 class WorkshopHome extends Component {
 
     constructor()
@@ -16,23 +15,24 @@ class WorkshopHome extends Component {
             'TitleSvg':Code,
             'Title':'Workshops',
             'paragraph':<p>lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem'</p>,
-            'topLeft':University,
-            'topRight':confCard,
-            'center':Networking,
-            'botLeft':UniversityOutline,
-            'botRight':Beer,
-            'translateDivide':1
+            'topLeft':Papyrus,
+            'topRight':QuestionMark,
+            'center':MessageCloud,
+            'botLeft':PapyrusOutline,
+            'botRight':MessageFolder,
+
     }
     }
     animate = () => {
+     
         var rotateAnimation = (classtoAnimate) => {
             anime({
                 targets: classtoAnimate,
                 rotate: {
                     value: 360,
-                    duration: 1000
+                    duration: 15000
                 },
-                loop: true,
+                loop:true,
                 easing: 'linear'
             });
         };
@@ -40,10 +40,10 @@ class WorkshopHome extends Component {
         anime({
             targets: '.svgFam__topLeft',
             translateX: {
-                value: -250/this.state.translateDivide
+                value: -20
             },
             translateY: {
-                value: -150/this.state.translateDivide
+                value: -100
             },
             rotateX: {
                 value: 180,
@@ -57,13 +57,20 @@ class WorkshopHome extends Component {
         anime({
             targets: '.svgFam__topRight',
             translateX: {
-                value: 250/this.state.translateDivide
+                value: 25
             },
             translateY: {
-                value: -150/this.state.translateDivide
+                value: -150
             },
             rotateX: {
                 value: 180,
+            },
+            rotate:{
+                rotate: {
+                    value: 360,
+                    duration: 2000,
+                    loop:true
+                },
             },
             complete: function () {
                 rotateAnimation('.svgFam__topRight')
@@ -74,10 +81,10 @@ class WorkshopHome extends Component {
         anime({
             targets: '.svgFam__botRight',
             translateX: {
-                value: 400/this.state.translateDivide
+                value: '40%'
             },
             translateY: {
-                value: 250/this.state.translateDivide
+                value: 50
             },
             rotateX: {
                 value: 180,
@@ -91,15 +98,15 @@ class WorkshopHome extends Component {
         anime({
             targets: '.svgFam__botLeft',
             translateX: {
-                value: -200/(this.state.translateDivide-(this.state.translateDivide> 2 ? 1 : 0)) //den feugei arketa xoris to -1
+                value: -200
             },
             translateY: {
-                value: 250/this.state.translateDivide
+                value: 50
             },
             rotateX: {
                 value: 180,
             },
-            complete: function () {
+            complete: function() {
                 rotateAnimation('.svgFam__botLeft')
             },
             easing: 'linear'
@@ -111,33 +118,21 @@ class WorkshopHome extends Component {
             loop: true,
             direction: 'alternate',
             duration: 2500,
-            easing: 'linear',
-
+            easing: 'linear'
         })
     }
 
     componentDidMount() {
-        window.addEventListener("resize", this.resize.bind(this));
-        this.resize();
-        this.animate();
-      }
 
-    componentDidUpdate()
-    {
-        this.animate.restart();
-    }
-    
-    
-    
-      resize() {
-        window.innerWidth <= 1300 ? this.setState({ 'translateDivide': 3 }) : this.setState({ 'translateDivide': 1})
+        this.animate();
+       
       }
 
 
 
     render() {
         return (
-            <Container fluid='true'>
+            <Container id='MainNav' fluid='true'>
                 <Row>
                     <Col md='6' className='workshopCon'>
                         <this.state.TitleSvg className='workshopCon__svg' />

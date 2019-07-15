@@ -22,7 +22,7 @@ const Beer = () => {
 }
 
 const confCard = () => {
-  return <svg id='confCard' className='svgFam__topRight fade-in' width="156.869" height="156.133" viewBox="0 0 125.628 129.139">
+  return <svg id='confCard' className='svgFam__topRight' width="156.869" height="156.133" viewBox="0 0 125.628 129.139">
     <defs>
       <linearGradient id="Event-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
         <stop offset="0" stopColor="#ff9a7d" />
@@ -51,7 +51,7 @@ const confCard = () => {
 }
 
 const Networking = () => {
-  return <svg id='NetworkingSVG' xmlns="http://www.w3.org/2000/svg" className='svgFam__center fade-in' width="301.92" height="217.399" viewBox="0 0 301.92 217.399">
+  return <svg id='NetworkingSVG' xmlns="http://www.w3.org/2000/svg" className='svgFam__center slide-top' width="301.92" height="217.399" viewBox="0 0 301.92 217.399">
     <defs>
       <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
         <stop offset="0" stop-color="#ff9a7d" />
@@ -76,7 +76,7 @@ const Networking = () => {
 }
 
 const University = () => {
-  return <svg xmlns="http://www.w3.org/2000/svg" className='svgFam__topLeft fade-in' width="83.61" height="78.783" viewBox="0 0 83.61 78.783">
+  return <svg xmlns="http://www.w3.org/2000/svg" className='svgFam__topLeft' width="83.61" height="78.783" viewBox="0 0 83.61 78.783">
     <defs>
       <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
         <stop offset="0" stop-color="#ff9a7d" />

@@ -1,5 +1,7 @@
 .workshopCon {
 
+    
+
     #codeSvg {
         width: 70px;
         height: 70px;
@@ -20,16 +22,93 @@
         margin: 0 10%;
     }
 
+    
 }
 
+.svgFam
+    {
+
+        &__botRight,&__botLeft,&__topRight,&__topLeft {
+            overflow: hidden!important;
+        }
+
+        &__botRight
+        {
+            left:50%;
+            top:70%;
+            
+        }
+
+        &__botLeft
+        {
+            left:15%;
+            top:70%;
+        }
+
+        &__topLeft
+        {
+            left:-25%;
+            top:5%;
+        }
+
+        &__topRight
+        {
+            left:40%;
+        }
+    }
 @media (max-width: 1300px) {
     .svgFam {
 
         margin: 0 25%;
 
-        * {
+        &__botRight,&__botLeft,&__topRight,&__topLeft {
             max-width: 90px;
             max-height: 90px;
+        }
+
+        &__center
+        {
+            max-width:120px;
+            max-height: 120px;
+            margin-top:-25%;
+        }
+    }
+
+    .svgFam
+    {
+        &__botRight
+        {
+            left:70%;
+        }
+
+        &__topLeft
+        {
+            left:-40%;
+        }
+
+        &__topRight
+        {
+            left:40%;
+        }
+
+        &__botLeft
+        {
+            left:30%;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+
+    .svgFam
+    {
+        &__botLeft
+        {
+            left:50%;
+        }
+        &__botRight
+        {
+            left:63%;
         }
     }
 }
