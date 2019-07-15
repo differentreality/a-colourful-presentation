@@ -25,8 +25,8 @@ const CogOutline = () => {
     <defs>
       <filter id="Path_116" x="0" y="0" width="94.084" height="93.629" filterUnits="userSpaceOnUse">
         <feOffset dy="3" input="SourceAlpha"/>
-        <feGaussianBlur stdDeviation="4.5" result="blur"/>
-        <feFlood floodColor="#0f3ed8" floodOpacity="0.961"/>
+        <feGaussianBlur stdDeviation="2.5" result="blur"/>
+        <feFlood floodColor="#0f3ed8" floodOpacity="0.261"/>
         <feComposite operator="in" in2="blur"/>
         <feComposite in="SourceGraphic"/>
       </filter>

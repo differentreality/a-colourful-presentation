@@ -1,27 +1,35 @@
-.workshopCon
-{
+.workshopCon {
 
-    #codeSvg 
-    {
-        width:70px!important;
-        height: 70px!important;
-        margin-top:-20px;  
+    #codeSvg {
+        width: 70px;
+        height: 70px;
+        margin-top: -20px;
     }
 
-    &__Title
-    {
-        margin-left:5%;
-        font-size:40px;
+    &__Title {
+        margin-left: 5%;
+        font-size: 40px;
     }
-    
-    p
-    {
+
+    p {
         max-width: 70%;
-        margin-top:5%;
+        margin-top: 5%;
     }
 
-    .myButton
-    {
-        margin:0 10%;
+    .myButton {
+        margin: 0 10%;
+    }
+
+}
+
+@media (max-width: 1300px) {
+    .svgFam {
+
+        margin: 0 25%;
+
+        * {
+            max-width: 90px;
+            max-height: 90px;
+        }
     }
 }
