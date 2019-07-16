@@ -134,19 +134,20 @@ class WorkshopHome extends Component {
         return (
             <Container id='MainNav' fluid='true'>
                 <Row>
-                    <Col md='6' className='workshopCon'>
-                        <this.state.TitleSvg className='workshopCon__svg' />
-                        <span className='workshopCon__Title'>{this.state.Title}</span>
-                        {this.state.paragraph} {this.state.translateDivide}
-                        <Button group='workshop' buttonText='Learn More!' />
-                    </Col>
-                    <Col md='6' className='svgFam'>
+                <Col lg={{span:6,order:'last'}}  className='svgFam col-xs-pull-12'>
                         <this.state.topLeft />
                         <this.state.botLeft  />
                         <this.state.center />
                         <this.state.topRight />
                         <this.state.botRight />
                     </Col>
+                    <Col lg={{span:6,order:'first'}} className='workshopCon col-xs-push-12'>
+                        <this.state.TitleSvg className='workshopCon__svg' />
+                        <span className='workshopCon__Title'>{this.state.Title}</span>
+                        {this.state.paragraph} {this.state.translateDivide}
+                        <Button group='workshop' buttonText='Learn More!' />
+                    </Col>
+                    
                 </Row>
             </Container>
         );
