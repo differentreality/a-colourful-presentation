@@ -1,33 +1,8 @@
 import React, { PureComponent, Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import { Col } from 'react-bootstrap';
 
-var colours = [
-    {
-        'id': 'stellafacts',
-        'name': 'Grape',
-        'code': '#9B4EA1'
-    },
-    {
-        'id': 'contact',
-        'name': 'Plum',
-        'code': '#4e4376'
-    },
-    {
-        'id': 'talks',
-        'name': 'Pomegranate',
-        'code': '#FF0844'
-    },
-    {
-        'id': 'workshops',
-        'name': 'Blueberry',
-        'code': '#9B4EA1'
-    },
-    {
-        'id': 'events',
-        'name': 'Grapefruit',
-        'code': '#FF9A7D'
-    }
-]
+
 
 class LogoMenu extends Component {
 
@@ -60,17 +35,46 @@ class LogoMenu extends Component {
     }
 }
 
-//TODO: analoga me to router,allakse xroma & periexomeno
-const SidebarMenu = () => {
-    return <Col className='sideMenu' xs={1}>
+const SidebarMenu = (props) => {
+
+    var colours = [
+        {
+            'id': 'stella',
+            'name': 'Grape',
+            'code': '#9B4EA1'
+        },
+        {
+            'id': 'contact',
+            'name': 'Plum',
+            'code': '#4e4376'
+        },
+        {
+            'id': 'talk',
+            'name': 'Pomegranate',
+            'code': '#FF0844'
+        },
+        {
+            'id': 'workshop',
+            'name': 'Blueberry',
+            'code': '#28a2b7'
+        },
+        {
+            'id': 'event',
+            'name': 'Grapefruit',
+            'code': '#FF9A7D'
+        }
+    ]
+
+    //check an ekane render, redirect 404
+    return (!props.arNum)? null:<Col className='sideMenu' xs={1}>
         <Col className='sideMenu__insideBorderContent' xs={12}>
             <LogoMenu />
         </Col>
 
-        <Col className='sideMenu__outofBorderContent sideMenu__outofBorderContent-stella' xs={12}>
-            <div className='sideMenu__outofBorderContent__colourBubble-stella' />{/*colourBubble based on router*/}
-            <span className='sideMenu__outofBorderContent__colourCode'>{colours[0].code}</span>
-            <span className='sideMenu__outofBorderContent__colourName'>{colours[0].name}</span>
+        <Col className={'sideMenu__outofBorderContent sideMenu__outofBorderContent-'+colours[props.arNum].id} xs={12}>
+            <div className={'sideMenu__outofBorderContent__colourBubble-'+colours[props.arNum].id} />
+            <span className='sideMenu__outofBorderContent__colourCode'>{colours[props.arNum].code} </span>
+            <span className='sideMenu__outofBorderContent__colourName'>{colours[props.arNum].name}</span>
         </Col>
     </Col>
 }
@@ -86,10 +90,11 @@ const MobileHeader = () => {
 
 class Menu extends PureComponent {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            menu: <SidebarMenu />
+            menu: <SidebarMenu />,
+            colourNum : 2
         };
     }
 
@@ -97,9 +102,17 @@ class Menu extends PureComponent {
         window.addEventListener("resize", this.resize.bind(this));
         this.resize();
     }
+    
+    groupColour = (url) => ({
+        '/workshops': 3,
+        '/talks': 2,
+        '/contact': 1,
+        '/stellas-facts': 0,
+        '/events': 4
+    })[url]
 
     resize() {
-        window.innerWidth <= 770 ? this.setState({ menu: <MobileHeader /> }) : this.setState({ menu: <SidebarMenu /> })
+        window.innerWidth <= 770 ? this.setState({ menu: <MobileHeader /> }) : this.setState({ menu: <SidebarMenu arNum={this.groupColour(this.props.location.pathname)} /> })
     }
 
 
@@ -111,5 +124,5 @@ class Menu extends PureComponent {
     }
 }
 
-export default Menu;
+export default withRouter(Menu);
  
