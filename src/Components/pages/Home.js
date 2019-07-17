@@ -29,7 +29,8 @@ class Home extends Component {
                 </Row>
                 <Row className='homeCTA'>
                     <Col md='6'>
-                        <span className='home__latest'>Latest</span><Button group='workshop' secondButtonText='Git 101' />
+                        <span className='home__latest'>Latest</span>
+                        <Button group='workshop' buttonText='Git 101' />
                     </Col>
 
                     <Col md='6'>

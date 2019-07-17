@@ -31,8 +31,8 @@ var colours = [
 
 class LogoMenu extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             isOpen: false
         };

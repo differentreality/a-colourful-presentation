@@ -1,5 +1,5 @@
 import React from 'react';
-const Coffee = () => {return <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="85.205" height="117.224" viewBox="0 0 85.205 117.224">
+const Coffee = () => {return <svg xmlns="http://www.w3.org/2000/svg" className='svgFam__botRight fade-in' xlink="http://www.w3.org/1999/xlink" width="85.205" height="117.224" viewBox="0 0 85.205 117.224">
 <defs>
   <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
     <stop offset="0" stopColor="#9b4ea1"/>
@@ -21,7 +21,7 @@ const Coffee = () => {return <svg xmlns="http://www.w3.org/2000/svg" xlink="http
 
 
 
-const Idea = () => {return <svg xlink="http://www.w3.org/1999/xlink" width="117" height="116.871" viewBox="0 0 117 116.871">
+const Idea = () => {return <svg xlink="http://www.w3.org/1999/xlink" className='svgFam__topLeft fade-in' width="117" height="116.871" viewBox="0 0 117 116.871">
 <defs>
   <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
     <stop offset="0" stopColor="#9b4ea1"/>
@@ -40,7 +40,7 @@ const Idea = () => {return <svg xlink="http://www.w3.org/1999/xlink" width="117"
 
 
 
-const IdeaOutline = () => {return <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="127.779" height="127.813" viewBox="0 0 127.779 127.813">
+const IdeaOutline = () => {return <svg xmlns="http://www.w3.org/2000/svg" className='svgFam__botLeft fade-in' xlink="http://www.w3.org/1999/xlink" width="127.779" height="127.813" viewBox="0 0 127.779 127.813">
 <defs>
   <filter id="Path_200" x="0" y="0" width="127.779" height="127.813" filterUnits="userSpaceOnUse">
     <feOffset dy="3" input="SourceAlpha"/>
@@ -65,7 +65,7 @@ const IdeaOutline = () => {return <svg xmlns="http://www.w3.org/2000/svg" xlink=
 
 
 
-const Reading = () => {return <svg xmlns="http://www.w3.org/2000/svg" width="234.259" height="186.42" viewBox="0 0 234.259 186.42">
+const Reading = () => {return <svg xmlns="http://www.w3.org/2000/svg" className='svgFam__center  fade-in' width="234.259" height="186.42" viewBox="0 0 234.259 186.42">
   <defs>
     <linearGradient id="linear-gradient" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
       <stop offset="0" stopColor="#dc51af"/>
@@ -96,20 +96,48 @@ const Reading = () => {return <svg xmlns="http://www.w3.org/2000/svg" width="234
 
 
 
-const Smile = () => {return<svg xmlns="http://www.w3.org/2000/svg" width="105.429" height="105.398" viewBox="0 0 105.429 105.398">
+const Smile = () => {return <svg xmlns="http://www.w3.org/2000/svg" className='svgFam__topRight fade-in' width="105.429" height="105.398" viewBox="0 0 105.429 105.398">
 <defs>
   <filter id="Path_182" x="0" y="0" width="105.429" height="105.398" filterUnits="userSpaceOnUse">
     <feOffset dy="3" input="SourceAlpha"/>
     <feGaussianBlur stdDeviation="3" result="blur"/>
-    <feFlood floodColor="#dc51af" floodOpacity="0.831"/>
+    <feFlood flood-color="#dc51af" flood-opacity="0.831"/>
     <feComposite operator="in" in2="blur"/>
+    <feComposite in="SourceGraphic"/>
+  </filter>
+  <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+    <stop offset="0" stop-color="#9b4ea1"/>
+    <stop offset="1" stop-color="#dc51af"/>
+  </linearGradient>
+  <filter id="Ellipse_4" x="16.542" y="25.145" width="31.464" height="40.856" filterUnits="userSpaceOnUse">
+    <feOffset dy="18" input="SourceAlpha"/>
+    <feGaussianBlur stdDeviation="3" result="blur-2"/>
+    <feFlood flood-color="#dc51af"/>
+    <feComposite operator="in" in2="blur-2"/>
+    <feComposite in="SourceGraphic"/>
+  </filter>
+  <filter id="Ellipse_5" x="53.121" y="32.167" width="31.464" height="40.856" filterUnits="userSpaceOnUse">
+    <feOffset dy="18" input="SourceAlpha"/>
+    <feGaussianBlur stdDeviation="3" result="blur-3"/>
+    <feFlood flood-color="#dc51af"/>
+    <feComposite operator="in" in2="blur-3"/>
     <feComposite in="SourceGraphic"/>
   </filter>
 </defs>
 <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Path_182)">
-  <path id="Path_182-2" data-name="Path 182" d="M33.2,0A32.991,32.991,0,1,1,0,32.973,33.03,33.03,0,0,1,33.2,0Z" transform="translate(30.79 8.5) rotate(17)" fill="#fff" stroke="#dc51af" strokeMiterlimit="10" strokeWidth="4"/>
+  <path id="Path_182-2" data-name="Path 182" d="M33.2,0A32.991,32.991,0,1,1,0,32.973,33.03,33.03,0,0,1,33.2,0Z" transform="translate(30.79 8.5) rotate(17)" fill="#fff" stroke="#dc51af" stroke-miterlimit="10" stroke-width="4"/>
+</g>
+<path id="Path_183" data-name="Path 183" d="M30.723,0c-1.384,6.492-8.5,11.055-15.828,10.944C7.81,10.837.88,6.173,0,1.187,4.957,2.515,9.957,4.376,15.116,5.095,20.6,5.859,25.468,2.974,30.723,0Z" transform="translate(35.902 52.644) rotate(17)" stroke="#fff" stroke-miterlimit="10" stroke-width="2" fill="url(#linear-gradient)"/>
+<path id="Path_184" data-name="Path 184" d="M15.976,10.128C10.746,5.293,5.495,5.182,0,9.868A12.651,12.651,0,0,1,4.928,1.1,5.116,5.116,0,0,1,10.991.895C13.736,2.541,16.2,6.925,15.976,10.128Z" transform="translate(60.705 37.354) rotate(17)" fill="url(#linear-gradient)"/>
+<path id="Path_185" data-name="Path 185" d="M15.7,10.111C10.539,5.464,5.378,5.03.268,9.9-.566,8.159.6,5.015,3.033,2.45,4.908.474,7.055-.708,9.857.467,12.945,1.762,15.861,6.418,15.7,10.111Z" transform="translate(37.809 30.37) rotate(17)" fill="url(#linear-gradient)"/>
+<g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Ellipse_4)">
+  <ellipse id="Ellipse_4-2" data-name="Ellipse 4" cx="5.322" cy="5.618" rx="5.322" ry="5.618" transform="translate(28.83 25.14) rotate(17)" fill="#fff" opacity="0.17"/>
+</g>
+<g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Ellipse_5)">
+  <ellipse id="Ellipse_5-2" data-name="Ellipse 5" cx="5.322" cy="5.618" rx="5.322" ry="5.618" transform="translate(65.41 32.17) rotate(17)" fill="#fff" opacity="0.17"/>
 </g>
 </svg>
+
 }
 
 

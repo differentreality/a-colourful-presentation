@@ -64,15 +64,16 @@ $calltoActionGradient: linear-gradient(to right, #28B781, #63D8B4);
 $calltoActionShadow:0px 5px 20px 2px rgba(40, 183, 129, .4);
 $calltoActionShadowHover:0px 6px 20px 5px rgba(40, 183, 129, .2);
 
-$contactGradientVertical: linear-gradient( #2b5876, #4e4376);
-$contactTextColor:#4e4376;
-
+$contactGradientVertical: linear-gradient(to right, #2b5876, #4e4376);
+$contacttoActionShadow:0px 5px 20px 2px rgba(113, 100, 161, 0.4);
+$contacttoActionShadowHover:0px 5px 20px 2px rgba(78, 67, 118,.5);
 //primary for text
 $paragraphColour: #4d4d4d;
 $talkTextColor : #FF0844;
 $stellaTextColor : #9B4EA1;
 $eventTextColor : #FF9A7D;
 $workshopTextColor : #4464AD;
+$contactTextColor:#4e4376;
 $talkTextShadow : 1px 1px 20px rgba(252, 65, 40, 0.534);
 $stellaTextShadow : 1px 1px 40px rgba(199, 173, 216, 0.473);
 $stellaTextShadowHarder : 1px 1px 20px rgba(117, 55, 158, 0.473);

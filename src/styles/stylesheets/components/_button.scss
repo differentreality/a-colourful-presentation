@@ -74,6 +74,10 @@
       @include coloredButton($calltoActionGradient, $calltoActionShadow, $calltoActionShadowHover);
     }
 
+    &--contact {
+      @include coloredButton($contactGradientVertical, $contacttoActionShadow, $contacttoActionShadowHover);
+    }
+
     
   }
 

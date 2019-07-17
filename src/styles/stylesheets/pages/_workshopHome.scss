@@ -9,17 +9,20 @@
     }
 
     &__Title {
-        margin-left: 5%;
-        font-size: 40px;
+        margin-left: 2%;
+        font-size: 30px;
+        font-weight: 500;
+        color:$paragraphColour;
     }
 
     p {
         max-width: 70%;
         margin-top: 5%;
+        color:$paragraphColour;
     }
 
     .myButton {
-        margin: 0 10%;
+        margin: 10% 15%;
     }
 
 
