@@ -3,9 +3,6 @@ import { withRouter } from 'react-router-dom';
 import { Facebook, Instagram, Github, Gitlab, LinkedIn } from '../../../svg/Social/SocialSvg';
 import { Col } from 'react-bootstrap';
 
-// TODO: analoga me to router,allakse xroma
-//to xroma allazei me vasi to group property
-
 const SocialBar = (props) => {
     var social = [
         {

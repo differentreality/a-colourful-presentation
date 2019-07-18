@@ -107,15 +107,7 @@ class CategoryNavigation extends Component {
 
         anime({
             targets: '.svgFam__topLeft',
-            translateX: {
-                value: -20
-            },
-            translateY: {
-                value: -100
-            },
-            rotateX: {
-                value: 180,
-            },
+            
             complete: function () {
                 rotateAnimation('.svgFam__topLeft')
                
@@ -124,16 +116,8 @@ class CategoryNavigation extends Component {
         });
 
         anime({
-            targets: '.svgFam__topRight',
-            translateX: {
-                value: 25
-            },
-            translateY: {
-                value: -150
-            },
-            rotateX: {
-                value: 180,
-            },
+            targets: '.svgFam__topRight',   
+           
             rotate: {
                 rotate: {
                     value: 360,
@@ -149,15 +133,7 @@ class CategoryNavigation extends Component {
 
         anime({
             targets: '.svgFam__botRight',
-            translateX: {
-                value: '40%'
-            },
-            translateY: {
-                value: 50
-            },
-            rotateX: {
-                value: 180,
-            },
+            
             complete: function () {
                 rotateAnimation('.svgFam__botRight')
             },
@@ -166,15 +142,7 @@ class CategoryNavigation extends Component {
 
         anime({
             targets: '.svgFam__botLeft',
-            translateX: {
-                value: -200
-            },
-            translateY: {
-                value: 50
-            },
-            rotateX: {
-                value: 180,
-            },
+           
             complete: ()=>{
                 rotateAnimation('.svgFam__botLeft')
             },

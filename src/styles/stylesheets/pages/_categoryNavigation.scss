@@ -12,13 +12,13 @@
         margin-left: 2%;
         font-size: 30px;
         font-weight: 500;
-        color:$paragraphColour;
+        color: $paragraphColour;
     }
 
     p {
         max-width: 70%;
         margin-top: 5%;
-        color:$paragraphColour;
+        color: $paragraphColour;
     }
 
     .myButton {
@@ -39,21 +39,21 @@
 
     &__botRight {
         left: 50%;
-        top: 70%;
-
+        top: 100%;
     }
 
     &__botLeft {
-        left: 15%;
+        left: -30%;
         top: 70%;
     }
 
     &__topLeft {
         left: -25%;
-        top: 5%;
+        top: -35%;
     }
 
     &__topRight {
+        top: -25%;
         left: 40%;
     }
 }
@@ -82,15 +82,16 @@
         }
 
         &__topLeft {
-            left: -20%;
+            left: -40%;
         }
+
+
 
         &__topRight {
             left: 40%;
         }
 
         &__botLeft {
-            left: 30%;
             top: 30%;
         }
     }
@@ -118,14 +119,15 @@
         }
 
         &__topLeft {
+            top:-150px;
             left: -40%;
         }
 
         &__botLeft {
-            left: 30%;
         }
 
         &__topRight {
+            top:-150px;
             left: 40%;
         }
 
@@ -152,7 +154,7 @@
         margin: 50% 25%;
 
         &__botRight {
-            left: 63%;
+            left: -33%;
         }
 
         &__botLeft {

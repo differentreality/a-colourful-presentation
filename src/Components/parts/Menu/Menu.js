@@ -104,6 +104,7 @@ class Menu extends PureComponent {
         this.resize();
         history.listen( location =>  {
             this.setState({ menu: <SidebarMenu colourCategory={this.groupColour(location.pathname)} />})
+            this.resize();
         })
     }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 const Hand = () => {
-    return <svg xmlns="http://www.w3.org/2000/svg" xmlnsxlink="http://www.w3.org/1999/xlink" className='svgFam__topRight' width="95.772" height="99.348" viewBox="0 0 95.772 99.348">
+    return <svg xmlns="http://www.w3.org/2000/svg" xmlnsxlink="http://www.w3.org/1999/xlink" className='fade-in svgFam__topRight' width="95.772" height="99.348" viewBox="0 0 95.772 99.348">
     <defs>
       <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
         <stop offset="0" stop-color="#ff0844"/>
@@ -13,7 +13,7 @@ const Hand = () => {
 }
 
 const Microphone = () => {
-  return <svg xmlns="http://www.w3.org/2000/svg"  className='svgFam__topLeft'   width="80" height="123.823" viewBox="0 0 80 123.823">
+  return <svg xmlns="http://www.w3.org/2000/svg"  className='fade-in svgFam__topLeft'   width="80" height="123.823" viewBox="0 0 80 123.823">
   <defs>
     <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
       <stop offset="0" stop-color="#ff0844"/>
@@ -31,7 +31,7 @@ const Microphone = () => {
 
 }
 
-const MicrophoneOutlineSvg = () => { return <svg xmlns="http://www.w3.org/2000/svg" className='svgFam__botLeft' width="102.471" height="113.704" viewBox="0 0 102.471 113.704">
+const MicrophoneOutlineSvg = () => { return <svg xmlns="http://www.w3.org/2000/svg" className='fade-in svgFam__botLeft' width="102.471" height="113.704" viewBox="0 0 102.471 113.704">
 <defs>
   <filter id="Path_a" x="0" y="0" width="56.445" height="56.476" filterUnits="userSpaceOnUse">
     <feOffset dy="3" input="SourceAlpha"/>
@@ -76,7 +76,7 @@ const MicrophoneOutlineSvg = () => { return <svg xmlns="http://www.w3.org/2000/s
 
 
 const Ruby = () => {
-  return <svg xmlns="http://www.w3.org/2000/svg" className='svgFam__botRight' width="94.85" height="99.736" viewBox="0 0 94.85 99.736">
+  return <svg xmlns="http://www.w3.org/2000/svg" className='fade-in svgFam__botRight' width="94.85" height="99.736" viewBox="0 0 94.85 99.736">
   <defs>
     <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
       <stop offset="0" stop-color="#ff0844"/>
@@ -92,7 +92,7 @@ const Ruby = () => {
 
 }
 
-const whiteBoard = () => {return <svg xmlns="http://www.w3.org/2000/svg" className='svgFam__center' width="255.003" height="272.353" viewBox="0 0 255.003 272.353">
+const whiteBoard = () => {return <svg xmlns="http://www.w3.org/2000/svg" className='fade-in svgFam__center' width="255.003" height="272.353" viewBox="0 0 255.003 272.353">
 <defs>
   <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
     <stop offset="0" stop-color="#ff0844"/>
