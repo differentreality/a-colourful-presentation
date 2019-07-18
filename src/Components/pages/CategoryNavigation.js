@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import { Code, Cog, CogOutline, Pen, Laptop, Tool } from '../../../svg/Workshops'
-import { Papyrus, PapyrusOutline, QuestionMark, MessageCloud, MessageFolder } from '../../../svg/Contact'
-import { confCard, Beer, Networking, University, UniversityOutline } from '../../../svg/Events'
-import { Coffee, Idea, IdeaOutline, Smile, Reading } from '../../../svg/StellasFacts'
-import { Hand, whiteBoard, Microphone, MicrophoneOutlineSvg, Ruby } from '../../../svg/Talks'
+import { Code, Cog, CogOutline, Pen, Laptop, Tool } from '../../svg/Workshops'
+import { Papyrus, PapyrusOutline, QuestionMark, MessageCloud, MessageFolder } from '../../svg/Contact'
+import { confCard, Beer, Networking, University, UniversityOutline } from '../../svg/Events'
+import { Coffee, Idea, IdeaOutline, Smile, Reading } from '../../svg/StellasFacts'
+import { Hand, whiteBoard, Microphone, MicrophoneOutlineSvg, Ruby } from '../../svg/Talks'
 import { Container, Col, Row } from 'react-bootstrap';
-import { Button } from '../../parts/Buttons'
+import { Button } from '../parts/Buttons'
 import anime from 'animejs/lib/anime.es.js';
-import history from '../../../history'
-class WorkshopHome extends Component {
+import history from '../../history'
+class CategoryNavigation extends Component {
 
     constructor(props) {
         super(props);
@@ -270,4 +270,4 @@ class WorkshopHome extends Component {
     }
 }
 
-export default withRouter(WorkshopHome);
+export default withRouter(CategoryNavigation);

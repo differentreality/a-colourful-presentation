@@ -5,7 +5,7 @@ import './styles/stylesheets/main.scss';
 import { Container, Col, Row } from 'react-bootstrap';
 import SocialBar from './Components/parts/Menu/SocialBar'
 import Home from './Components/pages/Home'
-import WorkshopHome from './Components/pages/Categories/WorkshopHome'
+import CategoryNavigation from './Components/pages/CategoryNavigation'
 import {Router, Route, Switch } from 'react-router-dom'
 import anime from 'animejs/lib/anime.es.js';
 import history from './history'
@@ -51,11 +51,11 @@ class App extends Component {
                     <Row id='Content'>
                       <Switch>
                         <Route exact path='/' render={(props) => <Home  />} />
-                        <Route path='/workshops' render={(props) => <WorkshopHome  />} />
-                        <Route path='/talks' render={(props) => <WorkshopHome />} />
-                        <Route path='/events' render={(props) => <WorkshopHome />} />
-                        <Route path='/stellas-facts' render={(props) => <WorkshopHome />} />
-                        <Route path='/contact' render={(props) => <WorkshopHome />} />
+                        <Route path='/workshops' render={(props) => <CategoryNavigation  />} />
+                        <Route path='/talks' render={(props) => <CategoryNavigation />} />
+                        <Route path='/events' render={(props) => <CategoryNavigation />} />
+                        <Route path='/stellas-facts' render={(props) => <CategoryNavigation />} />
+                        <Route path='/contact' render={(props) => <CategoryNavigation />} />
                       </Switch>
                     </Row>
                   </Col>
