@@ -35,6 +35,7 @@ const SocialBar = (props) => {
         '/talks': 'talkSvgGradient',
         '/contact': 'contactSvgGradient',
         '/stellas-facts': 'stellaSvgGradient',
+        '/': 'stellaSvgGradient',
         '/events': 'eventSvgGradient'
     })[url]
 

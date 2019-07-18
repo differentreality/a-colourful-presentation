@@ -36,7 +36,6 @@ class LogoMenu extends Component {
 }
 
 const SidebarMenu = (props) => {
-
     var colours = [
         {
             'id': 'stella',
@@ -65,16 +64,17 @@ const SidebarMenu = (props) => {
         }
     ]
 
-    //check an ekane render, redirect 404
-    return (!props.arNum)? null:<Col className='sideMenu' xs={1}>
+    var pickedColour = colours.filter(category => category.id === props.colourCategory)
+
+    return <Col className='sideMenu' xs={1}>
         <Col className='sideMenu__insideBorderContent' xs={12}>
             <LogoMenu />
         </Col>
 
-        <Col className={'sideMenu__outofBorderContent sideMenu__outofBorderContent-'+colours[props.arNum].id} xs={12}>
-            <div className={'sideMenu__outofBorderContent__colourBubble-'+colours[props.arNum].id} />
-            <span className='sideMenu__outofBorderContent__colourCode'>{colours[props.arNum].code} </span>
-            <span className='sideMenu__outofBorderContent__colourName'>{colours[props.arNum].name}</span>
+        <Col className={'sideMenu__outofBorderContent sideMenu__outofBorderContent-' + pickedColour[0].id} xs={12}>
+            <div className={'sideMenu__outofBorderContent__colourBubble-' + pickedColour[0].id} />
+            <span className='sideMenu__outofBorderContent__colourCode'>{pickedColour[0].code}</span>
+            <span className='sideMenu__outofBorderContent__colourName'>{pickedColour[0].name}</span>
         </Col>
     </Col>
 }
@@ -93,8 +93,8 @@ class Menu extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-            menu: <SidebarMenu />,
-            colourNum : 2
+            menu: <SidebarMenu colourCategory={this.groupColour(this.props.location.pathname)} />,
+            colourNum: 0
         };
     }
 
@@ -102,17 +102,18 @@ class Menu extends PureComponent {
         window.addEventListener("resize", this.resize.bind(this));
         this.resize();
     }
-    
+
     groupColour = (url) => ({
-        '/workshops': 3,
-        '/talks': 2,
-        '/contact': 1,
-        '/stellas-facts': 0,
-        '/events': 4
+        '/workshops': 'workshop',
+        '/talks': 'talk',
+        '/contact': 'contact',
+        '/stellas-facts': 'stella',
+        '/events': 'event',
+        '/': 'stella',
     })[url]
 
     resize() {
-        window.innerWidth <= 770 ? this.setState({ menu: <MobileHeader /> }) : this.setState({ menu: <SidebarMenu arNum={this.groupColour(this.props.location.pathname)} /> })
+        window.innerWidth <= 770 ? this.setState({ menu: <MobileHeader /> }) : this.setState({ menu: <SidebarMenu colourCategory={this.groupColour(this.props.location.pathname)} /> })
     }
 
 
@@ -125,4 +126,3 @@ class Menu extends PureComponent {
 }
 
 export default withRouter(Menu);
- 
