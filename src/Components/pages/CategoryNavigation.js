@@ -35,9 +35,9 @@ class CategoryNavigation extends Component {
             'botRight': MessageFolder,
             'group': 'contact',
             'urlPointer': pointer,
-            'url':'/talks',
-            'scrolled':false
+            'url':'/talks'
         }
+
 
        
     }
@@ -47,21 +47,19 @@ class CategoryNavigation extends Component {
     }
 
     componentDidMount() {
-        console.log(this.state.scrolled);
-        if(!this.state.scrolled)
-        {
-            window.addEventListener("wheel", (this.scrollToChangePages))
-        }
         this.animate();
+        window.addEventListener('wheel',this.scrollToChangePages)
+        
     }
 
+   
 
-    scrollToChangePages = (e) => {
 
-        console.log(this.state.scrolled)
+
+    scrollToChangePages = (e) => {  
+
         if (e.deltaY > 2) {
             this.setState({scrolled:true});
-            console.log(this.state.urlPointer)
             this.changePointer('add');
             history.push(this.categoryURLS[this.state.urlPointer]);
             this.checkPage();
@@ -71,7 +69,6 @@ class CategoryNavigation extends Component {
         if (e.deltaY < -2) {
             
             this.setState({scrolled:true});
-            console.log(this.state.urlPointer)
             this.changePointer('minus');
             history.push(this.categoryURLS[this.state.urlPointer]);
             this.checkPage();
@@ -121,6 +118,7 @@ class CategoryNavigation extends Component {
             },
             complete: function () {
                 rotateAnimation('.svgFam__topLeft')
+               
             },
             easing: 'linear'
         });
@@ -177,7 +175,7 @@ class CategoryNavigation extends Component {
             rotateX: {
                 value: 180,
             },
-            complete: function () {
+            complete: ()=>{
                 rotateAnimation('.svgFam__botLeft')
             },
             easing: 'linear'
@@ -191,6 +189,8 @@ class CategoryNavigation extends Component {
             duration: 2500,
             easing: 'linear'
         })
+
+
     }
 
     checkPage = () => {
@@ -263,7 +263,6 @@ class CategoryNavigation extends Component {
                         {this.state.paragraph} {this.state.translateDivide}
                         <Button group={this.state.group} buttonText='Learn More!' />
                     </Col>
-
                 </Row>
             </Container>
         );

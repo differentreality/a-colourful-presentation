@@ -7,7 +7,6 @@ import SocialBar from './Components/parts/Menu/SocialBar'
 import Home from './Components/pages/Home'
 import CategoryNavigation from './Components/pages/CategoryNavigation'
 import {Router, Route, Switch } from 'react-router-dom'
-import anime from 'animejs/lib/anime.es.js';
 import history from './history'
 class App extends Component {
 
