@@ -1,12 +1,31 @@
 import React, { Component } from 'react';
+import anime from 'animejs/lib/anime.es.js';
 import { Container, Col, Row } from 'react-bootstrap';
 import { Button } from '../../Components/parts/Buttons';
 import CallToActionSvg from '../../svg/CallToActionSvg';
+import history from '../../history'
 class Home extends Component {
 
+    componentDidMount() {
+        window.addEventListener("wheel", this.scrollToChangePage.bind(this));
+    }
+
+    scrollToChangePage = (e) => {
+        if (e.deltaY > 0) {            
+            var animation =anime({
+                targets: '#Content',
+                opacity: 0,
+                duration: 500,
+                complete: function(){history.push('/workshops')}.bind(this)
+            })
+            
+            //eksafanisi content,ksanaemfanisi epomenou
+            animation.reverse();
+        }
+    }
     render() {
         return (
-            <Container fluid='true' className='home'>
+            <Container id='homePage' fluid='true' className='home'>
                 <Row>
                     <Col className='leftContent' md='6'>
                         <h1 className='leftContent__title'>Stella Rouzi</h1>
@@ -34,7 +53,7 @@ class Home extends Component {
                     </Col>
 
                     <Col md='6'>
-                        <span className='home__scrollAction'>Scroll and Roll!</span> <CallToActionSvg/>
+                        <span className='home__scrollAction'>Scroll and Roll!</span> <CallToActionSvg />
                     </Col>
                 </Row>
             </Container>

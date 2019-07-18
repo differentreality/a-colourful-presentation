@@ -1,6 +1,7 @@
 import React, { PureComponent, Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { Col } from 'react-bootstrap';
+import history from '../../../history'
 
 
 
@@ -101,7 +102,12 @@ class Menu extends PureComponent {
     componentDidMount() {
         window.addEventListener("resize", this.resize.bind(this));
         this.resize();
+        history.listen( location =>  {
+            this.setState({ menu: <SidebarMenu colourCategory={this.groupColour(location.pathname)} />})
+        })
     }
+
+    
 
     groupColour = (url) => ({
         '/workshops': 'workshop',
@@ -117,8 +123,12 @@ class Menu extends PureComponent {
     }
 
 
+    
 
     render() {
+
+        
+
         return (
             this.state.menu
         );

@@ -8,11 +8,23 @@ import { Hand, whiteBoard, Microphone, MicrophoneOutlineSvg, Ruby } from '../../
 import { Container, Col, Row } from 'react-bootstrap';
 import { Button } from '../../parts/Buttons'
 import anime from 'animejs/lib/anime.es.js';
+import history from '../../../history'
 class WorkshopHome extends Component {
 
     constructor(props) {
         super(props);
 
+        var pointer=0;
+        switch(history.location.pathname)
+        {
+            case'/workshops' :pointer=0;break;
+            case '/talks' :pointer=1;break;
+            case '/events' :pointer=2;break;
+            case '/stellas-facts' :pointer=3;break;
+            case '/contact' :pointer=4;break;
+            default :pointer=0;break;
+        }
+        
         this.state = {
             'Title': 'Contact',
             'paragraph': <p>  lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</p>,
@@ -21,8 +33,13 @@ class WorkshopHome extends Component {
             'center': MessageCloud,
             'botLeft': PapyrusOutline,
             'botRight': MessageFolder,
-            'group': 'contact'
+            'group': 'contact',
+            'urlPointer': pointer,
+            'url':'/talks',
+            'scrolled':false
         }
+
+       
     }
 
     componentWillMount() {
@@ -30,8 +47,52 @@ class WorkshopHome extends Component {
     }
 
     componentDidMount() {
+        console.log(this.state.scrolled);
+        if(!this.state.scrolled)
+        {
+            window.addEventListener("wheel", (this.scrollToChangePages))
+        }
         this.animate();
     }
+
+
+    scrollToChangePages = (e) => {
+
+        console.log(this.state.scrolled)
+        if (e.deltaY > 2) {
+            this.setState({scrolled:true});
+            console.log(this.state.urlPointer)
+            this.changePointer('add');
+            history.push(this.categoryURLS[this.state.urlPointer]);
+            this.checkPage();
+            setTimeout(this.animate(),1000);
+        }
+
+        if (e.deltaY < -2) {
+            
+            this.setState({scrolled:true});
+            console.log(this.state.urlPointer)
+            this.changePointer('minus');
+            history.push(this.categoryURLS[this.state.urlPointer]);
+            this.checkPage();
+            this.animate();
+        }
+        setTimeout(()=>this.setState({scrolled:false}),1000)
+    }
+
+    categoryURLS = ['/workshops', '/talks', '/events', '/stellas-facts', '/contact']
+    changePointer = (type) =>
+        type === 'add' ?
+            this.setState(prevState =>
+                (prevState.urlPointer === 4 ?
+                    { 'urlPointer': 0,'url':this.categoryURLS[0] } :
+                    { 'urlPointer': prevState.urlPointer + 1,'url':this.categoryURLS[prevState.urlPointer + 1] })
+            ) :
+        type === 'minus' ?
+            this.setState(prevState =>
+                (prevState.urlPointer === 0 ?
+                    { 'urlPointer': 4 ,'url':this.categoryURLS[4]} :
+                    { 'urlPointer': prevState.urlPointer - 1 ,'url':this.categoryURLS[prevState.urlPointer - 1]})) : ''
 
     animate = () => {
 
@@ -132,10 +193,8 @@ class WorkshopHome extends Component {
         })
     }
 
-
-
     checkPage = () => {
-        this.props.location.pathname === '/workshops' ? this.setState({
+        this.state.urlPointer === 0 ? this.setState({
             'Title': 'Workshops',
             'paragraph': <p>  lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</p>,
             'topLeft': Cog,
@@ -145,52 +204,52 @@ class WorkshopHome extends Component {
             'botRight': Pen,
             'group': 'workshop'
         }) :
-        this.props.location.pathname === '/talks' ? this.setState({
-            'Title': 'Talks',
-            'paragraph': <p>  lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</p>,
-            'topLeft': Microphone,
-            'topRight': Hand,
-            'center': whiteBoard,
-            'botLeft': MicrophoneOutlineSvg,
-            'botRight': Ruby,
-            'group': 'talk'
-        }) :
-            this.props.location.pathname === '/events' ? this.setState({
-                'Title': 'Events',
+            this.state.urlPointer === 1 ? this.setState({
+                'Title': 'Talks',
                 'paragraph': <p>  lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</p>,
-                'topLeft': University,
-                'topRight': Beer,
-                'center': Networking,
-                'botLeft': UniversityOutline,
-                'botRight': confCard,
-                'group': 'event'
+                'topLeft': Microphone,
+                'topRight': Hand,
+                'center': whiteBoard,
+                'botLeft': MicrophoneOutlineSvg,
+                'botRight': Ruby,
+                'group': 'talk'
             }) :
-                this.props.location.pathname === '/stellas-facts' ? this.setState({
-                    'Title': 'Talks',
+                this.state.urlPointer === 2 ? this.setState({
+                    'Title': 'Events',
                     'paragraph': <p>  lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</p>,
-                    'topLeft': Idea,
-                    'topRight': Smile,
-                    'center': Reading,
-                    'botLeft': IdeaOutline,
-                    'botRight': Coffee,
-                    'group': 'stella'
-                }) : this.setState({
-                    'Title': 'Contact',
-                    'paragraph': <p>  lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</p>,
-                    'topLeft': Papyrus,
-                    'topRight': QuestionMark,
-                    'center': MessageCloud,
-                    'botLeft': PapyrusOutline,
-                    'botRight': MessageFolder,
-                    'group': 'contact'
-                })
+                    'topLeft': University,
+                    'topRight': Beer,
+                    'center': Networking,
+                    'botLeft': UniversityOutline,
+                    'botRight': confCard,
+                    'group': 'event'
+                }) :
+                    this.state.urlPointer === 3 ? this.setState({
+                        'Title': `Stella's Facts`,
+                        'paragraph': <p>  lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</p>,
+                        'topLeft': Idea,
+                        'topRight': Smile,
+                        'center': Reading,
+                        'botLeft': IdeaOutline,
+                        'botRight': Coffee,
+                        'group': 'stella'
+                    }) : this.setState({
+                        'Title': 'Contact',
+                        'paragraph': <p>  lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</p>,
+                        'topLeft': Papyrus,
+                        'topRight': QuestionMark,
+                        'center': MessageCloud,
+                        'botLeft': PapyrusOutline,
+                        'botRight': MessageFolder,
+                        'group': 'contact'
+                    })
     }
 
 
     render() {
 
         return (
-            <Container id='MainNav' fluid='true'>
+            <Container id='MainNav' className='fade-in' fluid='true'>
                 <Row>
                     <Col lg={{ span: 6, order: 'last' }} className='svgFam col-xs-pull-12'>
                         <this.state.topLeft />
