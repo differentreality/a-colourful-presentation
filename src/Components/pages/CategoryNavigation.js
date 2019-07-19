@@ -1,30 +1,29 @@
+import history from '../../history'
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
-import { Code, Cog, CogOutline, Pen, Laptop, Tool } from '../../svg/Workshops'
-import { Papyrus, PapyrusOutline, QuestionMark, MessageCloud, MessageFolder } from '../../svg/Contact'
-import { confCard, Beer, Networking, University, UniversityOutline } from '../../svg/Events'
-import { Coffee, Idea, IdeaOutline, Smile, Reading } from '../../svg/StellasFacts'
-import { Hand, whiteBoard, Microphone, MicrophoneOutlineSvg, Ruby } from '../../svg/Talks'
-import { Container, Col, Row } from 'react-bootstrap';
 import { Button } from '../parts/Buttons'
 import anime from 'animejs/lib/anime.es.js';
-import history from '../../history'
+import { withRouter } from 'react-router-dom';
+import { Container, Col, Row } from 'react-bootstrap';
+import { Cog, CogOutline, Pen, Laptop, Tool } from '../../svg/Workshops'
+import { Coffee, Idea, IdeaOutline, Smile, Reading } from '../../svg/StellasFacts'
+import { Hand, whiteBoard, Microphone, MicrophoneOutlineSvg, Ruby } from '../../svg/Talks'
+import { confCard, Beer, Networking, University, UniversityOutline } from '../../svg/Events'
+import { Papyrus, PapyrusOutline, QuestionMark, MessageCloud, MessageFolder } from '../../svg/Contact'
 class CategoryNavigation extends Component {
 
     constructor(props) {
         super(props);
 
-        var pointer=0;
-        switch(history.location.pathname)
-        {
-            case'/workshops' :pointer=0;break;
-            case '/talks' :pointer=1;break;
-            case '/events' :pointer=2;break;
-            case '/stellas-facts' :pointer=3;break;
-            case '/contact' :pointer=4;break;
-            default :pointer=0;break;
+        var pointer = 0;
+        switch (history.location.pathname) {
+            case '/workshops': pointer = 0; break;
+            case '/talks': pointer = 1; break;
+            case '/events': pointer = 2; break;
+            case '/stellas-facts': pointer = 3; break;
+            case '/contact': pointer = 4; break;
+            default: pointer = 0; break;
         }
-        
+
         this.state = {
             'Title': 'Contact',
             'paragraph': <p>  lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</p>,
@@ -35,11 +34,11 @@ class CategoryNavigation extends Component {
             'botRight': MessageFolder,
             'group': 'contact',
             'urlPointer': pointer,
-            'url':'/talks'
+            'url': '/contact'
         }
 
 
-       
+
     }
 
     componentWillMount() {
@@ -48,33 +47,33 @@ class CategoryNavigation extends Component {
 
     componentDidMount() {
         this.animate();
-        window.addEventListener('wheel',this.scrollToChangePages)
-        
+        window.addEventListener('wheel', this.scrollToChangePages)
+
     }
 
-   
 
 
 
-    scrollToChangePages = (e) => {  
+
+    scrollToChangePages = (e) => {
 
         if (e.deltaY > 2) {
-            this.setState({scrolled:true});
+            this.setState({ scrolled: true });
             this.changePointer('add');
             history.push(this.categoryURLS[this.state.urlPointer]);
             this.checkPage();
-            setTimeout(this.animate(),1000);
+            setTimeout(this.animate(), 1000);
         }
 
         if (e.deltaY < -2) {
-            
-            this.setState({scrolled:true});
+
+            this.setState({ scrolled: true });
             this.changePointer('minus');
             history.push(this.categoryURLS[this.state.urlPointer]);
             this.checkPage();
             this.animate();
         }
-        setTimeout(()=>this.setState({scrolled:false}),1000)
+        setTimeout(() => this.setState({ scrolled: false }), 1000)
     }
 
     categoryURLS = ['/workshops', '/talks', '/events', '/stellas-facts', '/contact']
@@ -82,14 +81,14 @@ class CategoryNavigation extends Component {
         type === 'add' ?
             this.setState(prevState =>
                 (prevState.urlPointer === 4 ?
-                    { 'urlPointer': 0,'url':this.categoryURLS[0] } :
-                    { 'urlPointer': prevState.urlPointer + 1,'url':this.categoryURLS[prevState.urlPointer + 1] })
+                    { 'urlPointer': 0, 'url': this.categoryURLS[0] } :
+                    { 'urlPointer': prevState.urlPointer + 1, 'url': this.categoryURLS[prevState.urlPointer + 1] })
             ) :
-        type === 'minus' ?
-            this.setState(prevState =>
-                (prevState.urlPointer === 0 ?
-                    { 'urlPointer': 4 ,'url':this.categoryURLS[4]} :
-                    { 'urlPointer': prevState.urlPointer - 1 ,'url':this.categoryURLS[prevState.urlPointer - 1]})) : ''
+            type === 'minus' ?
+                this.setState(prevState =>
+                    (prevState.urlPointer === 0 ?
+                        { 'urlPointer': 4, 'url': this.categoryURLS[4] } :
+                        { 'urlPointer': prevState.urlPointer - 1, 'url': this.categoryURLS[prevState.urlPointer - 1] })) : ''
 
     animate = () => {
 
@@ -107,17 +106,17 @@ class CategoryNavigation extends Component {
 
         anime({
             targets: '.svgFam__topLeft',
-            
+
             complete: function () {
                 rotateAnimation('.svgFam__topLeft')
-               
+
             },
             easing: 'linear'
         });
 
         anime({
-            targets: '.svgFam__topRight',   
-           
+            targets: '.svgFam__topRight',
+
             rotate: {
                 rotate: {
                     value: 360,
@@ -133,7 +132,7 @@ class CategoryNavigation extends Component {
 
         anime({
             targets: '.svgFam__botRight',
-            
+
             complete: function () {
                 rotateAnimation('.svgFam__botRight')
             },
@@ -142,8 +141,8 @@ class CategoryNavigation extends Component {
 
         anime({
             targets: '.svgFam__botLeft',
-           
-            complete: ()=>{
+
+            complete: () => {
                 rotateAnimation('.svgFam__botLeft')
             },
             easing: 'linear'
@@ -228,8 +227,8 @@ class CategoryNavigation extends Component {
                     </Col>
                     <Col lg={{ span: 6, order: 'first' }} className='workshopCon col-xs-push-12'>
                         <span className='workshopCon__Title'>{this.state.Title}</span>
-                        {this.state.paragraph} {this.state.translateDivide}
-                        <Button group={this.state.group} buttonText='Learn More!' />
+                        {this.state.paragraph}
+                        <Button  group={this.state.group} buttonText='Learn More!' />
                     </Col>
                 </Row>
             </Container>

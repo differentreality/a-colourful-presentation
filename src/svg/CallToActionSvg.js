@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CallToActionSvg = () => {return <svg xmlns="http://www.w3.org/2000/svg" width="82.94" height="82.94" opacity='.7' viewBox="0 0 72.94 72.94">
+const CallToActionSvg = () => {return <svg  width="82.94" height="82.94" opacity='.7' viewBox="0 0 72.94 72.94">
   <defs>
     <filter id="Path_1" x="0" y="0" width="72.94" height="72.94" filterUnits="userSpaceOnUse">
       <feOffset dy="3" input="SourceAlpha"/>

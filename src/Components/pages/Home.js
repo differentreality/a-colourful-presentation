@@ -8,6 +8,7 @@ class Home extends Component {
 
     componentDidMount() {
         window.addEventListener("wheel", this.scrollToChangePage.bind(this));
+        history.push('/workshops').bind(this)
     }
 
     scrollToChangePage = (e) => {
@@ -16,9 +17,7 @@ class Home extends Component {
                 targets: '#Content',
                 opacity: 0,
                 duration: 500,
-                complete: function(){history.push('/workshops')}.bind(this)
             })
-            
             //eksafanisi content,ksanaemfanisi epomenou
             animation.reverse();
         }
