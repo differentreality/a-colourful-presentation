@@ -106,49 +106,14 @@
         }
 
         
-        &__colourBubble,&__colourCode,&__colourName
+       .colourBubble,&__colourCode,&__colourName
         {
             position: absolute;
         }
 
-        &__colourBubble
+        .colourBubble
         {
-            width:20px;
-            height:20px;
-            opacity:0.8;
-            position:absolute;
-            margin-right:15px;
-            border-radius: 50%;
-            display:inline-block;
-
-            &-talk
-            {
-                @extend .sideMenu__outofBorderContent__colourBubble;
-                background-image:$talkGradientVertical;
-            }
-
-            &-event
-            {
-                @extend .sideMenu__outofBorderContent__colourBubble;
-                background-image:$eventGradientVertical;
-            }
-
-            &-workshop
-            {
-                @extend .sideMenu__outofBorderContent__colourBubble;
-                background-image:$workshopGradientVertical;
-            }
-            &-stella
-            {
-                @extend .sideMenu__outofBorderContent__colourBubble;
-                background-image:$stellaGradientVertical;
-            }
-            &-contact
-            {
-                @extend .sideMenu__outofBorderContent__colourBubble;
-                background-image:$contactGradientVertical;
-            }
-
+            margin-left:0px;
         }
 
         &__colourCode
@@ -191,14 +156,6 @@
         {
             margin-left: -20px;
             margin-top: 850%;
-            
-            
-
-            &__colourBubble
-            {
-                width:15px;
-                height:15px;
-            }
 
             &__colourName{
             margin-left:20px;

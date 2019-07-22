@@ -1,0 +1,49 @@
+.colourBubble {
+    transition: background-image 0.2s ease-in-out;
+    width: 20px;
+    height: 20px;
+    opacity: 0.8;
+    margin-left:20px;
+    border:.3px solid rgb(202, 202, 202);
+    border-radius: 50%;
+    display: inline-block;
+    background-image: $talkGradientVertical;
+
+    &-talk {
+        @extend .colourBubble;
+        background-image: $talkGradientVertical;
+    }
+
+    &-event {
+        @extend .colourBubble;
+        background-image: $eventGradientVertical;
+    }
+
+    &-workshop {
+        @extend .colourBubble;
+        background-image: $workshopGradientVertical;
+    }
+
+    &-stella {
+        @extend .colourBubble;
+        background-image: $stellaGradientVertical;
+    }
+
+    &-contact {
+        @extend .colourBubble;
+        background-image: $contactGradientVertical;
+    }
+
+    &-empty {
+        @extend .colourBubble;
+        background-image: $emptyGradientVertical;
+    }
+
+}
+
+@media (max-width:1500px) {
+    .colourBubble {
+        width: 15px;
+        height: 15px;
+    }
+}

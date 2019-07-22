@@ -1,164 +1,188 @@
-.workshopCon {
+#MainNav {
+    .workshopCon {
 
 
 
-    #codeSvg {
-        width: 70px;
-        height: 70px;
-        margin-top: -20px;
+        #codeSvg {
+            width: 70px;
+            height: 70px;
+            margin-top: -20px;
+        }
+
+        &__Title {
+            margin-left: 2%;
+            font-size: 30px;
+            font-weight: 500;
+            color: $paragraphColour;
+        }
+
+
+        p {
+            min-height: 100px;
+            max-width: 70%;
+            margin-top: 5%;
+            color: $paragraphColour;
+        }
+
+        .myButton {
+            margin: 5% 15%;
+        }
+
+       
     }
 
-    &__Title {
-        margin-left: 2%;
-        font-size: 30px;
-        font-weight: 500;
-        color: $paragraphColour;
-    }
-
-    p {
-        max-width: 70%;
-        margin-top: 5%;
-        color: $paragraphColour;
-    }
-
-    .myButton {
-        margin: 10% 15%;
-    }
 
 
-}
-
-.svgFam {
-
-    &__botRight,
-    &__botLeft,
-    &__topRight,
-    &__topLeft {
-        overflow: hidden;
-    }
-
-    &__botRight {
-        left: 50%;
-        top: 100%;
-    }
-
-    &__botLeft {
-        left: -30%;
-        top: 70%;
-    }
-
-    &__topLeft {
-        left: -25%;
-        top: -35%;
-    }
-
-    &__topRight {
-        top: -25%;
-        left: 40%;
-    }
-}
-
-@media (max-width: 1500px) {
     .svgFam {
-
-
 
         &__botRight,
         &__botLeft,
         &__topRight,
         &__topLeft {
-            max-width: 70px;
-            max-height: 70px;
-        }
-
-        &__center {
-            max-width: 110px;
-            max-height: 110px;
+            overflow: hidden;
         }
 
         &__botRight {
             left: 50%;
-            top: 30%;
-        }
-
-        &__topLeft {
-            left: -40%;
-        }
-
-
-
-        &__topRight {
-            left: 40%;
+            top: 100%;
         }
 
         &__botLeft {
-            top: 30%;
-        }
-    }
-}
-
-@media (max-width: 993px) {
-    .svgFam {
-
-
-        margin: 20% 25%;
-        margin-left: 35%;
-
-        &__botRight,
-        &__botLeft,
-        &__topRight,
-        &__topLeft {
-            max-width: 70px;
-            max-height: 70px;
-        }
-
-        &__center {
-            max-width: 110px;
-            max-height: 110px;
-            margin-top: -25%;
+            left: -30%;
+            top: 70%;
         }
 
         &__topLeft {
-            top:-150px;
-            left: -40%;
-        }
-
-        &__botLeft {
+            left: -25%;
+            top: -35%;
         }
 
         &__topRight {
-            top:-150px;
+            top: -25%;
             left: 40%;
         }
-
-        &__botRight {
-            left: 70%;
-        }
-
-
-    }
-}
-
-@media (max-width: 770px) {
-
-    .svgFam {
-        margin: 30% 25%;
     }
 
-}
+    @media (max-width: 1500px) {
 
-@media (max-width: 500px) {
+        .workshopCon p
+        {
+            min-height: 150px;
+        }
+        .svgFam {
 
-    .svgFam {
 
-        margin: 50% 25%;
 
-        &__botRight {
-            left: -33%;
+            &__botRight,
+            &__botLeft,
+            &__topRight,
+            &__topLeft {
+                max-width: 70px;
+                max-height: 70px;
+            }
+
+            &__center {
+                max-width: 110px;
+                max-height: 110px;
+            }
+
+            &__botRight {
+                left: 50%;
+                top: 30%;
+            }
+
+            &__topLeft {
+                left: -40%;
+            }
+
+
+
+            &__topRight {
+                left: 40%;
+            }
+
+            &__botLeft {
+                top: 30%;
+            }
+        }
+    }
+
+    @media (max-width: 993px) {
+        .svgFam {
+
+
+            margin: 20% 25%;
+            margin-left: 35%;
+
+            &__botRight,
+            &__botLeft,
+            &__topRight,
+            &__topLeft {
+                max-width: 70px;
+                max-height: 70px;
+            }
+
+            &__center {
+                max-width: 110px;
+                max-height: 110px;
+                margin-top: -25%;
+            }
+
+            &__topLeft {
+                top: -150px;
+                left: -40%;
+            }
+
+            &__botLeft {}
+
+            &__topRight {
+                top: -150px;
+                left: 40%;
+            }
+
+            &__botRight {
+                left: 70%;
+            }
+
+
+        }
+    }
+
+    .bubbleGuide {
+        margin: 20% 0% 0% -5%;
+        text-align: center;
+        position: absolute;
+
+        h6
+        {
+            padding-top:5px;
+            margin-left: 10px;
+            opacity:.7;
+            
+        }
+    }
+
+    @media (max-width: 770px) {
+
+        .svgFam {
+            margin: 30% 25%;
         }
 
-        &__botLeft {
-            left: 70%;
+    }
+
+    @media (max-width: 500px) {
+
+        .svgFam {
+
+            margin: 50% 25%;
+
+            &__botRight {
+                left: -33%;
+            }
+
+            &__botLeft {
+                left: 70%;
+            }
         }
     }
 }

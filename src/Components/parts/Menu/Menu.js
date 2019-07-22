@@ -73,7 +73,7 @@ const SidebarMenu = (props) => {
         </Col>
 
         <Col className={'sideMenu__outofBorderContent sideMenu__outofBorderContent-' + pickedColour[0].id} xs={12}>
-            <div className={'sideMenu__outofBorderContent__colourBubble-' + pickedColour[0].id} />
+            <div className={'colourBubble-' + pickedColour[0].id} />
             <span className='sideMenu__outofBorderContent__colourCode'>{pickedColour[0].code}</span>
             <span className='sideMenu__outofBorderContent__colourName'>{pickedColour[0].name}</span>
         </Col>

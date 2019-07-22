@@ -64,9 +64,11 @@ $calltoActionGradient: linear-gradient(to right, #28B781, #63D8B4);
 $calltoActionShadow:0px 5px 20px 2px rgba(40, 183, 129, .4);
 $calltoActionShadowHover:0px 6px 20px 5px rgba(40, 183, 129, .2);
 
-$contactGradientVertical: linear-gradient(to right, #2b5876, #4e4376);
-$contacttoActionShadow:0px 5px 20px 2px rgba(113, 100, 161, 0.4);
-$contacttoActionShadowHover:0px 5px 20px 2px rgba(78, 67, 118,.5);
+$contactGradientVertical: linear-gradient(#2b5876, #4e4376);
+$contactShadow:0px 5px 20px 2px rgba(113, 100, 161, 0.4);
+$contactShadowHover:0px 5px 20px 2px rgba(78, 67, 118,.5);
+
+$emptyGradientVertical:linear-gradient(#e9e9e9, #c5c5c5);
 //primary for text
 $paragraphColour: #4d4d4d;
 $talkTextColor : #FF0844;

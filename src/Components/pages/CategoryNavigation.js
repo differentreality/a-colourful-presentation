@@ -34,7 +34,6 @@ class CategoryNavigation extends Component {
             'botRight': null,
             'group': null,
             'urlPointer': pointer,
-            'url': null
         }
 
 
@@ -43,7 +42,7 @@ class CategoryNavigation extends Component {
 
     componentWillMount() {
         this.checkPage();
-       
+
     }
 
     componentDidMount() {
@@ -212,7 +211,7 @@ class CategoryNavigation extends Component {
                 }) :
                     this.state.urlPointer === 3 ? this.setState({
                         'Title': `Stella's Facts`,
-                        'paragraph': <p>Several things about me and the things I enjoy the most.<br/><i>Purple is of course, one of them!</i></p>,
+                        'paragraph': <p>Several things about me and the things I enjoy the most.<br /><i>Purple is of course, one of them!</i></p>,
                         'topLeft': Idea,
                         'topRight': Smile,
                         'center': Reading,
@@ -237,17 +236,29 @@ class CategoryNavigation extends Component {
         return (
             <Container id='MainNav' className='fade-in' fluid='true'>
                 <Row>
-                    <Col lg={{ span: 6, order: 'last' }} className='svgFam col-xs-pull-12'>
+                    <Col lg={{ span: 6, order: 'last' }} className='svgFam'>
                         <this.state.topLeft />
                         <this.state.botLeft />
                         <this.state.center />
                         <this.state.topRight />
                         <this.state.botRight />
                     </Col>
-                    <Col lg={{ span: 6, order: 'first' }} className='workshopCon col-xs-push-12'>
+                    <Col lg={{ span: 6, order: 'first' }} className='workshopCon'>
                         <span className='workshopCon__Title'>{this.state.Title}</span>
-                        {this.state.paragraph}
+                        <span className='workshopCon__paragraph'>{this.state.paragraph}</span>
                         <Button group={this.state.group} buttonText='Learn More!' />
+                    </Col>
+                </Row>
+
+                {/*TODO add navlinks,minimize text,moving animation,responsive*/}
+                <Row >
+                    <Col className='bubbleGuide'  xs='12'>
+                        <h6>keep scrolling!</h6>
+                        <span className={'colourBubble-' + (this.state.group==='workshop' ? 'workshop':'empty')} />
+                        <span className={'colourBubble-' + (this.state.group==='talk' ? 'talk':'empty')} />
+                        <span className={'colourBubble-' + (this.state.group==='event' ? 'event':'empty')} />
+                        <span className={'colourBubble-' + (this.state.group==='stella' ? 'stella':'empty')} />
+                        <span className={'colourBubble-' + (this.state.group==='contact' ? 'contact':'empty')} />
                     </Col>
                 </Row>
             </Container>

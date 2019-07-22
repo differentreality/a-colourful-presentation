@@ -75,7 +75,7 @@
     }
 
     &--contact {
-      @include coloredButton($contactGradientVertical, $contacttoActionShadow, $contacttoActionShadowHover);
+      @include coloredButton($contactGradientVertical, $contactShadow, $contactShadowHover);
     }
 
     
