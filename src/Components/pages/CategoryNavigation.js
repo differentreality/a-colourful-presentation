@@ -25,16 +25,16 @@ class CategoryNavigation extends Component {
         }
 
         this.state = {
-            'Title': 'Contact',
-            'paragraph': <p>  lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</p>,
-            'topLeft': Papyrus,
-            'topRight': QuestionMark,
-            'center': MessageCloud,
-            'botLeft': PapyrusOutline,
-            'botRight': MessageFolder,
-            'group': 'contact',
+            'Title': null,
+            'paragraph': null,
+            'topLeft': null,
+            'topRight': null,
+            'center': null,
+            'botLeft': null,
+            'botRight': null,
+            'group': null,
             'urlPointer': pointer,
-            'url': '/contact'
+            'url': null
         }
 
 
@@ -43,11 +43,12 @@ class CategoryNavigation extends Component {
 
     componentWillMount() {
         this.checkPage();
+       
     }
 
     componentDidMount() {
-        this.animate();
         window.addEventListener('wheel', this.scrollToChangePages)
+        this.restartAnimations();
 
     }
 
@@ -62,7 +63,7 @@ class CategoryNavigation extends Component {
             this.changePointer('add');
             history.push(this.categoryURLS[this.state.urlPointer]);
             this.checkPage();
-            setTimeout(this.animate(), 1000);
+            this.restartAnimations();
         }
 
         if (e.deltaY < -2) {
@@ -71,7 +72,7 @@ class CategoryNavigation extends Component {
             this.changePointer('minus');
             history.push(this.categoryURLS[this.state.urlPointer]);
             this.checkPage();
-            this.animate();
+            this.restartAnimations();
         }
         setTimeout(() => this.setState({ scrolled: false }), 1000)
     }
@@ -90,63 +91,79 @@ class CategoryNavigation extends Component {
                         { 'urlPointer': 4, 'url': this.categoryURLS[4] } :
                         { 'urlPointer': prevState.urlPointer - 1, 'url': this.categoryURLS[prevState.urlPointer - 1] })) : ''
 
-    animate = () => {
 
-        var rotateAnimation = (classtoAnimate) => {
-            anime({
-                targets: classtoAnimate,
-                rotate: {
-                    value: 360,
-                    duration: 15000
-                },
-                loop: true,
-                easing: 'linear'
-            });
-        };
 
+    rotateAnimation = (classtoAnimate) => {
         anime({
-            targets: '.svgFam__topLeft',
-
-            complete: function () {
-                rotateAnimation('.svgFam__topLeft')
-
-            },
-            easing: 'linear'
-        });
-
-        anime({
-            targets: '.svgFam__topRight',
-
+            targets: classtoAnimate,
             rotate: {
-                rotate: {
-                    value: 360,
-                    duration: 2000,
-                    loop: true
-                },
+                value: 360,
+                duration: 15000
             },
-            complete: function () {
-                rotateAnimation('.svgFam__topRight')
-            },
+            loop: true,
             easing: 'linear'
         });
+    };
 
-        anime({
-            targets: '.svgFam__botRight',
+    topLeft = anime({
+        targets: '.svgFam__topLeft',
 
-            complete: function () {
-                rotateAnimation('.svgFam__botRight')
+        complete: () =>
+            this.rotateAnimation('.svgFam__topLeft')
+
+        ,
+        easing: 'linear'
+    })
+
+    topRight = anime({
+        targets: '.svgFam__topRight',
+
+        rotate: {
+            rotate: {
+                value: 360,
+                duration: 2000,
+                loop: true
             },
-            easing: 'linear'
-        });
+        },
+        complete: () => this.rotateAnimation('.svgFam__topRight'),
+        easing: 'linear'
+    });
 
-        anime({
-            targets: '.svgFam__botLeft',
+    botRight = anime({
+        targets: '.svgFam__botRight',
 
-            complete: () => {
-                rotateAnimation('.svgFam__botLeft')
-            },
-            easing: 'linear'
-        });
+        complete: () =>
+            this.rotateAnimation('.svgFam__botRight')
+        ,
+        easing: 'linear'
+    });
+
+    botLeft = anime({
+        targets: '.svgFam__botLeft',
+
+        complete: () =>
+            this.rotateAnimation('.svgFam__botLeft')
+        ,
+        easing: 'linear'
+    });
+
+    center = anime({
+        targets: '.svgFam__center',
+        translateY: 50,
+        loop: true,
+        direction: 'alternate',
+        duration: 2500,
+        easing: 'linear'
+    })
+
+
+    restartAnimations = () => {
+
+
+        this.topLeft.restart();
+        this.topRight.restart();
+        this.botLeft.restart();
+        this.botRight.restart();
 
         anime({
             targets: '.svgFam__center',
@@ -155,7 +172,7 @@ class CategoryNavigation extends Component {
             direction: 'alternate',
             duration: 2500,
             easing: 'linear'
-        })
+        }).restart();
 
 
     }
@@ -163,7 +180,7 @@ class CategoryNavigation extends Component {
     checkPage = () => {
         this.state.urlPointer === 0 ? this.setState({
             'Title': 'Workshops',
-            'paragraph': <p>  lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</p>,
+            'paragraph': <p>  Introducing a technology in a hands-on session.<br /><i>Showcase your Laptop Stickers!</i></p>,
             'topLeft': Cog,
             'topRight': Tool,
             'center': Laptop,
@@ -173,7 +190,7 @@ class CategoryNavigation extends Component {
         }) :
             this.state.urlPointer === 1 ? this.setState({
                 'Title': 'Talks',
-                'paragraph': <p>  lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</p>,
+                'paragraph': <p> We're talking about tools.<br /><i>We also exchange swag!</i></p>,
                 'topLeft': Microphone,
                 'topRight': Hand,
                 'center': whiteBoard,
@@ -183,7 +200,9 @@ class CategoryNavigation extends Component {
             }) :
                 this.state.urlPointer === 2 ? this.setState({
                     'Title': 'Events',
-                    'paragraph': <p>  lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</p>,
+                    'paragraph': <p>  Conferences & events where I was a coordinator or had an amazing experience meeting new people and
+                        learning new things!
+                    </p>,
                     'topLeft': University,
                     'topRight': Beer,
                     'center': Networking,
@@ -193,7 +212,7 @@ class CategoryNavigation extends Component {
                 }) :
                     this.state.urlPointer === 3 ? this.setState({
                         'Title': `Stella's Facts`,
-                        'paragraph': <p>  lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</p>,
+                        'paragraph': <p>Several things about me and the things I enjoy the most.<br/><i>Purple is of course, one of them!</i></p>,
                         'topLeft': Idea,
                         'topRight': Smile,
                         'center': Reading,
@@ -228,7 +247,7 @@ class CategoryNavigation extends Component {
                     <Col lg={{ span: 6, order: 'first' }} className='workshopCon col-xs-push-12'>
                         <span className='workshopCon__Title'>{this.state.Title}</span>
                         {this.state.paragraph}
-                        <Button  group={this.state.group} buttonText='Learn More!' />
+                        <Button group={this.state.group} buttonText='Learn More!' />
                     </Col>
                 </Row>
             </Container>

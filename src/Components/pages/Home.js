@@ -8,7 +8,6 @@ class Home extends Component {
 
     componentDidMount() {
         window.addEventListener("wheel", this.scrollToChangePage.bind(this));
-        history.push('/workshops').bind(this)
     }
 
     scrollToChangePage = (e) => {
@@ -18,6 +17,7 @@ class Home extends Component {
                 opacity: 0,
                 duration: 500,
             })
+            history.push('/workshops');
             //eksafanisi content,ksanaemfanisi epomenou
             animation.reverse();
         }
@@ -51,7 +51,7 @@ class Home extends Component {
                         <Button group='workshop' buttonText='Git 101' />
                     </Col>
 
-                    <Col md='6'>
+                    <Col className='scrollGuide' md='6'>
                         <span className='home__scrollAction'>Scroll and Roll!</span> <CallToActionSvg />
                     </Col>
                 </Row>
