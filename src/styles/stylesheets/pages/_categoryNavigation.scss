@@ -28,7 +28,7 @@
             margin: 5% 15%;
         }
 
-       
+
     }
 
 
@@ -65,10 +65,10 @@
 
     @media (max-width: 1500px) {
 
-        .workshopCon p
-        {
-            min-height: 150px;
+        .workshopCon p {
+            min-height: 120px;
         }
+
         .svgFam {
 
 
@@ -108,6 +108,27 @@
     }
 
     @media (max-width: 993px) {
+
+
+        .workshopCon {
+            .myButton {
+                margin: -10% 0% 0% 30%;
+                display: inline-block;
+            }
+
+            * {
+                text-align: center;
+            }
+
+            &__Title {
+                margin: 0px;
+            }
+
+            p {
+                max-width: 100%;
+            }
+        }
+
         .svgFam {
 
 
@@ -133,8 +154,6 @@
                 left: -40%;
             }
 
-            &__botLeft {}
-
             &__topRight {
                 top: -150px;
                 left: 40%;
@@ -153,12 +172,15 @@
         text-align: center;
         position: absolute;
 
-        h6
-        {
-            padding-top:5px;
+        h6 {
+            padding-top: 5px;
             margin-left: 10px;
-            opacity:.7;
-            
+            opacity: .7;
+
+        }
+
+        a{
+            max-width:0px!important;
         }
     }
 
@@ -174,15 +196,59 @@
 
         .svgFam {
 
-            margin: 50% 25%;
+            margin: 50% 25% 30% 33%;
 
             &__botRight {
                 left: -33%;
+                top: -10%;
             }
 
             &__botLeft {
                 left: 70%;
             }
+        }
+
+        .workshopCon {
+
+
+            &__Title {
+                font-size: 20px;
+
+            }
+
+            p {
+                min-height: 80px;
+                font-size: 13px;
+            }
+
+        }
+
+        .svgFam {
+
+            &__botRight,
+            &__botLeft,
+            &__topRight,
+            &__topLeft {
+                max-width: 50px;
+                max-height: 50px;
+            }
+
+            &__center {
+                max-width: 70px;
+                max-height: 70px;
+                margin-top: -60%;
+            }
+
+
+        }
+
+        .bubbleGuide {
+            h6 {
+                font-size: 13px;
+                text-align: center;
+            }
+
+            margin:10% 0% 0% -2%;
         }
     }
 }

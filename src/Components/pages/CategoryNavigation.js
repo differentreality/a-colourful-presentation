@@ -2,7 +2,7 @@ import history from '../../history'
 import React, { Component } from 'react';
 import { Button } from '../parts/Buttons'
 import anime from 'animejs/lib/anime.es.js';
-import { withRouter } from 'react-router-dom';
+import { withRouter, NavLink } from 'react-router-dom';
 import { Container, Col, Row } from 'react-bootstrap';
 import { Cog, CogOutline, Pen, Laptop, Tool } from '../../svg/Workshops'
 import { Coffee, Idea, IdeaOutline, Smile, Reading } from '../../svg/StellasFacts'
@@ -58,7 +58,7 @@ class CategoryNavigation extends Component {
     scrollToChangePages = (e) => {
 
         if (e.deltaY > 2) {
-            this.setState({ scrolled: true });
+
             this.changePointer('add');
             history.push(this.categoryURLS[this.state.urlPointer]);
             this.checkPage();
@@ -67,13 +67,13 @@ class CategoryNavigation extends Component {
 
         if (e.deltaY < -2) {
 
-            this.setState({ scrolled: true });
+
             this.changePointer('minus');
             history.push(this.categoryURLS[this.state.urlPointer]);
             this.checkPage();
             this.restartAnimations();
         }
-        setTimeout(() => this.setState({ scrolled: false }), 1000)
+
     }
 
     categoryURLS = ['/workshops', '/talks', '/events', '/stellas-facts', '/contact']
@@ -141,19 +141,24 @@ class CategoryNavigation extends Component {
         targets: '.svgFam__botLeft',
 
         complete: () =>
-            this.rotateAnimation('.svgFam__botLeft')
-        ,
+            this.rotateAnimation('.svgFam__botLeft'),
         easing: 'linear'
     });
 
+
     center = anime({
-        targets: '.svgFam__center',
-        translateY: 50,
-        loop: true,
-        direction: 'alternate',
-        duration: 2500,
-        easing: 'linear'
-    })
+
+        complete: () => anime({
+            targets: '.svgFam__center',
+            translateY: 50,
+            loop: true,
+            direction: 'alternate',
+            duration: 2500,
+            easing: 'linear'
+        })
+    });
+
+
 
 
     restartAnimations = () => {
@@ -163,18 +168,11 @@ class CategoryNavigation extends Component {
         this.topRight.restart();
         this.botLeft.restart();
         this.botRight.restart();
-
-        anime({
-            targets: '.svgFam__center',
-            translateY: 50,
-            loop: true,
-            direction: 'alternate',
-            duration: 2500,
-            easing: 'linear'
-        }).restart();
+        this.center.restart();
 
 
     }
+
 
     checkPage = () => {
         this.state.urlPointer === 0 ? this.setState({
@@ -230,8 +228,24 @@ class CategoryNavigation extends Component {
                     })
     }
 
+    updatePointer = (num) => {
+        this.setState({
+            'urlPointer': num
+        },
+            () => {
+                history.push(this.categoryURLS[num]);
+                this.checkPage();
+                this.restartAnimations();
+            })
+
+    }
+
+
+
 
     render() {
+
+
 
         return (
             <Container id='MainNav' className='fade-in' fluid='true'>
@@ -244,7 +258,7 @@ class CategoryNavigation extends Component {
                         <this.state.botRight />
                     </Col>
                     <Col lg={{ span: 6, order: 'first' }} className='workshopCon'>
-                        <span className='workshopCon__Title'>{this.state.Title}</span>
+                        <h1 className='workshopCon__Title'>{this.state.Title}</h1>
                         <span className='workshopCon__paragraph'>{this.state.paragraph}</span>
                         <Button group={this.state.group} buttonText='Learn More!' />
                     </Col>
@@ -252,13 +266,13 @@ class CategoryNavigation extends Component {
 
                 {/*TODO add navlinks,minimize text,moving animation,responsive*/}
                 <Row >
-                    <Col className='bubbleGuide'  xs='12'>
+                    <Col className='bubbleGuide' xs='12'>
                         <h6>keep scrolling!</h6>
-                        <span className={'colourBubble-' + (this.state.group==='workshop' ? 'workshop':'empty')} />
-                        <span className={'colourBubble-' + (this.state.group==='talk' ? 'talk':'empty')} />
-                        <span className={'colourBubble-' + (this.state.group==='event' ? 'event':'empty')} />
-                        <span className={'colourBubble-' + (this.state.group==='stella' ? 'stella':'empty')} />
-                        <span className={'colourBubble-' + (this.state.group==='contact' ? 'contact':'empty')} />
+                        <NavLink to="/workshops" onClick={() => this.updatePointer(0)}><span className={'colourBubble-' + (this.state.group === 'workshop' ? 'workshop' : 'empty')} /></NavLink>
+                        <NavLink to="/talks" onClick={() => this.updatePointer(1)}><span className={'colourBubble-' + (this.state.group === 'talk' ? 'talk' : 'empty')} /></NavLink>
+                        <NavLink to="/events" onClick={() => this.updatePointer(2)}><span className={'colourBubble-' + (this.state.group === 'event' ? 'event' : 'empty')} /></NavLink>
+                        <NavLink to="/stellas-facts" onClick={() => this.updatePointer(3)}><span className={'colourBubble-' + (this.state.group === 'stella' ? 'stella' : 'empty')} /></NavLink>
+                        <NavLink to="/contact" onClick={() => this.updatePointer(4)}><span className={'colourBubble-' + (this.state.group === 'contact' ? 'contact' : 'empty')} /></NavLink>
                     </Col>
                 </Row>
             </Container>
