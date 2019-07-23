@@ -110,14 +110,14 @@ class Menu extends PureComponent {
 
     
 
-    groupColour = (url) => ({
-        '/workshops': 'workshop',
-        '/talks': 'talk',
-        '/contact': 'contact',
-        '/stellas-facts': 'stella',
-        '/events': 'event',
-        '/': 'stella',
-    })[url]
+    groupColour = (url) => {
+        return (/(\/workshops.*)/g).test(url) ? 'workshop':
+        (/(\/talks.*)/g).test(url) ? 'talk':
+        (/(\/events.*)/g).test(url) ? 'event':
+        (/(\/stellas-facts.*)/g).test(url) ? 'stella':
+        (/(\/contact.*)/g).test(url) ? 'contact' : 'contact'
+
+    }
 
     resize() {
         window.innerWidth <= 770 ? this.setState({ menu: <MobileHeader /> }) : this.setState({ menu: <SidebarMenu colourCategory={this.groupColour(this.props.location.pathname)} /> })

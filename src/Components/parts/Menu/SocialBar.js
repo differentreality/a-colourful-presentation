@@ -27,14 +27,13 @@ const SocialBar = (props) => {
         }
     ]
 
-    const groupColour = (url) => ({
-        '/workshops': 'workshopSvgGradient',
-        '/talks': 'talkSvgGradient',
-        '/contact': 'contactSvgGradient',
-        '/stellas-facts': 'stellaSvgGradient',
-        '/': 'stellaSvgGradient',
-        '/events': 'eventSvgGradient'
-    })[url]
+    const groupColour = (url) => {
+        return (/(\/workshops.*)/g).test(url) ? 'workshopSvgGradient':
+        (/(\/talks.*)/g).test(url) ? 'talkSvgGradient':
+        (/(\/events.*)/g).test(url) ? 'eventSvgGradient':
+        (/(\/stellas-facts.*)/g).test(url) ? 'stellaSvgGradient':
+        (/(\/contact.*)/g).test(url) ? 'contact' : 'contactSvgGradient'
+    }
 
     return <Col className='socialCol' xl={{ span: 5, offset: 7 }} lg={{ span: 6, offset: 6 }} md={{ span: 7, offset: 5 }}  >
 

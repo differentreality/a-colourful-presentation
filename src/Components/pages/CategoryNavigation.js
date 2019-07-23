@@ -264,7 +264,7 @@ class CategoryNavigation extends Component {
                     </Col>
                 </Row>
 
-                {/*TODO add navlinks,minimize text,moving animation,responsive*/}
+               
                 <Row >
                     <Col className='bubbleGuide' xs='12'>
                         <h6>keep scrolling!</h6>

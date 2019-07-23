@@ -6,6 +6,7 @@ import { Container, Col, Row } from 'react-bootstrap';
 import SocialBar from './Components/parts/Menu/SocialBar'
 import Home from './Components/pages/Home'
 import CategoryNavigation from './Components/pages/CategoryNavigation'
+import Topics from './Components/pages/Topics'
 import {Router, Route, Switch } from 'react-router-dom'
 import history from './history'
 class App extends Component {
@@ -50,11 +51,12 @@ class App extends Component {
                     <Row id='Content'>
                       <Switch>
                         <Route exact path='/' render={(props) => <Home  />} />
-                        <Route path='/workshops' render={(props) => <CategoryNavigation  />} />
-                        <Route path='/talks' render={(props) => <CategoryNavigation />} />
-                        <Route path='/events' render={(props) => <CategoryNavigation />} />
-                        <Route path='/stellas-facts' render={(props) => <CategoryNavigation />} />
-                        <Route path='/contact' render={(props) => <CategoryNavigation />} />
+                        <Route exact path='/workshops' render={(props) => <CategoryNavigation  />} />
+                        <Route exact path='/talks' render={(props) => <CategoryNavigation />} />
+                        <Route exact path='/events' render={(props) => <CategoryNavigation />} />
+                        <Route exact path='/stellas-facts' render={(props) => <CategoryNavigation />} />
+                        <Route exact path='/contact' render={(props) => <CategoryNavigation />} />
+                        <Route exact path='/workshops/topics' render={(props) => <Topics />} />
                       </Switch>
                     </Row>
                   </Col>
