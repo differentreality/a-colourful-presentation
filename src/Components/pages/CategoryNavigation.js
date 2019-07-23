@@ -2,7 +2,7 @@ import history from '../../history'
 import React, { Component } from 'react';
 import { Button } from '../parts/Buttons'
 import anime from 'animejs/lib/anime.es.js';
-import { withRouter, NavLink } from 'react-router-dom';
+import { withRouter, Link,NavLink } from 'react-router-dom';
 import { Container, Col, Row } from 'react-bootstrap';
 import { Cog, CogOutline, Pen, Laptop, Tool } from '../../svg/Workshops'
 import { Coffee, Idea, IdeaOutline, Smile, Reading } from '../../svg/StellasFacts'
@@ -49,6 +49,11 @@ class CategoryNavigation extends Component {
         window.addEventListener('wheel', this.scrollToChangePages)
         this.restartAnimations();
 
+    }
+
+    componentWillUnmount()
+    {
+        window.removeEventListener('wheel', this.scrollToChangePages);
     }
 
 
@@ -260,7 +265,7 @@ class CategoryNavigation extends Component {
                     <Col lg={{ span: 6, order: 'first' }} className='workshopCon'>
                         <h1 className='workshopCon__Title'>{this.state.Title}</h1>
                         <span className='workshopCon__paragraph'>{this.state.paragraph}</span>
-                        <Button group={this.state.group} buttonText='Learn More!' />
+                        <Link to='/workshops/topics'><Button group={this.state.group} buttonText='Learn More!' /></Link>
                     </Col>
                 </Row>
 

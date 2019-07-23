@@ -1,0 +1,158 @@
+.topic                              
+{
+    margin-bottom:20%;
+}
+.topicsCont {
+    &__Category {
+        font-size: 20px;
+        margin:-2% 0% 5% 0%;
+
+        &-workshop
+        {
+            @extend .topicsCont__Category;
+            color: $workshopTextColor;
+        }
+
+        &-talk
+        {
+            @extend .topicsCont__Category;
+            color: $talkTextColor;
+        }
+
+       
+    }
+
+    &__Title {
+        font-size: 50px;
+        font-weight: 900;
+        display: inline-block;
+        margin-left: 2%;
+
+        &-workshop
+        {
+            @extend .topicsCont__Title;
+            color: $workshopTextColor;
+        }
+
+        &-talk
+        {
+            @extend .topicsCont__Title;
+            color: $talkTextColor;
+        }
+
+       
+    }
+
+    &__Svg {
+        max-height: 50px;
+        max-width: 50px;
+        display: inline-block;
+        margin: -3% 0% 0% 5%;
+    }
+
+    p {
+        margin: 7% 0 10% 4%;
+        max-width: 60%;
+        color:$paragraphColour;
+    }
+}
+
+.keywordsCont {
+    text-align: center;
+
+    &__keywordText {
+
+        &-workshop
+        {
+            
+            color: $workshopTextColor;
+        }
+
+        &-talk
+        {
+            
+            color: $talkTextColor;
+        }
+
+       
+    }
+
+
+    &__divider {
+        width: 5%;
+        height: 2px;
+        display: inline-block;
+        margin-bottom: 10%;
+
+        &-workshop {
+            @extend .keywordsCont__divider;
+            background-color: $workshopTextColor
+        }
+
+        &-talk
+        {
+            @extend .keywordsCont__divider;
+            background-color: $talkTextColor;
+        }
+
+       
+
+        
+    }
+
+    .keywordsSVG {
+        display: block;
+
+
+        
+
+        svg {
+
+            text-align: center;
+            max-width: 80px;
+            height: 80px;
+        }
+
+        &__SvgTitle
+        {
+            display: block;
+            color:$paragraphColour;
+           
+        }
+
+    }
+}
+
+@media (max-width:700px) {
+    
+    .topicsCont{
+
+        
+
+        .myButton{
+        margin-left:25%;
+        }
+
+        &__Category {
+            font-size: 14px;
+            margin: 10% 0;
+        }
+
+        p{
+            max-width:80%;
+        }
+    }
+        .keywordsCont {
+
+            .keywordsSVG {
+                &__SvgTitle {
+                    font-size: 14px;
+                }
+
+                svg {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+        }
+}

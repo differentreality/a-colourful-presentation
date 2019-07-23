@@ -50,13 +50,15 @@ class App extends Component {
                     {this.state.SocialBar}
                     <Row id='Content'>
                       <Switch>
-                        <Route exact path='/' render={(props) => <Home  />} />
-                        <Route exact path='/workshops' render={(props) => <CategoryNavigation  />} />
-                        <Route exact path='/talks' render={(props) => <CategoryNavigation />} />
-                        <Route exact path='/events' render={(props) => <CategoryNavigation />} />
-                        <Route exact path='/stellas-facts' render={(props) => <CategoryNavigation />} />
-                        <Route exact path='/contact' render={(props) => <CategoryNavigation />} />
-                        <Route exact path='/workshops/topics' render={(props) => <Topics />} />
+                        <Route exact path='/' render={() => <Home  />} />
+                        <Route exact path='/workshops' render={() => <CategoryNavigation  />} />
+                        <Route exact path='/talks' render={() => <CategoryNavigation />} />
+                        <Route exact path='/events' render={() => <CategoryNavigation />} />
+                        <Route exact path='/stellas-facts' render={() => <CategoryNavigation />} />
+                        <Route exact path='/contact' render={() => <CategoryNavigation />} />
+                        <Route exact path='/workshops/topics' render={() => <Topics group='workshop'/>} />
+                        <Route exact path='/talks/topics' render={() => <Topics group='talk'/>} />
+                        <Route exact path='/events/topics' render={() => <Topics group='event'/>} />
                       </Switch>
                     </Row>
                   </Col>
