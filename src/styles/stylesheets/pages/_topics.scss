@@ -23,7 +23,7 @@
     }
 
     &__Title {
-        font-size: 50px;
+        font-size: 55px;
         font-weight: 900;
         display: inline-block;
         margin-left: 2%;
@@ -55,12 +55,21 @@
         max-width: 60%;
         color:$paragraphColour;
     }
+
+    .myButton
+    {
+        margin:5% 0% 0% 25%;
+    }
 }
+
 
 .keywordsCont {
     text-align: center;
 
+
+
     &__keywordText {
+
 
         &-workshop
         {
@@ -104,13 +113,14 @@
         display: block;
 
 
+
         
 
         svg {
 
             text-align: center;
-            max-width: 80px;
-            height: 80px;
+            width: 50px;
+            height: 50px;
         }
 
         &__SvgTitle
@@ -123,14 +133,40 @@
     }
 }
 
-@media (max-width:700px) {
+@media (max-width:1300px)
+{
+    .topicsCont
+    
+    {
+    &__Title{
+        font-size:30px;
+    }
+
+    &__Svg
+    {
+        max-width: 40px;
+    }
+}
+}
+
+
+
+
+@media (max-width:1000px) {
+
+    .topic                              
+{
+    margin-bottom:50%;
+}
     
     .topicsCont{
 
         
 
         .myButton{
-        margin-left:25%;
+        margin:15%;
+        min-width:60%;
+        font-size:120%;
         }
 
         &__Category {
@@ -144,9 +180,11 @@
     }
         .keywordsCont {
 
+            margin-top:15%;
+
             .keywordsSVG {
                 &__SvgTitle {
-                    font-size: 14px;
+                    font-size: 13px;
                 }
 
                 svg {

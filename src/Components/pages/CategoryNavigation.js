@@ -33,6 +33,7 @@ class CategoryNavigation extends Component {
             'botLeft': null,
             'botRight': null,
             'group': null,
+            'buttonLink':null,
             'urlPointer': pointer,
         }
 
@@ -46,14 +47,14 @@ class CategoryNavigation extends Component {
     }
 
     componentDidMount() {
-        window.addEventListener('wheel', this.scrollToChangePages)
+        window.addEventListener('wheel', this.scrollToChangePages,true)
         this.restartAnimations();
 
     }
 
     componentWillUnmount()
     {
-        window.removeEventListener('wheel', this.scrollToChangePages);
+        window.removeEventListener('wheel', this.scrollToChangePages,true);
     }
 
 
@@ -188,7 +189,8 @@ class CategoryNavigation extends Component {
             'center': Laptop,
             'botLeft': CogOutline,
             'botRight': Pen,
-            'group': 'workshop'
+            'group': 'workshop',
+            'buttonLink':'/workshops/topics'
         }) :
             this.state.urlPointer === 1 ? this.setState({
                 'Title': 'Talks',
@@ -265,7 +267,7 @@ class CategoryNavigation extends Component {
                     <Col lg={{ span: 6, order: 'first' }} className='workshopCon'>
                         <h1 className='workshopCon__Title'>{this.state.Title}</h1>
                         <span className='workshopCon__paragraph'>{this.state.paragraph}</span>
-                        <Link to='/workshops/topics'><Button group={this.state.group} buttonText='Learn More!' /></Link>
+                        <Link to={this.state.buttonLink}><Button group={this.state.group} buttonText='Learn More!' /></Link>
                     </Col>
                 </Row>
 

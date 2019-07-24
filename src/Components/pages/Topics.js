@@ -1,8 +1,8 @@
-import history from '../../history'
 import React, { Component } from 'react';
 import { Button } from '../parts/Buttons'
 import { Container, Col, Row } from 'react-bootstrap';
 import { withRouter } from 'react-router-dom';
+import anime from 'animejs/lib/anime.es.js';
 import { Heart, Tool, Git, Version, Cog, MVC, Ruby, HtmlTag } from '../../svg/topics/topicsSvg';
 class Topics extends Component {
 
@@ -55,20 +55,39 @@ class Topics extends Component {
             primarySvg: Ruby,
             Title: 'Ruby On Rails',
             paragraph: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry',
-            svg1: MVC,
-            svg1Text: 'M.V.C.',
-            svg2: HtmlTag,
-            svg2Text: 'Web App',
+            svg2: MVC,
+            svg1: HtmlTag,
+            svg1Text: 'Web App',
+            svg2Text: 'M.V.C.',
             svg3: Cog,
             svg3Text: 'Framework'
         }
     ]
 
+    svgAnimation = anime({
+
+        complete:()=>
+            anime({targets: '.keywordsSVG__Svg',
+            translateY: -20,
+            loop: true,
+            direction: 'alternate',
+            duration: 2500,
+            easing: 'linear'})
+        })
+
+        svgAnimatio2 = anime({
+
+            complete:()=>
+                anime({targets: '.keywordsCont__divider',
+                scale:0.7,
+                duration: 400,
+                easing: 'linear'})
+            })
     
 
 
     render() {
-        return <Container fluid='true'>
+        return <Container fluid='true' className='fade-in'>
 
 
 
@@ -84,17 +103,17 @@ class Topics extends Component {
                 </Col>
                 <Col lg={{ span: '6' }} className='keywordsCont'>
                     <h4 className={'keywordsCont__keywordText-' + this.props.group}>keywords</h4>
-                    <div className={'keywordsCont__divider-' + this.props.group} />
-                    <Row>
-                        <Col className='keywordsSVG' xs={{ span: 4 }} md={{ span: 4, offset: 0 }} xl={{ span: 3, offset: 1 }}>
+                    <div className={'keywordsCont__divider keywordsCont__divider-' + this.props.group} />
+                    <Row className='keywordsSVGCont'>
+                        <Col className='keywordsSVG' xs={{ span: 4 }} md={{ span: 4, offset: 0 }} xl={{ span: 3, offset: 2 }}>
                             <event.svg1 className='keywordsSVG__Svg' />
                             <span className='keywordsSVG__SvgTitle'>{event.svg1Text}</span>
                         </Col>
-                        <Col className='keywordsSVG' xs={{ span: 4 }} md={{ span: 4, offset: 0 }} xl={{ span: 3, offset: 1 }} >
+                        <Col className='keywordsSVG' xs={{ span: 4 }} md={{ span: 4, offset: 0 }} xl={{ span: 3, offset: 0 }} >
                             <event.svg2 className='keywordsSVG__Svg' />
                             <span className='keywordsSVG__SvgTitle'>{event.svg2Text}</span>
                         </Col>
-                        <Col className='keywordsSVG' xs={{ span: 4 }} sm={{ span: 4, offset: 0 }} xl={{ span: 3, offset: 1 }} >
+                        <Col className='keywordsSVG' xs={{ span: 4 }} sm={{ span: 4, offset: 0 }} xl={{ span: 3, offset: 0 }} >
                             <event.svg3 className='keywordsSVG__Svg' />
                             <span className='keywordsSVG__SvgTitle'>{event.svg3Text}</span>
                         </Col>
