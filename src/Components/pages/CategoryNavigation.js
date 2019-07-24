@@ -9,12 +9,14 @@ import { Coffee, Idea, IdeaOutline, Smile, Reading } from '../../svg/StellasFact
 import { Hand, whiteBoard, Microphone, MicrophoneOutlineSvg, Ruby } from '../../svg/Talks'
 import { confCard, Beer, Networking, University, UniversityOutline } from '../../svg/Events'
 import { Papyrus, PapyrusOutline, QuestionMark, MessageCloud, MessageFolder } from '../../svg/Contact'
+import {debounce} from 'lodash'
 class CategoryNavigation extends Component {
 
     constructor(props) {
+        
         super(props);
-
         var pointer = 0;
+        this.debouncedScroll = this.debouncedScroll.bind(this);
         switch (history.location.pathname) {
             case '/workshops': pointer = 0; break;
             case '/talks': pointer = 1; break;
@@ -42,23 +44,26 @@ class CategoryNavigation extends Component {
     }
 
     componentWillMount() {
+        window.addEventListener('wheel', this.debouncedScroll,true)
         this.checkPage();
 
     }
 
     componentDidMount() {
-        window.addEventListener('wheel', this.scrollToChangePages,true)
+       
         this.restartAnimations();
-
     }
 
     componentWillUnmount()
     {
-        window.removeEventListener('wheel', this.scrollToChangePages,true);
+        window.removeEventListener('wheel', this.debouncedScroll,true);
+      
     }
 
+    
 
 
+debouncedScroll=debounce((e)=>this.scrollToChangePages(e),50);
 
 
     scrollToChangePages = (e) => {
