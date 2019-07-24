@@ -8,6 +8,8 @@ import Home from './Components/pages/Home'
 import CategoryNavigation from './Components/pages/CategoryNavigation'
 import Topics from './Components/pages/Topics'
 import {Router, Route, Switch } from 'react-router-dom'
+
+import anime from 'animejs/lib/anime.es.js';
 import history from './history'
 class App extends Component {
 
@@ -32,6 +34,8 @@ class App extends Component {
   resize() {
     window.innerWidth <= 770 ? this.setState({ SocialBar: '' }) : this.setState({ SocialBar: <SocialBar /> })
   }
+
+ 
 
   
  

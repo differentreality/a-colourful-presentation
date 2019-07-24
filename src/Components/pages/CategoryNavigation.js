@@ -57,10 +57,7 @@ class CategoryNavigation extends Component {
     componentWillUnmount()
     {
         window.removeEventListener('wheel', this.debouncedScroll,true);
-      
     }
-
-    
 
 
 debouncedScroll=debounce((e)=>this.scrollToChangePages(e),50);
@@ -205,7 +202,8 @@ debouncedScroll=debounce((e)=>this.scrollToChangePages(e),50);
                 'center': whiteBoard,
                 'botLeft': MicrophoneOutlineSvg,
                 'botRight': Ruby,
-                'group': 'talk'
+                'group': 'talk',
+                'buttonLink':'/talks/topics'
             }) :
                 this.state.urlPointer === 2 ? this.setState({
                     'Title': 'Events',

@@ -3,7 +3,7 @@ import { Button } from '../parts/Buttons'
 import { Container, Col, Row } from 'react-bootstrap';
 import { withRouter } from 'react-router-dom';
 import anime from 'animejs/lib/anime.es.js';
-import { Heart, Tool, Git, Version, Cog, MVC, Ruby, HtmlTag } from '../../svg/topics/topicsSvg';
+import { Heart, Tool, Git, Version, Cog, MVC, Ruby, HtmlTag ,Gsoc,Globe,Student,OpenSource } from '../../svg/topics/topicsSvg';
 class Topics extends Component {
 
     constructor(props) {
@@ -18,13 +18,14 @@ class Topics extends Component {
         {
             primarySvg: Git,
             Title: 'Git',
-            paragraph: 'We learn about versioning and contributing',
+            paragraph: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry',
             svg1: Heart,
             svg1Text: 'Contributing',
             svg2: Tool,
             svg2Text: 'Maintenance',
             svg3: Version,
-            svg3Text: 'Versioning'
+            svg3Text: 'Versioning',
+            buttonText:'Browse Git'
         },
         {
             primarySvg: Ruby,
@@ -35,32 +36,23 @@ class Topics extends Component {
             svg2: HtmlTag,
             svg2Text: 'Web App',
             svg3: Cog,
-            svg3Text: 'Framework'
+            svg3Text: 'Framework',
+            buttonText:'Browse Ruby on Rails'
         }
     ]
 
     talkContent = [
         {
-            primarySvg: Git,
-            Title: 'Git',
-            paragraph: 'We learn about versioning and contributing',
-            svg1: Heart,
-            svg1Text: 'Contributing',
-            svg2: Tool,
-            svg2Text: 'Maintenance',
-            svg3: Version,
-            svg3Text: 'Versioning'
-        },
-        {
-            primarySvg: Ruby,
-            Title: 'Ruby On Rails',
+            primarySvg: Gsoc,
+            Title: 'Google Summer of Code',
             paragraph: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry',
-            svg2: MVC,
-            svg1: HtmlTag,
-            svg1Text: 'Web App',
-            svg2Text: 'M.V.C.',
-            svg3: Cog,
-            svg3Text: 'Framework'
+            svg1: OpenSource,
+            svg1Text: 'Open Source Community',
+            svg2: Student,
+            svg2Text: 'For Students',
+            svg3: Globe,
+            svg3Text: 'Remote',
+            buttonText:'Browse GSoC'
         }
     ]
 
@@ -75,14 +67,7 @@ class Topics extends Component {
             easing: 'linear'})
         })
 
-        svgAnimatio2 = anime({
-
-            complete:()=>
-                anime({targets: '.keywordsCont__divider',
-                scale:0.7,
-                duration: 400,
-                easing: 'linear'})
-            })
+        
     
 
 
@@ -92,14 +77,14 @@ class Topics extends Component {
 
 
 
-            <h3 className={'topicsCont__Category-' + this.props.group}>Workshops</h3>
+            <h3 className={'topicsCont__Category-' + this.props.group}>{this.props.group+'s'}</h3>
 
             {this.state.chosenArray.map((event) => <Row className='topic'>
                 <Col lg={{ span: '6' }} className='topicsCont'>
                     <event.primarySvg className='topicsCont__Svg' />
                     <h2 className={'topicsCont__Title-' + this.props.group}>{event.Title}</h2>
                     <p>{event.paragraph} </p>
-                    <Button group={this.props.group} buttonText={'Browse '+event.Title} />
+                    <Button group={this.props.group} buttonText={event.buttonText} />
                 </Col>
                 <Col lg={{ span: '6' }} className='keywordsCont'>
                     <h4 className={'keywordsCont__keywordText-' + this.props.group}>keywords</h4>

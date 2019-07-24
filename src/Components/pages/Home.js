@@ -7,7 +7,15 @@ import history from '../../history'
 class Home extends Component {
 
     componentDidMount() {
-        window.addEventListener("wheel", this.scrollToChangePage.bind(this));
+        this.scrollToChangePage=this.scrollToChangePage.bind(this)
+        window.addEventListener("wheel",this.scrollToChangePage);
+        this.entranceAnimation();
+        
+    }
+
+    componentWillUnmount()
+    {
+        window.removeEventListener('wheel', this.scrollToChangePage);
     }
 
     scrollToChangePage = (e) => {
@@ -22,6 +30,22 @@ class Home extends Component {
             animation.reverse();
         }
     }
+
+    entranceAnimation =() =>{
+        var textWrapper = document.querySelector('.leftContent__title');
+        textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+
+        anime.timeline()
+        .add({
+          targets: '.leftContent__title .letter',
+          opacity: [0,1],
+          easing: "easeInOutQuad",
+          duration: 2250,
+          delay: function(el, i) {
+            return 150 * (i+1)
+          }
+        })
+      }
     render() {
         return (
             <Container id='homePage' fluid='true' className='home'>
