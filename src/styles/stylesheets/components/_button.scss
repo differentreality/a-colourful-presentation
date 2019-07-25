@@ -18,14 +18,17 @@
 
     &--workshop {
       color: $workshopTextColor;
+      border-left:2px solid $workshopTextColor;
 
       &:hover {
         text-shadow: $workshopTextShadow;
+        
       }
     }
 
     &--talk {
       color: $talkTextColor;
+      border-left:2px solid $talkTextColor;
 
       &:hover {
         text-shadow: $talkTextShadow;
@@ -34,6 +37,7 @@
 
     &--stella {
       color: $stellaTextColor;
+      border-left:2px solid $stellaTextColor;
 
       &:hover {
         text-shadow: $stellaTextShadow;
@@ -42,6 +46,7 @@
 
     &--event {
       color: $eventTextColor;
+      border-left:2px solid $eventTextColor;
 
       &:hover {
         text-shadow: $eventTextShadow;

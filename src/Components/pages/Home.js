@@ -33,7 +33,8 @@ class Home extends Component {
 
     entranceAnimation =() =>{
         var textWrapper = document.querySelector('.leftContent__title');
-        textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+        // eslint-disable-next-line
+        textWrapper.innerHTML = textWrapper.textContent.replace((/([^\x00-\x80]|\w)/g), "<span class='letter'>$&</span>");
 
         anime.timeline()
         .add({

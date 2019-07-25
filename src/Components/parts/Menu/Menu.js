@@ -1,7 +1,6 @@
-import React, { PureComponent, Component } from 'react';
+import React, {  Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { Col } from 'react-bootstrap';
-import history from '../../../history'
 
 
 
@@ -89,51 +88,22 @@ const MobileHeader = () => {
     </Col>
 }
 
-class Menu extends PureComponent {
+const Menu = (props) => {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            menu: <SidebarMenu colourCategory={this.groupColour(this.props.location.pathname)} />,
-            colourNum: 0
-        };
-    }
 
-    componentDidMount() {
-        window.addEventListener("resize", this.resize.bind(this));
-        this.resize();
-        history.listen( location =>  {
-            this.setState({ menu: <SidebarMenu colourCategory={this.groupColour(location.pathname)} />})
-            this.resize();
-        })
-    }
 
-    
-
-    groupColour = (url) => {
-        return (/(\/workshops.*)/g).test(url) ? 'workshop':
-        (/(\/talks.*)/g).test(url) ? 'talk':
-        (/(\/events.*)/g).test(url) ? 'event':
-        (/(\/stellas-facts.*)/g).test(url) ? 'stella':
-        (/(\/contact.*)/g).test(url) ? 'contact' : 'contact'
+    var groupColour = (url) => {
+        return (/(\/workshops.*)/g).test(url) ? 'workshop' :
+            (/(\/talks.*)/g).test(url) ? 'talk' :
+                (/(\/events.*)/g).test(url) ? 'event' :
+                    (/(\/stellas-facts.*)/g).test(url) ? 'stella' :
+                        (/(\/contact.*)/g).test(url) ? 'contact' : 'stella'
 
     }
 
-    resize() {
-        window.innerWidth <= 770 ? this.setState({ menu: <MobileHeader /> }) : this.setState({ menu: <SidebarMenu colourCategory={this.groupColour(this.props.location.pathname)} /> })
-    }
 
 
-    
-
-    render() {
-
-        
-
-        return (
-            this.state.menu
-        );
-    }
+    return (props.mobile) ? <MobileHeader /> : <SidebarMenu colourCategory={groupColour(props.location.pathname)} />
 }
 
 export default withRouter(Menu);

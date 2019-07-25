@@ -1,22 +1,29 @@
 import React, { Component } from 'react';
-import './styles/App.css';
-import Menu from './Components/parts/Menu/Menu';
+import {Router, Route, Switch } from 'react-router-dom'
+import history from './history'
+
+//styles
 import './styles/stylesheets/main.scss';
+import './styles/App.css';
+
+//components
+import Menu from './Components/parts/Menu/Menu';
 import { Container, Col, Row } from 'react-bootstrap';
 import SocialBar from './Components/parts/Menu/SocialBar'
-import Home from './Components/pages/Home'
-import CategoryNavigation from './Components/pages/CategoryNavigation'
-import Topics from './Components/pages/Topics'
-import {Router, Route, Switch } from 'react-router-dom'
 
-import anime from 'animejs/lib/anime.es.js';
-import history from './history'
+//pages
+import Home from './Components/pages/Home'
+import Topics from './Components/pages/Topics'
+import Events from './Components/pages/Events'
+import CategoryNavigation from './Components/pages/CategoryNavigation'
+
 class App extends Component {
 
   constructor() {
     super();
     this.state = {
-      SocialBar: <SocialBar />, //emfanisi mono sto desktop
+      mobile:false,
+      SocialBar: <SocialBar />,
       colour: 'purple'
     };
   }
@@ -30,9 +37,9 @@ class App extends Component {
   }
 
 
-
+ //mobile view
   resize() {
-    window.innerWidth <= 770 ? this.setState({ SocialBar: '' }) : this.setState({ SocialBar: <SocialBar /> })
+    window.innerWidth <= 770 ? this.setState({ SocialBar: '',mobile:true }) : this.setState({ SocialBar: <SocialBar />,mobile:false })
   }
 
  
@@ -49,7 +56,7 @@ class App extends Component {
             <Row>
               <Col>
                 <Row>
-                  <Menu colour={this.state.colour} />
+                  <Menu mobile={this.state.mobile} colour={this.state.colour} />
                   <Col md={{ span: 9, offset: 2 }} xs={12}>
                     {this.state.SocialBar}
                     <Row id='Content'>
@@ -60,9 +67,9 @@ class App extends Component {
                         <Route exact path='/events' render={() => <CategoryNavigation />} />
                         <Route exact path='/stellas-facts' render={() => <CategoryNavigation />} />
                         <Route exact path='/contact' render={() => <CategoryNavigation />} />
-                        <Route exact path='/workshops/topics' render={() => <Topics group='workshop'/>} />
+                        <Route exact path='/workshops/topics' render={() => <Topics group='workshop'/>} />   
+                        <Route exact path='/workshops/topics/git' render={() => <Events group='workshop'/>} />
                         <Route exact path='/talks/topics' render={() => <Topics group='talk'/>} />
-                        <Route exact path='/events/topics' render={() => <Topics group='event'/>} />
                       </Switch>
                     </Row>
                   </Col>

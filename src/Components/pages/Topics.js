@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from '../parts/Buttons'
 import { Container, Col, Row } from 'react-bootstrap';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import anime from 'animejs/lib/anime.es.js';
 import { Heart, Tool, Git, Version, Cog, MVC, Ruby, HtmlTag ,Gsoc,Globe,Student,OpenSource } from '../../svg/topics/topicsSvg';
 class Topics extends Component {
@@ -25,7 +25,8 @@ class Topics extends Component {
             svg2Text: 'Maintenance',
             svg3: Version,
             svg3Text: 'Versioning',
-            buttonText:'Browse Git'
+            buttonText:'Browse Git',
+            link:'/workshops/topics/git'
         },
         {
             primarySvg: Ruby,
@@ -37,7 +38,8 @@ class Topics extends Component {
             svg2Text: 'Web App',
             svg3: Cog,
             svg3Text: 'Framework',
-            buttonText:'Browse Ruby on Rails'
+            buttonText:'Browse Ruby on Rails',
+            link:'/workshops/topics/ror'
         }
     ]
 
@@ -52,7 +54,8 @@ class Topics extends Component {
             svg2Text: 'For Students',
             svg3: Globe,
             svg3Text: 'Remote',
-            buttonText:'Browse GSoC'
+            buttonText:'Browse GSoC',
+            link:'/workshops/topics/gsoc'
         }
     ]
 
@@ -84,7 +87,7 @@ class Topics extends Component {
                     <event.primarySvg className='topicsCont__Svg' />
                     <h2 className={'topicsCont__Title-' + this.props.group}>{event.Title}</h2>
                     <p>{event.paragraph} </p>
-                    <Button group={this.props.group} buttonText={event.buttonText} />
+                    <Link to={event.link}><Button group={this.props.group} buttonText={event.buttonText} /></Link>
                 </Col>
                 <Col lg={{ span: '6' }} className='keywordsCont'>
                     <h4 className={'keywordsCont__keywordText-' + this.props.group}>keywords</h4>
