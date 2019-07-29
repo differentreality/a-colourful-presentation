@@ -3,7 +3,9 @@ import { Button } from '../parts/Buttons'
 import { Container, Col, Row } from 'react-bootstrap';
 import { withRouter, Link } from 'react-router-dom';
 import anime from 'animejs/lib/anime.es.js';
+import store from '../../store'
 import { Heart, Tool, Git, Version, Cog, MVC, Ruby, HtmlTag ,Gsoc,Globe,Student,OpenSource } from '../../svg/topics/topicsSvg';
+import LinkContainer from '../parts/LinkContainer'
 class Topics extends Component {
 
     constructor(props) {
@@ -12,6 +14,18 @@ class Topics extends Component {
         this.state={
             chosenArray : array
         };
+    }
+
+    componentDidMount()
+    {
+        this.updateStore();
+    }
+
+    updateStore =() =>
+    {
+        store.dispatch(
+            {type:'change_Color',payload:{color:this.props.group}}
+        );
     }
 
     wshopContent = [
@@ -59,6 +73,21 @@ class Topics extends Component {
         }
     ]
 
+    LinkArray = [
+        {
+            url:'sadaaa',
+            text:'test'
+        },
+        {
+            url:'sadaaa',
+            text:'test'
+        },
+        {
+            url:'sadaaa',
+            text:'test'
+        }
+    ]
+
     svgAnimation = anime({
 
         complete:()=>
@@ -75,14 +104,11 @@ class Topics extends Component {
 
 
     render() {
+
         return <Container fluid='true' className='fade-in'>
-
-
-
-
             <h3 className={'topicsCont__Category-' + this.props.group}>{this.props.group+'s'}</h3>
 
-            {this.state.chosenArray.map((event) => <Row className='topic'>
+            {this.state.chosenArray.map((event,id) => <Row key={id} className='topic'>
                 <Col lg={{ span: '6' }} className='topicsCont'>
                     <event.primarySvg className='topicsCont__Svg' />
                     <h2 className={'topicsCont__Title-' + this.props.group}>{event.Title}</h2>
@@ -110,6 +136,7 @@ class Topics extends Component {
             </Row>
             )}
 
+            <LinkContainer title='Useful Links' Links={this.LinkArray}/> 
 
 
         </Container>

@@ -1,0 +1,54 @@
+.LinkContainer {
+
+  .LinkList {
+      padding-left: 0px;
+      border-radius: 15px;
+      list-style-type: none;
+      border-left: 1px solid rgb(196, 196, 196);
+      border-right: 1px solid rgb(196, 196, 196);
+      border-bottom: 1px solid rgb(196, 196, 196);
+
+    &__Title {
+      height: 50px;
+      color: white;
+      line-height: 50px;
+      text-align: center;
+      border-top-right-radius:  15px;
+      border-top-left-radius: 15px;
+      background: $calltoActionGradient;
+    }
+
+    &__Text {
+      padding-right: 50%;
+    }
+
+    li {
+      text-align: center;
+      border-bottom: 1px solid rgb(196, 196, 196);
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    &__Link  {
+      color: #808080;
+    }
+
+    .callToActionSvg {
+      text-align: right;
+      width: 35px;
+      transform: rotate(-90deg);
+      fill: #13687e;
+
+      #Path_cycle {
+        fill: rgba(0, 0, 0, 0);
+    }
+    
+    #Path_arrow {
+        opacity:1;
+        fill: #28B781;
+      }
+    }
+  }
+}

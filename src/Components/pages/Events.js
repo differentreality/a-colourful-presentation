@@ -4,13 +4,26 @@ import { withRouter } from 'react-router-dom';
 import { EmptyButton } from '../parts/Buttons';
 import git101ateith from '../../Photos/git101ateith.JPG';
 import Carousel, { Modal, ModalGateway } from 'react-images';
-
+import store from '../../store';
 const images = [{ src: git101ateith, caption: 'caption caption caption' }]
 
 class Events extends Component {
     state = { modalIsOpen: false }
     toggleModal = () => {
         this.setState(state => ({ modalIsOpen: !state.modalIsOpen }));
+    }
+
+    componentDidMount()
+    {
+        this.updateStore();
+    }
+
+    updateStore =() =>
+    {
+
+        store.dispatch(
+            {type:'change_Color',payload:{color:this.props.group}}
+        );
     }
 
     wshopContent = [
@@ -34,7 +47,7 @@ class Events extends Component {
 
 
     render() {
-        const { modalIsOpen } = this.state;
+        const { modalIsOpen } = this.state; 
         return (
             <Container className='fade-in' fluid='true'>
                 <Row>

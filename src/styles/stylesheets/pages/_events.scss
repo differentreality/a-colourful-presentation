@@ -61,6 +61,24 @@
             box-shadow: 0px 14px 35px -6px rgba(41, 192, 179,.7);
     
         }
+
+        &-event
+        {
+            @extend  .eventLeftCont__info;
+            background: $eventGradientVertical;
+            -webkit-box-shadow: $eventTextShadow;
+            -moz-box-shadow: $eventTextShadow;
+            box-shadow: $eventTextShadow;
+        }
+
+        &-talk
+        {
+            @extend  .eventLeftCont__info;
+            background: $talkGradientVertical;
+            -webkit-box-shadow: $talkShadow;
+            -moz-box-shadow: $talkShadow;
+            box-shadow: $talkShadow;
+        }
     }
 }
 

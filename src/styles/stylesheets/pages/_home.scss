@@ -37,7 +37,7 @@
     }
 
     .homeCTA {
-        margin-top: 10%;
+        margin-top: 7%;
     }
 
     &__latest {
@@ -49,12 +49,17 @@
     }
 
     &__scrollAction {
-        font-size: 45px;
+        font-size: 30px;
         font-weight: 100;
         margin-left: 15%;
         color: $stellaTextColor;
         text-shadow: $stellaTextShadowHarder;
     }
+
+        .callToActionSvg {
+        width: 50px;
+    }
+    
 }
 
 @media (max-width:1400px) {
@@ -84,7 +89,7 @@
 
         
 
-        #calltoActionSvg {
+        .calltoActionSvg {
             max-width: 35px;
         }
     }

@@ -1,16 +1,16 @@
 import React, {  Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { Col } from 'react-bootstrap';
+import {connect} from 'react-redux';
 
 
-
-class LogoMenu extends Component {
+class MenuButton extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
             isOpen: false
-        };
+            };
     }
 
     clicked = () => {
@@ -35,8 +35,12 @@ class LogoMenu extends Component {
     }
 }
 
-const SidebarMenu = (props) => {
-    var colours = [
+
+class SidebarMenu  extends Component {
+
+
+    
+    colours = [
         {
             'id': 'stella',
             'name': 'Grape',
@@ -64,46 +68,45 @@ const SidebarMenu = (props) => {
         }
     ]
 
-    var pickedColour = colours.filter(category => category.id === props.colourCategory)
+    
+    render() {
+    const pickedColour = this.colours.filter(category => category.id === this.props.colourCategory)
 
-    return <Col className='sideMenu' xs={1}>
-        <Col className='sideMenu__insideBorderContent' xs={12}>
-            <LogoMenu />
-        </Col>
-
-        <Col className={'sideMenu__outofBorderContent sideMenu__outofBorderContent-' + pickedColour[0].id} xs={12}>
-            <div className={'colourBubble-' + pickedColour[0].id} />
-            <span className='sideMenu__outofBorderContent__colourCode'>{pickedColour[0].code}</span>
-            <span className='sideMenu__outofBorderContent__colourName'>{pickedColour[0].name}</span>
-        </Col>
-    </Col>
+    return ( 
+    
+        <Col className='sideMenu' xs={1}>
+            <Col className='sideMenu__insideBorderContent' xs={12}>
+                <MenuButton />
+            </Col>
+            <Col className={'sideMenu__outofBorderContent sideMenu__outofBorderContent-' + pickedColour[0].id} xs={12}>
+                <div className={'colourBubble-' + pickedColour[0].id} />
+                <span className='sideMenu__outofBorderContent__colourCode'>{pickedColour[0].code}</span>
+                <span className='sideMenu__outofBorderContent__colourName'>{pickedColour[0].name}</span>
+            </Col>
+        </Col>) 
+    }
 }
 
 
 const MobileHeader = () => {
     return <Col className='mobileHeader' xs={12}>
         <Col xs={10} id='mobileHeader-bordered'>
-            <LogoMenu />
+            <MenuButton />
         </Col>
     </Col>
 }
 
+
 const Menu = (props) => {
 
-
-
-    var groupColour = (url) => {
-        return (/(\/workshops.*)/g).test(url) ? 'workshop' :
-            (/(\/talks.*)/g).test(url) ? 'talk' :
-                (/(\/events.*)/g).test(url) ? 'event' :
-                    (/(\/stellas-facts.*)/g).test(url) ? 'stella' :
-                        (/(\/contact.*)/g).test(url) ? 'contact' : 'stella'
-
-    }
-
-
-
-    return (props.mobile) ? <MobileHeader /> : <SidebarMenu colourCategory={groupColour(props.location.pathname)} />
+    return (props.mobile) ? <MobileHeader /> : <SidebarMenu colourCategory={(props.color)} />
 }
 
-export default withRouter(Menu);
+const mapStateToProps=(reducer) => {
+    return ({color:reducer.color});
+}
+
+
+
+
+export default withRouter(connect(mapStateToProps)(Menu));
