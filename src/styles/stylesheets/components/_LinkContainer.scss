@@ -1,54 +1,134 @@
 .LinkContainer {
+  display: inline-block;
+
 
   .LinkList {
-      padding-left: 0px;
+    padding-left: 0px;
+    list-style-type: none;
+    transition: all .5s;
+    border-left: 1px solid rgb(196, 196, 196);
+    border-right: 1px solid rgb(196, 196, 196);
+    border-bottom: 1px solid rgb(196, 196, 196);
+
+    &-callToAction{
+      @extend .LinkList;
       border-radius: 15px;
-      list-style-type: none;
-      border-left: 1px solid rgb(196, 196, 196);
-      border-right: 1px solid rgb(196, 196, 196);
-      border-bottom: 1px solid rgb(196, 196, 196);
+    &:hover {
+      -webkit-box-shadow: 0px 14px 35px -6px rgba(79, 221, 209, 0.4);
+      -moz-box-shadow: 0px 14px 35px -6px rgba(79, 221, 209, 0.4);
+      box-shadow: 0px 14px 35px -6px rgba(79, 221, 209, 0.4);
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+  }
+
+    &-download{
+      @extend .LinkList;
+      -webkit-box-shadow: 0px 14px 35px -6px rgba(114, 114, 114, 0.2);
+      -moz-box-shadow: 0px 14px 35px -6px rgba(114, 114, 114, 0.2);
+      box-shadow: 0px 14px 35px -6px rgba(114, 114, 114, 0.2);
+
+      .LinkList__ListItem
+      {
+        padding:10% 0; 
+      }
+
+  }
 
     &__Title {
       height: 50px;
       color: white;
+      font-size: 20px;
       line-height: 50px;
       text-align: center;
-      border-top-right-radius:  15px;
-      border-top-left-radius: 15px;
-      background: $calltoActionGradient;
+
+
+      &-callToAction {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        @extend .LinkList__Title;
+        background: $calltoActionGradient;
+      }
+
+      &-download {
+
+        @extend .LinkList__Title;
+        background-color: #3B434B;
+      }
     }
 
     &__Text {
-      padding-right: 50%;
+      padding-right: 40%;
+      font-size: 20px;
     }
 
-    li {
+    li  {
       text-align: center;
       border-bottom: 1px solid rgb(196, 196, 196);
+     
 
       &:last-child {
         border-bottom: none;
       }
     }
 
-    &__Link  {
+    &__Link {
       color: #808080;
     }
 
-    .callToActionSvg {
-      text-align: right;
+    .callToActionSvg,
+    .downloadSvg {
       width: 35px;
+    }
+
+    .callToActionSvg {
       transform: rotate(-90deg);
-      fill: #13687e;
 
       #Path_cycle {
         fill: rgba(0, 0, 0, 0);
-    }
-    
-    #Path_arrow {
-        opacity:1;
+      }
+
+      #Path_arrow {
+        opacity: 1;
         fill: #28B781;
       }
+    }
+  }
+}
+
+.StageContainer {
+  display: inline-block;
+
+
+  .StageList {
+    padding-left: 0px;
+    border-radius: 15px;
+    list-style-type: none;
+    border-left: 1px solid rgb(196, 196, 196);
+    border-right: 1px solid rgb(196, 196, 196);
+    border-bottom: 1px solid rgb(196, 196, 196);
+    transition: all .5s;
+    text-align: center;
+
+    &:hover {
+      -webkit-box-shadow: 0px 14px 35px -6px rgba(79, 221, 209, 0.4);
+      -moz-box-shadow: 0px 14px 35px -6px rgba(79, 221, 209, 0.4);
+      box-shadow: 0px 14px 35px -6px rgba(79, 221, 209, 0.4);
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    &__Title {
+      height: 50px;
+      color: white;
+      font-size: 15px;
+      line-height: 50px;
+      text-align: center;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      background: $workshopGradientVerticalDarker;
+    }
+
+    &__Text {
+      padding: 10% 5px;
     }
   }
 }

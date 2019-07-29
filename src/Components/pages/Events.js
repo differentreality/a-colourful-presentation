@@ -5,6 +5,8 @@ import { EmptyButton } from '../parts/Buttons';
 import git101ateith from '../../Photos/git101ateith.JPG';
 import Carousel, { Modal, ModalGateway } from 'react-images';
 import store from '../../store';
+
+
 const images = [{ src: git101ateith, caption: 'caption caption caption' }]
 
 class Events extends Component {

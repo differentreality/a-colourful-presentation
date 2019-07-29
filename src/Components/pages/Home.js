@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import anime from 'animejs/lib/anime.es.js';
 import { Container, Col, Row } from 'react-bootstrap';
 import { Button } from '../../Components/parts/Buttons';
-import CallToActionSvg from '../../svg/CallToActionSvg';
+import {CallToActionSvg} from '../../svg/CallToActionSvg';
 import history from '../../history'
 class Home extends Component {
 

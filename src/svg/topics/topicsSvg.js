@@ -1,5 +1,5 @@
 import React from 'react';
-const Git =(props)=>{ return <svg className={props.className} width="110.532" height="110.532" viewBox="0 0 110.532 110.532">
+const Git =(props)=>{ return <svg id='gitSvg' className={props.className} width="110.532" height="110.532" viewBox="0 0 110.532 110.532">
   <defs>
     <filter id="Path_117" x="0" y="0" width="110.532" height="110.532" filterUnits="userSpaceOnUse">
       <feOffset dy="3" input="SourceAlpha"/>

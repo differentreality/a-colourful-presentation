@@ -40,9 +40,19 @@ class CategoryNavigation extends Component {
             'buttonLink':null,
             'urlPointer': pointer,
         }
+      
 
 
 
+    }
+
+    updateStore =() =>
+    {
+
+        //first category after homepage scroll
+        store.dispatch(
+            {type:'change_Color',payload:{color:'workshop'}}
+        );
     }
 
     componentWillMount() {
@@ -52,6 +62,8 @@ class CategoryNavigation extends Component {
 
     componentDidMount() { 
         this.restartAnimations();
+        this.updateStore();
+       
     }
 
     componentWillUnmount()

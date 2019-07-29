@@ -5,7 +5,7 @@ import { withRouter, Link } from 'react-router-dom';
 import anime from 'animejs/lib/anime.es.js';
 import store from '../../store'
 import { Heart, Tool, Git, Version, Cog, MVC, Ruby, HtmlTag ,Gsoc,Globe,Student,OpenSource } from '../../svg/topics/topicsSvg';
-import LinkContainer from '../parts/LinkContainer'
+
 class Topics extends Component {
 
     constructor(props) {
@@ -73,20 +73,7 @@ class Topics extends Component {
         }
     ]
 
-    LinkArray = [
-        {
-            url:'sadaaa',
-            text:'test'
-        },
-        {
-            url:'sadaaa',
-            text:'test'
-        },
-        {
-            url:'sadaaa',
-            text:'test'
-        }
-    ]
+    
 
     svgAnimation = anime({
 
@@ -136,7 +123,7 @@ class Topics extends Component {
             </Row>
             )}
 
-            <LinkContainer title='Useful Links' Links={this.LinkArray}/> 
+          
 
 
         </Container>

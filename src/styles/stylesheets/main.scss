@@ -32,13 +32,15 @@
   'components/icons/socialIcons.scss',
   'components/icons/svgs.scss',
   'components/LinkContainer',
-  'components/colourBubble.scss';
+  'components/colourBubble.scss',
+  'components/codeSnippet';
 // 6. Page-specific styles
 @import
   'pages/categoryNavigation',
   'pages/home',
   'pages/events',
-  '/pages/topics';
+  '/pages/topics',
+  '/pages/DetailedEvent';
 
 // 7. Themes
 @import

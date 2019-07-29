@@ -28,15 +28,6 @@ $max-width: 1180px !default;
 
 
 
-/// Breakpoints map
-/// @prop {String} keys - Keys are identifiers mapped to a given length
-/// @prop {Map} values - Values are actual breakpoints expressed in pixels
-$breakpoints: (
-  'small': 320px,
-  'medium': 768px,
-  'large': 1024px,
-) !default;
-
 
 $borderColour:rgb(114, 114, 114);
 //buttons
@@ -75,7 +66,7 @@ $paragraphColour: #4d4d4d;
 $talkTextColor : #FF0844;
 $stellaTextColor : #9B4EA1;
 $eventTextColor : #FF9A7D;
-$workshopTextColor : #28a2b7;
+$workshopTextColor : #228799;
 $contactTextColor:#4e4376;
 $talkTextShadow : 1px 1px 20px rgba(252, 65, 40, 0.534);
 $stellaTextShadow : 1px 1px 40px rgba(199, 173, 216, 0.473);
