@@ -9,7 +9,9 @@ import { Coffee, Idea, IdeaOutline, Smile, Reading } from '../../svg/StellasFact
 import { Hand, whiteBoard, Microphone, MicrophoneOutlineSvg, Ruby } from '../../svg/Talks'
 import { confCard, Beer, Networking, University, UniversityOutline } from '../../svg/Events'
 import { Papyrus, PapyrusOutline, QuestionMark, MessageCloud, MessageFolder } from '../../svg/Contact'
-import {debounce} from 'lodash'
+import {debounce} from 'lodash';
+import store from '../../store';
+
 class CategoryNavigation extends Component {
 
     constructor(props) {
@@ -46,11 +48,9 @@ class CategoryNavigation extends Component {
     componentWillMount() {
         window.addEventListener('wheel', this.debouncedScroll,true)
         this.checkPage();
-
     }
 
-    componentDidMount() {
-       
+    componentDidMount() { 
         this.restartAnimations();
     }
 
@@ -59,8 +59,12 @@ class CategoryNavigation extends Component {
         window.removeEventListener('wheel', this.debouncedScroll,true);
     }
 
+    componentDidUpdate()
+    {
+        this.updateStore();
+    }
 
-debouncedScroll=debounce((e)=>this.scrollToChangePages(e),50);
+debouncedScroll=debounce((e)=>this.scrollToChangePages(e),80);
 
 
     scrollToChangePages = (e) => {
@@ -81,7 +85,14 @@ debouncedScroll=debounce((e)=>this.scrollToChangePages(e),50);
             this.checkPage();
             this.restartAnimations();
         }
+    }
 
+    updateStore =() =>
+    {
+
+        store.dispatch(
+            {type:'change_Color',payload:{color:this.state.group}}
+        );
     }
 
     categoryURLS = ['/workshops', '/talks', '/events', '/stellas-facts', '/contact']

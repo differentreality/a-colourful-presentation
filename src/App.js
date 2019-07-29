@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import {Router, Route, Switch } from 'react-router-dom'
+import { Provider } from 'react-redux';
+import store from './store';
+import { Router, Route, Switch } from 'react-router-dom'
 import history from './history'
 
 //styles
@@ -22,13 +24,13 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      mobile:false,
+      mobile: false,
       SocialBar: <SocialBar />,
-      colour: 'purple'
+      color: 'stella'
     };
   }
 
-  
+
 
   componentDidMount() {
 
@@ -37,48 +39,52 @@ class App extends Component {
   }
 
 
- //mobile view
+  //mobile view
   resize() {
-    window.innerWidth <= 770 ? this.setState({ SocialBar: '',mobile:true }) : this.setState({ SocialBar: <SocialBar />,mobile:false })
+    window.innerWidth <= 770 ? this.setState({ SocialBar: '', mobile: true }) : this.setState({ SocialBar: <SocialBar />, mobile: false })
   }
 
- 
 
-  
- 
-  
+
+
+
+
   render() {
-    
+
     return (
-      <Router history={history}>
-        <div className="App" >
-          <Container fluid='true'>
-            <Row>
-              <Col>
-                <Row>
-                  <Menu mobile={this.state.mobile} colour={this.state.colour} />
-                  <Col md={{ span: 9, offset: 2 }} xs={12}>
-                    {this.state.SocialBar}
-                    <Row id='Content'>
-                      <Switch>
-                        <Route exact path='/' render={() => <Home  />} />
-                        <Route exact path='/workshops' render={() => <CategoryNavigation  />} />
-                        <Route exact path='/talks' render={() => <CategoryNavigation />} />
-                        <Route exact path='/events' render={() => <CategoryNavigation />} />
-                        <Route exact path='/stellas-facts' render={() => <CategoryNavigation />} />
-                        <Route exact path='/contact' render={() => <CategoryNavigation />} />
-                        <Route exact path='/workshops/topics' render={() => <Topics group='workshop'/>} />   
-                        <Route exact path='/workshops/topics/git' render={() => <Events group='workshop'/>} />
-                        <Route exact path='/talks/topics' render={() => <Topics group='talk'/>} />
-                      </Switch>
-                    </Row>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-          </Container>
-        </div>
-      </Router>
+      <React.StrictMode>
+      <Provider store={store}>
+        <Router history={history}>
+          <div className="App" >
+            <Container fluid='true'>
+              <Row>
+                <Col>
+                  <Row>
+                    <Menu mobile={this.state.mobile} />
+                    <Col md={{ span: 9, offset: 2 }} xs={12}>
+                      {this.state.SocialBar}
+                      <Row id='Content'>
+                        <Switch>
+                          <Route exact path='/' render={() => <Home />} />
+                          <Route exact path='/workshops' render={() => <CategoryNavigation />} />
+                          <Route exact path='/talks' render={() => <CategoryNavigation />} />
+                          <Route exact path='/events' render={() => <CategoryNavigation />} />
+                          <Route exact path='/stellas-facts' render={() => <CategoryNavigation />} />
+                          <Route exact path='/contact' render={() => <CategoryNavigation />} />
+                          <Route exact path='/workshops/topics' render={() => <Topics group='workshop' />} />
+                          <Route exact path='/workshops/topics/git' render={() => <Events group='workshop' />} />
+                          <Route exact path='/talks/topics' render={() => <Topics group='talk' />} />
+                        </Switch>
+                      </Row>
+                    </Col>
+                  </Row>
+                </Col>
+              </Row>
+            </Container>
+          </div>
+        </Router>
+      </Provider>
+      </React.StrictMode>
     );
   }
 }
