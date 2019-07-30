@@ -18,7 +18,8 @@ import Home from './Components/pages/Home'
 import Topics from './Components/pages/Topics'
 import Events from './Components/pages/Events'
 import CategoryNavigation from './Components/pages/CategoryNavigation'
-import DetailedEvent from './Components/pages/DetailedEvent'
+import DetailedEvent from './Components/pages/DetailedEvent/DetailedEvent'
+import {Git101} from './Components/pages/DetailedEvent/events/git101'
 class App extends Component {
 
   constructor() {
@@ -74,7 +75,7 @@ class App extends Component {
                           <Route exact path='/workshops/topics' render={() => <Topics group='workshop' />} />
                           <Route exact path='/talks/topics' render={() => <Topics group='talk' />} />
                           <Route exact path='/workshops/topics/git' render={() => <Events group='workshop' />} />
-                          <Route exact path='/workshops/topics/git/:Event' render={() => <DetailedEvent mobile={this.state.mobile} group='workshop' />} />
+                          <Route exact path='/workshops/topics/git/:Event' render={() => <Git101 mobile={this.state.mobile} group='workshop' />} />
                         </Switch>
                       </Row>
                     </Col>

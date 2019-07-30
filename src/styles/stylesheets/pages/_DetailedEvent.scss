@@ -125,6 +125,17 @@
             stroke: none;
         }
 
+        &__codeLine
+        {display:block;
+            margin-bottom: 20px;
+        }
+
+        &__command
+        {
+            font-weight: 700;
+            color:#28b46e;
+        }
+
         svg {
             width: 40px;
             margin: 0px 2% 0px 0px;
@@ -170,7 +181,7 @@
             h3{
                 font-size:17px;
             }
-            &__command
+            &__codeLine
             {
                 font-size:15px;
             }
@@ -217,7 +228,7 @@
                 font-size:16px;
             }
 
-            &__command
+            &__codeLine
             {
                 font-size:15px;
             }
