@@ -16,10 +16,11 @@ import SocialBar from './Components/parts/Menu/SocialBar'
 //pages
 import Home from './Components/pages/Home'
 import Topics from './Components/pages/Topics'
-import Events from './Components/pages/Events'
+import GitEvents from './Components/pages/eventShowcase/GitEvents'
 import CategoryNavigation from './Components/pages/CategoryNavigation'
-import DetailedEvent from './Components/pages/DetailedEvent/DetailedEvent'
-import {Git101} from './Components/pages/DetailedEvent/events/git101'
+import DetailedEvent from './Components/pages/eventDetails/DetailedEvent'
+import {Git101} from './Components/pages/eventDetails/events/git101'
+import About from './Components/pages/About'
 class App extends Component {
 
   constructor() {
@@ -71,11 +72,13 @@ class App extends Component {
                           <Route exact path='/talks' render={() => <CategoryNavigation />} />
                           <Route exact path='/events' render={() => <CategoryNavigation />} />
                           <Route exact path='/stellas-facts' render={() => <CategoryNavigation />} />
+                          <Route exact path='/stellas-facts/about' render={() => <About mobile={this.state.mobile}/>} />
                           <Route exact path='/contact' render={() => <CategoryNavigation />} />
                           <Route exact path='/workshops/topics' render={() => <Topics group='workshop' />} />
                           <Route exact path='/talks/topics' render={() => <Topics group='talk' />} />
-                          <Route exact path='/workshops/topics/git' render={() => <Events group='workshop' />} />
+                          <Route exact path='/workshops/topics/git' render={() => <GitEvents />} />
                           <Route exact path='/workshops/topics/git/:Event' render={() => <Git101 mobile={this.state.mobile} group='workshop' />} />
+                          
                         </Switch>
                       </Row>
                     </Col>

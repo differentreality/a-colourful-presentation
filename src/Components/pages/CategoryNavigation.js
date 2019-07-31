@@ -248,7 +248,8 @@ debouncedScroll=debounce((e)=>this.scrollToChangePages(e),80);
                         'center': Reading,
                         'botLeft': IdeaOutline,
                         'botRight': Coffee,
-                        'group': 'stella'
+                        'group': 'stella',
+                        'buttonLink':'/stellas-facts/about'
                     }) : this.setState({
                         'Title': 'Contact',
                         'paragraph': <p>  lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</p>,

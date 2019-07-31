@@ -6,7 +6,6 @@ import { DualButtons, Button } from '../../parts/Buttons';
 import { LinkContainer, StageContainer } from '../../parts/LinkContainer';
 import CodeSnippets from '../../parts/CodeSnippets'
 
-
 class DetailedEvent extends Component {
 
     constructor(props) {
@@ -62,7 +61,7 @@ class DetailedEvent extends Component {
 
                     </div>
                     <Row>
-                        {this.props.data.cheatsheet.map((cheatData, id) =>{return <Col md='6' lg='4' className='cheatDetails'>
+                        {this.props.data.cheatsheet.map((cheatData, id) =>{return <Col key={id} md='6' lg='4' className='cheatDetails'>
                                 <this.props.data.svg /><h3>{cheatData.title}</h3>
                                 <span className='cheatDetails__codeLine'><span className='cheatDetails__command'>{cheatData.command}</span> | {cheatData.use}</span>
                                 </Col>})}

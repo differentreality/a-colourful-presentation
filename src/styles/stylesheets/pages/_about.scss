@@ -1,0 +1,319 @@
+.About {
+
+    overflow-x: hidden;
+
+    * {
+        font-weight: 700;
+        color: $paragraphColour;
+    }
+
+    .postRow {
+        margin: 40% 0 10% 0;
+    }
+
+    .PhotoContainer {
+        text-align: center;
+
+
+        h4 {
+            margin-top: 10px;
+        }
+
+        img{
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        &__stella {
+            &__image {
+                width: 300px;
+            }
+        }
+
+        &__miranda {
+
+            margin-left: 70%;
+
+            &__image  {
+                width: 150px;            }
+
+            h4 {
+                font-size: 20px;
+            }
+
+        }
+    }
+
+    .Introduction {
+        font-size: 40px;
+        text-align: right;
+    }
+
+    .superParagraph {
+        font-size: 40px;
+        text-align: center;
+        border-top: 1px solid $paragraphColour;
+        border-bottom: 1px solid $paragraphColour;
+    }
+
+    .keyword {
+        color: $stellaTextColor;
+    }
+
+    .primaryTechnologies {
+
+        .titleContainer {
+            margin: 5% auto;
+            transform: rotate(10deg);
+
+            h1,
+            h2 {
+                font-weight: 600;
+            }
+
+            h2 {
+                margin-left: 20%;
+            }
+        }
+
+        svg {
+            width: 270px;
+        }
+
+        #aboutRubySVG {
+            margin-left: 40%;
+        }
+
+        #aboutGitSVG {
+            margin-left: 23%;
+        }
+
+
+        #aboutRailsSVG {
+            margin-left: 11%;
+        }
+    }
+
+
+    .osemRow {
+        .osemContainer {
+            h1 {
+                font-size: 30px;
+                margin: 0 0 0 11%;
+            }
+        }
+
+        .aboutOsem {
+            margin-top: 20%;
+            font-size: 30px;
+        }
+    }
+
+    .sectionTitle {
+        text-align: center;
+        text-align: left;
+
+        .divider {
+            display: inline-block;
+            width: 20%;
+            background-color: $paragraphColour;
+            height: 2px;
+            opacity: .5;
+            margin-bottom: 14%;
+        }
+    }
+
+    .aboutBooksSvg {
+        transform: rotate(-35deg);
+        opacity: .8;
+    }
+
+    .aboutBooks {
+        font-size: 30px;
+        text-align: right;
+    }
+
+    .bookSuggestion {
+        text-align: center;
+
+        h2 {
+            font-size: 25px;
+            font-weight: 400;
+        }
+
+        &-left {
+            @extend .bookSuggestion;
+            display: block;
+            padding-bottom: 20%;
+            border-right: 1px solid $paragraphColour;
+        }
+
+        &-right {
+            @extend .bookSuggestion;
+        }
+
+        .bookList {
+            list-style-type: none;
+            padding:0px;
+            &__author,
+            &__title {
+                font-weight: 400;
+                font-family: 'EB Garamond', serif;
+                font-size: 25px;
+            }
+
+            &__title {
+                font-style: italic;
+            }
+        }
+    }
+
+
+    .cooking {
+        img {
+
+            width: 80%;
+            margin: auto 0;
+        }
+
+
+        &__info {
+            margin: auto 0;
+
+
+            h3 {
+                opacity: .7;
+                margin-bottom: 10%;
+            }
+
+            p {
+                font-size: 20px;
+            }
+        }
+    }
+
+    .contactStella {
+
+        &__paragraph {
+            padding: 3%;
+            border-right: 1px solid $stellaTextColor;
+            font-size: 35px;
+            font-weight: 400;
+        }
+    }
+
+}
+
+@media (max-width:1300px) {
+    .About {
+
+        .PhotoContainer {
+            &__stella {
+
+                &__image {
+                    width: 200px;
+                }
+            }
+
+            &__miranda {
+
+                margin-left: 40%;
+
+                img {
+                    width: 100px;
+                }
+            }
+        }
+
+        .Introduction {
+            margin-top: 20%;
+            font-size: 25px;
+        }
+
+        .superParagraph {
+            padding: 5% 0;
+            font-size: 30px;
+        }
+
+        .primaryTechnologies {
+            svg {
+                width: 200px;
+            }
+
+            #aboutRubySVG {
+                margin: -20% 0 0 30%;
+            }
+
+            #aboutGitSVG {
+                margin: 0%;
+            }
+
+
+            #aboutRailsSVG {
+                margin-left: 11%;
+            }
+        }
+
+        .osemRow {
+            .osemContainer {
+
+                h1{
+                    font-size:20px;
+                    width:70%;
+                    text-align: right;
+                }
+                img {
+                    width: 200px;
+                }
+            }
+
+            
+            .aboutOsem
+            {
+                font-size:20px;
+            }
+        }
+
+        .sectionTitle
+        {
+            h1{
+                font-size:25px;
+            }
+        }
+
+        .aboutBooksSvg
+        {
+            svg{
+            width:150px;
+            }
+        }
+
+        .aboutBooks{
+            p{
+                margin-top:30%;
+                font-size:16px;
+            }
+        }
+
+        .cooking
+        {
+            text-align:center;
+            img{
+                width:200px;
+                margin-bottom:40px;
+            }
+            p{
+                font-size:16px;
+            }
+        }
+
+        .contactStella
+        {
+
+            &__paragraph{
+            font-size:16px;
+            padding:0%;
+            }
+        }
+    }
+}
