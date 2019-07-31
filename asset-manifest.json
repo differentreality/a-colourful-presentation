@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/a-colourful-presentation/static/css/main.f5eb76fe.chunk.css",
+    "main.js": "/a-colourful-presentation/static/js/main.bf2a7e7a.chunk.js",
+    "main.js.map": "/a-colourful-presentation/static/js/main.bf2a7e7a.chunk.js.map",
+    "runtime~main.js": "/a-colourful-presentation/static/js/runtime~main.a815e0c9.js",
+    "runtime~main.js.map": "/a-colourful-presentation/static/js/runtime~main.a815e0c9.js.map",
+    "static/js/2.620e4a71.chunk.js": "/a-colourful-presentation/static/js/2.620e4a71.chunk.js",
+    "static/js/2.620e4a71.chunk.js.map": "/a-colourful-presentation/static/js/2.620e4a71.chunk.js.map",
+    "index.html": "/a-colourful-presentation/index.html",
+    "precache-manifest.3fdcb6ff6552368d5b4814c74982f3a0.js": "/a-colourful-presentation/precache-manifest.3fdcb6ff6552368d5b4814c74982f3a0.js",
+    "service-worker.js": "/a-colourful-presentation/service-worker.js",
+    "static/css/main.f5eb76fe.chunk.css.map": "/a-colourful-presentation/static/css/main.f5eb76fe.chunk.css.map",
+    "static/media/git101ateith.JPG": "/a-colourful-presentation/static/media/git101ateith.68343267.JPG",
+    "static/media/git101poster.jpg": "/a-colourful-presentation/static/media/git101poster.3e536d12.jpg",
+    "static/media/gitMpratsa.JPG": "/a-colourful-presentation/static/media/gitMpratsa.55e6988b.JPG",
+    "static/media/gitNasia.JPG": "/a-colourful-presentation/static/media/gitNasia.11915b84.JPG",
+    "static/media/gitPeople.JPG": "/a-colourful-presentation/static/media/gitPeople.6ba8380c.JPG",
+    "static/media/gitStella.JPG": "/a-colourful-presentation/static/media/gitStella.d6ee9852.JPG",
+    "static/media/osem.jpg": "/a-colourful-presentation/static/media/osem.f1a85bc6.jpg",
+    "static/media/spaghetti.png": "/a-colourful-presentation/static/media/spaghetti.a75b2b69.png",
+    "static/media/stella.jpg": "/a-colourful-presentation/static/media/stella.b28649fd.jpg"
+  }
+}
