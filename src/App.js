@@ -36,7 +36,6 @@ class App extends Component {
 
 
   componentDidMount() {
-
     window.addEventListener("resize", this.resize.bind(this));
     this.resize();
     this.setState({isMenuOpen:store.getState().isMenuOpen})
@@ -90,8 +89,9 @@ class App extends Component {
     );
   }
 }
+
+
 const mapStateToProps=(reducer) => {
   return ({color:reducer.color,isMenuOpen:reducer.isMenuOpen});
 }
-
 export default connect(mapStateToProps)(App);

@@ -2,22 +2,22 @@ import history from '../../history'
 import React, { Component } from 'react';
 import { Button } from '../parts/Buttons'
 import anime from 'animejs/lib/anime.es.js';
-import { withRouter, Link,NavLink } from 'react-router-dom';
+import { withRouter, Link, NavLink } from 'react-router-dom';
 import { Container, Col, Row } from 'react-bootstrap';
 import { Cog, CogOutline, Pen, Laptop, Tool } from '../../svg/Workshops'
 import { Coffee, Idea, IdeaOutline, Smile, Reading } from '../../svg/StellasFacts'
 import { Hand, whiteBoard, Microphone, MicrophoneOutlineSvg, Ruby } from '../../svg/Talks'
 import { ConfCard, Beer, Networking, University, UniversityOutline } from '../../svg/Events'
 import { Papyrus, PapyrusOutline, QuestionMark, MessageCloud, MessageFolder } from '../../svg/Contact'
-import {debounce} from 'lodash';
+import { debounce } from 'lodash';
 import store from '../../store';
 
 class CategoryNavigation extends Component {
 
     constructor(props) {
-        
+
         super(props);
-        var pointer = 0;
+        let pointer;
         this.debouncedScroll = this.debouncedScroll.bind(this);
         switch (history.location.pathname) {
             case '/workshops': pointer = 0; break;
@@ -29,54 +29,68 @@ class CategoryNavigation extends Component {
         }
 
         this.state = {
-            'Title': null,
-            'paragraph': null,
-            'topLeft': null,
-            'topRight': null,
-            'center': null,
-            'botLeft': null,
-            'botRight': null,
-            'group': null,
-            'buttonLink':null,
             'urlPointer': pointer,
         }
-      
-
-
-
     }
 
     componentWillMount() {
-        window.addEventListener('wheel', this.debouncedScroll,true)
+        window.addEventListener('wheel', this.debouncedScroll, true)
+        window.addEventListener('touchstart', this.startTouch, false);
+        window.addEventListener('touchmove', this.moveTouch, false);
         this.checkPage();
     }
 
-    componentDidMount() { 
+
+
+
+
+
+    componentDidMount() {
         this.restartAnimations();
         this.updateStore();
-         //first category after homepage scroll
-         store.dispatch(
-            {type:'change_Color',payload:{color:'workshop'}}
+        //first category after homepage scroll
+        store.dispatch(
+            { type: 'change_Color', payload: { color: 'workshop' } }
         );
-       
+
     }
 
-    componentWillUnmount()
-    {
-        window.removeEventListener('wheel', this.debouncedScroll,true);
+    componentWillUnmount() {
+        window.removeEventListener('wheel', this.debouncedScroll, true);
+        window.removeEventListener('touchstart', this.startTouch, true);
+        window.removeEventListener('touchmove', this.moveTouch, true);
     }
 
-    componentDidUpdate()
-    {
+    componentDidUpdate() {
         this.updateStore();
     }
 
-debouncedScroll=debounce((e)=>this.scrollToChangePages(e),80);
-
-
-    scrollToChangePages = (e) => {
-
-        if (e.deltaY > 2) {
+    initialX = null;
+    startTouch = (e) => {
+        this.initialX = e.touches[0].clientX;
+    };
+    moveTouch = (e) => {
+        if (this.initialX === null) {
+            return;
+        }
+        var currentX = e.touches[0].clientX;
+        var diffX = this.initialX - currentX;
+        // sliding horizontally
+        if (diffX > 0) {
+            // swiped left
+            this.debouncedSwipe('left');
+        } else {
+            // swiped right
+            this.debouncedSwipe('right');
+        }
+        this.initialX = null;
+        this.initialY = null;
+        e.preventDefault();
+    };
+    
+    swipeToChangePages = (swipeDirection) => {
+        console.log(swipeDirection);
+        if (swipeDirection === 'right') {
 
             this.changePointer('add');
             history.push(this.categoryURLS[this.state.urlPointer]);
@@ -84,7 +98,25 @@ debouncedScroll=debounce((e)=>this.scrollToChangePages(e),80);
             this.restartAnimations();
         }
 
-        if (e.deltaY < -2) {
+        if (swipeDirection === 'left') {
+            this.changePointer('minus');
+            history.push(this.categoryURLS[this.state.urlPointer]);
+            this.checkPage();
+            this.restartAnimations();
+        }
+    }
+
+    scrollToChangePages = (scrollingDirection) => {
+
+        if (scrollingDirection.deltaY > 2) {
+
+            this.changePointer('add');
+            history.push(this.categoryURLS[this.state.urlPointer]);
+            this.checkPage();
+            this.restartAnimations();
+        }
+
+        if (scrollingDirection.deltaY < -2) {
 
 
             this.changePointer('minus');
@@ -94,15 +126,18 @@ debouncedScroll=debounce((e)=>this.scrollToChangePages(e),80);
         }
     }
 
-    updateStore =() =>
-    {
+    debouncedScroll = debounce((e) => this.scrollToChangePages(e), 80);
+    debouncedSwipe = debounce((e, swipeDirection) => this.swipeToChangePages(e, swipeDirection), 80);
+
+    updateStore = () => {
 
         store.dispatch(
-            {type:'change_Color',payload:{color:this.state.group}}
+            { type: 'change_Color', payload: { color: this.state.group } }
         );
     }
 
     categoryURLS = ['/workshops', '/talks', '/events', '/stellas-facts', '/contact']
+
     changePointer = (type) =>
         type === 'add' ?
             this.setState(prevState =>
@@ -130,7 +165,7 @@ debouncedScroll=debounce((e)=>this.scrollToChangePages(e),80);
         });
     };
 
-    topLeft = anime({
+    svgTopLeftAnimation = anime({
         targets: '.svgFam__topLeft',
 
         complete: () =>
@@ -140,7 +175,7 @@ debouncedScroll=debounce((e)=>this.scrollToChangePages(e),80);
         easing: 'linear'
     })
 
-    topRight = anime({
+    svgTopRightAnimation = anime({
         targets: '.svgFam__topRight',
 
         rotate: {
@@ -154,7 +189,7 @@ debouncedScroll=debounce((e)=>this.scrollToChangePages(e),80);
         easing: 'linear'
     });
 
-    botRight = anime({
+    svgBotRightAnimation = anime({
         targets: '.svgFam__botRight',
 
         complete: () =>
@@ -163,7 +198,7 @@ debouncedScroll=debounce((e)=>this.scrollToChangePages(e),80);
         easing: 'linear'
     });
 
-    botLeft = anime({
+    svgBotLeftAnimation = anime({
         targets: '.svgFam__botLeft',
 
         complete: () =>
@@ -172,7 +207,7 @@ debouncedScroll=debounce((e)=>this.scrollToChangePages(e),80);
     });
 
 
-    center = anime({
+    svgCenterAnimation = anime({
 
         complete: () => anime({
             targets: '.svgFam__center',
@@ -190,13 +225,11 @@ debouncedScroll=debounce((e)=>this.scrollToChangePages(e),80);
     restartAnimations = () => {
 
 
-        this.topLeft.restart();
-        this.topRight.restart();
-        this.botLeft.restart();
-        this.botRight.restart();
-        this.center.restart();
-
-
+        this.svgTopRightAnimation.restart();
+        this.svgBotRightAnimation.restart();
+        this.svgBotLeftAnimation.restart();
+        this.svgCenterAnimation.restart();
+        this.svgTopLeftAnimation.restart();
     }
 
 
@@ -210,7 +243,7 @@ debouncedScroll=debounce((e)=>this.scrollToChangePages(e),80);
             'botLeft': CogOutline,
             'botRight': Pen,
             'group': 'workshop',
-            'buttonLink':'/workshops/topics'
+            'buttonLink': '/workshops/topics'
         }) :
             this.state.urlPointer === 1 ? this.setState({
                 'Title': 'Talks',
@@ -221,7 +254,7 @@ debouncedScroll=debounce((e)=>this.scrollToChangePages(e),80);
                 'botLeft': MicrophoneOutlineSvg,
                 'botRight': Ruby,
                 'group': 'talk',
-                'buttonLink':'/talks/topics'
+                'buttonLink': '/talks/topics'
             }) :
                 this.state.urlPointer === 2 ? this.setState({
                     'Title': 'Events',
@@ -233,7 +266,8 @@ debouncedScroll=debounce((e)=>this.scrollToChangePages(e),80);
                     'center': Networking,
                     'botLeft': UniversityOutline,
                     'botRight': ConfCard,
-                    'group': 'event'
+                    'group': 'event',
+                    'buttonLink': '/events/archives'
                 }) :
                     this.state.urlPointer === 3 ? this.setState({
                         'Title': `Stella's Facts`,
@@ -244,7 +278,7 @@ debouncedScroll=debounce((e)=>this.scrollToChangePages(e),80);
                         'botLeft': IdeaOutline,
                         'botRight': Coffee,
                         'group': 'stella',
-                        'buttonLink':'/stellas-facts/about'
+                        'buttonLink': '/stellas-facts/about'
                     }) : this.setState({
                         'Title': 'Contact',
                         'paragraph': <p>  lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</p>,
@@ -253,11 +287,12 @@ debouncedScroll=debounce((e)=>this.scrollToChangePages(e),80);
                         'center': MessageCloud,
                         'botLeft': PapyrusOutline,
                         'botRight': MessageFolder,
-                        'group': 'contact'
+                        'group': 'contact',
+                        'buttonLink': '/contact/form'
                     })
     }
 
-    updatePointer = (num) => {
+    updatePointerClick = (num) => {
         this.setState({
             'urlPointer': num
         },
@@ -266,7 +301,6 @@ debouncedScroll=debounce((e)=>this.scrollToChangePages(e),80);
                 this.checkPage();
                 this.restartAnimations();
             })
-
     }
 
 
@@ -293,15 +327,15 @@ debouncedScroll=debounce((e)=>this.scrollToChangePages(e),80);
                     </Col>
                 </Row>
 
-               
+
                 <Row >
                     <Col className='bubbleGuide' xs='12'>
-                        <h6>keep scrolling!</h6>
-                        <NavLink to="/workshops" onClick={() => this.updatePointer(0)}><span className={'colourBubble-' + (this.state.group === 'workshop' ? 'workshop' : 'empty')} /></NavLink>
-                        <NavLink to="/talks" onClick={() => this.updatePointer(1)}><span className={'colourBubble-' + (this.state.group === 'talk' ? 'talk' : 'empty')} /></NavLink>
-                        <NavLink to="/events" onClick={() => this.updatePointer(2)}><span className={'colourBubble-' + (this.state.group === 'event' ? 'event' : 'empty')} /></NavLink>
-                        <NavLink to="/stellas-facts" onClick={() => this.updatePointer(3)}><span className={'colourBubble-' + (this.state.group === 'stella' ? 'stella' : 'empty')} /></NavLink>
-                        <NavLink to="/contact" onClick={() => this.updatePointer(4)}><span className={'colourBubble-' + (this.state.group === 'contact' ? 'contact' : 'empty')} /></NavLink>
+                        <h6>🡠 Keep Swiping & Scrolling! 🡢</h6>
+                        <NavLink to="/workshops" onClick={() => this.updatePointerClick(0)}><span className={'colourBubble-' + (this.state.group === 'workshop' ? 'workshop' : 'empty')} /></NavLink>
+                        <NavLink to="/talks" onClick={() => this.updatePointerClick(1)}><span className={'colourBubble-' + (this.state.group === 'talk' ? 'talk' : 'empty')} /></NavLink>
+                        <NavLink to="/events" onClick={() => this.updatePointerClick(2)}><span className={'colourBubble-' + (this.state.group === 'event' ? 'event' : 'empty')} /></NavLink>
+                        <NavLink to="/stellas-facts" onClick={() => this.updatePointerClick(3)}><span className={'colourBubble-' + (this.state.group === 'stella' ? 'stella' : 'empty')} /></NavLink>
+                        <NavLink to="/contact" onClick={() => this.updatePointerClick(4)}><span className={'colourBubble-' + (this.state.group === 'contact' ? 'contact' : 'empty')} /></NavLink>
                     </Col>
                 </Row>
             </Container>

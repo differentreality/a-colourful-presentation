@@ -10,7 +10,6 @@ class Home extends Component {
         this.scrollToChangePage=this.scrollToChangePage.bind(this)
         window.addEventListener("wheel",this.scrollToChangePage);
         this.entranceAnimation();
-        
     }
 
     componentWillUnmount()
@@ -77,7 +76,7 @@ class Home extends Component {
                     </Col>
 
                     <Col className='scrollGuide' md='6'>
-                        <span className='home__scrollAction'>Scroll and Roll!</span> <CallToActionSvg />
+                        <span className='home__scrollAction'>Try Swiping or Scrolling!</span> <CallToActionSvg />
                     </Col>
                 </Row>
             </Container>
