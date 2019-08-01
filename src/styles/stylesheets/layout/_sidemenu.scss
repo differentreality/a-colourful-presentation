@@ -1,48 +1,56 @@
-.sideMenu,.mobileHeader
-{
-    .menu__logo
-    {
+.sideMenu,
+.mobileHeader {
+    .menu__logo {
         display: inline;
     }
 }
 
 .v-link {
-    color:$paragraphColour;
-    cursor:pointer;
+    color: $paragraphColour;
+    cursor: pointer;
     display: inline-block;
 
 
-    &__v-lines
-    {
+    &__v-lines {
         display: inline-block;
     }
 
-    &__v-line
-    {
+    &__v-line {
         width: 20px;
         height: 2px;
         transition: 0.4s;
-        background-color:$borderColour;
+        background-color: $borderColour;
         margin: 6px 0px 3px 10px;
 
-        &-1
-        {
+        &-1 {
             @extend .v-link__v-line;
-            &--closed
-            {
+
+            &--closed {
                 -webkit-transform: rotate(-45deg) translate(-4px, 5px);
                 transform: rotate(-45deg) translate(-4px, 5px);
             }
         }
 
-        &-2
-        {
+        &-2 {
             @extend .v-link__v-line;
-            &--closed
-            {
+
+            &--closed {
                 -webkit-transform: rotate(45deg) translate(-1px, -2px);
                 transform: rotate(45deg) translate(-1px, -2px);
             }
+        }
+    }
+
+    &-white {
+        @extend .v-link;
+
+        .v-link__text {
+            color: white;
+        }
+
+        .v-link__v-line-1,
+        .v-link__v-line-2 {
+            background-color: white;
         }
     }
 }
@@ -56,7 +64,7 @@
         padding-bottom: 200%;
         border-right: 1px solid $borderColour;
 
-        
+
 
         &:hover {
             transition: all .2s;
@@ -68,7 +76,7 @@
 
     .v-link {
         font-size: 22px;
-        min-width:100px;
+        min-width: 100px;
         margin-top: 250%;
         transform: rotate(270deg);
         -ms-transform: rotate(270deg);
@@ -76,98 +84,143 @@
     }
 
     &__outofBorderContent {
-        font-size:13px;
-        margin-top: 600%;
-        color:$stellaTextColor;
 
-        &-talk
-        {
-            color:$talkTextColor;
+        transition:all .5s;
+        font-size: 13px;
+        margin-top: 750px;
+        color: $stellaTextColor;
+
+        &-talk {
+            color: $talkTextColor;
         }
 
-        &-stella
-        {
-            color:$stellaTextColor;
+        &-stella {
+            color: $stellaTextColor;
         }
 
-        &-event
-        {
-            color:$eventTextColor;
+        &-event {
+            color: $eventTextColor;
         }
 
-        &-workshop
-        {
-            color:$workshopTextColor;
+        &-workshop {
+            color: $workshopTextColor;
         }
 
-        &-contact
-        {
-            color:$contactTextColor;
+        &-contact {
+            color: $contactTextColor;
         }
 
-        
-       .colourBubble,&__colourCode,&__colourName
-        {
+        &-white {
+            color: white;
+        }
+
+
+        .colourBubble,
+        &__colourCode,
+        &__colourName {
             position: absolute;
         }
 
-        .colourBubble
-        {
-            margin-left:0px;
+        .colourBubble {
+            margin-left: 0px;
         }
 
-        &__colourCode
-        {
-            margin-left:30px;
+        &__colourCode {
+            margin-left: 30px;
             font-weight: 900;
-            position:absolute;
+            position: absolute;
         }
 
-        &__colourName
+        &__colourName {
+            font-weight: 100;
+            margin-top: 20px;
+            margin-left: 50px;
+        }
+    }
+
+    &-white {
+        @extend .sideMenu;
+
+        .sideMenu__insideBorderContent {
+            border-right: 1px solid white;
+        }
+
+        .menu__logo
         {
-            font-weight:100;
-            margin-top:20px;
-            margin-left:50px;
+            color:white;
         }
     }
 }
 
+.mobileHeader {
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 9;
+    padding: 0%;
+    -webkit-box-shadow: 0px 33px 23px -20px rgba(0, 0, 0, .1);
+    -moz-box-shadow: 0px 33px 23px -20px rgba(0, 0, 0, .1);
+    box-shadow: 0px 33px 23px -20px rgba(0, 0, 0, .1);
 
+    &__bordered {
+        padding: 2%;
+        margin-left: -2%;
+        border-bottom: 1px solid rgba(88, 88, 88, .6);
+
+        a {
+            padding: 0px 0px 0px 35px;
+        }
+
+        @media (max-width:400px) {
+            padding: 5%;
+        }
+    }
+
+    &-white {
+        @extend .mobileHeader;
+        background-color: rgba(83, 20, 92, 0.1);
+        -webkit-box-shadow: 0px 44px 55px -19px rgba(0, 0, 0, 1);
+        -moz-box-shadow: 0px 44px 55px -19px rgba(0, 0, 0, 1);
+        box-shadow: 0px 44px 55px -23px rgba(0, 0, 0, 1);
+
+        .mobileHeader__bordered {
+            background-color: transparent;
+            border-bottom: 1px solid white;
+
+
+        }
+    }
+}
 
 @media (max-width:1500px) {
     .sideMenu {
         font-size: 13px;
-        .v-link 
-        {
-                font-size:15px;
-                
-                &__v-lines
-                {
-                    margin-bottom:-2px;
-                }
 
-                &__v-line
-                {
-                width:13px;
+        .v-link {
+            font-size: 15px;
+
+            &__v-lines {
+                margin-bottom: -2px;
+            }
+
+            &__v-line {
+                width: 13px;
                 margin: 6px 0px 3px 10px;
-                }
+            }
         }
-        &__outofBorderContent 
-        {
+
+        &__outofBorderContent {
             margin-left: -20px;
             margin-top: 850%;
 
-            &__colourName{
-            margin-left:20px;
+            &__colourName {
+                margin-left: 20px;
             }
         }
     }
 }
 
-.mobileHeader
-{
-    .v-link
-    {
+.mobileHeader {
+    .v-link {
         float: right;
         font-size: 15px;
     }
@@ -178,20 +231,17 @@
 @media (max-width:1200px) {
 
 
-    .sideMenu
-    {
-            
-        .v-link
-        {
+    .sideMenu {
 
-            margin-left:-60%;
+        .v-link {
+
+            margin-left: -60%;
         }
 
         &__outofBorderContent {
-                font-size:11px;
-                margin-top: 1050%;
+            font-size: 11px;
+            margin-top: 1050%;
         }
     }
 
 }
-

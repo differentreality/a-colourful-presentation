@@ -1,7 +1,8 @@
-import React, {  Component } from 'react';
+import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { Col } from 'react-bootstrap';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
+import store from '../../../store';
 
 
 class MenuButton extends Component {
@@ -9,25 +10,31 @@ class MenuButton extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isOpen: false
-            };
+            isOpen:this.props.isMenuOpen
+        };
     }
-
+    updateStore = () => {
+        store.dispatch(
+            { type: 'trigger_Menu', payload: { isMenuOpen: this.state.isOpen}}
+        )
+    }
     clicked = () => {
-        this.setState(prevState => ({
-            isOpen: !prevState.isOpen
-        }));
+        this.setState(prevState => 
+            ({
+                isOpen: !prevState.isOpen
+            }),
+            this.updateStore)
     }
 
     render() {
         return (
             <div>
-                <span className='menu__logo'>LOGO</span>
-                <span className='v-link' onClick={this.clicked}>
-                    {this.state.isOpen ? <span className='fade-in v-link__text'>CLOSE</span> : <span className='puff-in-center v-link__text'>MENU</span>}
+                <span className='menu__logo'>HOME</span>
+                <span className={'v-link'+(this.props.isMenuOpen?'-white':'')} onClick={this.clicked}>
+                    {this.props.isMenuOpen ? <span className='fade-in v-link__text'>CLOSE</span> : <span className='puff-in-center v-link__text'>MENU</span>}
                     <div className='v-link__v-lines'>
-                        <div className={this.state.isOpen ? 'v-link__v-line-1 v-link__v-line-1--closed' : 'v-link__v-line-1'} />
-                        <div className={this.state.isOpen ? 'v-link__v-line-2 v-link__v-line-2--closed' : 'v-link__v-line-2'} />
+                        <div className={this.props.isMenuOpen ? 'v-link__v-line-1 v-link__v-line-1--closed' : 'v-link__v-line-1'} />
+                        <div className={this.props.isMenuOpen ? 'v-link__v-line-2 v-link__v-line-2--closed' : 'v-link__v-line-2'} />
                     </div>
                 </span>
             </div>
@@ -36,10 +43,10 @@ class MenuButton extends Component {
 }
 
 
-class SidebarMenu  extends Component {
+class SidebarMenu extends Component {
 
 
-    
+
     colours = [
         {
             'id': 'stella',
@@ -68,30 +75,30 @@ class SidebarMenu  extends Component {
         }
     ]
 
-    
-    render() {
-    const pickedColour = this.colours.filter(category => category.id === this.props.colourCategory)
 
-    return ( 
-    
-        <Col className='sideMenu' xs={1}>
-            <Col className='sideMenu__insideBorderContent' xs={12}>
-                <MenuButton />
-            </Col>
-            <Col className={'sideMenu__outofBorderContent sideMenu__outofBorderContent-' + pickedColour[0].id} xs={12}>
-                <div className={'colourBubble-' + pickedColour[0].id} />
-                <span className='sideMenu__outofBorderContent__colourCode'>{pickedColour[0].code}</span>
-                <span className='sideMenu__outofBorderContent__colourName'>{pickedColour[0].name}</span>
-            </Col>
-        </Col>) 
+    render() {
+        const pickedColour = this.colours.filter(category => category.id === this.props.colourCategory)
+
+        return (
+
+            <Col className={'sideMenu'+(this.props.isMenuOpen?'-white':'')} xs={1}>
+                <Col className='sideMenu__insideBorderContent' xs={12}>
+                    <MenuButton isMenuOpen={this.props.isMenuOpen}/>
+                </Col>
+                <Col className={'sideMenu__outofBorderContent sideMenu__outofBorderContent-' + (this.props.isMenuOpen?'white':pickedColour[0].id)} xs={12}>
+                    <div className={'colourBubble-' + pickedColour[0].id} />
+                    <span className='sideMenu__outofBorderContent__colourCode'>{pickedColour[0].code}</span>
+                    <span className='sideMenu__outofBorderContent__colourName'>{pickedColour[0].name}</span>
+                </Col>
+            </Col>)
     }
 }
 
 
-const MobileHeader = () => {
-    return <Col className='mobileHeader' xs={12}>
-        <Col xs={10} id='mobileHeader-bordered'>
-            <MenuButton />
+const MobileHeader = (props) => {
+    return <Col className={'mobileHeader'+(props.isMenuOpen?'-white':'')} xs={12}>
+        <Col xs={10} className='mobileHeader__bordered'>
+            <MenuButton isMenuOpen={props.isMenuOpen}/>
         </Col>
     </Col>
 }
@@ -99,11 +106,11 @@ const MobileHeader = () => {
 
 const Menu = (props) => {
 
-    return (props.mobile) ? <MobileHeader /> : <SidebarMenu colourCategory={(props.color)} />
+    return (props.mobile) ? <MobileHeader isMenuOpen={props.isMenuOpen}/> : <SidebarMenu isMenuOpen={props.isMenuOpen} colourCategory={(props.color)} />
 }
 
-const mapStateToProps=(reducer) => {
-    return ({color:reducer.color});
+const mapStateToProps = (reducer) => {
+    return ({ color: reducer.color,isMenuOpen:reducer.isMenuOpen });
 }
 
 

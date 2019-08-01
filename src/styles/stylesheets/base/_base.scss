@@ -3,7 +3,25 @@ p
     color:$paragraphColour;
 }
 
-*
+
+
+
+.App
 {
-    scroll-behavior: smooth;
+    background:linear-gradient(#ffffff, #ffffff);
+    transition: all .5s;
+
+   &-openMenu
+   {
+        background:linear-gradient(#572D5A, #190819);
+   }
+}
+
+@media (max-width:770px)
+{
+    #Content
+    {
+        margin-top:20%;
+        
+    }
 }

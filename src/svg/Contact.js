@@ -82,7 +82,7 @@ const Papyrus = () => {return <svg  id='papyrusSvg' className='fade-in svgFam__t
 
 
 
-const PapyrusOutline = () => {return<svg  className='fade-in svgFam__botLeft' xlink="http://www.w3.org/1999/xlink" width="79.825" height="97.266" viewBox="0 0 79.825 97.266">
+const PapyrusOutline = () => {return<svg  className='fade-in svgFam__botLeft' id='PapyrusOutlineSvg' xlink="http://www.w3.org/1999/xlink" width="79.825" height="97.266" viewBox="0 0 79.825 97.266">
 <defs>
   <filter id="Path_212" x="0" y="6.071" width="66.582" height="91.195" filterUnits="userSpaceOnUse">
     <feOffset dy="3" input="SourceAlpha"/>

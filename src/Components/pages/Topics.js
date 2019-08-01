@@ -91,7 +91,6 @@ class Topics extends Component {
 
 
     render() {
-
         return <Container fluid='true' className='fade-in'>
             <h3 className={'topicsCont__Category-' + this.props.group}>{this.props.group+'s'}</h3>
 

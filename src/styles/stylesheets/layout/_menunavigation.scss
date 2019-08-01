@@ -1,0 +1,194 @@
+#MenuNavigation {
+    height: 100%;
+    min-height: 100vh;
+
+    ul {
+        margin-top: 10%;
+        list-style: none;
+    }
+
+
+
+    .Navigation {
+
+        &__Title {
+            color: white;
+            display: inline;
+            font-size: 22px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        &__Link {
+            font-size: 19px;
+            color: rgb(219, 219, 219);
+        }
+
+        svg {
+            width: 45px;
+            height: 45px;
+        }
+
+
+        #PapyrusOutlineSvg {
+
+            path {
+                fill: white;
+                stroke: black
+            }
+
+
+        }
+
+        #MicrophoneOutlineSvg {
+            path {
+                fill: white;
+                stroke: none;
+            }
+        }
+
+        #confCard {
+            path {
+                fill: white;
+                stroke: rgba(0, 0, 0, 2);
+            }
+
+
+
+        }
+
+
+
+        #codeSvg {
+            path {
+                fill: white;
+            }
+
+            margin-top:-1%;
+        }
+    }
+
+
+    .scheduledQuote {
+        margin-top: 15%;
+        padding-left: 10%;
+        border-left: 2px solid white;
+
+        &__title,
+        &__author,
+        &__quote {
+            font-family: 'EB Garamond', serif;
+            color: rgba(235, 235, 235, .8);
+        }
+
+        &__author {
+            margin-left: 60%;
+        }
+    }
+
+    .newsLetter {
+        margin-top: 15%;
+        padding-bottom: 10%;
+
+
+        &__info {
+            font-size: 18px;
+            color: #D3B333;
+            display: inline-block;
+        }
+
+        .newsLetterForm {
+            font-size: 20px;
+            text-align: center;
+            display: inline-block;
+
+            &__input {
+                border: none;
+                color: #D3B333;
+                text-align: center;
+                background-color: transparent;
+                border-bottom: 1px solid white;
+            }
+
+            &__submit {
+                color: white;
+                margin-top: 6%;
+                text-align: center;
+                transition: all .5s;
+                border: 1px solid transparent;
+                background-color: transparent;
+                border-left: 2px solid rgb(184, 183, 183);
+
+                &:hover {
+                    color: #572D5A;
+                    border-radius: 12px;
+                    background-color: white;
+                    border: 2px solid rgb(184, 183, 183);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:700px) {
+    #MenuNavigation {
+        .Navigation {
+            margin-top:10%;
+            text-align: center;
+            ul{
+                margin:5% 0 10% -10%;
+                
+            }
+            &__Title {
+                font-size: 17px;
+            }
+            &__Link {
+                font-size: 19px;
+                color: rgb(219, 219, 219);
+            }
+
+            svg {
+                width: 30px;
+                height: 30px;
+            }
+
+        }
+
+        .scheduledQuote
+        {
+            border:none;
+            &__title,&__author
+            {
+                font-size:20px;
+            }
+
+            &__quote
+            {
+                font-size:21px;
+            }
+        }
+
+        .newsLetter
+        {
+            text-align: center;
+            padding-bottom:20%;
+            &__info{
+                font-size:16px;
+            }
+
+            .newsLetterForm{
+            text-align: center;
+            &__input{
+
+                font-size:17px;
+                margin-top:10%;
+            }
+        
+        &__submit{
+            margin-top:10%;
+        }}
+        
+    }
+
+    }
+}

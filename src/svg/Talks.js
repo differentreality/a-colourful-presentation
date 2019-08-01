@@ -20,7 +20,7 @@ const Microphone = () => {
 }
 
 const MicrophoneOutlineSvg = () => {
-  return <svg className='fade-in svgFam__botLeft' width="102.471" height="113.704" viewBox="0 0 102.471 113.704">
+  return <svg className='fade-in svgFam__botLeft' id='MicrophoneOutlineSvg' width="102.471" height="113.704" viewBox="0 0 102.471 113.704">
     <defs>
       <filter id="Path_a" x="0" y="0" width="56.445" height="56.476" filterUnits="userSpaceOnUse">
         <feOffset dy="3" input="SourceAlpha" />

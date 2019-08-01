@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 import { Router, Route, Switch } from 'react-router-dom'
 import history from './history'
-
+import {connect} from 'react-redux'
 //styles
 import './styles/stylesheets/main.scss';
 import './styles/App.css';
@@ -21,6 +21,7 @@ import CategoryNavigation from './Components/pages/CategoryNavigation'
 import DetailedEvent from './Components/pages/eventDetails/DetailedEvent'
 import {Git101} from './Components/pages/eventDetails/events/git101'
 import About from './Components/pages/About'
+import MenuContainer from './Components/pages/MenuContainer'
 class App extends Component {
 
   constructor() {
@@ -38,8 +39,8 @@ class App extends Component {
 
     window.addEventListener("resize", this.resize.bind(this));
     this.resize();
+    this.setState({isMenuOpen:store.getState().isMenuOpen})
   }
-
 
   //mobile view
   resize() {
@@ -47,17 +48,12 @@ class App extends Component {
   }
 
 
-
-
-
-
   render() {
-
     return (
       <React.StrictMode>
       <Provider store={store}>
-        <Router history={history}>
-          <div className="App" >
+        <Router history={history} basename={process.env.PUBLIC_URL}>
+          <div className={"App"+(this.props.isMenuOpen?'-openMenu':'')} >
             <Container fluid='true'>
               <Row>
                 <Col>
@@ -66,6 +62,7 @@ class App extends Component {
                     <Col md={{ span: 9, offset: 2 }} xs={12}>
                       {this.state.SocialBar}
                       <Row id='Content'>
+                      {this.props.isMenuOpen?<MenuContainer/>:
                         <Switch>
                           <Route exact path='/' render={() => <Home />} />
                           <Route exact path='/workshops' render={() => <CategoryNavigation />} />
@@ -79,7 +76,7 @@ class App extends Component {
                           <Route exact path='/workshops/topics/git' render={() => <GitEvents />} />
                           <Route exact path='/workshops/topics/git/:Event' render={() => <Git101 mobile={this.state.mobile} group='workshop' />} />
                           
-                        </Switch>
+                        </Switch>}
                       </Row>
                     </Col>
                   </Row>
@@ -93,5 +90,8 @@ class App extends Component {
     );
   }
 }
+const mapStateToProps=(reducer) => {
+  return ({color:reducer.color,isMenuOpen:reducer.isMenuOpen});
+}
 
-export default App;
+export default connect(mapStateToProps)(App);

@@ -7,7 +7,7 @@ import { Container, Col, Row } from 'react-bootstrap';
 import { Cog, CogOutline, Pen, Laptop, Tool } from '../../svg/Workshops'
 import { Coffee, Idea, IdeaOutline, Smile, Reading } from '../../svg/StellasFacts'
 import { Hand, whiteBoard, Microphone, MicrophoneOutlineSvg, Ruby } from '../../svg/Talks'
-import { confCard, Beer, Networking, University, UniversityOutline } from '../../svg/Events'
+import { ConfCard, Beer, Networking, University, UniversityOutline } from '../../svg/Events'
 import { Papyrus, PapyrusOutline, QuestionMark, MessageCloud, MessageFolder } from '../../svg/Contact'
 import {debounce} from 'lodash';
 import store from '../../store';
@@ -46,15 +46,6 @@ class CategoryNavigation extends Component {
 
     }
 
-    updateStore =() =>
-    {
-
-        //first category after homepage scroll
-        store.dispatch(
-            {type:'change_Color',payload:{color:'workshop'}}
-        );
-    }
-
     componentWillMount() {
         window.addEventListener('wheel', this.debouncedScroll,true)
         this.checkPage();
@@ -63,6 +54,10 @@ class CategoryNavigation extends Component {
     componentDidMount() { 
         this.restartAnimations();
         this.updateStore();
+         //first category after homepage scroll
+         store.dispatch(
+            {type:'change_Color',payload:{color:'workshop'}}
+        );
        
     }
 
@@ -237,7 +232,7 @@ debouncedScroll=debounce((e)=>this.scrollToChangePages(e),80);
                     'topRight': Beer,
                     'center': Networking,
                     'botLeft': UniversityOutline,
-                    'botRight': confCard,
+                    'botRight': ConfCard,
                     'group': 'event'
                 }) :
                     this.state.urlPointer === 3 ? this.setState({
