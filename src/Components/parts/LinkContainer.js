@@ -11,12 +11,12 @@ class LinkContainer extends React.Component {
             <ul className={'LinkList-' + this.props.group}>
                 <li className={'LinkList__Title-' + this.props.group}>{this.props.title}</li>
                 {this.props.Links.map((link, id) =>
-                    <li className='LinkList__ListItem'>
-                        <a className='LinkList__Link' key={id} href={link.url}>
+                    <li key={id} className='LinkList__ListItem'>
+                        <a className='LinkList__Link'  rel="noopener noreferrer" target="_blank" href={link.url}>
                             <span className='LinkList__Text'>{link.text}</span>
                             {this.props.group === 'download' ? <DownloadSvg /> : <CallToActionSvg />}
                         </a>
-                        </li>
+                    </li>
                 )}
             </ul>
         </Col>:''

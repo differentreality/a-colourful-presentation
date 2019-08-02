@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
 import { withRouter } from 'react-router-dom';
 import { EmptyButton } from '../../parts/Buttons';
-import git101ateith from '../../../Photos/git101ateith.JPG';
 import Carousel, { Modal, ModalGateway } from 'react-images';
 import store from '../../../store';
 import { Link } from 'react-router-dom';
@@ -10,8 +9,13 @@ import { Link } from 'react-router-dom';
 
 class Events extends Component {
     state = { modalIsOpen: false, selectedIndex: 0 }
-    toggleModal = (index) => {
-        this.setState(state => ({ modalIsOpen: !state.modalIsOpen, selectedIndex: index }));
+
+
+
+
+    toggleModal = (index)=>
+    {
+        this.setState(state=>({modalIsOpen:!state.modalIsOpen,selectedIndex:index}));
     }
 
     componentDidMount() {
@@ -53,10 +57,10 @@ class Events extends Component {
 
 
     render() {
-        const { modalIsOpen } = this.state;
+        const { modalIsOpen, selectedIndex } = this.state;
         return (
             <Container className='fade-in' fluid='true'>
-                {this.props.data.map((event, id) => <Row key={id}>
+                {this.props.data.map((event, id) => <Row className='eventCont' key={id}>
                     <Col lg='8' className='eventLeftCont'>
                         <h1 className='eventLeftCont__Title'>{event.Title}</h1>
                         <div onClick={() => this.toggleModal(id)} style={{
@@ -67,7 +71,7 @@ class Events extends Component {
                             <Row>
                                 <Col xs={this.props.group === 'workshop' ? '4' : '6'}>
                                     <h3>Date</h3><br />
-                                    <h6>{event.date}</h6>
+                                    <h6>{event.date} id: {id}</h6>
 
                                 </Col>
                                 {this.props.group === 'workshop' ? <Col className='eventLeftCont__center' xs='4' >
@@ -92,7 +96,7 @@ class Events extends Component {
                 <ModalGateway>
                     {modalIsOpen ? (
                         <Modal onClose={this.toggleModal}  >
-                            <Carousel onClick={this.toggleModal} views={this.props.images} />
+                            <Carousel onClick={this.toggleModal} currentIndex={selectedIndex} views={this.props.images} />
                         </Modal>
                     ) : null}
                 </ModalGateway>

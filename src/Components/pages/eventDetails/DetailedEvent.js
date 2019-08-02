@@ -25,21 +25,21 @@ class DetailedEvent extends Component {
         );
     }
 
-    render(props) {
+    render() {
 
         const { modalIsOpen, selectedIndex } = this.state;
-        return <Container fluid='true'>
+        return <Container className='fade-in' fluid='true'>
             <Row>
                 <Col xs='12' className='EventInfo' md='8'>
                     <h1 className='EventInfo__Title'>{this.props.data.title}</h1>
                     <h5 className='EventInfo__Date'>{this.props.data.date}</h5>
                     <p className='EventInfo__information'>{this.props.data.details} </p>
-                    <DualButtons group={this.props.data.group} firstButtonText='Get the Slides' secondButtonText='Facebook Event' />
+                    <DualButtons group={this.props.data.group} firstLink={this.props.data.slides} secondLink={this.props.data.socialEvent} firstButtonText='Get the Slides' secondButtonText='Facebook Event' />
                 </Col>
 
 
                 <Col md='4' className='EventPoster'>
-                    <img src={this.props.data.poster} onClick={() => this.toggleModal(0)} className='EventPoster__image' />
+                    <img src={this.props.data.poster} alt={this.props.data.title +' poster'} onClick={() => this.toggleModal(0)} className='EventPoster__image' />
                     <h5 className='EventPoster__text'>the poster</h5>
                 </Col>
             </Row>
@@ -92,16 +92,16 @@ class DetailedEvent extends Component {
                     <h1>Moments</h1>
                 </Col>
                 <Col md='6'>
-                    <img src={this.props.data.images[1].src} onClick={() => this.toggleModal(1)} className='PhotosRow__image' />
+                    <img src={this.props.data.images[1].src} alt={this.props.data.images[1].caption} onClick={() => this.toggleModal(1)} className='PhotosRow__image' />
                 </Col>
                 <Col md='6'>
-                    <img src={this.props.data.images[2].src} onClick={() => this.toggleModal(2)} className='PhotosRow__image' />
+                    <img src={this.props.data.images[2].src} onClick={() => this.toggleModal(2)} alt={this.props.data.images[2].caption} className='PhotosRow__image' />
                 </Col>
                 <Col md='6'>
-                    <img src={this.props.data.images[3].src} onClick={() => this.toggleModal(3)} className='PhotosRow__image' />
+                    <img src={this.props.data.images[3].src} onClick={() => this.toggleModal(3)} alt={this.props.data.images[3].caption} className='PhotosRow__image' />
                 </Col>
                 <Col md='6'>
-                    <img src={this.props.data.images[4].src} onClick={() => this.toggleModal(4)} className='PhotosRow__image' />
+                    <img src={this.props.data.images[4].src} onClick={() => this.toggleModal(4)} alt={this.props.data.images[4].caption} className='PhotosRow__image' />
                 </Col>
             </Row>
 

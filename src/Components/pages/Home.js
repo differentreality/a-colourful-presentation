@@ -4,7 +4,6 @@ import { Container, Col, Row } from 'react-bootstrap';
 import { Button } from '../../Components/parts/Buttons';
 import { CallToActionSvg } from '../../svg/CallToActionSvg';
 import history from '../../history'
-import { directive } from '@babel/types';
 class Home extends Component {
 
     componentDidMount() {

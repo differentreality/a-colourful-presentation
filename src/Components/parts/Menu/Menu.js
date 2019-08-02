@@ -4,6 +4,7 @@ import { Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import store from '../../../store';
 import anime from 'animejs/lib/anime.es.js';
+import {Link } from 'react-router-dom';
 
 
 class MenuButton extends Component {
@@ -17,19 +18,7 @@ class MenuButton extends Component {
 
     componentDidMount()
     {
-        anime.timeline({
-            targets:'.menuButtons',
-            opacity:[0,1],
-            delay:2500,
-            easing:'linear',
-            duration:1000
-        })
-        .add({
-            targets:'.sideMenu__outofBorderContent',
-            opacity:[0,1],
-            easing:'linear',
-            duration:1000
-        })
+        
     }
     updateStore = () => {
         store.dispatch(
@@ -47,7 +36,7 @@ class MenuButton extends Component {
     render() {
         return (
             <div className='menuButtons'>
-                <span className='menu__logo'>HOME</span>
+                <Link to='/'><span className='menu__logo'>HOME</span></Link>
                 <span className={'v-link'+(this.props.isMenuOpen?'-white':'')} onClick={this.clicked}>
                     {this.props.isMenuOpen ? <span className='fade-in v-link__text'>CLOSE</span> : <span className='puff-in-center v-link__text'>MENU</span>}
                     <div className='v-link__v-lines'>
@@ -63,7 +52,10 @@ class MenuButton extends Component {
 
 class SidebarMenu extends Component {
 
-
+componentDidMount()
+{
+    this.loadAnimations();
+}
 
     colours = [
         {
@@ -94,9 +86,25 @@ class SidebarMenu extends Component {
     ]
 
 
+    loadAnimations=()=>
+    {
+        anime.timeline({
+            targets:'.menuButtons',
+            opacity:[0,1],
+            delay:2500,
+            easing:'linear',
+            duration:1000
+        })
+        .add({
+            targets:'.sideMenu__outofBorderContent',
+            opacity:[0,1],
+            easing:'linear',
+            duration:1000
+        })
+    }
     render() {
         const pickedColour = this.colours.filter(category => category.id === this.props.colourCategory)
-
+        
         return (
 
             <Col className={'slide-in-top sideMenu'+(this.props.isMenuOpen?'-white':'')} xs={1}>
@@ -113,12 +121,23 @@ class SidebarMenu extends Component {
 }
 
 
-const MobileHeader = (props) => {
-    return <Col className={'slide-in-left mobileHeader'+(props.isMenuOpen?'-white':'')} xs={12}>
+class MobileHeader extends React.PureComponent {
+        componentDidMount()
+        {
+            anime({
+                targets:'.menuButtons',
+                opacity:[0,1],
+                delay:2500,
+                easing:'linear',
+                duration:1000
+            });
+        }
+        render(){
+    return <Col className={'slide-in-left mobileHeader'+(this.props.isMenuOpen?'-white':'')} xs={12}>
         <Col xs={10} className='mobileHeader__bordered'>
-            <MenuButton isMenuOpen={props.isMenuOpen}/>
+            <MenuButton isMenuOpen={this.props.isMenuOpen}/>
         </Col>
-    </Col>
+    </Col>}
 }
 
 

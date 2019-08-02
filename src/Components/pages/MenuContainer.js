@@ -6,6 +6,7 @@ import { MenuConfCard } from '../../svg/Events'
 import { PapyrusOutline } from '../../svg/Contact'
 import {  Link } from 'react-router-dom';
 import store from '../../store'
+import SocialBar from '../parts/Menu/SocialBar'
 
 const workshopLinks=[
     {
@@ -13,7 +14,7 @@ const workshopLinks=[
        url:'/workshops/topics/git' 
     },
     {
-        title:'ruby',
+        title:'Ruby',
         url:'/workshops/topics/ruby' 
      }
 ]
@@ -44,32 +45,40 @@ class MenuContainer extends Component {
         );
     }
     render() {
-        return <Container id='MenuNavigation'>
+        return <Container className='fade-in' id='MenuNavigation'>
             <Row>
                 <Col className='Navigation' md='6' lg='3'>
                     <Code />
-                    <h1 className='Navigation__Title'>Workshops</h1>
+                    <Link onClick={this.updateStore} to='/workshops/topics'>
+                        <h1 className='Navigation__Title'>Workshops</h1>
+                    </Link>
                     <ul>
                         {workshopLinks.map((link, id) => <li><Link onClick={this.updateStore} className='Navigation__Link' key={id} to={link.url}>{link.title}</Link></li>)}
                     </ul>
                 </Col>
                 <Col className='Navigation' md='6' lg='3'>
                     <MicrophoneOutlineSvg />
-                    <h1 className='Navigation__Title'>Talks</h1>
+                    <Link onClick={this.updateStore} to='/talks/topics'>
+                        <h1 className='Navigation__Title'>Talks</h1>
+                    </Link>
                     <ul>
                         {talkLinks.map((link, id) =><li> <Link className='Navigation__Link' key={id} to={link.url}>{link.title}</Link></li>)}
                     </ul>
                 </Col>
                 <Col className='Navigation' md='6' lg='3'>
                     <MenuConfCard />
-                    <h1 className='Navigation__Title'>Events</h1>
+                    <Link onClick={this.updateStore} to='/events/archive'>
+                        <h1 className='Navigation__Title'>Events</h1>
+                    </Link>
                     <ul>
                         {eventsLinks.map((link, id) =><li> <Link className='Navigation__Link' key={id} to={link.url}>{link.title}</Link></li>)}
                     </ul>
                 </Col>
                 <Col className='Navigation' md='6' lg='3'>
                     <PapyrusOutline />
-                    <h1 className='Navigation__Title'>Contact</h1>
+                    <Link onClick={this.updateStore} to='/contact'>
+                        <h1 className='Navigation__Title'>Contact</h1>
+                    </Link>
                     <ul>
                         <li> <Link className='Navigation__Link' to='/stellas-facts/about'>Stella's Facts</Link></li>
                         <li> <Link className='Navigation__Link' to='/contact/form'>Contact form</Link></li>
@@ -102,6 +111,11 @@ class MenuContainer extends Component {
                     </form>
                     </Col>
             </Row>
+
+
+            {this.props.mobile?<Row className='socialIcons'>
+                <SocialBar/>
+            </Row>:''}
         </Container>
     }
 }

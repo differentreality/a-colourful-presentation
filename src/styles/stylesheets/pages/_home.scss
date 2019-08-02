@@ -4,7 +4,7 @@
 
 .home {
 
-    overflow-X:hidden;
+overflow-X:hidden;
     .leftContent {
         &__title {
             margin-top: 10%;
@@ -91,10 +91,19 @@
 
         
 
+        
+
         svg {
             max-width: 22px;
         }
+
+        .homeCTA
+    {
+        margin-top:15%;
     }
+    }
+
+    
 }
 
 @media (max-width:780px)

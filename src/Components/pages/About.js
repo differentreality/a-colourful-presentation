@@ -6,6 +6,7 @@ import spaghetti from '../../Photos/spaghetti.png'
 import { Rails, Git, Ruby } from '../../svg/AboutSvg';
 import { Reading } from '../../svg/StellasFacts';
 import Carousel, { Modal, ModalGateway } from 'react-images';
+import anime from 'animejs/lib/anime.es.js';
 
 
 const images=[{src:stella,caption:'lorem lorem lorem'}]
@@ -32,10 +33,40 @@ class About extends Component {
         this.setState(state => ({ modalIsOpen: !state.modalIsOpen, selectedIndex: index }));
     }
 
+    componentDidMount()
+    {
+        this.technologyAnimation();
+    }
+
+    technologyAnimation=()=>
+    {
+        anime({
+            targets:['.primaryTechnologies svg','.aboutBooksSvg svg'],
+            translateY:50,
+            loop:true,
+            duration:2000,
+            direction: 'alternate',
+            easing:    'easeInOutSine',
+            delay: function (el, i) {
+                return 350 * (i + 1)
+            }
+        })
+
+        anime({
+            targets:'.titleContainer',
+            opacity:[.5,1],
+            loop:true,
+            duration:2000,
+            direction: 'alternate',
+            easing:    'easeInOutSine',
+            
+        })
+    }
+
 
 render() {
     const { modalIsOpen } = this.state;        
-        return <Container className='About' fluid='true'>
+        return <Container className='About fade-in' fluid='true'>
             <Row>
                 <Col md='6' className='PhotoContainer' >
                     <div className='PhotoContainer__stella'>

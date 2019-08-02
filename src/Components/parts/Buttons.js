@@ -4,9 +4,12 @@ import { Col } from 'react-bootstrap';
 const DualButtons = (props) => {
     return <Col className='dualButtons' xs={12}>
         <div style={{ marginTop: '50px' }}>
-            <div className={'myButton myButton--colourless myButton--colourless--' + props.group}>{props.firstButtonText}</div>
-           
-            <div className={'myButton myButton--colored myButton--colored--' + props.group} >{props.secondButtonText}</div>
+            <a rel="noopener noreferrer" target="_blank" href={props.firstLink}>
+                <div className={'myButton myButton--colourless myButton--colourless--' + props.group}>{props.firstButtonText}</div>
+            </a>
+            <a rel="noopener noreferrer" target="_blank" href={props.secondLink}>
+                <div className={'myButton myButton--colored myButton--colored--' + props.group} >{props.secondButtonText}</div>
+            </a>
         </div>
 
     </Col>

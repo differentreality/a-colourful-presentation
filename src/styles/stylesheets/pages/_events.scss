@@ -1,3 +1,7 @@
+.eventCont
+{
+    padding-bottom:20%;
+}
 .eventLeftCont {
     &__image {
         height: 300px;
@@ -16,6 +20,7 @@
 
     &__Title {
         margin-left: 10%;
+        font-size:33px;
     }
 
 

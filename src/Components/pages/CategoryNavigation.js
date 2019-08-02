@@ -213,7 +213,7 @@ class CategoryNavigation extends Component {
             translateY: 50,
             loop: true,
             direction: 'alternate',
-            duration: 2500,
+            duration: 2000,
             easing: 'linear'
         })
     });

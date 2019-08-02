@@ -6,33 +6,32 @@
     padding-left: 0px;
     list-style-type: none;
     transition: all .5s;
-    border-left: 1px solid rgb(196, 196, 196);
-    border-right: 1px solid rgb(196, 196, 196);
-    border-bottom: 1px solid rgb(196, 196, 196);
 
-    &-callToAction{
+
+    &-callToAction {
       @extend .LinkList;
       border-radius: 15px;
-    &:hover {
-      -webkit-box-shadow: 0px 14px 35px -6px rgba(79, 221, 209, 0.4);
-      -moz-box-shadow: 0px 14px 35px -6px rgba(79, 221, 209, 0.4);
-      box-shadow: 0px 14px 35px -6px rgba(79, 221, 209, 0.4);
-      background-color: rgba(255, 255, 255, 0.8);
-    }
-  }
 
-    &-download{
+      &:hover {
+        -webkit-box-shadow: 0px 14px 35px -6px rgba(79, 221, 209, 0.4);
+        -moz-box-shadow: 0px 14px 35px -6px rgba(79, 221, 209, 0.4);
+        box-shadow: 0px 14px 35px -6px rgba(79, 221, 209, 0.4);
+        background-color: rgba(255, 255, 255, 0.8);
+      }
+    }
+
+    &-download {
       @extend .LinkList;
       -webkit-box-shadow: 0px 14px 35px -6px rgba(114, 114, 114, 0.2);
       -moz-box-shadow: 0px 14px 35px -6px rgba(114, 114, 114, 0.2);
       box-shadow: 0px 14px 35px -6px rgba(114, 114, 114, 0.2);
 
-      .LinkList__ListItem
-      {
-        padding:10% 0; 
+      .LinkList__ListItem {
+        
+          padding: 5% 0px;
       }
 
-  }
+    }
 
     &__Title {
       height: 50px;
@@ -61,10 +60,10 @@
       font-size: 20px;
     }
 
-    li  {
+    li {
       text-align: center;
       border-bottom: 1px solid rgb(196, 196, 196);
-     
+
 
       &:last-child {
         border-bottom: none;
@@ -73,6 +72,14 @@
 
     &__Link {
       color: #808080;
+
+      &:hover {
+        svg {
+          transition: all .5s;
+          transform: scale(1.2) translateY(5px);
+        }
+      }
+
     }
 
     .callToActionSvg,

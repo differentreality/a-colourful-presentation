@@ -1,7 +1,9 @@
 .sideMenu,
 .mobileHeader {
     .menu__logo {
-        display: inline;
+        display: inline-block;
+        color:$paragraphColour;
+        margin-top:5%;
     }
 }
 

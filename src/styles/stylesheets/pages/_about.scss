@@ -54,6 +54,7 @@
         text-align: center;
         border-top: 1px solid $paragraphColour;
         border-bottom: 1px solid $paragraphColour;
+        padding:200px 0;
     }
 
     .keyword {
@@ -197,7 +198,7 @@
         &__paragraph {
             padding: 3%;
             border-right: 1px solid $stellaTextColor;
-            font-size: 35px;
+            font-size: 25px;
             font-weight: 400;
         }
     }
