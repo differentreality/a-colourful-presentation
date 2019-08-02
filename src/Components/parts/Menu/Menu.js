@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import store from '../../../store';
+import anime from 'animejs/lib/anime.es.js';
 
 
 class MenuButton extends Component {
@@ -12,6 +13,23 @@ class MenuButton extends Component {
         this.state = {
             isOpen:this.props.isMenuOpen
         };
+    }
+
+    componentDidMount()
+    {
+        anime.timeline({
+            targets:'.menuButtons',
+            opacity:[0,1],
+            delay:2500,
+            easing:'linear',
+            duration:1000
+        })
+        .add({
+            targets:'.sideMenu__outofBorderContent',
+            opacity:[0,1],
+            easing:'linear',
+            duration:1000
+        })
     }
     updateStore = () => {
         store.dispatch(
@@ -28,7 +46,7 @@ class MenuButton extends Component {
 
     render() {
         return (
-            <div>
+            <div className='menuButtons'>
                 <span className='menu__logo'>HOME</span>
                 <span className={'v-link'+(this.props.isMenuOpen?'-white':'')} onClick={this.clicked}>
                     {this.props.isMenuOpen ? <span className='fade-in v-link__text'>CLOSE</span> : <span className='puff-in-center v-link__text'>MENU</span>}
@@ -81,7 +99,7 @@ class SidebarMenu extends Component {
 
         return (
 
-            <Col className={'sideMenu'+(this.props.isMenuOpen?'-white':'')} xs={1}>
+            <Col className={'slide-in-top sideMenu'+(this.props.isMenuOpen?'-white':'')} xs={1}>
                 <Col className='sideMenu__insideBorderContent' xs={12}>
                     <MenuButton isMenuOpen={this.props.isMenuOpen}/>
                 </Col>
@@ -96,7 +114,7 @@ class SidebarMenu extends Component {
 
 
 const MobileHeader = (props) => {
-    return <Col className={'mobileHeader'+(props.isMenuOpen?'-white':'')} xs={12}>
+    return <Col className={'slide-in-left mobileHeader'+(props.isMenuOpen?'-white':'')} xs={12}>
         <Col xs={10} className='mobileHeader__bordered'>
             <MenuButton isMenuOpen={props.isMenuOpen}/>
         </Col>

@@ -52,9 +52,6 @@ class CategoryNavigation extends Component {
         store.dispatch(
             { type: 'change_Color', payload: { color: 'workshop' } }
         );
-
-        this.entranceAnimation();
-
     }
 
     componentWillUnmount() {
@@ -222,15 +219,15 @@ class CategoryNavigation extends Component {
     });
 
 
-    entranceAnimation=()=>
+
+
+    buttonAnimation=()=>
     {
         anime({
-            targets:'.bubbleGuide',
-            translateY:[200,0],
+            targets:'.myButton',
+            opacity:[0,1],
             duration:3000,
             easing: 'spring(1, 80, 10, 0)',
-            delay:2000
-
         })
     }
 
@@ -242,6 +239,7 @@ class CategoryNavigation extends Component {
         this.svgBotLeftAnimation.restart();
         this.svgCenterAnimation.restart();
         this.svgTopLeftAnimation.restart();
+        this.buttonAnimation();
     }
 
 
@@ -324,7 +322,7 @@ class CategoryNavigation extends Component {
 
 
         return (
-            <Container id='MainNav' className='fade-in' fluid='true'>
+            <Container id='MainNav' className='fade-in'  fluid='true'>
                 <Row>
                     <Col lg={{ span: 6, order: 'last' }} className='svgFam'>
                         <this.state.topLeft className='topLeft'/>
@@ -342,7 +340,7 @@ class CategoryNavigation extends Component {
 
 
                 <Row >
-                    <Col className='bubbleGuide' xs='12'>
+                    <Col className='bubbleGuide'  xs='12'>
                         <h6>🡠 Keep Swiping & Scrolling! 🡢</h6>
                         <NavLink to="/workshops" onClick={() => this.updatePointerClick(0)}><span className={'colourBubble-' + (this.state.group === 'workshop' ? 'workshop' : 'empty')} /></NavLink>
                         <NavLink to="/talks" onClick={() => this.updatePointerClick(1)}><span className={'colourBubble-' + (this.state.group === 'talk' ? 'talk' : 'empty')} /></NavLink>

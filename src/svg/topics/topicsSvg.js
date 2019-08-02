@@ -134,7 +134,7 @@ const HtmlTag = (props) => <svg className={props.className}  width="76" height="
   </filter>
 </defs>
 <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#_)">
-  <text id="_2" data-name="&lt;/&gt;" transform="translate(9 37)" fill="#28a2b7" fontSize="44" text-align="center" fontFamily="Gilroy-Light, Gilroy" fontWeight="300" letterSpacing="0.05em"><tspan x="0" y="0">&lt;/&gt;</tspan></text>
+  <text id="_2" data-name="&lt;/&gt;" transform="translate(9 37)" fill="#28a2b7" fontSize="35" text-align="center" fontFamily="Gilroy-Light, Gilroy" fontWeight="300" letterSpacing="0.05em"><tspan x="0" y="0">&lt;/&gt;</tspan></text>
 </g>
 </svg>
 
