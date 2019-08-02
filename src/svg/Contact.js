@@ -33,7 +33,7 @@ const MessageFolder = () => {return <svg  className='fade-in svgFam__botRight' w
 
 
 
-const Papyrus = () => {return <svg  id='papyrusSvg' className='fade-in svgFam__topLeft' width="154.087" height="156.918" viewBox="0 0 154.087 156.918">
+const Papyrus = (props) => {return <svg  id='papyrusSvg' className={'fade-in' + (props.className?' svgFam__topLeft':'')} width="154.087" height="156.918" viewBox="0 0 154.087 156.918">
 <defs>
 
   <filter id="Path_212" x="0" y="0.308" width="137.508" height="156.611" filterUnits="userSpaceOnUse">

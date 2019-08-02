@@ -53,6 +53,8 @@ class CategoryNavigation extends Component {
             { type: 'change_Color', payload: { color: 'workshop' } }
         );
 
+        this.entranceAnimation();
+
     }
 
     componentWillUnmount() {
@@ -220,7 +222,17 @@ class CategoryNavigation extends Component {
     });
 
 
+    entranceAnimation=()=>
+    {
+        anime({
+            targets:'.bubbleGuide',
+            translateY:[200,0],
+            duration:3000,
+            easing: 'spring(1, 80, 10, 0)',
+            delay:2000
 
+        })
+    }
 
     restartAnimations = () => {
 
@@ -231,6 +243,7 @@ class CategoryNavigation extends Component {
         this.svgCenterAnimation.restart();
         this.svgTopLeftAnimation.restart();
     }
+
 
 
     checkPage = () => {
@@ -314,11 +327,11 @@ class CategoryNavigation extends Component {
             <Container id='MainNav' className='fade-in' fluid='true'>
                 <Row>
                     <Col lg={{ span: 6, order: 'last' }} className='svgFam'>
-                        <this.state.topLeft />
-                        <this.state.botLeft />
-                        <this.state.center />
-                        <this.state.topRight />
-                        <this.state.botRight />
+                        <this.state.topLeft className='topLeft'/>
+                        <this.state.botLeft className='botLeft'/>
+                        <this.state.center className='center'/>
+                        <this.state.topRight className='topRight'/>
+                        <this.state.botRight className='botRight'/>
                     </Col>
                     <Col lg={{ span: 6, order: 'first' }} className='workshopCon'>
                         <h1 className='workshopCon__Title'>{this.state.Title}</h1>
