@@ -1,7 +1,7 @@
 import React from 'react';
-import Events from './Events';
-import gitNasia from '../../../Photos/gitNasia.JPG'
-import git101ateith from '../../../Photos/git101ateith.JPG'
+import Events from '../../Events'
+import gitNasia from '../../../../Photos/gitNasia.JPG'
+import git101ateith from '../../../../Photos/git101ateith.JPG'
 import { withRouter } from 'react-router-dom';
 const gitWorkshops = [
     {

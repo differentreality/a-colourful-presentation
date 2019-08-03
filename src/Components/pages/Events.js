@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
 import { withRouter } from 'react-router-dom';
-import { EmptyButton } from '../../parts/Buttons';
+import { EmptyButton } from '../parts/Buttons'
 import Carousel, { Modal, ModalGateway } from 'react-images';
-import store from '../../../store';
+import store from '../../store';
 import { Link } from 'react-router-dom';
 
 
@@ -29,9 +29,9 @@ class Events extends Component {
     gradientColourImage = (group) => group === 'workshop' ?
         'linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(40, 162, 183,.4))' :
         group === 'event' ?
-            'linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(255, 154, 125,.4))' :
+            'linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(255, 154, 125,.3))' :
             group === 'talk' ?
-                'linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(255, 8, 68,.4))' : ''
+                'linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(255, 8, 68,.1))' : ''
 
 
 
@@ -41,20 +41,6 @@ class Events extends Component {
             { type: 'change_Color', payload: { color: this.props.group } }
         );
     }
-
-    // ena prop analoga me to katigoria
-    // 1 git,1ror,1 talks,events
-    //to kathe antikeimeno tha exei periexomeno gia kathe event
-    //titlos
-    //date
-    //place
-    //About
-    //paragraph
-    //Link
-    //photo
-    //photo colours
-
-
 
     render() {
         const { modalIsOpen, selectedIndex } = this.state;
@@ -71,7 +57,7 @@ class Events extends Component {
                             <Row>
                                 <Col xs={this.props.group === 'workshop' ? '4' : '6'}>
                                     <h3>Date</h3><br />
-                                    <h6>{event.date} id: {id}</h6>
+                                    <h6>{event.date}</h6>
 
                                 </Col>
                                 {this.props.group === 'workshop' ? <Col className='eventLeftCont__center' xs='4' >

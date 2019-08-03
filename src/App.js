@@ -18,14 +18,17 @@ import SocialBar from './Components/parts/Menu/SocialBar'
 //pages
 import Home from './Components/pages/Home'
 import Topics from './Components/pages/Topics'
-import GitEvents from './Components/pages/eventShowcase/GitEvents'
-import RailsEvents from './Components/pages/eventShowcase/RailsEvents'
+import GitEvents from './Components/pages/Workshops/eventShowcase/GitEvents'
+import RailsEvents from './Components/pages/Workshops/eventShowcase/RailsEvents'
 import CategoryNavigation from './Components/pages/CategoryNavigation'
-import {Git101} from './Components/pages/eventDetails/events/git101'
-import Ror1ateith from './Components/pages/eventDetails/events/Ror1ateith'
-import Ror2ateith from './Components/pages/eventDetails/events/Ror2ateith'
+import {Git101} from './Components/pages/Workshops/eventDetails/git101'
+import Ror1ateith from './Components/pages/Workshops/eventDetails/Ror1ateith'
+import Ror2ateith from './Components/pages/Workshops/eventDetails/Ror2ateith'
 import About from './Components/pages/About'
 import MenuContainer from './Components/pages/MenuContainer'
+import Conferences from './Components/pages/Events_Conferences/eventShowcase/Conferences'
+import GSoCTalks from './Components/pages/Talks/eventShowcase/GSoCTalks'
+import GSoCateith from './Components/pages/Talks/eventDetails/GSoCateith'
 class App extends Component {
 
   constructor() {
@@ -74,19 +77,33 @@ class App extends Component {
                       {this.props.isMenuOpen?<MenuContainer mobile={this.state.mobile}/>:
                         <Switch>
                           <Route exact path='/' render={() => <Home />} />
+
+                          {/*workshops*/}
                           <Route exact path='/workshops' render={() => <CategoryNavigation />} />
-                          <Route exact path='/talks' render={() => <CategoryNavigation />} />
-                          <Route exact path='/events' render={() => <CategoryNavigation />} />
-                          <Route exact path='/stellas-facts' render={() => <CategoryNavigation />} />
-                          <Route exact path='/stellas-facts/about' render={() => <About mobile={this.state.mobile}/>} />
-                          <Route exact path='/contact' render={() => <CategoryNavigation />} />
                           <Route exact path='/workshops/topics' render={() => <Topics group='workshop' />} />
-                          <Route exact path='/talks/topics' render={() => <Topics group='talk' />} />
                           <Route exact path='/workshops/topics/git' render={() => <GitEvents />} />
                           <Route exact path='/workshops/topics/ror' render={() => <RailsEvents />} />
                           <Route exact path='/workshops/topics/git/git101' render={() => <Git101 mobile={this.state.mobile} group='workshop' />} />
                           <Route exact path='/workshops/topics/ror/rorpt1ateith' render={() => <Ror1ateith mobile={this.state.mobile} group='workshop' />} />
                           <Route exact path='/workshops/topics/ror/rorpt2ateith' render={() => <Ror2ateith mobile={this.state.mobile} group='workshop' />} />
+
+                          {/*talks*/}
+                          <Route exact path='/talks' render={() => <CategoryNavigation />} />
+                          <Route exact path='/talks/topics' render={() => <Topics group='talk' />} />
+                          <Route exact path='/talks/topics/gsoc' render={() => <GSoCTalks />} />
+                          <Route exact path='/talks/topics/gsoc/gsocateith' render={() => <GSoCateith />} />
+
+                          {/*events*/}
+                          <Route exact path='/events' render={() => <CategoryNavigation />} />
+                          <Route exact path='/events/archive' render={() => <Conferences />} />
+
+                          {/*about*/}
+                          <Route exact path='/stellas-facts' render={() => <CategoryNavigation />} />
+                          <Route exact path='/stellas-facts/about' render={() => <About mobile={this.state.mobile}/>} />
+                          
+                          {/*contact*/}
+                          <Route exact path='/contact' render={() => <CategoryNavigation />} />
+                          
 
 
                         </Switch>}

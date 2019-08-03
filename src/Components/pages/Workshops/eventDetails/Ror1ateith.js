@@ -1,13 +1,12 @@
 import React from 'react';
-import {WorkshopDetailedEvent} from '../DetailedEvent';
-import git101poster from '../../../../Photos/git101poster.jpg'
-import gitMpratsa from '../../../../Photos/gitMpratsa.JPG';
-import gitPeople from '../../../../Photos/gitPeople.JPG';
-import gitStella from '../../../../Photos/gitStella.JPG';
-import gitNasia from '../../../../Photos/gitNasia.JPG';
-import { Git } from '../../../../svg/topics/topicsSvg';
+import {WorkshopDetailedEvent} from '../../DetailedEvent'
+import railspt1_img2 from '../../../../Photos/railspt1ateith/railspt1_img2.JPG'
+import railspt1_img3 from '../../../../Photos/railspt1ateith/railspt1_img3.JPG'
+import railspt1_img4 from '../../../../Photos/railspt1ateith/railspt1_img4.JPG'
+import railspt1_img5 from '../../../../Photos/railspt1ateith/railspt1_img5.JPG'
+import rorpt1poster from '../../../../Photos/railspt1ateith/rorpt1poster.jpg'
 
-
+import { Ruby } from '../../../../svg/topics/topicsSvg';
 
 const codesnippets=<div>
 <div>
@@ -101,16 +100,16 @@ const LinkArray = [
     }
 ]
 
-const images = [{ src: git101poster, caption: 'caption caption caption' },
-{ src: gitNasia, caption: 'caption caption caption' },
-{ src: gitMpratsa, caption: 'caption caption caption' },
-{ src: gitPeople, caption: 'caption caption caption' },
-{ src: gitStella, caption: 'caption caption caption' }
+const images = [{ src: rorpt1poster, caption: 'caption caption caption' },
+{ src: railspt1_img2, caption: 'caption caption caption' },
+{ src: railspt1_img3, caption: 'caption caption caption' },
+{ src: railspt1_img4, caption: 'caption caption caption' },
+{ src: railspt1_img5, caption: 'caption caption caption' }
 ]
 
 const eventData = 
     {
-        title:'git101',
+        title:'Intro to Ruby On Rails',
         date:'06/05/2019',
         details:'lorem lorem loremlorem lorem loremlorem lorem loremlorem lorem loremlorem lorem lorem',
         group:'workshop',
@@ -118,7 +117,7 @@ const eventData =
         slides:'https://docs.google.com/presentation/d/1EQo6aQmxGQ-HV1Q7ZTpbSTBzhoIwOmkffHM9r6ji5lM/edit?usp=sharing',
         socialEvent:'https://www.facebook.com/events/455650285188880/',
         links:[LinkArray,LinkArray,LinkArray],
-        svg:Git,
+        svg:Ruby,
         cheatsheet,
         codeSnippets:[codesnippets,codesnippets],
         images,
@@ -126,6 +125,6 @@ const eventData =
     }
 
 
-const Git101 = (props)=><WorkshopDetailedEvent mobile={props.mobile} group='workshop' data={eventData}/>
+const Ror1ateith = (props)=><WorkshopDetailedEvent mobile={props.mobile} group='workshop' data={eventData}/>
 
-export {Git101};
+export default Ror1ateith;

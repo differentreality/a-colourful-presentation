@@ -188,8 +188,8 @@ const Gsoc = (props) =><svg className={props.className} width="51.433" height="5
 const Student = (props)=><svg className={props.className} width="103.897" height="90.91" viewBox="0 0 103.897 90.91">
 <defs>
   <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
-    <stop offset="0" stop-color="#ff0844"/>
-    <stop offset="1" stop-color="#ffb199"/>
+    <stop offset="0" stopColor="#ff0844"/>
+    <stop offset="1" stopColor="#ffb199"/>
   </linearGradient>
 </defs>
 <g id="Group_98" data-name="Group 98" transform="translate(-461 -220)">
@@ -201,8 +201,8 @@ const Student = (props)=><svg className={props.className} width="103.897" height
 const OpenSource = (props)=><svg className={props.className} width="85.324" height="82.512" viewBox="0 0 85.324 82.512">
   <defs>
     <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
-      <stop offset="0" stop-color="#ff0844"/>
-      <stop offset="1" stop-color="#ffb199"/>
+      <stop offset="0" stopColor="#ff0844"/>
+      <stop offset="1" stopColor="#ffb199"/>
     </linearGradient>
   </defs>
   <g id="Group_99" data-name="Group 99" transform="translate(-468 -216.686)">
@@ -213,8 +213,8 @@ const OpenSource = (props)=><svg className={props.className} width="85.324" heig
 const Globe = (props) =><svg className={props.className} width="92.157" height="85.141" viewBox="0 0 92.157 85.141">
 <defs>
   <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
-    <stop offset="0" stop-color="#ff0844"/>
-    <stop offset="1" stop-color="#ffb199"/>
+    <stop offset="0" stopColor="#ff0844"/>
+    <stop offset="1" stopColor="#ffb199"/>
   </linearGradient>
 </defs>
 <g id="Group_100" data-name="Group 100" transform="translate(-609.5 57.334)">

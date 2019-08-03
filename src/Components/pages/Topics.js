@@ -69,7 +69,7 @@ class Topics extends Component {
             svg3: Globe,
             svg3Text: 'Remote',
             buttonText:'Browse GSoC',
-            link:'/workshops/topics/gsoc'
+            link:'/talks/topics/gsoc'
         }
     ]
 

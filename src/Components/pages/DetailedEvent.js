@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
-import store from '../../../store'
+import store from '../../store'
 import Carousel, { Modal, ModalGateway } from 'react-images';
-import { DualButtons, Button } from '../../parts/Buttons';
-import { LinkContainer, StageContainer } from '../../parts/LinkContainer';
-import CodeSnippets from '../../parts/CodeSnippets'
+import { DualButtons, Button } from '../parts/Buttons';
+import { LinkContainer, StageContainer } from '../parts/LinkContainer';
+import CodeSnippets from '../parts/CodeSnippets'
 
 const EventIntroduction = (props) =>
     <Row>

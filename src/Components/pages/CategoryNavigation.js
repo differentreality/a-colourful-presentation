@@ -278,7 +278,7 @@ class CategoryNavigation extends Component {
                     'botLeft': UniversityOutline,
                     'botRight': ConfCard,
                     'group': 'event',
-                    'buttonLink': '/events/archives'
+                    'buttonLink': '/events/archive'
                 }) :
                     this.state.urlPointer === 3 ? this.setState({
                         'Title': `Stella's Facts`,

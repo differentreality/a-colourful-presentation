@@ -1,5 +1,5 @@
 import React from 'react';
-import {WorkshopDetailedEvent} from '../DetailedEvent';
+import {WorkshopDetailedEvent} from '../../DetailedEvent';
 import railspt2_img2 from '../../../../Photos/railspt2ateith/Rorateithpt2_1.JPG'
 import railspt2_img3 from '../../../../Photos/railspt2ateith/Rorateithpt2_2.JPG'
 import railspt2_img4 from '../../../../Photos/railspt2ateith/Rorateithpt2_3.JPG'

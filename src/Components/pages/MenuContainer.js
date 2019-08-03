@@ -7,8 +7,6 @@ import { PapyrusOutline } from '../../svg/Contact'
 import {  Link } from 'react-router-dom';
 import store from '../../store'
 import SocialBar from '../parts/Menu/SocialBar'
-import { faArrowRight} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const workshopLinks=[
     {
@@ -16,8 +14,8 @@ const workshopLinks=[
        url:'/workshops/topics/git' 
     },
     {
-        title:'Ruby',
-        url:'/workshops/topics/ruby' 
+        title:'Ruby on Rails',
+        url:'/workshops/topics/ror' 
      }
 ]
 
@@ -25,17 +23,13 @@ const talkLinks=[
     {
        title:'Google Summer of Code',
        url:'/talks/topics/gsoc' 
-    },
-    {
-        title:'ruby',
-        url:'/workshops/topics/ruby' 
-     }
+    }
 ]
 
 const eventsLinks=[
     {
-        title:'Past Events',
-        url:'/events/events'
+        title:'Conferences & Meetups',
+        url:'/events/archive'
     }
 ]
 class MenuContainer extends Component {
@@ -55,7 +49,7 @@ class MenuContainer extends Component {
                         <h1 className='Navigation__Title'>Workshops</h1>
                     </Link>
                     <ul>
-                        {workshopLinks.map((link, id) => <li><Link onClick={this.updateStore} className='Navigation__Link' key={id} to={link.url}>{link.title}</Link></li>)}
+                        {workshopLinks.map((link, id) => <li key={id}><Link onClick={this.updateStore} className='Navigation__Link' key={id} to={link.url}>{link.title}</Link></li>)}
                     </ul>
                 </Col>
                 <Col className='Navigation' md='6' lg='3'>
@@ -64,7 +58,7 @@ class MenuContainer extends Component {
                         <h1 className='Navigation__Title'>Talks</h1>
                     </Link>
                     <ul>
-                        {talkLinks.map((link, id) =><li> <Link className='Navigation__Link' key={id} to={link.url}>{link.title}</Link></li>)}
+                        {talkLinks.map((link, id) =><li key={id}> <Link onClick={this.updateStore} className='Navigation__Link' key={id} to={link.url}>{link.title}</Link></li>)}
                     </ul>
                 </Col>
                 <Col className='Navigation' md='6' lg='3'>
@@ -73,7 +67,7 @@ class MenuContainer extends Component {
                         <h1 className='Navigation__Title'>Events</h1>
                     </Link>
                     <ul>
-                        {eventsLinks.map((link, id) =><li> <Link className='Navigation__Link' key={id} to={link.url}>{link.title}</Link></li>)}
+                        {eventsLinks.map((link, id) =><li key={id}> <Link onClick={this.updateStore} className='Navigation__Link' key={id} to={link.url}>{link.title}</Link></li>)}
                     </ul>
                 </Col>
                 <Col className='Navigation' md='6' lg='3'>
@@ -82,8 +76,8 @@ class MenuContainer extends Component {
                         <h1 className='Navigation__Title'>Contact</h1>
                     </Link>
                     <ul>
-                        <li> <Link className='Navigation__Link' to='/stellas-facts/about'>Stella's Facts</Link></li>
-                        <li> <Link className='Navigation__Link' to='/contact/form'>Contact form</Link></li>
+                        <li> <Link  onClick={this.updateStore} className='Navigation__Link' to='/stellas-facts/about'>Stella's Facts</Link></li>
+                        <li> <Link  onClick={this.updateStore} className='Navigation__Link' to='/contact/form'>Contact form</Link></li>
                     </ul>
                 </Col>
             </Row>

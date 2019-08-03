@@ -7,14 +7,14 @@ const Rails=() =><svg id='aboutRailsSVG' xmlns="http://www.w3.org/2000/svg" widt
     <filter id="Rectangle_32" x="0" y="0" width="454" height="454" filterUnits="userSpaceOnUse">
       <feOffset dy="7" input="SourceAlpha"/>
       <feGaussianBlur stdDeviation="8" result="blur"/>
-      <feFlood flood-color="#9b4ea1" flood-opacity="0.161"/>
+      <feFlood floodColor="#9b4ea1" floodOpacity="0.161"/>
       <feComposite operator="in" in2="blur"/>
       <feComposite in="SourceGraphic"/>
     </filter>
     <filter id="Path_365" x="135.948" y="86.185" width="199.986" height="160.839" filterUnits="userSpaceOnUse">
       <feOffset dy="3" input="SourceAlpha"/>
       <feGaussianBlur stdDeviation="3" result="blur-2"/>
-      <feFlood flood-color="#9b4ea1" flood-opacity="0.161"/>
+      <feFlood floodColor="#9b4ea1" floodOpacity="0.161"/>
       <feComposite operator="in" in2="blur-2"/>
       <feComposite in="SourceGraphic"/>
     </filter>
@@ -40,7 +40,7 @@ const Rails=() =><svg id='aboutRailsSVG' xmlns="http://www.w3.org/2000/svg" widt
     <path id="Path_382" data-name="Path 382" d="M417.619,537.658c0,1.542-.024,3.084.011,4.625.015.665-.144.974-.891.967-3.125-.033-6.251-.026-9.376,0-.642,0-.89-.217-.886-.864.018-3.167-.015-6.334.021-9.5a2.387,2.387,0,0,1,2.281-2.4,23.952,23.952,0,0,1,6.6-.026,2.459,2.459,0,0,1,2.234,2.7C417.631,534.658,417.619,536.158,417.619,537.658Z" transform="translate(-162.353 -379.146)" fill="#fff"/>
   </g>
   <text id="git_commit_-m_portfolio_update_" data-name="git commit -m
- &apos;portfolio update&apos;" transform="matrix(0.94, -0.342, 0.342, 0.94, 236.264, 265.411)" fill="#6b6b6b" font-size="29" font-family="Gilroy-ExtraBold, Gilroy" font-weight="800"><tspan x="-95.468" y="0">git commit -m</tspan><tspan x="-120.002" y="36" space="preserve"> &apos;portfolio update&apos;</tspan></text>
+ &apos;portfolio update&apos;" transform="matrix(0.94, -0.342, 0.342, 0.94, 236.264, 265.411)" fill="#6b6b6b" fontSize="29" fontFamily="Gilroy-ExtraBold, Gilroy" fontWeight="800"><tspan x="-95.468" y="0">git commit -m</tspan><tspan x="-120.002" y="36" space="preserve"> &apos;portfolio update&apos;</tspan></text>
 </svg>
 
 const Git=()=><svg id='aboutGitSVG' xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="0 0 454 454">
@@ -48,14 +48,14 @@ const Git=()=><svg id='aboutGitSVG' xmlns="http://www.w3.org/2000/svg" xlink="ht
     <filter id="Rectangle_34" x="0" y="0" width="454" height="454" filterUnits="userSpaceOnUse">
       <feOffset dy="7" input="SourceAlpha"/>
       <feGaussianBlur stdDeviation="8" result="blur"/>
-      <feFlood flood-color="#9b4ea1" flood-opacity="0.161"/>
+      <feFlood floodColor="#9b4ea1" floodOpacity="0.161"/>
       <feComposite operator="in" in2="blur"/>
       <feComposite in="SourceGraphic"/>
     </filter>
     <filter id="Path_383" x="143.66" y="81.68" width="181.739" height="181.739" filterUnits="userSpaceOnUse">
       <feOffset dy="3" input="SourceAlpha"/>
       <feGaussianBlur stdDeviation="3" result="blur-2"/>
-      <feFlood flood-color="#9b4ea1" flood-opacity="0.161"/>
+      <feFlood floodColor="#9b4ea1" floodOpacity="0.161"/>
       <feComposite operator="in" in2="blur-2"/>
       <feComposite in="SourceGraphic"/>
     </filter>
@@ -69,7 +69,7 @@ const Git=()=><svg id='aboutGitSVG' xmlns="http://www.w3.org/2000/svg" xlink="ht
     </g>
   </g>
   <text id="git_commit_-m_portfolio_update_" data-name="git commit -m
- &apos;portfolio update&apos;" transform="matrix(0.966, 0.259, -0.259, 0.966, 193.071, 282.201)" fill="#6b6b6b" font-size="29" font-family="Gilroy-ExtraBold, Gilroy" font-weight="800"><tspan x="-95.468" y="0">git commit -m</tspan><tspan x="-120.002" y="36" space="preserve"> &apos;portfolio update&apos;</tspan></text>
+ &apos;portfolio update&apos;" transform="matrix(0.966, 0.259, -0.259, 0.966, 193.071, 282.201)" fill="#6b6b6b" fontSize="29" fontFamily="Gilroy-ExtraBold, Gilroy" fontWeight="800"><tspan x="-95.468" y="0">git commit -m</tspan><tspan x="-120.002" y="36" space="preserve"> &apos;portfolio update&apos;</tspan></text>
 </svg>
 
 const Ruby=() =><svg id='aboutRubySVG' xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="0 0 454 454">
@@ -77,7 +77,7 @@ const Ruby=() =><svg id='aboutRubySVG' xmlns="http://www.w3.org/2000/svg" xlink=
     <filter id="Path_384" x="0" y="0" width="454" height="454" filterUnits="userSpaceOnUse">
       <feOffset dy="7" input="SourceAlpha"/>
       <feGaussianBlur stdDeviation="8" result="blur"/>
-      <feFlood flood-color="#9b4ea1" flood-opacity="0.161"/>
+      <feFlood floodColor="#9b4ea1" floodOpacity="0.161"/>
       <feComposite operator="in" in2="blur"/>
       <feComposite in="SourceGraphic"/>
     </filter>
@@ -89,7 +89,7 @@ const Ruby=() =><svg id='aboutRubySVG' xmlns="http://www.w3.org/2000/svg" xlink=
     </g>
   </g>
   <g id="Group_45" data-name="Group 45" transform="translate(85.656 -413.222) rotate(43)">
-    <path id="Path_256" data-name="Path 256" d="M430.186,325.82c1.209-5.406,3.125-12.214,4.2-19.152,2.371-15.266,12.411-24.644,24.33-32.612a71.068,71.068,0,0,1,30.5-11.91,26.376,26.376,0,0,1,9.394.722c6.653,1.618,13.142,3.914,19.8,5.521,9.7,2.341,17.642,11.04,13.335,24.166-6.317,19.251-12.164,38.656-18.231,57.989-1.688,5.378-1.706,5.277-7.213,4.383-19.628-3.19-39.273-6.278-58.9-9.486-5.242-.857-10.091-2.694-13.628-6.963C431.106,335.259,430.372,331.41,430.186,325.82Zm62.6-60.325c-1.03.1-1.7.144-2.375.223-14.5,1.7-26.784,8.263-37.823,17.44A43.119,43.119,0,0,0,440.9,297.368c-1.724,3.559-3.151,7.341-.578,10.964,2.617,3.685,6.788,3.557,10.8,3.424a2.575,2.575,0,0,0,.286-.046c18.3-2.844,33.455-11.48,45.558-25.32a33.5,33.5,0,0,0,5.88-10.785c1.613-4.552-.841-8.189-5.541-9.4A41.287,41.287,0,0,0,492.786,265.5Zm-.6,33.312-24.652,14.176,24.652,14.678Zm-22.986,41.87-5.9-22.949L449.655,341.56l.562.986Zm21.108-8.9-.1-1.006L466.8,316.758l5.87,22.9Zm5.808-4.687.822.473,13.434-10.527-14.256-15.764Zm.518-32.659,23.856,3.846.259-.674-14.48-18.7ZM447.247,337.01l.718.2,12.694-22.166H443.582C444.822,322.475,446.034,329.742,447.247,337.01Zm49.979-5.281c3.969,5.566,7.762,10.885,11.553,16.2l.671-.351,2.168-26.661Zm7.928,18.427c.047-.5.146-.729.068-.839q-3.8-5.442-7.64-10.86c-3.5-4.93-3.48-4.882-8.868-2.105-3.346,1.724-6.773,3.293-10.771,5.226Zm-4.111-51.326,13.326,14.184,8.7-10.569Zm24.141-1.443,1.055,0c.923-3.195,1.918-6.372,2.7-9.6a2.29,2.29,0,0,0-.914-2.005c-5.213-2.133-10.486-4.118-15.742-6.144l-.385.536ZM441,321.093l-.787-.046c-1.372,4.261-2.775,8.513-4.077,12.8a2.53,2.53,0,0,0,.351,1.854,9.98,9.98,0,0,0,7.6,4.583C443.014,333.639,442.006,327.366,441,321.093Zm70.745-45.529L528.517,282C527.154,274.183,521.01,271.76,511.744,275.564Zm2.4,58.337.746.157q3.676-11.711,7.351-23.422c-3.209,3.3-7.582,5.6-7.166,11.313C515.365,325.89,514.5,329.914,514.148,333.9Zm-17.509,16.643c.046-.289-14.521-3.658-14.475-3.947a8.321,8.321,0,0,1,1.03-.158s-10.326-4.425-15.541-1.437c1.768.294,5.541,1.02,10.123,1.915C484.8,348.289,493.63,350.043,496.639,350.544Zm15.9-79.333.055-.631-6.451-1.759.887,3.984,2.154-.623Z" transform="translate(0)" fill="#fff" stroke="#9b4ea1" stroke-width="2"/>
+    <path id="Path_256" data-name="Path 256" d="M430.186,325.82c1.209-5.406,3.125-12.214,4.2-19.152,2.371-15.266,12.411-24.644,24.33-32.612a71.068,71.068,0,0,1,30.5-11.91,26.376,26.376,0,0,1,9.394.722c6.653,1.618,13.142,3.914,19.8,5.521,9.7,2.341,17.642,11.04,13.335,24.166-6.317,19.251-12.164,38.656-18.231,57.989-1.688,5.378-1.706,5.277-7.213,4.383-19.628-3.19-39.273-6.278-58.9-9.486-5.242-.857-10.091-2.694-13.628-6.963C431.106,335.259,430.372,331.41,430.186,325.82Zm62.6-60.325c-1.03.1-1.7.144-2.375.223-14.5,1.7-26.784,8.263-37.823,17.44A43.119,43.119,0,0,0,440.9,297.368c-1.724,3.559-3.151,7.341-.578,10.964,2.617,3.685,6.788,3.557,10.8,3.424a2.575,2.575,0,0,0,.286-.046c18.3-2.844,33.455-11.48,45.558-25.32a33.5,33.5,0,0,0,5.88-10.785c1.613-4.552-.841-8.189-5.541-9.4A41.287,41.287,0,0,0,492.786,265.5Zm-.6,33.312-24.652,14.176,24.652,14.678Zm-22.986,41.87-5.9-22.949L449.655,341.56l.562.986Zm21.108-8.9-.1-1.006L466.8,316.758l5.87,22.9Zm5.808-4.687.822.473,13.434-10.527-14.256-15.764Zm.518-32.659,23.856,3.846.259-.674-14.48-18.7ZM447.247,337.01l.718.2,12.694-22.166H443.582C444.822,322.475,446.034,329.742,447.247,337.01Zm49.979-5.281c3.969,5.566,7.762,10.885,11.553,16.2l.671-.351,2.168-26.661Zm7.928,18.427c.047-.5.146-.729.068-.839q-3.8-5.442-7.64-10.86c-3.5-4.93-3.48-4.882-8.868-2.105-3.346,1.724-6.773,3.293-10.771,5.226Zm-4.111-51.326,13.326,14.184,8.7-10.569Zm24.141-1.443,1.055,0c.923-3.195,1.918-6.372,2.7-9.6a2.29,2.29,0,0,0-.914-2.005c-5.213-2.133-10.486-4.118-15.742-6.144l-.385.536ZM441,321.093l-.787-.046c-1.372,4.261-2.775,8.513-4.077,12.8a2.53,2.53,0,0,0,.351,1.854,9.98,9.98,0,0,0,7.6,4.583C443.014,333.639,442.006,327.366,441,321.093Zm70.745-45.529L528.517,282C527.154,274.183,521.01,271.76,511.744,275.564Zm2.4,58.337.746.157q3.676-11.711,7.351-23.422c-3.209,3.3-7.582,5.6-7.166,11.313C515.365,325.89,514.5,329.914,514.148,333.9Zm-17.509,16.643c.046-.289-14.521-3.658-14.475-3.947a8.321,8.321,0,0,1,1.03-.158s-10.326-4.425-15.541-1.437c1.768.294,5.541,1.02,10.123,1.915C484.8,348.289,493.63,350.043,496.639,350.544Zm15.9-79.333.055-.631-6.451-1.759.887,3.984,2.154-.623Z" transform="translate(0)" fill="#fff" stroke="#9b4ea1" strokeWidth="2"/>
     <path id="Path_257" data-name="Path 257" d="M499.1,268.033a41.293,41.293,0,0,1,4.514.705c4.7,1.216,7.154,4.853,5.541,9.4a33.5,33.5,0,0,1-5.88,10.785c-12.1,13.841-27.262,22.477-45.558,25.32a2.537,2.537,0,0,1-.286.046c-4.012.134-8.183.261-10.8-3.423-2.573-3.623-1.146-7.405.578-10.965A43.121,43.121,0,0,1,458.9,285.7c11.039-9.177,23.319-15.741,37.823-17.44C497.394,268.177,498.068,268.129,499.1,268.033Z" transform="translate(-6.312 -2.538)" fill="#9b4ea1"/>
     <path id="Path_258" data-name="Path 258" d="M519.211,325.442V354.3L494.56,339.618Z" transform="translate(-27.021 -26.635)" fill="#9b4ea1"/>
     <path id="Path_259" data-name="Path 259" d="M483.288,381,464.3,382.868l-.562-.986,13.646-23.832C479.423,365.974,481.242,373.046,483.288,381Z" transform="translate(-14.083 -40.322)" fill="#9b4ea1"/>
@@ -107,7 +107,7 @@ const Ruby=() =><svg id='aboutRubySVG' xmlns="http://www.w3.org/2000/svg" xlink=
     <path id="Path_271" data-name="Path 271" d="M567.485,276.155l-5.509,1.593-.887-3.984,6.451,1.759Z" transform="translate(-54.946 -4.943)" fill="#9b4ea1"/>
     <path id="Path_385" data-name="Path 385" d="M575.344,277.239l-12.278,2.316c-.654-1.917-1.182-3.463-1.977-5.792l14.377,2.558Z" transform="translate(816.825 -185.438) rotate(101)" fill="#9b4ea1"/>
   </g>
-  <text id="git_commit_-m_portfolio_update_" transform="translate(197.8 264.134) rotate(13)" fill="#6b6b6b" font-size="29" font-family="Gilroy-ExtraBold, Gilroy" font-weight="800"><tspan x="-95.468" y="0">git commit -m</tspan><tspan x="-120.002" y="36" space="preserve"> &apos;portfolio update&apos;</tspan></text>
+  <text id="git_commit_-m_portfolio_update_" transform="translate(197.8 264.134) rotate(13)" fill="#6b6b6b" fontSize="29" fontFamily="Gilroy-ExtraBold, Gilroy" fontWeight="800"><tspan x="-95.468" y="0">git commit -m</tspan><tspan x="-120.002" y="36" space="preserve"> &apos;portfolio update&apos;</tspan></text>
 </svg>
 
 

@@ -1,7 +1,7 @@
 import React from 'react';
-import Events from './Events';
-import railspt1_img1 from '../../../Photos/railspt1ateith/railspt1_img1.JPG'
-import Rorateithpt2_3 from '../../../Photos/railspt2ateith/Rorateithpt2_3.JPG'
+import Events from '../../Events';
+import railspt1_img1 from '../../../../Photos/railspt1ateith/railspt1_img1.JPG'
+import Rorateithpt2_3 from '../../../../Photos/railspt2ateith/Rorateithpt2_3.JPG'
 import { withRouter } from 'react-router-dom';
 
 const railsWorkshops = [

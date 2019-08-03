@@ -9,7 +9,7 @@ import Carousel, { Modal, ModalGateway } from 'react-images';
 import anime from 'animejs/lib/anime.es.js';
 
 
-const images=[{src:stella,caption:'lorem lorem lorem'}]
+const images=[{src:stella,caption:'lorem lorem lorem'},{src:stella,caption:'lorem lorem lorem'}]
 
 const TechBooks = [
     {
@@ -70,12 +70,12 @@ render() {
             <Row>
                 <Col md='6' className='PhotoContainer' >
                     <div className='PhotoContainer__stella'>
-                        <img className='PhotoContainer__stella__image' onClick={()=>this.toggleModal(0)} src={stella} />
+                        <img alt={images[0].caption} className='PhotoContainer__stella__image' onClick={()=>this.toggleModal(0)} src={stella} />
                         <h4>That's me!</h4>
                     </div>
 
                     <div className='PhotoContainer__miranda'>
-                        <img className='PhotoContainer__miranda__image' src={stella} onClick={()=>this.toggleModal(1)} />
+                        <img alt={images[1].caption} className='PhotoContainer__miranda__image' src={stella} onClick={()=>this.toggleModal(1)} />
                         <h4>...and that's Miranda!</h4>
                     </div>
 
@@ -108,7 +108,7 @@ render() {
             <Row className='postRow osemRow'>
                 <Col md={{ span: 6, offset: 6 }} className='osemContainer'>
                     <h1>My experience with GSoC</h1>
-                    <img src={osem} />
+                    <img alt="osem's logo with a mouse smiling with closed eyes, and scratching its belly" src={osem} />
                 </Col>
                 <Col md='6'>
                     <p className='aboutOsem'>
@@ -156,7 +156,7 @@ render() {
 
             <Row className='postRow cooking'>
                 <Col className='' xs='12'  md='6'>
-                    <img src={spaghetti} />
+                    <img src={spaghetti} alt='a tasty spaghetti plate with sauce and vegetables' />
                     
                 </Col>
                 <Col className='cooking__info' xs={{ span: 12 }} md='6'>
