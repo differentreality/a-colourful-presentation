@@ -76,7 +76,7 @@ const MenuConfCard=() =>
 
 
 const Networking = () => {
-  return <svg id='NetworkingSVG'  className='fade-in svgFam__center' width="301.92" height="217.399" viewBox="0 0 301.92 217.399">
+  return <svg id='NetworkingSVG'  className='fade-in svgFam__center'  width="255.003"  height="272.353" viewBox="0 0 351.92 217.399">
     <g id="Group_42" data-name="Group 42" transform="translate(-784.631 -551)">
       <path id="Path_235" data-name="Path 235" d="M388.965,468.691h-113.4c-4.181-25.345,16.772-52.173,42.186-53.568,11.146-.612,22.575-.848,33.534.9C375.067,419.8,392.067,444.2,388.965,468.691Z" transform="translate(601.779 299.709)" fill="url(#linear-gradient)" />
       <path id="Path_237" data-name="Path 237" d="M358.23,386.554a28.436,28.436,0,0,1-30.169,28.353c-15.054-1.3-27.047-15.936-25.922-31.939,1.1-15.694,15.039-28.151,30.231-27.025C347.377,357.055,359.317,371.189,358.23,386.554Z" transform="translate(603.656 295.627)" fill="url(#linear-gradient)" />
