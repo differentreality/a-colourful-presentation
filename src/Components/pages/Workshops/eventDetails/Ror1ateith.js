@@ -4,7 +4,7 @@ import railspt1_img2 from '../../../../Photos/railspt1ateith/railspt1_img2.JPG'
 import railspt1_img3 from '../../../../Photos/railspt1ateith/railspt1_img3.JPG'
 import railspt1_img4 from '../../../../Photos/railspt1ateith/railspt1_img4.JPG'
 import railspt1_img5 from '../../../../Photos/railspt1ateith/railspt1_img5.JPG'
-import rorpt1poster from '../../../../Photos/railspt1ateith/rorpt1poster.jpg'
+import rorpt1poster from '../../../../Photos/railspt1ateith/rorpt1poster.JPG'
 
 import { Ruby } from '../../../../svg/topics/topicsSvg';
 

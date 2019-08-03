@@ -3,7 +3,6 @@
 // -----------------------------------------------------------------------------
 
 .home {
-
 overflow-X:hidden;
     .leftContent {
         &__title {
@@ -24,6 +23,16 @@ overflow-X:hidden;
             color: $stellaTextColor;
             text-shadow: $stellaTextShadow;
         }
+    }
+
+    .skipButton
+    {
+        z-index: 3;
+        border:none;
+        background: white;
+        font-style: italic;
+        color:$paragraphColour;
+        position: fixed;
     }
 
     .rightContent {
@@ -108,6 +117,18 @@ overflow-X:hidden;
 
 @media (max-width:780px)
 {
+    .skipButton
+    {
+        display: block;
+        position: static!important;
+        z-index: 3;
+        border:none;
+        background: transparent;
+        font-style: italic;
+        color:$paragraphColour;
+        margin-top:10%;
+    }
+
     .scrollGuide {
         margin-top: 20%;
         .home__scrollAction{

@@ -61,7 +61,6 @@ class App extends Component {
 
   render() {
     return (
-      <React.StrictMode>
       <Provider store={store}>
         <Router history={history} >
           <ScrollToTop/>
@@ -117,7 +116,6 @@ class App extends Component {
          
         </Router>
       </Provider>
-      </React.StrictMode>
     );
   }
 }

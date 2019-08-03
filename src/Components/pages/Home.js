@@ -7,6 +7,7 @@ import history from '../../history'
 import store from '../../store'
 class Home extends Component {
 
+    state={skipButton:true}
     componentDidMount() {
         this.scrollToChangePage = this.scrollToChangePage.bind(this);
         this.updateStore();
@@ -61,12 +62,16 @@ class Home extends Component {
         animation.reverse();
     }
 
+   
+
+    animationTimeline=anime.timeline({complete:()=>this.hideSkipButton()});
+
     entranceAnimation = () => {
         var textWrapper = document.querySelector('.leftContent__title');
         // eslint-disable-next-line
         textWrapper.innerHTML = textWrapper.textContent.replace((/([^\x00-\x80]|\w)/g), "<span class='letter'>$&</span>");
 
-        anime.timeline()
+        this.animationTimeline
             .add({
                 targets: '.leftContent__title .letter',
                 opacity: [0, 1],
@@ -101,10 +106,19 @@ class Home extends Component {
             .add({
                 targets:'.homeCTA',
                 opacity: [0, 1],
-                duration:1000
+                duration:1000,
             })
+            .add({
+                targets:'.skipButton',
+                opacity: [1, 0],
+                duration:1000,
+                complete:()=>this.hideSkipButton()
+            })
+      
     }
+    hideSkipButton=()=>this.setState({skipButton:false})
 
+    skipAnimation=()=>{this.animationTimeline.seek(this.animationTimeline.duration);this.hideSkipButton()};
 
     updateStore = () => {
 
@@ -116,6 +130,7 @@ class Home extends Component {
     render() {
         return (
             <Container id='homePage' fluid='true' className='home'>
+              {this.state.skipButton?<button className='skipButton fade-in' onClick={this.skipAnimation}>Skip Animations?</button>:''}
                 <Row>
                     <Col className='leftContent' md='6'>
                         <h1 className='leftContent__title'>Stella Rouzi</h1>
