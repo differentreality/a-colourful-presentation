@@ -7,6 +7,8 @@ import { PapyrusOutline } from '../../svg/Contact'
 import {  Link } from 'react-router-dom';
 import store from '../../store'
 import SocialBar from '../parts/Menu/SocialBar'
+import { faArrowRight} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const workshopLinks=[
     {
@@ -107,7 +109,7 @@ class MenuContainer extends Component {
                     <Col lg='4'>
                     <form className='newsLetterForm' action="/action_page.php">
                     <input className='newsLetterForm__input' type="text" id="fname" name="firstname" placeholder="Your E-mail..."/>
-                    <input className='newsLetterForm__submit' type="submit" value="Submit! 🡢 "/>
+                    <input className='newsLetterForm__submit' type="submit" value={"Submit!"}/>
                     </form>
                     </Col>
             </Row>

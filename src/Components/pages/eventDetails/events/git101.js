@@ -1,5 +1,5 @@
 import React from 'react';
-import DetailedEvent from '../DetailedEvent';
+import {WorkshopDetailedEvent} from '../DetailedEvent';
 import git101poster from '../../../../Photos/git101poster.jpg'
 import gitMpratsa from '../../../../Photos/gitMpratsa.JPG';
 import gitPeople from '../../../../Photos/gitPeople.JPG';
@@ -126,6 +126,6 @@ const eventData =
     }
 
 
-const Git101 = ()=><DetailedEvent group='workshop' data={eventData}/>
+const Git101 = (props)=><WorkshopDetailedEvent mobile={props.mobile} group='workshop' data={eventData}/>
 
 export {Git101};

@@ -11,6 +11,9 @@ import { ConfCard, Beer, Networking, University, UniversityOutline } from '../..
 import { Papyrus, PapyrusOutline, QuestionMark, MessageCloud, MessageFolder } from '../../svg/Contact'
 import { debounce } from 'lodash';
 import store from '../../store';
+import { faArrowRight ,faArrowLeft} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 class CategoryNavigation extends Component {
 
@@ -31,16 +34,15 @@ class CategoryNavigation extends Component {
         this.state = {
             'urlPointer': pointer,
         }
-    }
 
+    }
+    
     componentWillMount() {
         window.addEventListener('wheel', this.debouncedScroll, true)
         window.addEventListener('touchstart', this.startTouch, false);
         window.addEventListener('touchmove', this.moveTouch, false);
         this.checkPage();
     }
-
-
 
 
 
@@ -88,7 +90,6 @@ class CategoryNavigation extends Component {
     };
     
     swipeToChangePages = (swipeDirection) => {
-        console.log(swipeDirection);
         if (swipeDirection === 'right') {
 
             this.changePointer('add');
@@ -106,7 +107,6 @@ class CategoryNavigation extends Component {
     }
 
     scrollToChangePages = (scrollingDirection) => {
-
         if (scrollingDirection.deltaY > 2) {
 
             this.changePointer('add');
@@ -341,7 +341,7 @@ class CategoryNavigation extends Component {
 
                 <Row >
                     <Col className='bubbleGuide'  xs='12'>
-                        <h6>🡠 Keep Swiping & Scrolling! 🡢</h6>
+                        <h6><FontAwesomeIcon icon={faArrowLeft}/> Keep Swiping & Scrolling! <FontAwesomeIcon icon={faArrowRight}/></h6>
                         <NavLink to="/workshops" onClick={() => this.updatePointerClick(0)}><span className={'colourBubble-' + (this.state.group === 'workshop' ? 'workshop' : 'empty')} /></NavLink>
                         <NavLink to="/talks" onClick={() => this.updatePointerClick(1)}><span className={'colourBubble-' + (this.state.group === 'talk' ? 'talk' : 'empty')} /></NavLink>
                         <NavLink to="/events" onClick={() => this.updatePointerClick(2)}><span className={'colourBubble-' + (this.state.group === 'event' ? 'event' : 'empty')} /></NavLink>

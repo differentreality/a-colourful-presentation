@@ -1,5 +1,5 @@
 import React from 'react';
-import DetailedEvent from '../DetailedEvent';
+import {WorkshopDetailedEvent} from '../DetailedEvent';
 import railspt1_img2 from '../../../../Photos/railspt1ateith/railspt1_img2.JPG'
 import railspt1_img3 from '../../../../Photos/railspt1ateith/railspt1_img3.JPG'
 import railspt1_img4 from '../../../../Photos/railspt1ateith/railspt1_img4.JPG'
@@ -125,6 +125,6 @@ const eventData =
     }
 
 
-const Ror1ateith = ()=><DetailedEvent group='workshop' data={eventData}/>
+const Ror1ateith = (props)=><WorkshopDetailedEvent mobile={props.mobile} group='workshop' data={eventData}/>
 
 export default Ror1ateith;

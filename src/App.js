@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import store from './store';
-import {BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import {Router, Route, Switch } from 'react-router-dom'
 import ScrollToTop from './ScrollToTop'
 
 import history from './history'

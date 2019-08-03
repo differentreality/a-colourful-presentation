@@ -4,18 +4,20 @@ import { Container, Col, Row } from 'react-bootstrap';
 import { Button } from '../../Components/parts/Buttons';
 import { CallToActionSvg } from '../../svg/CallToActionSvg';
 import history from '../../history'
+import store from '../../store'
 class Home extends Component {
 
     componentDidMount() {
-        this.scrollToChangePage = this.scrollToChangePage.bind(this)
-        window.addEventListener("wheel", this.scrollToChangePage);
+        this.scrollToChangePage = this.scrollToChangePage.bind(this);
+        this.updateStore();
+        window.addEventListener("wheel", this.scrollToChangePage,true);
         window.addEventListener('touchstart', this.startTouch, false);
         window.addEventListener('touchmove', this.swipeToChangePage, false);
         this.entranceAnimation();
     }
 
     componentWillUnmount() {
-        window.removeEventListener('wheel', this.scrollToChangePage);
+        window.removeEventListener('wheel', this.scrollToChangePage,true);
         window.removeEventListener('touchstart', this.startTouch, true);
         window.removeEventListener('touchmove', this.swipeToChangePage, true);
     }
@@ -25,6 +27,7 @@ class Home extends Component {
         this.initialX = e.touches[0].clientX;
     };
     swipeToChangePage = (e) => {
+       
         if (this.initialX === null) {
             return;
         }
@@ -40,6 +43,7 @@ class Home extends Component {
     };
 
     scrollToChangePage = (e) => {
+        
         if (e.deltaY > 0) {
             //scroll down
             this.changePage();
@@ -102,6 +106,12 @@ class Home extends Component {
     }
 
 
+    updateStore = () => {
+
+        store.dispatch(
+            { type: 'change_Color', payload: { color: 'stella' } }
+        );
+    }
 
     render() {
         return (
