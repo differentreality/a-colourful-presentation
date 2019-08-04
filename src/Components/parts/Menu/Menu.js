@@ -45,7 +45,7 @@ class MenuButton extends Component {
     render() {
         return (
             <div className='menuButtons'>
-                <Link to='/'><span  onClick={this.homeClick} className='menu__logo'>HOME</span></Link>
+                <Link to='/' onClick={this.homeClick} className='menu__logo'>HOME</Link>
                 <span className={'v-link'+(this.props.isMenuOpen?'-white':'')} onClick={this.clicked}>
                     {this.props.isMenuOpen ? <span className='fade-in v-link__text'>CLOSE</span> : <span className='puff-in-center v-link__text'>MENU</span>}
                     <div className='v-link__v-lines'>

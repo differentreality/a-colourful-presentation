@@ -1,9 +1,9 @@
 .sideMenu,
 .mobileHeader {
     .menu__logo {
+        color: $paragraphColour;
+        margin-top: 10%;
         display: inline-block;
-        color:$paragraphColour;
-        margin-top:5%;
     }
 }
 
@@ -87,7 +87,7 @@
 
     &__outofBorderContent {
 
-        transition:all .5s;
+        transition: all .5s;
         font-size: 13px;
         margin-top: 750px;
         color: $stellaTextColor;
@@ -147,9 +147,8 @@
             border-right: 1px solid white;
         }
 
-        .menu__logo
-        {
-            color:white;
+        .menu__logo {
+            color: white;
         }
     }
 }
@@ -187,8 +186,10 @@
         .mobileHeader__bordered {
             background-color: transparent;
             border-bottom: 1px solid white;
-
-
+        }
+        .menu__logo
+        {
+            color:white;
         }
     }
 }
@@ -246,4 +247,12 @@
         }
     }
 
+}
+
+@media (max-width:770px) {
+    .mobileHeader {
+        .menu__logo {
+            display: inline;
+        }
+    }
 }

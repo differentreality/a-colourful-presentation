@@ -39,6 +39,7 @@ const eventData =
         date:'06/05/2019',
         details:'lorem lorem loremlorem lorem loremlorem lorem loremlorem lorem loremlorem lorem lorem',
         group:'talk',
+        topic:'GSoC',
         poster:images[0].src,
         slides:'https://docs.google.com/presentation/d/1EQo6aQmxGQ-HV1Q7ZTpbSTBzhoIwOmkffHM9r6ji5lM/edit?usp=sharing',
         socialEvent:'https://www.facebook.com/events/455650285188880/',

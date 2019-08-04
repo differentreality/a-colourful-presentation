@@ -5,6 +5,8 @@ import { Button } from '../../Components/parts/Buttons';
 import { CallToActionSvg } from '../../svg/CallToActionSvg';
 import history from '../../history'
 import store from '../../store'
+import {  Link } from 'react-router-dom';
+
 class Home extends Component {
 
     state={skipButton:true}
@@ -44,7 +46,6 @@ class Home extends Component {
     };
 
     scrollToChangePage = (e) => {
-        
         if (e.deltaY > 0) {
             //scroll down
             this.changePage();
@@ -52,14 +53,9 @@ class Home extends Component {
     }
 
     changePage = () => {
-        var animation = anime({
-            targets: '#Content',
-            opacity: 0,
-            duration: 500,
-        })
+        
         history.push('/workshops');
-        //eksafanisi content,ksanaemfanisi epomenou
-        animation.reverse();
+      
     }
 
    
@@ -156,7 +152,9 @@ class Home extends Component {
                     </Col>
 
                     <Col className='scrollGuide' md='6'>
-                        <span className='home__scrollAction'>Try Swiping or Scrolling!</span> <CallToActionSvg />
+                        <Link to='/workshops'>
+                            <span className='home__scrollAction'>Try Swiping or Scrolling!</span> <CallToActionSvg />
+                        </Link>
                     </Col>
                 </Row>
             </Container>

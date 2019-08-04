@@ -29,6 +29,7 @@ import MenuContainer from './Components/pages/MenuContainer'
 import Conferences from './Components/pages/Events_Conferences/eventShowcase/Conferences'
 import GSoCTalks from './Components/pages/Talks/eventShowcase/GSoCTalks'
 import GSoCateith from './Components/pages/Talks/eventDetails/GSoCateith'
+import Fosdem19 from './Components/pages/Events_Conferences/eventDetails/Fosdem19'
 class App extends Component {
 
   constructor() {
@@ -95,6 +96,7 @@ class App extends Component {
                           {/*events*/}
                           <Route exact path='/events' render={() => <CategoryNavigation />} />
                           <Route exact path='/events/archive' render={() => <Conferences />} />
+                          <Route exact path='/events/archive/fosdem19' render={() => <Fosdem19 />} />
 
                           {/*about*/}
                           <Route exact path='/stellas-facts' render={() => <CategoryNavigation />} />

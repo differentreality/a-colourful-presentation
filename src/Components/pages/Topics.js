@@ -5,7 +5,7 @@ import { withRouter, Link } from 'react-router-dom';
 import anime from 'animejs/lib/anime.es.js';
 import store from '../../store'
 import { Heart, Tool, Git, Version, Cog, MVC, Ruby, HtmlTag ,Gsoc,Globe,Student,OpenSource } from '../../svg/topics/topicsSvg';
-
+import {BreadCrumbsLevel1} from '../parts/BreadCrumbs'
 class Topics extends Component {
 
     constructor(props) {
@@ -92,7 +92,8 @@ class Topics extends Component {
 
     render() {
         return <Container fluid='true' className='fade-in'>
-            <h3 className={'topicsCont__Category-' + this.props.group}>{this.props.group+'s'}</h3>
+               <BreadCrumbsLevel1 group={this.props.group}/>
+
 
             {this.state.chosenArray.map((event,id) => <Row key={id} className='topic'>
                 <Col lg={{ span: '6' }} className='topicsCont'>

@@ -7,6 +7,7 @@ import { Rails, Git, Ruby } from '../../svg/AboutSvg';
 import { Reading } from '../../svg/StellasFacts';
 import Carousel, { Modal, ModalGateway } from 'react-images';
 import anime from 'animejs/lib/anime.es.js';
+import { SingleBreadCrumbs } from '../parts/BreadCrumbs'
 
 
 const images=[{src:stella,caption:'lorem lorem lorem'},{src:stella,caption:'lorem lorem lorem'}]
@@ -67,6 +68,7 @@ class About extends Component {
 render() {
     const { modalIsOpen } = this.state;        
         return <Container className='About fade-in' fluid='true'>
+            <SingleBreadCrumbs group="stella" parent="Stella's Facts" url='/stellas-facts' title='about'/>
             <Row>
                 <Col md='6' className='PhotoContainer' >
                     <div className='PhotoContainer__stella'>

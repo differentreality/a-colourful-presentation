@@ -17,6 +17,6 @@ const images = [
     { src: GSoCateith1, caption: 'caption caption caption' },
 ]
 
-const GSoCTalks = () =>  <Events group='talk' images={images} data={GSoCTalksData}/>
+const GSoCTalks = () =>  <Events group='talk' topic='GSoC' images={images} data={GSoCTalksData}/>
 
 export default withRouter(GSoCTalks);

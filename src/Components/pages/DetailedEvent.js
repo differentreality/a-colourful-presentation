@@ -5,11 +5,12 @@ import Carousel, { Modal, ModalGateway } from 'react-images';
 import { DualButtons, Button } from '../parts/Buttons';
 import { LinkContainer, StageContainer } from '../parts/LinkContainer';
 import CodeSnippets from '../parts/CodeSnippets'
+import { EventBreadCrumbsLevel3, BreadCrumbsLevel3 } from '../parts/BreadCrumbs'
 
 const EventIntroduction = (props) =>
     <Row>
         <Col xs='12' md='8' className='EventInfo'>
-            <h1 onClick={() => console.log(props)} className='EventInfo__Title'>{props.title}</h1>
+            <h1 className='EventInfo__Title'>{props.title}</h1>
             <h5 className='EventInfo__Date'>{props.date}</h5>
             <p className='EventInfo__information'>{props.details} </p>
             <DualButtons group={props.group} firstLink={props.slides} secondLink={props.socialEvent} firstButtonText='Get the Slides' secondButtonText='Facebook Event' />
@@ -116,8 +117,9 @@ class WorkshopDetailedEvent extends Component {
         const mobile = this.props.mobile;
         return <Container className='fade-in' fluid='true'>
 
+            <BreadCrumbsLevel3 group={this.props.group} topic={this.props.data.topic} title={this.props.data.title} />
 
-            <EventIntroduction title={this.props.data.title} date={this.props.data.date} details={this.props.data.details}
+            <EventIntroduction topic={this.props.data.topic} title={this.props.data.title} date={this.props.data.date} details={this.props.data.details}
                 group={this.props.data.group} firstLink={this.props.data.slides}
                 secondLink={this.props.data.socialEvent}
                 poster={this.props.data.poster}
@@ -136,7 +138,7 @@ class WorkshopDetailedEvent extends Component {
 
             <PhotoMedia images={this.props.data.images} toggleModal={(num) => this.toggleModal(num)} />
 
-            <CTAEnding isMobile={mobile}/>
+            <CTAEnding isMobile={mobile} />
 
             <ModalGateway >
                 {modalIsOpen ? (
@@ -173,7 +175,9 @@ class TalkEventDetails extends Component {
         const mobile = this.props.mobile;
         return <Container className='fade-in' fluid='true'>
 
-
+            {this.props.group==='event'?<EventBreadCrumbsLevel3 group={this.props.group} title={this.props.data.title}/>:
+            <BreadCrumbsLevel3 group={this.props.group} topic={this.props.data.topic} title={this.props.data.title} />}
+            
             <EventIntroduction title={this.props.data.title} date={this.props.data.date} details={this.props.data.details}
                 group={this.props.data.group} firstLink={this.props.data.slides}
                 secondLink={this.props.data.socialEvent}
@@ -184,7 +188,7 @@ class TalkEventDetails extends Component {
 
             <PhotoMedia images={this.props.data.images} toggleModal={(num) => this.toggleModal(num)} />
 
-            <CTAEnding isMobile={mobile}/>
+            <CTAEnding isMobile={mobile} />
 
             <ModalGateway >
                 {modalIsOpen ? (
@@ -197,4 +201,4 @@ class TalkEventDetails extends Component {
     }
 }
 
-export {WorkshopDetailedEvent,TalkEventDetails};
+export { WorkshopDetailedEvent, TalkEventDetails };

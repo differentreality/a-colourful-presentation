@@ -5,7 +5,7 @@ import { EmptyButton } from '../parts/Buttons'
 import Carousel, { Modal, ModalGateway } from 'react-images';
 import store from '../../store';
 import { Link } from 'react-router-dom';
-
+import {BreadCrumbsLevel2,EventBreadCrumbsLevel1} from '../parts/BreadCrumbs'
 
 class Events extends Component {
     state = { modalIsOpen: false, selectedIndex: 0 }
@@ -46,6 +46,12 @@ class Events extends Component {
         const { modalIsOpen, selectedIndex } = this.state;
         return (
             <Container className='fade-in' fluid='true'>
+                                
+                                {/*Events do not have topics,so there's no extra link*/ }
+                               {this.props.group==='event'?<EventBreadCrumbsLevel1 group={this.props.group}/>
+                               :<BreadCrumbsLevel2 group={this.props.group} topic={this.props.topic}/>}
+
+            
                 {this.props.data.map((event, id) => <Row className='eventCont' key={id}>
                     <Col lg='8' className='eventLeftCont'>
                         <h1 className='eventLeftCont__Title'>{event.Title}</h1>

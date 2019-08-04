@@ -30,6 +30,6 @@ const images = [
     { src: Rorateithpt2_3, caption: 'caption caption caption' },
 ]
 
-const RailsEvents = () => <Events group='workshop' images={images} data={railsWorkshops} />
+const RailsEvents = () => <Events group='workshop' topic='RoR' images={images} data={railsWorkshops} />
 
 export default withRouter(RailsEvents);
