@@ -76,22 +76,24 @@
             &__botLeft,
             &__topRight,
             &__topLeft {
-                max-width: 70px;
-                max-height: 70px;
+                max-width: 20%;
+                max-height: 20%;
             }
 
             &__center {
-                max-width: 110px;
-                max-height: 110px;
+                max-width: 40%;
+                max-height: 40%;
+                margin-left:-10%;
+                top:-10%;
             }
 
             &__botRight {
-                left: 50%;
+                left: 40%;
                 top: 30%;
             }
 
             &__topLeft {
-                left: -40%;
+                left: -30%;
             }
 
 
@@ -145,7 +147,7 @@
             &__center {
                 max-width: 110px;
                 max-height: 110px;
-                margin-top: -25%;
+                margin-top: -40%;
             }
 
             &__topLeft {
@@ -159,7 +161,7 @@
             }
 
             &__botRight {
-                left: 70%;
+                left: 60%;
             }
 
 
@@ -186,26 +188,28 @@
     @media (max-width: 770px) {
 
         .svgFam {
-            margin: 30% 25%;
+
+            margin-left:40%;
+             &__botRight,
+            &__botLeft,
+            &__topRight,
+            &__topLeft {
+                max-width: 50px;
+                max-height: 50px;
+            }
+
+            &__center {
+                max-width: 70px;
+                max-height: 700px;
+                margin-top: -70%;
+            }
         }
 
     }
 
     @media (max-width: 500px) {
 
-        .svgFam {
-
-            margin: 50% 25% 30% 33%;
-
-            &__botRight {
-                left: -33%;
-                top: -10%;
-            }
-
-            &__botLeft {
-                left: 70%;
-            }
-        }
+   
 
         .workshopCon {
 
@@ -224,18 +228,23 @@
 
         .svgFam {
 
+            margin-top: 30%;   
+
+ &__botRight,&__botLeft {
+                top: -50%;
+            }
             &__botRight,
             &__botLeft,
             &__topRight,
             &__topLeft {
-                max-width: 50px;
-                max-height: 50px;
+                max-width: 30px;
+                max-height: 30px;
             }
 
             &__center {
                 max-width: 70px;
                 max-height: 70px;
-                margin-top: -60%;
+                margin-top: -80%;
             }
 
 
@@ -251,3 +260,12 @@
         }
     }
 }
+
+   @media (max-width: 420px) {
+
+#MainNav{
+    .svgFam {
+        margin-top:50%;
+   }
+}
+   }

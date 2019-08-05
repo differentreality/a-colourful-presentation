@@ -1,25 +1,35 @@
 import React, { Component } from 'react';
 import anime from 'animejs/lib/anime.es.js';
+import history from '../../history'
+import store from '../../store'
+
+import {  Link } from 'react-router-dom';
 import { Container, Col, Row } from 'react-bootstrap';
 import { Button } from '../../Components/parts/Buttons';
 import { CallToActionSvg } from '../../svg/CallToActionSvg';
-import history from '../../history'
-import store from '../../store'
-import {  Link } from 'react-router-dom';
+
 
 class Home extends Component {
 
-    state={skipButton:true}
+    state={animationPlaying:true}
     componentDidMount() {
         this.scrollToChangePage = this.scrollToChangePage.bind(this);
+
+        //set theme to purple
         this.updateStore();
+
+        //add listeners for scroll / swipe
         window.addEventListener("wheel", this.scrollToChangePage,true);
         window.addEventListener('touchstart', this.startTouch, false);
         window.addEventListener('touchmove', this.swipeToChangePage, false);
+
+        //play animations
         this.entranceAnimation();
     }
 
     componentWillUnmount() {
+
+        //remove scroll / swipe listeners
         window.removeEventListener('wheel', this.scrollToChangePage,true);
         window.removeEventListener('touchstart', this.startTouch, true);
         window.removeEventListener('touchmove', this.swipeToChangePage, true);
@@ -36,6 +46,7 @@ class Home extends Component {
         }
         var currentX = e.touches[0].clientX;
         var diffX = this.initialX - currentX;
+
         // sliding horizontally
         if (diffX > 0) {
             // swiped left
@@ -53,17 +64,17 @@ class Home extends Component {
     }
 
     changePage = () => {
-        
         history.push('/workshops');
       
     }
 
-   
 
+    //when the animation is completed,hide the skip button 
     animationTimeline=anime.timeline({complete:()=>this.hideSkipButton()});
 
     entranceAnimation = () => {
         var textWrapper = document.querySelector('.leftContent__title');
+
         // eslint-disable-next-line
         textWrapper.innerHTML = textWrapper.textContent.replace((/([^\x00-\x80]|\w)/g), "<span class='letter'>$&</span>");
 
@@ -112,12 +123,20 @@ class Home extends Component {
             })
       
     }
-    hideSkipButton=()=>this.setState({skipButton:false})
 
-    skipAnimation=()=>{this.animationTimeline.seek(this.animationTimeline.duration);this.hideSkipButton()};
+
+    skipAnimation=()=>{
+
+        //finish animation
+        this.animationTimeline.seek(this.animationTimeline.duration);
+
+        //hide skip button
+        this.hideSkipButton();
+        };
+
+    hideSkipButton=()=>this.setState({animationPlaying:false})
 
     updateStore = () => {
-
         store.dispatch(
             { type: 'change_Color', payload: { color: 'stella' } }
         );
@@ -126,7 +145,10 @@ class Home extends Component {
     render() {
         return (
             <Container id='homePage' fluid='true' className='home'>
-              {this.state.skipButton?<button className='skipButton fade-in' onClick={this.skipAnimation}>Skip Animations?</button>:''}
+
+              {/*IF animation is playing,show the skip button */}
+              {this.state.animationPlaying?<button className='skipButton fade-in' onClick={this.skipAnimation}>Skip Animations?</button>:''}
+              
                 <Row>
                     <Col className='leftContent' md='6'>
                         <h1 className='leftContent__title'>Stella Rouzi</h1>

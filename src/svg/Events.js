@@ -1,6 +1,6 @@
 import React from 'react';
 const Beer = () => {
-  return <svg  className='fade-in svgFam__botRight fade-in' width="67.554" height="69.364" viewBox="0 0 67.554 69.364">
+  return <svg  className='fade-in svgFam__botRight fade-in'width="85.205" height="117.224"viewBox="0 0 67.554 69.364">
     <defs>
       <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
         <stop offset="0" stopColor="#ff9a7d" />
@@ -22,7 +22,7 @@ const Beer = () => {
 }
 
 const ConfCard = () => {
-  return <svg id='confCard' className='fade-in svgFam__topRight' width="156.869" height="156.133" viewBox="0 0 125.628 129.139">
+  return <svg id='confCard' className='fade-in svgFam__topRight' width="85.205" height="117.224" viewBox="0 0 125.628 129.139">
     <defs>
       <linearGradient id="Event-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
         <stop offset="0" stopColor="#ff9a7d" />

@@ -15,7 +15,7 @@ const MessageCloud = () => {return <svg  className='fade-in svgFam__center' widt
 
 
 
-const MessageFolder = () => {return <svg  className='fade-in svgFam__botRight' width="93.725" height="86.834" viewBox="0 0 93.725 86.834">
+const MessageFolder = () => {return <svg  className='fade-in svgFam__botRight' width="85.205" height="117.224"viewBox="0 0 93.725 86.834">
 <defs>
   <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
     <stop offset="0" stopColor="#2b5876"/>
@@ -33,7 +33,7 @@ const MessageFolder = () => {return <svg  className='fade-in svgFam__botRight' w
 
 
 
-const Papyrus = (props) => {return <svg  id='papyrusSvg' className={'fade-in' + (props.className?' svgFam__topLeft':'')} width="154.087" height="156.918" viewBox="0 0 154.087 156.918">
+const Papyrus = (props) => {return <svg  id='papyrusSvg' className={'fade-in' + (props.className?' svgFam__topLeft':'')}width="85.205" height="117.224" viewBox="0 0 154.087 156.918">
 <defs>
 
   <filter id="Path_212" x="0" y="0.308" width="137.508" height="156.611" filterUnits="userSpaceOnUse">
@@ -82,7 +82,7 @@ const Papyrus = (props) => {return <svg  id='papyrusSvg' className={'fade-in' + 
 
 
 
-const PapyrusOutline = () => {return<svg  className='fade-in svgFam__botLeft' id='PapyrusOutlineSvg' xlink="http://www.w3.org/1999/xlink" width="79.825" height="97.266" viewBox="0 0 79.825 97.266">
+const PapyrusOutline = () => {return<svg  className='fade-in svgFam__botLeft' id='PapyrusOutlineSvg' width="85.205" height="117.224" viewBox="0 0 79.825 97.266">
 <defs>
   <filter id="Path_212" x="0" y="6.071" width="66.582" height="91.195" filterUnits="userSpaceOnUse">
     <feOffset dy="3" input="SourceAlpha"/>
@@ -125,7 +125,7 @@ const PapyrusOutline = () => {return<svg  className='fade-in svgFam__botLeft' id
 
 
 
-const QuestionMark = () => {return <svg  className='fade-in svgFam__topRight' width="125.443" height="114.585" viewBox="0 0 125.443 114.585">
+const QuestionMark = () => {return <svg  className='fade-in svgFam__topRight' width="85.205" height="117.224" viewBox="0 0 125.443 114.585">
 <text id="_" data-name="?" fontSize='70px' transform="translate(20.488 56.025) rotate(52)" fill="#2b5876" stopOpacity="95" fontWeight="800" letterSpacing="0.05em"><tspan x="0" y="0">?</tspan></text>
 </svg>
 }

@@ -20,8 +20,10 @@ class CategoryNavigation extends Component {
     constructor(props) {
 
         super(props);
-        let pointer;
         this.debouncedScroll = this.debouncedScroll.bind(this);
+        
+        //set a pointer based on url
+        let pointer;
         switch (history.location.pathname) {
             case '/workshops': pointer = 0; break;
             case '/talks': pointer = 1; break;
@@ -38,31 +40,25 @@ class CategoryNavigation extends Component {
     }
     
     componentWillMount() {
+
+        //scroll & swipe listeners
         window.addEventListener('wheel', this.debouncedScroll, true)
         window.addEventListener('touchstart', this.startTouch, false);
         window.addEventListener('touchmove', this.moveTouch, false);
         this.checkPage();
-    }
-
-
-
-
-    componentDidMount() {
-        this.restartAnimations();
-        this.updateStore();
-        //first category after homepage scroll
-        store.dispatch(
-            { type: 'change_Color', payload: { color: 'workshop' } }
-        );
-    }
+    }   
 
     componentWillUnmount() {
+
+        //remove scroll & swipe listeners
         window.removeEventListener('wheel', this.debouncedScroll, true);
         window.removeEventListener('touchstart', this.startTouch, true);
         window.removeEventListener('touchmove', this.moveTouch, true);
     }
 
     componentDidUpdate() {
+
+        //change theme based on page
         this.updateStore();
     }
 
@@ -88,20 +84,34 @@ class CategoryNavigation extends Component {
         this.initialY = null;
         e.preventDefault();
     };
-    
     swipeToChangePages = (swipeDirection) => {
         if (swipeDirection === 'right') {
 
+            //pointer++
             this.changePointer('add');
+
+            //change url
             history.push(this.categoryURLS[this.state.urlPointer]);
+
+            //change state
             this.checkPage();
+
+            //replay animations
             this.restartAnimations();
         }
 
         if (swipeDirection === 'left') {
+
+            //pointer--
             this.changePointer('minus');
+
+            //change url
             history.push(this.categoryURLS[this.state.urlPointer]);
+
+            //change state
             this.checkPage();
+
+            //replay animations
             this.restartAnimations();
         }
     }
@@ -109,22 +119,36 @@ class CategoryNavigation extends Component {
     scrollToChangePages = (scrollingDirection) => {
         if (scrollingDirection.deltaY > 2) {
 
+            //pointer++
             this.changePointer('add');
+
+            //change url
             history.push(this.categoryURLS[this.state.urlPointer]);
+
+            //update state
             this.checkPage();
+
+            //replay animations
             this.restartAnimations();
         }
 
         if (scrollingDirection.deltaY < -2) {
 
-
+            //pointer--
             this.changePointer('minus');
+
+            //chnage url
             history.push(this.categoryURLS[this.state.urlPointer]);
+
+            //change state
             this.checkPage();
+
+            //replay animations
             this.restartAnimations();
         }
     }
 
+    //delay between repeatition : 80
     debouncedScroll = debounce((e) => this.scrollToChangePages(e), 80);
     debouncedSwipe = debounce((e, swipeDirection) => this.swipeToChangePages(e, swipeDirection), 80);
 
@@ -135,8 +159,8 @@ class CategoryNavigation extends Component {
         );
     }
 
-    categoryURLS = ['/workshops', '/talks', '/events', '/stellas-facts', '/contact']
 
+    categoryURLS = ['/workshops', '/talks', '/events', '/stellas-facts', '/contact']
     changePointer = (type) =>
         type === 'add' ?
             this.setState(prevState =>
@@ -318,9 +342,6 @@ class CategoryNavigation extends Component {
 
 
     render() {
-
-
-
         return (
             <Container id='MainNav' className='fade-in'  fluid='true'>
                 <Row>
