@@ -8,7 +8,6 @@ import gitNasia from '../../../../Photos/gitNasia.JPG';
 import { Git } from '../../../../svg/topics/topicsSvg';
 
 
-
 const codesnippets=<div>
 <div>
     {/* eslint-disable-next-line*/}

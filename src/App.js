@@ -30,6 +30,7 @@ import Conferences from './Components/pages/Events_Conferences/eventShowcase/Con
 import GSoCTalks from './Components/pages/Talks/eventShowcase/GSoCTalks'
 import GSoCateith from './Components/pages/Talks/eventDetails/GSoCateith'
 import Fosdem19 from './Components/pages/Events_Conferences/eventDetails/Fosdem19'
+import ContactForm from './Components/pages/ContactForm'
 class App extends Component {
 
   constructor() {
@@ -104,6 +105,7 @@ class App extends Component {
                           
                           {/*contact*/}
                           <Route exact path='/contact' render={() => <CategoryNavigation />} />
+                          <Route exact path='/contact/form' render={() => <ContactForm />} />
                           
 
 

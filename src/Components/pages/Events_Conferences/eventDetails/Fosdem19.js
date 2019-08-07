@@ -113,7 +113,7 @@ const eventData =
         title:'git101',
         date:'06/05/2019',
         details:'lorem lorem loremlorem lorem loremlorem lorem loremlorem lorem loremlorem lorem lorem',
-        group:'workshop',
+        group:'event',
         topic:'git',
         poster:images[0].src,
         slides:'https://docs.google.com/presentation/d/1EQo6aQmxGQ-HV1Q7ZTpbSTBzhoIwOmkffHM9r6ji5lM/edit?usp=sharing',
@@ -127,6 +127,6 @@ const eventData =
     }
 
 
-const Fosdem19 = (props)=><TalkEventDetails mobile={props.mobile} group='event' data={eventData}/>
+const Fosdem19 = (props)=><TalkEventDetails mobile={props.mobile} group={eventData.group} data={eventData}/>
 
 export default Fosdem19;

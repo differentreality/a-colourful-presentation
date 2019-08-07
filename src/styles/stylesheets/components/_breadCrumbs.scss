@@ -45,6 +45,16 @@
                 color:$stellaTextColor;
             }
         }
+
+        &-contact
+        {
+            @extend .breadCrumbs;
+            color:$paragraphColour;
+            
+            a{
+                color:$workshopTextColor;
+            }
+        }
 }
 
 @media (max-width:1000px) {

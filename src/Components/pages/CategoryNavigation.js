@@ -40,7 +40,7 @@ class CategoryNavigation extends Component {
     }
     
     componentWillMount() {
-
+        
         //scroll & swipe listeners
         window.addEventListener('wheel', this.debouncedScroll, true)
         window.addEventListener('touchstart', this.startTouch, false);
