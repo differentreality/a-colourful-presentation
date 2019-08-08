@@ -1,7 +1,7 @@
 import React from 'react';
 import Events from '../../Events'
-import gitNasia from '../../../../Photos/gitNasia.JPG'
-import git101ateith from '../../../../Photos/git101ateith.JPG'
+import gitNasia from '../../../../Photos/git101ateith/gitNasia.JPG'
+import git101ateith from '../../../../Photos/git101ateith/git101ateith.JPG'
 import { withRouter } from 'react-router-dom';
 const gitWorkshops = [
     {
@@ -15,10 +15,7 @@ const gitWorkshops = [
     }
 ]
 
-const images = [
-    { src: gitNasia, caption: 'caption caption caption' },
-    { src: git101ateith, caption: 'caption caption caption' },
-]
+const images = [gitNasia,git101ateith]
 
 const GitEvents = () =>  <Events group='workshop'  topic='git' images={images} data={gitWorkshops}/>
 

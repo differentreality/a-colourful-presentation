@@ -17,7 +17,6 @@ import SocialBar from './Components/parts/Menu/SocialBar'
 
 //pages
 import Home from './Components/pages/Home'
-import Topics from './Components/pages/Topics'
 import GitEvents from './Components/pages/Workshops/eventShowcase/GitEvents'
 import RailsEvents from './Components/pages/Workshops/eventShowcase/RailsEvents'
 import CategoryNavigation from './Components/pages/CategoryNavigation'

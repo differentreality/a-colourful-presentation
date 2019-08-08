@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
 import store from '../../store'
-import Carousel, { Modal, ModalGateway } from 'react-images';
 import { DualButtons, Button } from '../parts/Buttons';
 import { LinkContainer, StageContainer } from '../parts/LinkContainer';
 import CodeSnippets from '../parts/CodeSnippets'
 import { EventBreadCrumbsLevel3, BreadCrumbsLevel3 } from '../parts/BreadCrumbs'
+import FsLightbox from 'fslightbox-react';
 
 const EventIntroduction = (props) =>
     <Row>
@@ -16,7 +16,7 @@ const EventIntroduction = (props) =>
             <DualButtons group={props.group} firstLink={props.slides} secondLink={props.socialEvent} firstButtonText='Get the Slides' secondButtonText='Facebook Event' />
         </Col>
         <Col xs='12' md='4' className='EventPoster'>
-            <img src={props.poster} alt={props.title + ' poster'} onClick={() => props.toggleModal(0)} className='EventPoster__image' />
+            <img src={props.poster} alt={props.title + ' poster'} onClick={() => props.openLightboxOnSlide(1)} className='EventPoster__image' />
             <h5 className='EventPoster__text'>the poster</h5>
         </Col>
     </Row>
@@ -68,16 +68,16 @@ const PhotoMedia = (props) => <Row className='postIntroRow PhotosRow'>
         <h1>Moments</h1>
     </Col>
     <Col md='6'>
-        <img src={props.images[1].src} onClick={() => props.toggleModal(1)} alt={props.images[1].caption} className='PhotosRow__image' />
+        <img src={props.images[1]} alt={props.altText[1]} onClick={() => props.openLightboxOnSlide(2)} className='PhotosRow__image' />
     </Col>
     <Col md='6'>
-        <img src={props.images[2].src} onClick={() => props.toggleModal(2)} alt={props.images[2].caption} className='PhotosRow__image' />
+        <img src={props.images[2]} alt={props.altText[2]} onClick={() => props.openLightboxOnSlide(3)} className='PhotosRow__image' />
     </Col>
     <Col md='6'>
-        <img src={props.images[3].src} onClick={() => props.toggleModal(3)} alt={props.images[3].caption} className='PhotosRow__image' />
+        <img src={props.images[3]} alt={props.altText[3]} onClick={() => props.openLightboxOnSlide(4)} className='PhotosRow__image' />
     </Col>
     <Col md='6'>
-        <img src={props.images[4].src} onClick={() => props.toggleModal(4)} alt={props.images[4].caption} className='PhotosRow__image' />
+        <img src={props.images[4]} alt={props.altText[4]} onClick={() => props.openLightboxOnSlide(5)} className='PhotosRow__image' />
     </Col>
 </Row>
 
@@ -94,15 +94,11 @@ const CTAEnding = (props) => <div><Row className='postIntroRow ctaRow'>
 </div>
 
 class WorkshopDetailedEvent extends Component {
+    state = { toggler: false, slide: 0 }
 
     constructor(props) {
         super(props);
-        this.state = { modalIsOpen: false, selectedIndex: 0 }
         this.updateStore(props.group)
-    }
-
-    toggleModal = (index) => {
-        this.setState(state => ({ modalIsOpen: !state.modalIsOpen, selectedIndex: index }));
     }
 
     updateStore = (group) => {
@@ -111,9 +107,18 @@ class WorkshopDetailedEvent extends Component {
         );
     }
 
-    render() {
+    openLightboxOnSlide = (number) => {
+        this.setState(prevState =>
+            ({
+                toggler: !prevState.toggler,
+                slide: number,
+            })
+        );
+    }
 
-        const { modalIsOpen, selectedIndex } = this.state;
+    render() {
+        const toggler = this.state.toggler;
+        const slide = this.state.slide;
         const mobile = this.props.mobile;
         return <Container className='fade-in' fluid='true'>
 
@@ -123,7 +128,7 @@ class WorkshopDetailedEvent extends Component {
                 group={this.props.data.group} firstLink={this.props.data.slides}
                 secondLink={this.props.data.socialEvent}
                 poster={this.props.data.poster}
-                toggleModal={(num) => this.toggleModal(num)} />
+                openLightboxOnSlide={(num) => this.openLightboxOnSlide(num)} />
 
 
             <LinksRow links={this.props.data.links} />
@@ -136,31 +141,38 @@ class WorkshopDetailedEvent extends Component {
                 </div>)}
 
 
-            <PhotoMedia images={this.props.data.images} toggleModal={(num) => this.toggleModal(num)} />
+            <PhotoMedia images={this.props.data.images} altText={this.props.data.imageCaptions} openLightboxOnSlide={(num) => this.openLightboxOnSlide(num)} />
 
             <CTAEnding isMobile={mobile} />
 
-            <ModalGateway >
-                {modalIsOpen ? (
-                    <Modal onClose={this.toggleModal}  >
-                        <Carousel onClick={this.toggleModal} currentIndex={selectedIndex} views={this.props.data.images} />
-                    </Modal>
-                ) : null}
-            </ModalGateway>
+            <FsLightbox
+                    toggler={toggler}
+                    slide={slide}
+                    sources={this.props.data.images}
+                    type='image'
+                />
         </Container>
     }
 }
 
 class TalkEventDetails extends Component {
 
+    state = { toggler: false, slide: 0 }
+
+
     constructor(props) {
         super(props);
-        this.state = { modalIsOpen: false, selectedIndex: 0, isMobile: props.mobile }
+        this.state = { isMobile: props.mobile }
         this.updateStore(props.group)
     }
 
-    toggleModal = (index) => {
-        this.setState(state => ({ modalIsOpen: !state.modalIsOpen, selectedIndex: index }));
+    openLightboxOnSlide = (number) => {
+        this.setState(prevState =>
+            ({
+                toggler: !prevState.toggler,
+                slide: number,
+            })
+        );
     }
 
     updateStore = (group) => {
@@ -171,7 +183,8 @@ class TalkEventDetails extends Component {
 
     render() {
 
-        const { modalIsOpen, selectedIndex } = this.state;
+        const toggler = this.state.toggler;
+        const slide = this.state.slide;
         const mobile = this.props.mobile;
         return <Container className='fade-in' fluid='true'>
 
@@ -182,21 +195,21 @@ class TalkEventDetails extends Component {
                 group={this.props.data.group} firstLink={this.props.data.slides}
                 secondLink={this.props.data.socialEvent}
                 poster={this.props.data.poster}
-                toggleModal={(num) => this.toggleModal(num)} />
+                openLightboxOnSlide={(num) => this.openLightboxOnSlide(num)} />
 
             <LinksRow links={this.props.data.links} />
 
-            <PhotoMedia images={this.props.data.images} toggleModal={(num) => this.toggleModal(num)} />
+            <PhotoMedia images={this.props.data.images} altText={this.props.data.imageCaptions} openLightboxOnSlide={(num) => this.openLightboxOnSlide(num)} />
 
             <CTAEnding isMobile={mobile} />
 
-            <ModalGateway >
-                {modalIsOpen ? (
-                    <Modal onClose={this.toggleModal}  >
-                        <Carousel currentIndex={selectedIndex} views={this.props.data.images} />
-                    </Modal>
-                ) : null}
-            </ModalGateway>
+          
+            <FsLightbox
+                    toggler={toggler}
+                    slide={slide}
+                    sources={this.props.data.images}
+                    type='image'
+                />
         </Container>
     }
 }

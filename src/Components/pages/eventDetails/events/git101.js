@@ -1,10 +1,10 @@
 import React from 'react';
 import DetailedEvent from '../DetailedEvent';
-import git101poster from '../../../../Photos/git101poster.jpg'
-import gitMpratsa from '../../../../Photos/gitMpratsa.JPG';
-import gitPeople from '../../../../Photos/gitPeople.JPG';
-import gitStella from '../../../../Photos/gitStella.JPG';
-import gitNasia from '../../../../Photos/gitNasia.JPG';
+import git101poster from '../../../../Photos/git101ateith/git101poster.jpg'
+import gitMpratsa from '../../../../Photos/git101ateith/gitMpratsa.JPG';
+import gitPeople from '../../../../Photos/git101ateith/gitPeople.JPG';
+import gitStella from '../../../../Photos/git101ateith/gitStella.JPG';
+import gitNasia from '../../../../Photos/git101ateith/gitNasia.JPG';
 import { Git } from '../../../../svg/topics/topicsSvg';
 
 

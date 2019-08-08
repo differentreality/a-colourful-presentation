@@ -1,10 +1,10 @@
 import React from 'react';
 import {WorkshopDetailedEvent} from '../../DetailedEvent';
-import git101poster from '../../../../Photos/git101poster.jpg'
-import gitMpratsa from '../../../../Photos/gitMpratsa.JPG';
-import gitPeople from '../../../../Photos/gitPeople.JPG';
-import gitStella from '../../../../Photos/gitStella.JPG';
-import gitNasia from '../../../../Photos/gitNasia.JPG';
+import git101poster from '../../../../Photos/git101ateith/git101poster.jpg'
+import gitMpratsa from '../../../../Photos/git101ateith/gitMpratsa.JPG';
+import gitPeople from '../../../../Photos/git101ateith/gitPeople.JPG';
+import gitStella from '../../../../Photos/git101ateith/gitStella.JPG';
+import gitNasia from '../../../../Photos/git101ateith/gitNasia.JPG';
 import { Git } from '../../../../svg/topics/topicsSvg';
 
 
@@ -100,13 +100,8 @@ const LinkArray = [
     }
 ]
 
-const images = [{ src: git101poster, caption: 'caption caption caption' },
-{ src: gitNasia, caption: 'caption caption caption' },
-{ src: gitMpratsa, caption: 'caption caption caption' },
-{ src: gitPeople, caption: 'caption caption caption' },
-{ src: gitStella, caption: 'caption caption caption' }
-]
-
+const images = [ git101poster,gitNasia,gitMpratsa,gitPeople, gitStella]
+const imageCaptions=['lorem','lorem','lorem','lorem','lorem']
 const eventData = 
     {
         title:'git101',
@@ -114,7 +109,7 @@ const eventData =
         details:'lorem lorem loremlorem lorem loremlorem lorem loremlorem lorem loremlorem lorem lorem',
         group:'workshop',
         topic:'git',
-        poster:images[0].src,
+        poster:images[0],
         slides:'https://docs.google.com/presentation/d/1EQo6aQmxGQ-HV1Q7ZTpbSTBzhoIwOmkffHM9r6ji5lM/edit?usp=sharing',
         socialEvent:'https://www.facebook.com/events/455650285188880/',
         links:[LinkArray,LinkArray,LinkArray],
@@ -122,7 +117,9 @@ const eventData =
         cheatsheet,
         codeSnippets:[codesnippets,codesnippets],
         images,
+        imageCaptions,
         downloadLinks
+
     }
 
 

@@ -25,10 +25,7 @@ const railsWorkshops = [
 
 
 //1 for each event
-const images = [
-    { src: railspt1_img1, caption: 'caption caption caption' },
-    { src: Rorateithpt2_3, caption: 'caption caption caption' },
-]
+const images = [railspt1_img1, Rorateithpt2_3]
 
 const RailsEvents = () => <Events group='workshop' topic='RoR' images={images} data={railsWorkshops} />
 

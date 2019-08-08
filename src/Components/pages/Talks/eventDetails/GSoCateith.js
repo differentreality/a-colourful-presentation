@@ -26,12 +26,14 @@ const LinkArray = [
     }
 ]
 
-const images = [{ src: gsoc_ateith_poster, caption: 'caption caption caption' },
-{ src: GSoCateith2, caption: 'caption caption caption' },
-{ src: GSoCateit3, caption: 'caption caption caption' },
-{ src: GSoCateit4, caption: 'caption caption caption' },
-{ src: GSoCateith5, caption: 'caption caption caption' }
+const images = [gsoc_ateith_poster,
+GSoCateith2,
+GSoCateit3,
+GSoCateit4,
+GSoCateith5
 ]
+
+const imageCaptions=['lorem','lorem','lorem','lorem','lorem']
 
 const eventData = 
     {
@@ -40,11 +42,12 @@ const eventData =
         details:'lorem lorem loremlorem lorem loremlorem lorem loremlorem lorem loremlorem lorem lorem',
         group:'talk',
         topic:'GSoC',
-        poster:images[0].src,
+        poster:images[0],
         slides:'https://docs.google.com/presentation/d/1EQo6aQmxGQ-HV1Q7ZTpbSTBzhoIwOmkffHM9r6ji5lM/edit?usp=sharing',
         socialEvent:'https://www.facebook.com/events/455650285188880/',
         links:[LinkArray,LinkArray,LinkArray],
         images,
+        imageCaptions
       
     }
 

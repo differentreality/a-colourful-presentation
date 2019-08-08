@@ -1,8 +1,7 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
 import { withRouter } from 'react-router-dom';
 import { EmptyButton } from '../parts/Buttons'
-import Carousel, { Modal, ModalGateway } from 'react-images';
 import store from '../../store';
 import { Link } from 'react-router-dom';
 import { BreadCrumbsLevel2, EventBreadCrumbsLevel1 } from '../parts/BreadCrumbs'
@@ -62,7 +61,7 @@ class Events extends Component {
                 {this.props.data.map((event, id) => <Row className='eventCont' key={id}>
                     <Col lg='8' className='eventLeftCont'>
                         <h1 className='eventLeftCont__Title'>{event.Title}</h1>
-                        <div onClick={() => this.openLightboxOnSlide(id)} style={{
+                        <div onClick={() => this.openLightboxOnSlide(id+1)} style={{
                             backgroundImage: `${this.state.gradientColour},url(${this.props.images[id]})`
                         }} className='eventLeftCont__image' />
 

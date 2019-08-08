@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from '../parts/Buttons'
 import anime from 'animejs/lib/anime.es.js';
-import { withRouter, Link, NavLink } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import { Container, Col, Row } from 'react-bootstrap';
 import { Cog, CogOutline, Pen, Laptop, Tool } from '../../svg/Workshops'
 import { Coffee, Idea, IdeaOutline, Smile, Reading } from '../../svg/StellasFacts'

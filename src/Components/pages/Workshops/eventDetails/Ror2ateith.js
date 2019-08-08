@@ -102,12 +102,14 @@ const LinkArray = [
 
 
 const images = [
-    { src: rorpt2poster, caption: 'caption caption caption' },
-    { src: railspt2_img2, caption: 'caption caption caption' },
-    { src: railspt2_img3, caption: 'caption caption caption' },
-    { src: railspt2_img4, caption: 'caption caption caption' },
-    { src: railspt2_img5, caption: 'caption caption caption' }
+    rorpt2poster,
+    railspt2_img2,
+    railspt2_img3,
+    railspt2_img4,
+    railspt2_img5
 ]
+
+const imageCaptions = ['lorem','lorem','lorem','lorem','lorem']
 
 const eventData = 
     {
@@ -116,7 +118,7 @@ const eventData =
         details:'lorem lorem loremlorem lorem loremlorem lorem loremlorem lorem loremlorem lorem lorem',
         group:'workshop',
         topic:'RoR',
-        poster:images[0].src,
+        poster:images[0],
         slides:'https://docs.google.com/presentation/d/1EQo6aQmxGQ-HV1Q7ZTpbSTBzhoIwOmkffHM9r6ji5lM/edit?usp=sharing',
         socialEvent:'https://www.facebook.com/events/455650285188880/',
         links:[LinkArray,LinkArray,LinkArray],
@@ -124,6 +126,7 @@ const eventData =
         cheatsheet,
         codeSnippets:[codesnippets,codesnippets],
         images,
+        imageCaptions,
         downloadLinks
     }
 

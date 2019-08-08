@@ -5,12 +5,12 @@ import osem from '../../Photos/osem.jpg'
 import spaghetti from '../../Photos/spaghetti.png'
 import { Rails, Git, Ruby } from '../../svg/AboutSvg';
 import { Reading } from '../../svg/StellasFacts';
-import Carousel, { Modal, ModalGateway } from 'react-images';
 import anime from 'animejs/lib/anime.es.js';
 import { SingleBreadCrumbs } from '../parts/BreadCrumbs'
+import FsLightbox from 'fslightbox-react';
 
 
-const images=[{src:stella,caption:'lorem lorem lorem'},{src:stella,caption:'lorem lorem lorem'}]
+const images=[stella,stella]
 
 const TechBooks = [
     {
@@ -29,9 +29,15 @@ const SIbooks = [
 
 class About extends Component {
 
-    state = { modalIsOpen: false, selectedIndex: 0 }
-    toggleModal = (index) => {
-        this.setState(state => ({ modalIsOpen: !state.modalIsOpen, selectedIndex: index }));
+    state = { toggler: false, slide: 0 }
+
+     openLightboxOnSlide = (number) => {
+        this.setState(prevState =>
+            ({
+                toggler: !prevState.toggler,
+                slide: number,
+            })
+        );
     }
 
     componentDidMount()
@@ -66,18 +72,19 @@ class About extends Component {
 
 
 render() {
-    const { modalIsOpen } = this.state;        
+    const toggler = this.state.toggler;
+    const slide = this.state.slide;
         return <Container className='About fade-in' fluid='true'>
             <SingleBreadCrumbs group="stella" parent="Stella's Facts" url='/stellas-facts' title='about'/>
             <Row>
                 <Col md='6' className='PhotoContainer' >
                     <div className='PhotoContainer__stella'>
-                        <img alt={images[0].caption} className='PhotoContainer__stella__image' onClick={()=>this.toggleModal(0)} src={stella} />
+                        <img alt='a selfie of mine!' className='PhotoContainer__stella__image' onClick={()=>this.openLightboxOnSlide(1)} src={stella} />
                         <h4>That's me!</h4>
                     </div>
 
                     <div className='PhotoContainer__miranda'>
-                        <img alt={images[1].caption} className='PhotoContainer__miranda__image' src={stella} onClick={()=>this.toggleModal(1)} />
+                        <img alt='my blonde dog,Miranda,posing!' className='PhotoContainer__miranda__image' src={stella} onClick={()=>this.openLightboxOnSlide(2)} />
                         <h4>...and that's Miranda!</h4>
                     </div>
 
@@ -175,13 +182,12 @@ render() {
                 </Col>
             </Row>
 
-            <ModalGateway>
-                    {modalIsOpen ? (
-                        <Modal onClose={this.toggleModal}  >
-                            <Carousel onClick={this.toggleModal} views={images} />
-                        </Modal>
-                    ) : null}
-                </ModalGateway>
+            <FsLightbox
+                    toggler={toggler}
+                    slide={slide}
+                    sources={images}
+                    type='image'
+                />
         </Container>
     }
 
