@@ -193,7 +193,7 @@ class TalkEventDetails extends Component {
             <ModalGateway >
                 {modalIsOpen ? (
                     <Modal onClose={this.toggleModal}  >
-                        <Carousel onClick={this.toggleModal} currentIndex={selectedIndex} views={this.props.data.images} />
+                        <Carousel currentIndex={selectedIndex} views={this.props.data.images} />
                     </Modal>
                 ) : null}
             </ModalGateway>

@@ -25,25 +25,3 @@ a{
     text-decoration: none!important;
 }
 
-
-.modal-body
-{
-    padding:0;
-}
-.fade.modal.show
-{
-    //overwrite bootstrap inline css
-    padding-left:0px!important;
-    padding:0;
-
-}
-.modal-100
-{
-    min-width:100%;
-    min-height:100%;
-    opacity:.8;
-    margin:0;
-    padding:0;
-.modal-body{
-background: rgb(87, 45, 90)!important;}
-}

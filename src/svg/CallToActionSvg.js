@@ -2,7 +2,7 @@ import React from 'react';
 
 const CallToActionSvg = () => {return <svg className='callToActionSvg' width="52.94" height="52.94" opacity='.7' viewBox="0 0 72.94 72.94">
   <defs>
-    <filter id="Path_1" x="0" y="0" wcalltoActionSvgidth="72.94" height="72.94" filterUnits="userSpaceOnUse">
+    <filter id="Path_1" x="0" y="0" width="72.94" height="72.94" filterUnits="userSpaceOnUse">
       <feOffset dy="3" input="SourceAlpha"/>
       <feGaussianBlur stdDeviation="3.5" result="blur"/>
       <feFlood floodColor="#9b4ea1" floodOpacity="0.871"/>

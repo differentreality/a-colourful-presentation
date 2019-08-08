@@ -31,6 +31,9 @@ import GSoCTalks from './Components/pages/Talks/eventShowcase/GSoCTalks'
 import GSoCateith from './Components/pages/Talks/eventDetails/GSoCateith'
 import Fosdem19 from './Components/pages/Events_Conferences/eventDetails/Fosdem19'
 import ContactForm from './Components/pages/ContactForm'
+import WorkshopTopics from './Components/pages/Workshops/WorkshopTopics'
+import TalkTopics from './Components/pages/Talks/TalksTopics'
+
 class App extends Component {
 
   constructor() {
@@ -88,7 +91,7 @@ class App extends Component {
                           <Route exact path='/Categories' render={() => <CategoryNavigation />} />
                           
                           {/*workshops*/}
-                          <Route exact path='/workshops/topics' render={() => <Topics group='workshop' />} />
+                          <Route exact path='/workshops/topics' render={() => <WorkshopTopics />} />
                           <Route exact path='/workshops/topics/git' render={() => <GitEvents />} />
                           <Route exact path='/workshops/topics/ror' render={() => <RailsEvents />} />
                           <Route exact path='/workshops/topics/git/git101' render={() => <Git101 mobile={this.state.mobile} group='workshop' />} />
@@ -96,7 +99,7 @@ class App extends Component {
                           <Route exact path='/workshops/topics/ror/rorpt2ateith' render={() => <Ror2ateith mobile={this.state.mobile} group='workshop' />} />
 
                           {/*talks*/}
-                          <Route exact path='/talks/topics' render={() => <Topics group='talk' />} />
+                          <Route exact path='/talks/topics' render={() => <TalkTopics />} />
                           <Route exact path='/talks/topics/gsoc' render={() => <GSoCTalks />} />
                           <Route exact path='/talks/topics/gsoc/gsocateith' render={() => <GSoCateith />} />
 
