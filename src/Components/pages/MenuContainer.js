@@ -7,7 +7,6 @@ import { PapyrusOutline } from '../../svg/Contact'
 import {  Link } from 'react-router-dom';
 import store from '../../store'
 import SocialBar from '../parts/Menu/SocialBar'
-
 const workshopLinks=[
     {
        title:'Git',
@@ -43,6 +42,9 @@ class MenuContainer extends Component {
     render() {
         return <Container className='fade-in' id='MenuNavigation'>
             <Row>
+               
+            {this.props.mobile?'':
+                <SocialBar/>}
                 <Col className='Navigation' md='6' lg='3'>
                     <Code />
                     <Link onClick={this.updateStore} to='/workshops/topics'>

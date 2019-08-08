@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import store from './store';
-import {Router, Route, Switch } from 'react-router-dom'
+import { Router, Route, Switch } from 'react-router-dom'
 import ScrollToTop from './ScrollToTop'
 
 import history from './history'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 //styles
 import './styles/stylesheets/main.scss';
 import './styles/App.css';
 
 //components
 import Menu from './Components/parts/Menu/Menu';
-import { Container, Col, Row } from 'react-bootstrap';
+import { Container, Col, Row,Modal } from 'react-bootstrap';
 import SocialBar from './Components/parts/Menu/SocialBar'
 
 //pages
@@ -21,7 +21,7 @@ import Topics from './Components/pages/Topics'
 import GitEvents from './Components/pages/Workshops/eventShowcase/GitEvents'
 import RailsEvents from './Components/pages/Workshops/eventShowcase/RailsEvents'
 import CategoryNavigation from './Components/pages/CategoryNavigation'
-import {Git101} from './Components/pages/Workshops/eventDetails/git101'
+import { Git101 } from './Components/pages/Workshops/eventDetails/git101'
 import Ror1ateith from './Components/pages/Workshops/eventDetails/Ror1ateith'
 import Ror2ateith from './Components/pages/Workshops/eventDetails/Ror2ateith'
 import About from './Components/pages/About'
@@ -47,11 +47,11 @@ class App extends Component {
   componentDidMount() {
     window.addEventListener("resize", this.resize.bind(this));
     this.resize();
-    this.setState({isMenuOpen:store.getState().isMenuOpen})
+    this.setState({ isMenuOpen: store.getState().isMenuOpen })
     this.myRef = React.createRef()
   }
 
-  
+
 
   //mobile view
   resize() {
@@ -65,8 +65,8 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router history={history} >
-          <ScrollToTop/>
-          <div className={"App"+(this.props.isMenuOpen?'-openMenu':'')} >
+          <ScrollToTop />
+          <div className={"App" + (this.props.isMenuOpen ? '-openMenu' : '')} >
             <Container ref={this.myRef} fluid='true'>
               <Row>
                 <Col>
@@ -75,12 +75,19 @@ class App extends Component {
                     <Col md={{ span: 9, offset: 2 }} xs={12}>
                       {this.state.SocialBar}
                       <Row id='Content'>
-                      {this.props.isMenuOpen?<MenuContainer mobile={this.state.mobile}/>:
+
+                          <Modal dialogClassName='modal-100' show={this.props.isMenuOpen} onHide={this.handleClose}>
+                            <Modal.Body>
+                              <MenuContainer mobile={this.state.mobile} />
+                            </Modal.Body>
+                          </Modal>
+                          
                         <Switch>
                           <Route exact path='/' render={() => <Home />} />
 
+                          <Route exact path='/Categories' render={() => <CategoryNavigation />} />
+                          
                           {/*workshops*/}
-                          <Route exact path='/workshops' render={() => <CategoryNavigation />} />
                           <Route exact path='/workshops/topics' render={() => <Topics group='workshop' />} />
                           <Route exact path='/workshops/topics/git' render={() => <GitEvents />} />
                           <Route exact path='/workshops/topics/ror' render={() => <RailsEvents />} />
@@ -89,27 +96,21 @@ class App extends Component {
                           <Route exact path='/workshops/topics/ror/rorpt2ateith' render={() => <Ror2ateith mobile={this.state.mobile} group='workshop' />} />
 
                           {/*talks*/}
-                          <Route exact path='/talks' render={() => <CategoryNavigation />} />
                           <Route exact path='/talks/topics' render={() => <Topics group='talk' />} />
                           <Route exact path='/talks/topics/gsoc' render={() => <GSoCTalks />} />
                           <Route exact path='/talks/topics/gsoc/gsocateith' render={() => <GSoCateith />} />
 
                           {/*events*/}
-                          <Route exact path='/events' render={() => <CategoryNavigation />} />
                           <Route exact path='/events/archive' render={() => <Conferences />} />
                           <Route exact path='/events/archive/fosdem19' render={() => <Fosdem19 />} />
 
                           {/*about*/}
-                          <Route exact path='/stellas-facts' render={() => <CategoryNavigation />} />
-                          <Route exact path='/stellas-facts/about' render={() => <About mobile={this.state.mobile}/>} />
-                          
+                          <Route exact path='/stellas-facts/about' render={() => <About mobile={this.state.mobile} />} />
+
                           {/*contact*/}
-                          <Route exact path='/contact' render={() => <CategoryNavigation />} />
                           <Route exact path='/contact/form' render={() => <ContactForm />} />
-                          
 
-
-                        </Switch>}
+                        </Switch>
                       </Row>
                     </Col>
                   </Row>
@@ -117,7 +118,7 @@ class App extends Component {
               </Row>
             </Container>
           </div>
-         
+
         </Router>
       </Provider>
     );
@@ -128,7 +129,7 @@ class App extends Component {
 
 
 
-const mapStateToProps=(reducer) => {
-  return ({color:reducer.color,isMenuOpen:reducer.isMenuOpen});
+const mapStateToProps = (reducer) => {
+  return ({ color: reducer.color, isMenuOpen: reducer.isMenuOpen });
 }
 export default connect(mapStateToProps)(App);

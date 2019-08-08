@@ -3,15 +3,18 @@ import anime from 'animejs/lib/anime.es.js';
 import history from '../../history'
 import store from '../../store'
 
-import {  Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Container, Col, Row } from 'react-bootstrap';
 import { Button } from '../../Components/parts/Buttons';
 import { CallToActionSvg } from '../../svg/CallToActionSvg';
 
-
 class Home extends Component {
 
-    state={animationPlaying:true}
+    state = {
+        animationPlaying: true
+    }
+
+
     componentDidMount() {
         this.scrollToChangePage = this.scrollToChangePage.bind(this);
 
@@ -19,7 +22,7 @@ class Home extends Component {
         this.updateStore();
 
         //add listeners for scroll / swipe
-        window.addEventListener("wheel", this.scrollToChangePage,true);
+        window.addEventListener("wheel", this.scrollToChangePage, true);
         window.addEventListener('touchstart', this.startTouch, false);
         window.addEventListener('touchmove', this.swipeToChangePage, false);
 
@@ -30,7 +33,7 @@ class Home extends Component {
     componentWillUnmount() {
 
         //remove scroll / swipe listeners
-        window.removeEventListener('wheel', this.scrollToChangePage,true);
+        window.removeEventListener('wheel', this.scrollToChangePage, true);
         window.removeEventListener('touchstart', this.startTouch, true);
         window.removeEventListener('touchmove', this.swipeToChangePage, true);
     }
@@ -40,7 +43,7 @@ class Home extends Component {
         this.initialX = e.touches[0].clientX;
     };
     swipeToChangePage = (e) => {
-       
+
         if (this.initialX === null) {
             return;
         }
@@ -64,13 +67,13 @@ class Home extends Component {
     }
 
     changePage = () => {
-        history.push('/workshops');
-      
+        history.push('/Categories');
+
     }
 
 
     //when the animation is completed,hide the skip button 
-    animationTimeline=anime.timeline({complete:()=>this.hideSkipButton()});
+    animationTimeline = anime.timeline({ complete: () => this.hideSkipButton() });
 
     entranceAnimation = () => {
         var textWrapper = document.querySelector('.leftContent__title');
@@ -108,33 +111,33 @@ class Home extends Component {
                 translateX: -1000,
                 duration: 2000,
                 easing: 'easeInOutSine',
-                scale:[.05,1],
+                scale: [.05, 1],
             })
             .add({
-                targets:'.homeCTA',
+                targets: '.homeCTA',
                 opacity: [0, 1],
-                duration:1000,
+                duration: 1000,
             })
             .add({
-                targets:'.skipButton',
+                targets: '.skipButton',
                 opacity: [1, 0],
-                duration:1000,
-                complete:()=>this.hideSkipButton()
+                duration: 1000,
+                complete: () => this.hideSkipButton()
             })
-      
+
     }
 
 
-    skipAnimation=()=>{
+    skipAnimation = () => {
 
         //finish animation
         this.animationTimeline.seek(this.animationTimeline.duration);
 
         //hide skip button
         this.hideSkipButton();
-        };
+    };
 
-    hideSkipButton=()=>this.setState({animationPlaying:false})
+    hideSkipButton = () => this.setState({ animationPlaying: false })
 
     updateStore = () => {
         store.dispatch(
@@ -146,9 +149,9 @@ class Home extends Component {
         return (
             <Container id='homePage' fluid='true' className='home'>
 
-              {/*IF animation is playing,show the skip button */}
-              {this.state.animationPlaying?<button className='skipButton fade-in' onClick={this.skipAnimation}>Skip Animations?</button>:''}
-              
+                {/*IF animation is playing,show the skip button */}
+                {this.state.animationPlaying ? <button className='skipButton fade-in' onClick={this.skipAnimation}>Skip Animations?</button> : ''}
+
                 <Row>
                     <Col className='leftContent' md='6'>
                         <h1 className='leftContent__title'>Stella Rouzi</h1>
@@ -174,7 +177,7 @@ class Home extends Component {
                     </Col>
 
                     <Col className='scrollGuide' md='6'>
-                        <Link to='/workshops'>
+                        <Link to='/Categories'>
                             <span className='home__scrollAction'>Try Swiping or Scrolling!</span> <CallToActionSvg />
                         </Link>
                     </Col>

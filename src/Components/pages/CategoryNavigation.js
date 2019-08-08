@@ -1,4 +1,3 @@
-import history from '../../history'
 import React, { Component } from 'react';
 import { Button } from '../parts/Buttons'
 import anime from 'animejs/lib/anime.es.js';
@@ -11,7 +10,7 @@ import { ConfCard, Beer, Networking, University, UniversityOutline } from '../..
 import { Papyrus, PapyrusOutline, QuestionMark, MessageCloud, MessageFolder } from '../../svg/Contact'
 import { debounce } from 'lodash';
 import store from '../../store';
-import { faArrowRight ,faArrowLeft} from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
@@ -21,35 +20,27 @@ class CategoryNavigation extends Component {
 
         super(props);
         this.debouncedScroll = this.debouncedScroll.bind(this);
-        
-        //set a pointer based on url
-        let pointer;
-        switch (history.location.pathname) {
-            case '/workshops': pointer = 0; break;
-            case '/talks': pointer = 1; break;
-            case '/events': pointer = 2; break;
-            case '/stellas-facts': pointer = 3; break;
-            case '/contact': pointer = 4; break;
-            default: pointer = 0; break;
-        }
-
         this.state = {
-            'urlPointer': pointer,
+            'Title': 'Workshops',
+            'paragraph': <p>  Introducing a technology in a hands-on session.<br /><i>Showcase your Laptop Stickers!</i></p>,
+            'topLeft': Cog,
+            'topRight': Tool,
+            'center': Laptop,
+            'botLeft': CogOutline,
+            'botRight': Pen,
+            'group': 'workshop',
+            'buttonLink': '/workshops/topics',
+            navPointer: 0
         }
-
-    }
-    
-    componentWillMount() {
-        
-        //scroll & swipe listeners
         window.addEventListener('wheel', this.debouncedScroll, true)
         window.addEventListener('touchstart', this.startTouch, false);
         window.addEventListener('touchmove', this.moveTouch, false);
-        this.checkPage();
-    }   
+
+        this.updateStore();
+
+    }
 
     componentWillUnmount() {
-
         //remove scroll & swipe listeners
         window.removeEventListener('wheel', this.debouncedScroll, true);
         window.removeEventListener('touchstart', this.startTouch, true);
@@ -57,7 +48,6 @@ class CategoryNavigation extends Component {
     }
 
     componentDidUpdate() {
-
         //change theme based on page
         this.updateStore();
     }
@@ -90,9 +80,6 @@ class CategoryNavigation extends Component {
             //pointer++
             this.changePointer('add');
 
-            //change url
-            history.push(this.categoryURLS[this.state.urlPointer]);
-
             //change state
             this.checkPage();
 
@@ -104,9 +91,6 @@ class CategoryNavigation extends Component {
 
             //pointer--
             this.changePointer('minus');
-
-            //change url
-            history.push(this.categoryURLS[this.state.urlPointer]);
 
             //change state
             this.checkPage();
@@ -122,9 +106,6 @@ class CategoryNavigation extends Component {
             //pointer++
             this.changePointer('add');
 
-            //change url
-            history.push(this.categoryURLS[this.state.urlPointer]);
-
             //update state
             this.checkPage();
 
@@ -136,9 +117,6 @@ class CategoryNavigation extends Component {
 
             //pointer--
             this.changePointer('minus');
-
-            //chnage url
-            history.push(this.categoryURLS[this.state.urlPointer]);
 
             //change state
             this.checkPage();
@@ -160,19 +138,18 @@ class CategoryNavigation extends Component {
     }
 
 
-    categoryURLS = ['/workshops', '/talks', '/events', '/stellas-facts', '/contact']
     changePointer = (type) =>
         type === 'add' ?
             this.setState(prevState =>
-                (prevState.urlPointer === 4 ?
-                    { 'urlPointer': 0, 'url': this.categoryURLS[0] } :
-                    { 'urlPointer': prevState.urlPointer + 1, 'url': this.categoryURLS[prevState.urlPointer + 1] })
+                (prevState.navPointer === 4 ?
+                    { 'navPointer': 0 } :
+                    { 'navPointer': prevState.navPointer + 1 })
             ) :
             type === 'minus' ?
                 this.setState(prevState =>
-                    (prevState.urlPointer === 0 ?
-                        { 'urlPointer': 4, 'url': this.categoryURLS[4] } :
-                        { 'urlPointer': prevState.urlPointer - 1, 'url': this.categoryURLS[prevState.urlPointer - 1] })) : ''
+                    (prevState.navPointer === 0 ?
+                        { 'navPointer': 4 } :
+                        { 'navPointer': prevState.navPointer - 1 })) : ''
 
 
 
@@ -242,15 +219,11 @@ class CategoryNavigation extends Component {
         })
     });
 
-
-
-
-    buttonAnimation=()=>
-    {
+    buttonAnimation = () => {
         anime({
-            targets:'.myButton',
-            opacity:[0,1],
-            duration:3000,
+            targets: '.myButton',
+            opacity: [0, 1],
+            duration: 3000,
             easing: 'spring(1, 80, 10, 0)',
         })
     }
@@ -266,10 +239,8 @@ class CategoryNavigation extends Component {
         this.buttonAnimation();
     }
 
-
-
     checkPage = () => {
-        this.state.urlPointer === 0 ? this.setState({
+        this.state.navPointer === 0 ? this.setState({
             'Title': 'Workshops',
             'paragraph': <p>  Introducing a technology in a hands-on session.<br /><i>Showcase your Laptop Stickers!</i></p>,
             'topLeft': Cog,
@@ -280,7 +251,7 @@ class CategoryNavigation extends Component {
             'group': 'workshop',
             'buttonLink': '/workshops/topics'
         }) :
-            this.state.urlPointer === 1 ? this.setState({
+            this.state.navPointer === 1 ? this.setState({
                 'Title': 'Talks',
                 'paragraph': <p> We're talking about tools.<br /><i>We also exchange swag!</i></p>,
                 'topLeft': Microphone,
@@ -291,7 +262,7 @@ class CategoryNavigation extends Component {
                 'group': 'talk',
                 'buttonLink': '/talks/topics'
             }) :
-                this.state.urlPointer === 2 ? this.setState({
+                this.state.navPointer === 2 ? this.setState({
                     'Title': 'Events',
                     'paragraph': <p>  Conferences & events where I was a coordinator or had an amazing experience meeting new people and
                         learning new things!
@@ -304,7 +275,7 @@ class CategoryNavigation extends Component {
                     'group': 'event',
                     'buttonLink': '/events/archive'
                 }) :
-                    this.state.urlPointer === 3 ? this.setState({
+                    this.state.navPointer === 3 ? this.setState({
                         'Title': `Stella's Facts`,
                         'paragraph': <p>Several things about me and the things I enjoy the most.<br /><i>Purple is of course, one of them!</i></p>,
                         'topLeft': Idea,
@@ -329,10 +300,9 @@ class CategoryNavigation extends Component {
 
     updatePointerClick = (num) => {
         this.setState({
-            'urlPointer': num
+            'navPointer': num
         },
             () => {
-                history.push(this.categoryURLS[num]);
                 this.checkPage();
                 this.restartAnimations();
             })
@@ -343,14 +313,14 @@ class CategoryNavigation extends Component {
 
     render() {
         return (
-            <Container id='MainNav' className='fade-in'  fluid='true'>
+            <Container id='MainNav' className='fade-in' fluid='true'>
                 <Row>
                     <Col lg={{ span: 6, order: 'last' }} className='svgFam'>
-                        <this.state.topLeft className='topLeft'/>
-                        <this.state.botLeft className='botLeft'/>
-                        <this.state.center className='center'/>
-                        <this.state.topRight className='topRight'/>
-                        <this.state.botRight className='botRight'/>
+                        <this.state.topLeft className='topLeft' />
+                        <this.state.botLeft className='botLeft' />
+                        <this.state.center className='center' />
+                        <this.state.topRight className='topRight' />
+                        <this.state.botRight className='botRight' />
                     </Col>
                     <Col lg={{ span: 6, order: 'first' }} className='workshopCon'>
                         <h1 className='workshopCon__Title'>{this.state.Title}</h1>
@@ -361,8 +331,8 @@ class CategoryNavigation extends Component {
 
 
                 <Row >
-                    <Col className='bubbleGuide'  xs='12'>
-                        <h6><FontAwesomeIcon icon={faArrowLeft}/> Keep Swiping & Scrolling! <FontAwesomeIcon icon={faArrowRight}/></h6>
+                    <Col className='bubbleGuide' xs='12'>
+                        <h6><FontAwesomeIcon icon={faArrowLeft} /> Keep Swiping & Scrolling! <FontAwesomeIcon icon={faArrowRight} /></h6>
                         <NavLink to="/workshops" onClick={() => this.updatePointerClick(0)}><span className={'colourBubble-' + (this.state.group === 'workshop' ? 'workshop' : 'empty')} /></NavLink>
                         <NavLink to="/talks" onClick={() => this.updatePointerClick(1)}><span className={'colourBubble-' + (this.state.group === 'talk' ? 'talk' : 'empty')} /></NavLink>
                         <NavLink to="/events" onClick={() => this.updatePointerClick(2)}><span className={'colourBubble-' + (this.state.group === 'event' ? 'event' : 'empty')} /></NavLink>

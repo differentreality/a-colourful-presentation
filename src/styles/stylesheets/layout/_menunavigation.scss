@@ -1,7 +1,6 @@
 #MenuNavigation {
     height: 100%;
     min-height: 100vh;
-
     ul {
         margin-top: 10%;
         list-style: none;
@@ -70,7 +69,7 @@
 
 
     .scheduledQuote {
-        margin-top: 15%;
+        margin-top: 12%;
         padding-left: 10%;
         border-left: 2px solid white;
 
@@ -87,8 +86,7 @@
     }
 
     .newsLetter {
-        margin-top: 15%;
-        padding-bottom: 10%;
+        margin-top: 12%;
 
 
         &__info {
@@ -177,7 +175,6 @@
         .newsLetter
         {
             text-align: center;
-            padding-bottom:20%;
             &__info{
                 font-size:16px;
             }
