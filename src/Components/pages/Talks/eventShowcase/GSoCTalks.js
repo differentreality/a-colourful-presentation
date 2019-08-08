@@ -13,9 +13,7 @@ const GSoCTalksData = [
     }
 ]
 
-const images = [
-    { src: GSoCateith1, caption: 'caption caption caption' },
-]
+const images = [GSoCateith1]
 
 const GSoCTalks = () =>  <Events group='talk' topic='GSoC' images={images} data={GSoCTalksData}/>
 
