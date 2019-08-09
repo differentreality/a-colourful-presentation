@@ -3,6 +3,7 @@ import Events from '../../Events'
 import gitNasia from '../../../../Photos/git101ateith/gitNasia.JPG'
 import git101ateith from '../../../../Photos/git101ateith/git101ateith.JPG'
 import { withRouter } from 'react-router-dom';
+
 const gitWorkshops = [
     {
        

@@ -45,9 +45,10 @@ const CheatSheet = (props) => <Row className='postIntroRow'>
             })}
 
             <Col xs='12' className='stages'>
-                <StageContainer title='stage 1' text='lorem lorem lorem' />
-                <StageContainer title='stage 1' text='lorem lorem lorem' />
-                <StageContainer title='stage 1' text='lorem lorem lorem' />
+            <Row>
+                {props.stages.map((stage, id) =>
+                    <StageContainer title={'stage ' + id} text={stage} />)}
+            </Row>
             </Col>
         </Row>
     </Col>
@@ -136,7 +137,7 @@ class WorkshopDetailedEvent extends Component {
 
             {this.props.mobile ?
                 '' : (<div>
-                    <CheatSheet cheatsheet={this.props.data.cheatsheet} svg={this.props.data.svg} />
+                    <CheatSheet stages={this.props.data.stages} cheatsheet={this.props.data.cheatsheet} svg={this.props.data.svg} />
                     <EventCodeSnippets codeSnippets={this.props.data.codeSnippets} downloadLinks={this.props.data.downloadLinks} />
                 </div>)}
 
@@ -146,11 +147,11 @@ class WorkshopDetailedEvent extends Component {
             <CTAEnding isMobile={mobile} />
 
             <FsLightbox
-                    toggler={toggler}
-                    slide={slide}
-                    sources={this.props.data.images}
-                    type='image'
-                />
+                toggler={toggler}
+                slide={slide}
+                sources={this.props.data.images}
+                type='image'
+            />
         </Container>
     }
 }
@@ -188,9 +189,9 @@ class TalkEventDetails extends Component {
         const mobile = this.props.mobile;
         return <Container className='fade-in' fluid='true'>
 
-            {this.props.group==='event'?<EventBreadCrumbsLevel3 group={this.props.group} title={this.props.data.title}/>:
-            <BreadCrumbsLevel3 group={this.props.group} topic={this.props.data.topic} title={this.props.data.title} />}
-            
+            {this.props.group === 'event' ? <EventBreadCrumbsLevel3 group={this.props.group} title={this.props.data.title} /> :
+                <BreadCrumbsLevel3 group={this.props.group} topic={this.props.data.topic} title={this.props.data.title} />}
+
             <EventIntroduction title={this.props.data.title} date={this.props.data.date} details={this.props.data.details}
                 group={this.props.data.group} firstLink={this.props.data.slides}
                 secondLink={this.props.data.socialEvent}
@@ -203,13 +204,13 @@ class TalkEventDetails extends Component {
 
             <CTAEnding isMobile={mobile} />
 
-          
+
             <FsLightbox
-                    toggler={toggler}
-                    slide={slide}
-                    sources={this.props.data.images}
-                    type='image'
-                />
+                toggler={toggler}
+                slide={slide}
+                sources={this.props.data.images}
+                type='image'
+            />
         </Container>
     }
 }

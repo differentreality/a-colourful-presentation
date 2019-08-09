@@ -26,10 +26,10 @@ class LinkContainer extends React.Component {
 class StageContainer extends React.Component {
     render() {
         return <Col xs='8' sm='6' md='5' lg='3' xl='2' className='StageContainer'>
-            <ul className='StageList'>
-                <li className='StageList__Title'>{this.props.title}</li>
-                <li className='StageList__Text'>{this.props.text}</li>
-            </ul>
+            <div className='StageList'>
+                <h3 className='StageList__Title'>{this.props.title}</h3>
+                <p className='StageList__Text'>{this.props.text}</p>
+            </div>
         </Col>
     }
 }

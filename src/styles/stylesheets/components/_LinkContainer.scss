@@ -105,11 +105,10 @@
 .StageContainer {
   display: inline-block;
 
-
   .StageList {
-    padding-left: 0px;
+    height:200px;
+    width:150px;
     border-radius: 15px;
-    list-style-type: none;
     border-left: 1px solid rgb(196, 196, 196);
     border-right: 1px solid rgb(196, 196, 196);
     border-bottom: 1px solid rgb(196, 196, 196);
@@ -134,8 +133,7 @@
       background: $workshopGradientVerticalDarker;
     }
 
-    &__Text {
-      padding: 10% 5px;
+    &__Text{
     }
   }
 }

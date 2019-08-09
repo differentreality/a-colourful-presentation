@@ -101,12 +101,13 @@ const LinkArray = [
     }
 ]
 
-const images = [{ src: git101poster, caption: 'caption caption caption' },
-{ src: gitNasia, caption: 'caption caption caption' },
-{ src: gitMpratsa, caption: 'caption caption caption' },
-{ src: gitPeople, caption: 'caption caption caption' },
-{ src: gitStella, caption: 'caption caption caption' }
-]
+const images = [git101poster,
+ gitNasia,
+ gitMpratsa,
+ gitPeople,
+ gitStella]
+
+ const imageCaptions=['lorem','lorem','lorem','lorem','lorem']
 
 const eventData = 
     {
@@ -123,6 +124,7 @@ const eventData =
         cheatsheet,
         codeSnippets:[codesnippets,codesnippets],
         images,
+        imageCaptions,
         downloadLinks
     }
 
