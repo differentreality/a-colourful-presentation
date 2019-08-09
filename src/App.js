@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import store from './store';
-import { Router, Route, Switch } from 'react-router-dom'
+import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 import ScrollToTop from './ScrollToTop'
 
 import history from './history'
@@ -24,6 +24,7 @@ import { Git101 } from './Components/pages/Workshops/eventDetails/git101'
 import Ror1ateith from './Components/pages/Workshops/eventDetails/Ror1ateith'
 import Ror2ateith from './Components/pages/Workshops/eventDetails/Ror2ateith'
 import About from './Components/pages/About'
+import notFound404 from './Components/pages/notFound404'
 import MenuContainer from './Components/pages/MenuContainer'
 import Conferences from './Components/pages/Events_Conferences/eventShowcase/Conferences'
 import GSoCTalks from './Components/pages/Talks/eventShowcase/GSoCTalks'
@@ -86,7 +87,6 @@ class App extends Component {
                           
                         <Switch>
                           <Route exact path='/' render={() => <Home />} />
-
                           <Route exact path='/Categories' render={() => <CategoryNavigation />} />
                           
                           {/*workshops*/}
@@ -111,7 +111,9 @@ class App extends Component {
 
                           {/*contact*/}
                           <Route exact path='/contact/form' render={() => <ContactForm />} />
-
+                            
+                          {/*not found 404 */}
+                          <Route component={notFound404} />
                         </Switch>
                       </Row>
                     </Col>

@@ -87,7 +87,7 @@ const cheatsheet=[
 
 const stages = [
     'eat guacamole and cheese','drink water','sleep late sleep late'
-]
+]   
 const LinkArray = [
     {
         url: 'sadaaa',

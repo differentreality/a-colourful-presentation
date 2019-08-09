@@ -127,7 +127,7 @@ class CategoryNavigation extends Component {
     }
 
     //delay between repeatition : 80
-    debouncedScroll = debounce((e) => this.scrollToChangePages(e), 80);
+    debouncedScroll = debounce((e) => this.scrollToChangePages(e), 120);
     debouncedSwipe = debounce((e, swipeDirection) => this.swipeToChangePages(e, swipeDirection), 80);
 
     updateStore = () => {

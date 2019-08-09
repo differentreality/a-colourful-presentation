@@ -108,6 +108,9 @@ const images = [
     railspt2_img4,
     railspt2_img5
 ]
+const stages = [
+    'eat guacamole and cheese','drink water','sleep late sleep late'
+]
 
 const imageCaptions = ['lorem','lorem','lorem','lorem','lorem']
 
@@ -127,7 +130,9 @@ const eventData =
         codeSnippets:[codesnippets,codesnippets],
         images,
         imageCaptions,
-        downloadLinks
+        downloadLinks,
+        stages
+        
     }
 
 

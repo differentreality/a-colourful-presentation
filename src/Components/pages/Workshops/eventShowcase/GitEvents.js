@@ -13,7 +13,7 @@ const gitWorkshops = [
         Level: 'Beginner',
         Place: 'Thessaloniki',
         link: '/workshops/topics/git/git101'
-    }
+    },
 ]
 
 const images = [gitNasia,git101ateith]

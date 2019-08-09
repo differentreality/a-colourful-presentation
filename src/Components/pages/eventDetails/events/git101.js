@@ -1,12 +1,13 @@
 import React from 'react';
-import {WorkshopDetailedEvent} from '../../DetailedEvent'
-import railspt1_img2 from '../../../../Photos/railspt1ateith/railspt1_img2.JPG'
-import railspt1_img3 from '../../../../Photos/railspt1ateith/railspt1_img3.JPG'
-import railspt1_img4 from '../../../../Photos/railspt1ateith/railspt1_img4.JPG'
-import railspt1_img5 from '../../../../Photos/railspt1ateith/railspt1_img5.JPG'
-import rorpt1poster from '../../../../Photos/railspt1ateith/rorpt1poster.jpg'
+import DetailedEvent from '../DetailedEvent';
+import git101poster from '../../../../Photos/git101ateith/git101poster.jpg'
+import gitMpratsa from '../../../../Photos/git101ateith/gitMpratsa.JPG';
+import gitPeople from '../../../../Photos/git101ateith/gitPeople.JPG';
+import gitStella from '../../../../Photos/git101ateith/gitStella.JPG';
+import gitNasia from '../../../../Photos/git101ateith/gitNasia.JPG';
+import { Git } from '../../../../svg/topics/topicsSvg';
 
-import { Ruby } from '../../../../svg/topics/topicsSvg';
+
 
 const codesnippets=<div>
 <div>
@@ -100,33 +101,29 @@ const LinkArray = [
     }
 ]
 
-const images = [rorpt1poster,railspt1_img2,railspt1_img3,railspt1_img4,railspt1_img5]
-const imageCaptions = ['lorem','lorem','lorem','lorem','lorem']
-
-const stages = [
-    'eat guacamole and cheese','drink water','sleep late sleep late'
+const images = [{ src: git101poster, caption: 'caption caption caption' },
+{ src: gitNasia, caption: 'caption caption caption' },
+{ src: gitMpratsa, caption: 'caption caption caption' },
+{ src: gitPeople, caption: 'caption caption caption' },
+{ src: gitStella, caption: 'caption caption caption' }
 ]
+
 const eventData = 
     {
-        title:'Intro to Ruby On Rails',
+        title:'git101',
         date:'06/05/2019',
         details:'lorem lorem loremlorem lorem loremlorem lorem loremlorem lorem loremlorem lorem lorem',
         group:'workshop',
-        topic:'RoR',
-        poster:images[0],
-        slides:'https://docs.google.com/presentation/d/1EQo6aQmxGQ-HV1Q7ZTpbSTBzhoIwOmkffHM9r6ji5lM/edit?usp=sharing',
-        socialEvent:'https://www.facebook.com/events/455650285188880/',
+        poster:images[0].src,
         links:[LinkArray,LinkArray,LinkArray],
-        svg:Ruby,
+        svg:Git,
         cheatsheet,
         codeSnippets:[codesnippets,codesnippets],
         images,
-        stages,
-        imageCaptions,
         downloadLinks
     }
 
 
-const Ror1ateith = (props)=><WorkshopDetailedEvent mobile={props.mobile} group='workshop' data={eventData}/>
+const Git101 = ()=><DetailedEvent group='workshop' data={eventData}/>
 
-export default Ror1ateith;
+export {Git101};

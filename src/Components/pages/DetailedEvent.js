@@ -138,8 +138,8 @@ class WorkshopDetailedEvent extends Component {
             {this.props.mobile ?
                 '' : (<div>
                     <CheatSheet stages={this.props.data.stages} cheatsheet={this.props.data.cheatsheet} svg={this.props.data.svg} />
-                    <EventCodeSnippets codeSnippets={this.props.data.codeSnippets} downloadLinks={this.props.data.downloadLinks} />
                 </div>)}
+                    <EventCodeSnippets codeSnippets={this.props.data.codeSnippets} downloadLinks={this.props.data.downloadLinks} />
 
 
             <PhotoMedia images={this.props.data.images} altText={this.props.data.imageCaptions} openLightboxOnSlide={(num) => this.openLightboxOnSlide(num)} />
