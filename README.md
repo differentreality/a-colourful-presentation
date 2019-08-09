@@ -12,57 +12,82 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
-### `npm test`
+# Adding a new Page #
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## part 1 : Importing ##
+1. Navigate to the corresponding folder of the desired event (Workshops/Talks/Event_Conferences),then eventDetails
+2. make a new file named with the event's name. For example, gitIntroSkg.js
+3. Import either WorkshopDetails if it is a workshop, or EventTalk if it is a Conferenence/Talk from /pages/DetailedEvent
+4. Import the event's poster and a couple of photos
+5. If it is a workshop, import a svg for the cheatsheet.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## part 2 : adding Data ##
+We create several components : codesnippets(for a workshop) cheatSheet(for a workshop) LinkArrays (link containers) downloadLinks(container for downloading files) images(an array of images) imageCaptions(for alt text) and then we create a **parent array** importing all components and export it as a prop for our DetailedEvent Component 
+ 
+ ### Component A : codeSnippets ###
+ 
+ A single div with spans of different classes. Using BEM naming, codeSnippet is the block, code is the element and the rest is the modifier.
+ Every span has the base naming of codeSnippet__code-* and you can fill the * with one of the following names  :
+ 1. Comment //for a grayed out comment
+ 2. Command | pink coloured 
+ 3. input | white coloured
+ 4. Link | green coloured
+ ### Component B : cheatSheat ###
+ 
+ An array of objects with 3 fields :
+ 1. title : goal of command
+ 2. command : specific command
+ 3. use : the use of command
+ 
+ ### Component C : stageContainers ###
+ An array of texts for cheatsheet's stages.
+ 
+ ### Component D : downloadLinks ###
+ An array of objects with 2 fields : 
+ 1. url
+ 2. text
+ 
+ ### Component E : LinkArrays ###
+ An array of objects with 2 fields : 
+ 1. url
+ 2. text
+ 
+  ### Component F  : images ###
+  An array with the imported images
+  
+  ### Component G  : imageCaptions ###
+  An array of text for each image.Used as alt text.
+  
+  ## part 3 : Importing them all in a single object ##
+  1. title : event's data
+  2. date : event's date
+  3. details : a small paragraph 
+  4. group : workshop/talk/event,used for colours
+  5. topic : used for workshops / Talks -> BreadCrumbs
+  6. poset : most of the time, the first element of the images array.
+  7. slides : a link for the event's slides.
+  8. socialEvent : a link for facebook's event.
+  9. svg : used for the cheatsheet(workshop)
+  --Importing the arrays--
+  10. cheatsheet,
+  11. codeSnippets : an array with every codesnippet
+  12. images
+  13. imageCaptions
+  14. downloadlinks
+  15. stages
+  
+   ## part 4 : Exporting  ##
+  Export WorkshopDetailedEvent
+  const eventName = (props)=><WorkshopDetailedEvent mobile={props.mobile} group='workshop' data={eventData}/>
+  
+  ## part 5 : An actual page ##
+  1. Navigate to App Component
+  2. Import your exported eventName
+  3. Make a new Route based on event
+  
+  ## part 6 : show your new event on event Showcase Component ##
+  1. Navigate to the corresponding folder of the desired event (Workshops/Talks/Event_Conferences)
+  2. Navigate to eventShowcase.
+  3. Files are based on topic. Choose a file based on your event
+  4. create a new object in the single array component,with the same fields as the other one.
+  5. fill the fields.
