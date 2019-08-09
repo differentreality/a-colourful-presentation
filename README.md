@@ -78,7 +78,7 @@ We create several components : codesnippets(for a workshop) cheatSheet(for a wor
   
    ## part 4 : Exporting  ##
   Export WorkshopDetailedEvent
-  const eventName = (props)=><WorkshopDetailedEvent mobile={props.mobile} group='workshop' data={eventData}/>
+  "const eventName = (props)=> <WorkshopDetailedEvent mobile={props.mobile} group='workshop' data={eventData}/>"
   
   ## part 5 : An actual page ##
   1. Navigate to App Component
