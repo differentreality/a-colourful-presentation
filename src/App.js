@@ -4,7 +4,6 @@ import store from './store';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 import ScrollToTop from './ScrollToTop'
 
-import history from './history'
 import { connect } from 'react-redux'
 //styles
 import './styles/stylesheets/main.scss';
@@ -67,7 +66,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Router basename='/' history={history} >
+        <Router basename='/'  >
           <ScrollToTop />
           <div className={"App" + (this.props.isMenuOpen ? '-openMenu' : '')} >
             <Container ref={this.myRef} fluid='true'>

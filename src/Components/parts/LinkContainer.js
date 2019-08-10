@@ -7,7 +7,7 @@ class LinkContainer extends React.Component {
 
     render() 
     {
-        return (5>4)?<Col xs='8' sm='6' md='4' lg='3' xl='3' className='LinkContainer'>
+        return <Col xs='8' sm='6' md='4' lg='3' xl='2' className='LinkContainer'>
             <ul className={'LinkList-' + this.props.group}>
                 <li className={'LinkList__Title-' + this.props.group}>{this.props.title}</li>
                 {this.props.Links.map((link, id) =>
@@ -19,7 +19,7 @@ class LinkContainer extends React.Component {
                     </li>
                 )}
             </ul>
-        </Col>:''
+        </Col>
     }
 }
 

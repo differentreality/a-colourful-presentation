@@ -90,33 +90,38 @@ class Home extends Component {
                 targets: '.leftContent__title .letter',
                 opacity: [0, 1],
                 easing: "easeInOutQuad",
-                duration: 2250,
+                duration: 1500,
                 delay: function (el, i) {
-                    return 150 * (i + 1)
+                    return 50 * (i + 1)
                 }
             })
             .add({
                 targets: '.leftContent__subtitle-first',
                 opacity: [0, 1],
-                easing: "easeInOutQuad"
+                easing: "easeInOutQuad",
+                duration:1200,
             })
             .add({
                 targets: '.leftContent__subtitle-second',
                 opacity: [0, 1],
-                easing: "easeInOutQuad"
+                easing: "easeInOutQuad",
+                duration:1200,
+
             })
             .add({
                 targets: '.leftContent__subtitle-last',
                 opacity: [0, 1],
-                easing: "easeInOutQuad"
+                easing: "easeInOutQuad",
+                duration:1200,
+
             })
             .add({
                 targets: '.rightContent',
                 translateX: -1000,
-                duration: 2000,
+                duration: 1200,
                 easing: 'easeInOutSine',
                 scale: [.05, 1],
-            })
+            },2400)
             .add({
                 targets: '.homeCTA',
                 opacity: [0, 1],
@@ -125,7 +130,7 @@ class Home extends Component {
             .add({
                 targets: '.skipButton',
                 opacity: [1, 0],
-                duration: 1000,
+                duration: 800,
                 complete: () => this.hideSkipButton()
             })
 
@@ -189,7 +194,7 @@ class Home extends Component {
 
                     <Col className='scrollGuide' md='6'>
                         <Link to='/Categories'>
-                            <span className='home__scrollAction'>Try Swiping or Scrolling!</span> <CallToActionSvg />
+                            <span className='home__scrollAction'>Try Scrolling or Swipe left!</span> <CallToActionSvg />
                         </Link>
                     </Col>
                 </Row>

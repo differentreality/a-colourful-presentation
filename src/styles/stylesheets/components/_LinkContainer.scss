@@ -1,12 +1,9 @@
 .LinkContainer {
   display: inline-block;
-
-
   .LinkList {
     padding-left: 0px;
     list-style-type: none;
-    transition: all .5s;
-
+    transition: all 0.5s;
 
     &-callToAction {
       @extend .LinkList;
@@ -27,10 +24,8 @@
       box-shadow: 0px 14px 35px -6px rgba(114, 114, 114, 0.2);
 
       .LinkList__ListItem {
-        
-          padding: 5% 0px;
+        padding: 5% 0px;
       }
-
     }
 
     &__Title {
@@ -40,7 +35,6 @@
       line-height: 50px;
       text-align: center;
 
-
       &-callToAction {
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
@@ -49,21 +43,20 @@
       }
 
       &-download {
-
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
         @extend .LinkList__Title;
-        background-color: #3B434B;
+        background-color: #3b434b;
       }
     }
 
     &__Text {
-      padding-right: 40%;
-      font-size: 20px;
+      font-size: 18px;
     }
 
     li {
       text-align: center;
       border-bottom: 1px solid rgb(196, 196, 196);
-
 
       &:last-child {
         border-bottom: none;
@@ -75,11 +68,10 @@
 
       &:hover {
         svg {
-          transition: all .5s;
+          transition: all 0.5s;
           transform: scale(1.2) translateY(5px);
         }
       }
-
     }
 
     .callToActionSvg,
@@ -96,7 +88,7 @@
 
       #Path_arrow {
         opacity: 1;
-        fill: #28B781;
+        fill: #28b781;
       }
     }
   }
@@ -106,13 +98,13 @@
   display: inline-block;
 
   .StageList {
-    height:200px;
-    width:150px;
+    height: 200px;
+    width: 150px;
     border-radius: 15px;
     border-left: 1px solid rgb(196, 196, 196);
     border-right: 1px solid rgb(196, 196, 196);
     border-bottom: 1px solid rgb(196, 196, 196);
-    transition: all .5s;
+    transition: all 0.5s;
     text-align: center;
 
     &:hover {
@@ -132,8 +124,15 @@
       border-top-right-radius: 15px;
       background: $workshopGradientVerticalDarker;
     }
+  }
+}
 
-    &__Text{
-    }
+@media (max-width: 770px) {
+  .LinkContainer:nth-child(2n) {
+    float: left;
+  }
+
+  .LinkContainer:nth-child(2n+1) {
+    float: right;
   }
 }

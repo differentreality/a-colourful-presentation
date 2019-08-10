@@ -91,7 +91,7 @@ const stages = [
 const LinkArray = [
     {
         url: 'sadaaa',
-        text: 'test'
+        text: 'test test test'
     },
     {
         url: 'sadaaa',
