@@ -74,10 +74,7 @@ class CategoryNavigation extends Component {
 
         }
         else {
-            if (this.props.mobile === false) {
-                window.addEventListener('wheel', this.debouncedScroll, false)
-            }
-
+            window.addEventListener('wheel', this.debouncedScroll, false)
             window.addEventListener('touchstart', this.startTouch, false);
             window.addEventListener('touchmove', this.moveTouch, false);
             window.addEventListener('keydown', this.debouncedArrow, true);

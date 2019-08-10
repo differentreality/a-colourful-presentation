@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
 import stella from '../../Photos/stella.jpg'
+import miranda from '../../Photos/miranda.jpg'
 import osem from '../../Photos/osem.jpg'
 import spaghetti from '../../Photos/spaghetti.png'
 import { Rails, Git, Ruby } from '../../svg/AboutSvg';
@@ -10,7 +11,7 @@ import { SingleBreadCrumbs } from '../parts/BreadCrumbs'
 import FsLightbox from 'fslightbox-react';
 
 
-const images=[stella,stella]
+const images=[stella,miranda]
 
 const TechBooks = [
     {
@@ -84,7 +85,7 @@ render() {
                     </div>
 
                     <div className='PhotoContainer__miranda'>
-                        <img alt='my blonde dog,Miranda,posing!' className='PhotoContainer__miranda__image' src={stella} onClick={()=>this.openLightboxOnSlide(2)} />
+                        <img alt='my blonde dog,Miranda,posing!' className='PhotoContainer__miranda__image' src={miranda} onClick={()=>this.openLightboxOnSlide(2)} />
                         <h4>...and that's Miranda!</h4>
                     </div>
 
