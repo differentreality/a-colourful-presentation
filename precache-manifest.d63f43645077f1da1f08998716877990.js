@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e4ec84a8fca8768cd1e50ac929bc9b3a",
+    "revision": "d7d4fe51b3abf69388afaa0367d4a4de",
     "url": "/a-colourful-presentation/index.html"
   },
   {
-    "revision": "7fb5a63219a8ac245224",
-    "url": "/a-colourful-presentation/static/css/main.9e96a866.chunk.css"
+    "revision": "a521733b101a1ec68b73",
+    "url": "/a-colourful-presentation/static/css/main.8bbfb3ea.chunk.css"
   },
   {
-    "revision": "2e07b3ca668da342f2c2",
-    "url": "/a-colourful-presentation/static/js/2.a3acdd16.chunk.js"
+    "revision": "e3b005ff0118567b92c1",
+    "url": "/a-colourful-presentation/static/js/2.c563e415.chunk.js"
   },
   {
-    "revision": "7fb5a63219a8ac245224",
-    "url": "/a-colourful-presentation/static/js/main.217d7d8a.chunk.js"
+    "revision": "a521733b101a1ec68b73",
+    "url": "/a-colourful-presentation/static/js/main.22594203.chunk.js"
   },
   {
     "revision": "b777b631cb63f102372b",
@@ -82,6 +82,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "80b26ef66d2a6a3e520e366d0f393713",
     "url": "/a-colourful-presentation/static/media/gsoc_ateith_poster.80b26ef6.jpg"
+  },
+  {
+    "revision": "fdc51e94988e5ceced08d605046ffeb8",
+    "url": "/a-colourful-presentation/static/media/miranda.fdc51e94.jpg"
   },
   {
     "revision": "f1a85bc6fc4c631af70ea36d529a7b5f",
