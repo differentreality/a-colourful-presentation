@@ -39,8 +39,9 @@ class MenuContainer extends Component {
             {type: 'trigger_Menu', payload: { isMenuOpen: false}}
         );
     }
+    
     render() {
-        return <Container className='fade-in' id='MenuNavigation'>
+        return <Container className='fade-in' id='MenuNavigation' >
             <Row>
                
             {this.props.mobile?'':

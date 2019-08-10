@@ -33,7 +33,7 @@
 
 
     .svgFam {
-
+        
         &__botRight,
         &__botLeft,
         &__topRight,
@@ -229,6 +229,7 @@
 
         .svgFam {
 
+            left:2%;
             margin-top: 30%;   
 
  &__botRight,&__botLeft {
@@ -246,6 +247,7 @@
                 max-width: 70px;
                 max-height: 70px;
                 margin-top: -80%;
+                margin-left:-10%;
             }
 
 

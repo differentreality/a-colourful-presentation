@@ -12,7 +12,11 @@ import { debounce } from 'lodash';
 import store from '../../store';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { connect } from 'react-redux';
 
+const mapStateToProps = (reducer) => {
+    return ({ isMenuOpen: reducer.isMenuOpen });
+}
 
 class CategoryNavigation extends Component {
 
@@ -30,11 +34,10 @@ class CategoryNavigation extends Component {
             'botRight': Pen,
             'group': 'workshop',
             'buttonLink': '/workshops/topics',
-            navPointer: 0
+            navPointer: 0,
+            redirect: false
         }
-        window.addEventListener('wheel', this.debouncedScroll, true)
-        window.addEventListener('touchstart', this.startTouch, false);
-        window.addEventListener('touchmove', this.moveTouch, false);
+
 
         this.updateStore();
 
@@ -47,9 +50,33 @@ class CategoryNavigation extends Component {
         window.removeEventListener('touchmove', this.moveTouch, true);
     }
 
-    componentDidUpdate() {
+    componentDidUpdate(prevProps, prevState) {
+
         //change theme based on page
         this.updateStore();
+
+        //if menu is open and it wasn't before,do not allow OR allow scrolling &  swipping
+        if (this.props.isMenuOpen !== prevState.isMenuOpen)
+            this.setState( ({
+                isMenuOpen: this.props.isMenuOpen
+            }), this.wheelSweepHandler()
+            )
+
+    }
+
+    wheelSweepHandler = () => {
+        if (this.state.isMenuOpen) {
+            window.removeEventListener('wheel', this.debouncedScroll, true);
+            window.removeEventListener('touchstart', this.startTouch, true);
+            window.removeEventListener('touchmove', this.moveTouch, true);
+        }
+        else {
+            if (!this.props.mobile) {
+                window.addEventListener('wheel', this.debouncedScroll, true)
+            }
+            window.addEventListener('touchstart', this.startTouch, false);
+            window.addEventListener('touchmove', this.moveTouch, false);
+        }
     }
 
     initialX = null;
@@ -211,10 +238,10 @@ class CategoryNavigation extends Component {
 
         complete: () => anime({
             targets: '.svgFam__center',
-            translateY: 50,
+            translateY: 20,
             loop: true,
             direction: 'alternate',
-            duration: 2000,
+            duration: 800,
             easing: 'linear'
         })
     });
@@ -312,6 +339,7 @@ class CategoryNavigation extends Component {
 
 
     render() {
+        console.log('hello')
         return (
             <Container id='MainNav' className='fade-in' fluid='true'>
                 <Row>
@@ -335,7 +363,7 @@ class CategoryNavigation extends Component {
                         <h6><FontAwesomeIcon icon={faArrowLeft} /> Keep Swiping & Scrolling! <FontAwesomeIcon icon={faArrowRight} /></h6>
                         <span onClick={() => this.updatePointerClick(0)} className={'colourBubble-' + (this.state.group === 'workshop' ? 'workshop' : 'empty')} />
                         <span onClick={() => this.updatePointerClick(1)} className={'colourBubble-' + (this.state.group === 'talk' ? 'talk' : 'empty')} />
-                        <span onClick={() => this.updatePointerClick(2)} className={'colourBubble-' + (this.state.group === 'event' ? 'event' : 'empty')}/>
+                        <span onClick={() => this.updatePointerClick(2)} className={'colourBubble-' + (this.state.group === 'event' ? 'event' : 'empty')} />
                         <span onClick={() => this.updatePointerClick(3)} className={'colourBubble-' + (this.state.group === 'stella' ? 'stella' : 'empty')} />
                         <span onClick={() => this.updatePointerClick(4)} className={'colourBubble-' + (this.state.group === 'contact' ? 'contact' : 'empty')} />
                     </Col>
@@ -345,4 +373,4 @@ class CategoryNavigation extends Component {
     }
 }
 
-export default withRouter(CategoryNavigation);
+export default withRouter(connect(mapStateToProps)(CategoryNavigation));

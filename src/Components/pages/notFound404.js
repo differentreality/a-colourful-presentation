@@ -6,6 +6,10 @@ export default class notFound404 extends Component {
 
     timeline=anime.timeline();
 
+    componentDidMount()
+    {
+        this.animate();
+    }
     animate=()=>this.timeline.add({
                 targets: '.notFound__text',
                 opacity:[0,1],
@@ -19,11 +23,10 @@ export default class notFound404 extends Component {
 
 
     render() {
-        this.animate();
         return (
             <div>
                 <h1 className='notFound__text'>What</h1> <h1 className='notFound__text'>you searched for,</h1>
-                <h1 className='notFound__text'>doesn't really exist here!</h1>
+                <h1 className='notFound__text'>doesn't really exist here!{process.env.PUBLIC_URL}</h1>
                 <Link to='/'><h1 className='notFound__text'>Go back?</h1></Link>
             </div>
         )

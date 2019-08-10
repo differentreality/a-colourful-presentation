@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import anime from 'animejs/lib/anime.es.js';
-import history from '../../history'
 import store from '../../store'
 
-import { Link } from 'react-router-dom';
+import { Link ,Redirect } from 'react-router-dom';
 import { Container, Col, Row } from 'react-bootstrap';
 import { Button } from '../../Components/parts/Buttons';
 import { CallToActionSvg } from '../../svg/CallToActionSvg';
@@ -11,7 +10,8 @@ import { CallToActionSvg } from '../../svg/CallToActionSvg';
 class Home extends Component {
 
     state = {
-        animationPlaying: true
+        animationPlaying: true,
+        redirect:false,
     }
 
 
@@ -67,8 +67,7 @@ class Home extends Component {
     }
 
     changePage = () => {
-        history.push('/Categories');
-
+       this.setState({redirect:true})
     }
 
 
@@ -146,6 +145,11 @@ class Home extends Component {
     }
 
     render() {
+        const redirect = this.state.redirect;
+        if (redirect) {
+            return <Redirect to='/Categories'/>;
+          }
+
         return (
             <Container id='homePage' fluid='true' className='home'>
 

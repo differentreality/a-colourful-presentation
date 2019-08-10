@@ -67,7 +67,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Router history={history} >
+        <Router basename='/' history={history} >
           <ScrollToTop />
           <div className={"App" + (this.props.isMenuOpen ? '-openMenu' : '')} >
             <Container ref={this.myRef} fluid='true'>
@@ -86,31 +86,31 @@ class App extends Component {
                           </Modal>
                           
                         <Switch>
-                          <Route exact path='/' render={() => <Home />} />
-                          <Route exact path='/Categories' render={() => <CategoryNavigation />} />
+                          <Route  exact path='/' render={() => <Home />} />
+                          <Route  exact path='/Categories' render={() => <CategoryNavigation mobile={this.state.mobile} />} />
                           
                           {/*workshops*/}
-                          <Route exact path='/workshops/topics' render={() => <WorkshopTopics />} />
-                          <Route exact path='/workshops/topics/git' render={() => <GitEvents />} />
-                          <Route exact path='/workshops/topics/ror' render={() => <RailsEvents />} />
-                          <Route exact path='/workshops/topics/git/git101' render={() => <Git101 mobile={this.state.mobile} group='workshop' />} />
-                          <Route exact path='/workshops/topics/ror/rorpt1ateith' render={() => <Ror1ateith mobile={this.state.mobile} group='workshop' />} />
-                          <Route exact path='/workshops/topics/ror/rorpt2ateith' render={() => <Ror2ateith mobile={this.state.mobile} group='workshop' />} />
+                          <Route  exact path='/workshops/topics' render={() => <WorkshopTopics />} />
+                          <Route  exact path='/workshops/topics/git' render={() => <GitEvents />} />
+                          <Route  exact path='/workshops/topics/ror' render={() => <RailsEvents />} />
+                          <Route  exact path='/workshops/topics/git/git101' render={() => <Git101 mobile={this.state.mobile} group='workshop' />} />
+                          <Route  exact path='/workshops/topics/ror/rorpt1ateith' render={() => <Ror1ateith mobile={this.state.mobile} group='workshop' />} />
+                          <Route  exact path='/workshops/topics/ror/rorpt2ateith' render={() => <Ror2ateith mobile={this.state.mobile} group='workshop' />} />
 
                           {/*talks*/}
-                          <Route exact path='/talks/topics' render={() => <TalkTopics />} />
-                          <Route exact path='/talks/topics/gsoc' render={() => <GSoCTalks />} />
-                          <Route exact path='/talks/topics/gsoc/gsocateith' render={() => <GSoCateith />} />
+                          <Route  exact path='/talks/topics' render={() => <TalkTopics />} />
+                          <Route  exact path='/talks/topics/gsoc' render={() => <GSoCTalks />} />
+                          <Route  exact path='/talks/topics/gsoc/gsocateith' render={() => <GSoCateith />} />
 
                           {/*events*/}
-                          <Route exact path='/events/archive' render={() => <Conferences />} />
-                          <Route exact path='/events/archive/fosdem19' render={() => <Fosdem19 />} />
+                          <Route  exact path='/events/archive' render={() => <Conferences />} />
+                          <Route  exact path='/events/archive/fosdem19' render={() => <Fosdem19 />} />
 
                           {/*about*/}
-                          <Route exact path='/stellas-facts/about' render={() => <About mobile={this.state.mobile} />} />
+                          <Route  exact path='/stellas-facts/about' render={() => <About mobile={this.state.mobile} />} />
 
                           {/*contact*/}
-                          <Route exact path='/contact/form' render={() => <ContactForm />} />
+                          <Route  exact path='/contact/form' render={() => <ContactForm />} />
                             
                           {/*not found 404 */}
                           <Route component={notFound404} />
