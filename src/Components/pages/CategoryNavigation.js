@@ -69,13 +69,17 @@ class CategoryNavigation extends Component {
             window.removeEventListener('wheel', this.debouncedScroll, true);
             window.removeEventListener('touchstart', this.startTouch, true);
             window.removeEventListener('touchmove', this.moveTouch, true);
+            window.removeEventListener('keydown', this.debouncedArrow, true);
+
         }
         else {
             if (!this.props.mobile) {
                 window.addEventListener('wheel', this.debouncedScroll, true)
             }
+
             window.addEventListener('touchstart', this.startTouch, false);
             window.addEventListener('touchmove', this.moveTouch, false);
+            window.addEventListener('keydown', this.debouncedArrow, true);
         }
     }
 
@@ -153,10 +157,36 @@ class CategoryNavigation extends Component {
         }
     }
 
+    pressKeyToChangePages = (e) => {
+
+        if (e.keyCode == 37) {
+           // left arrow
+
+              //pointer--
+              this.changePointer('minus');
+
+              //change state
+              this.checkPage();
+  
+              //replay animations
+              this.restartAnimations();
+        }
+        else if (e.keyCode == 39) {
+           //pointer++
+           this.changePointer('add');
+
+           //update state
+           this.checkPage();
+
+           //replay animations
+           this.restartAnimations();
+        }
+    }
+
     //delay between repeatition : 80
     debouncedScroll = debounce((e) => this.scrollToChangePages(e), 120);
     debouncedSwipe = debounce((e, swipeDirection) => this.swipeToChangePages(e, swipeDirection), 80);
-
+    debouncedArrow = debounce((e) => this.pressKeyToChangePages(e), 80);
     updateStore = () => {
 
         store.dispatch(
