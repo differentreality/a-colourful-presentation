@@ -139,7 +139,7 @@ const University = () => {
 }
 
 const UniversityOutline = () => {
-  return <svg  className='fade-in svgFam__botLeft' width="78.953" height="77.076" viewBox="0 0 78.953 77.076">
+  return <svg  className='fade-in  svgFam__botLeft'  width="78.953" height="77.076" viewBox="0 0 78.953 77.076">
   <defs>
     <filter id="Path_386" x="1.716" y="0" width="75.475" height="36.106" filterUnits="userSpaceOnUse">
       <feOffset dy="3" input="SourceAlpha"/>

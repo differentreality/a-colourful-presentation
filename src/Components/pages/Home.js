@@ -16,7 +16,6 @@ class Home extends Component {
 
 
     componentDidMount() {
-        this.scrollToChangePage = this.scrollToChangePage.bind(this);
 
         //set theme to purple
         this.updateStore();
@@ -34,29 +33,35 @@ class Home extends Component {
 
         //remove scroll / swipe listeners
         window.removeEventListener('wheel', this.scrollToChangePage, true);
-        window.removeEventListener('touchstart', this.startTouch, true);
-        window.removeEventListener('touchmove', this.swipeToChangePage, true);
+        window.removeEventListener('touchstart', this.startTouch, false);
+        window.removeEventListener('touchmove', this.swipeToChangePage, false);
     }
 
     initialX = null;
+    initialY = null;
     startTouch = (e) => {
         this.initialX = e.touches[0].clientX;
+        this.initialY = e.touches[0].clientY;
     };
     swipeToChangePage = (e) => {
-
         if (this.initialX === null) {
             return;
         }
         var currentX = e.touches[0].clientX;
+        var currentY = e.touches[0].clientY;
         var diffX = this.initialX - currentX;
+        var diffY = this.initialY - currentY;
 
-        // sliding horizontally
-        if (diffX > 0) {
-            // swiped left
-            this.changePage();
+        if (Math.abs(diffX) > Math.abs(diffY)) {
+            // sliding horizontally
+            if (diffX > 0) {
+                // swiped left
+                this.changePage();
+            }
         }
+
         this.initialX = null;
-        e.preventDefault();
+        this.initialY = null;
     };
 
     scrollToChangePage = (e) => {
@@ -146,8 +151,9 @@ class Home extends Component {
 
     render() {
         const redirect = this.state.redirect;
+
         if (redirect) {
-            return <Redirect to='/Categories'/>;
+           return  <Redirect to='/Categories'/> 
           }
 
         return (
@@ -166,6 +172,7 @@ class Home extends Component {
                     </Col>
                     <Col className='rightContent' md='6'>
                         <p className='rightContent__paragraph'>
+
                             Meeting new people, sharing ideas,
                         <br />
                             exploring the world,

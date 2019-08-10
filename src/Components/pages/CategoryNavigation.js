@@ -45,9 +45,11 @@ class CategoryNavigation extends Component {
 
     componentWillUnmount() {
         //remove scroll & swipe listeners
-        window.removeEventListener('wheel', this.debouncedScroll, true);
+        window.removeEventListener('wheel', this.debouncedScroll, false);
         window.removeEventListener('touchstart', this.startTouch, true);
         window.removeEventListener('touchmove', this.moveTouch, true);
+        window.removeEventListener('keydown', this.debouncedArrow, true);
+
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -57,24 +59,23 @@ class CategoryNavigation extends Component {
 
         //if menu is open and it wasn't before,do not allow OR allow scrolling &  swipping
         if (this.props.isMenuOpen !== prevState.isMenuOpen)
-            this.setState( ({
+            this.setState(({
                 isMenuOpen: this.props.isMenuOpen
             }), this.wheelSweepHandler()
             )
-
     }
 
     wheelSweepHandler = () => {
         if (this.state.isMenuOpen) {
-            window.removeEventListener('wheel', this.debouncedScroll, true);
-            window.removeEventListener('touchstart', this.startTouch, true);
-            window.removeEventListener('touchmove', this.moveTouch, true);
+            window.removeEventListener('wheel', this.debouncedScroll, false);
+            window.removeEventListener('touchstart', this.startTouch, false);
+            window.removeEventListener('touchmove', this.moveTouch, false);
             window.removeEventListener('keydown', this.debouncedArrow, true);
 
         }
         else {
-            if (!this.props.mobile) {
-                window.addEventListener('wheel', this.debouncedScroll, true)
+            if (this.props.mobile === false) {
+                window.addEventListener('wheel', this.debouncedScroll, false)
             }
 
             window.addEventListener('touchstart', this.startTouch, false);
@@ -84,23 +85,33 @@ class CategoryNavigation extends Component {
     }
 
     initialX = null;
+    initialY = null;
     startTouch = (e) => {
         this.initialX = e.touches[0].clientX;
+        this.initialY = e.touches[0].clientY;
     };
     moveTouch = (e) => {
         if (this.initialX === null) {
             return;
         }
         var currentX = e.touches[0].clientX;
+        var currentY = e.touches[0].clientY;
         var diffX = this.initialX - currentX;
-        // sliding horizontally
-        if (diffX > 0) {
-            // swiped left
-            this.debouncedSwipe('left');
-        } else {
-            // swiped right
-            this.debouncedSwipe('right');
+        var diffY = this.initialY - currentY;
+
+        if (Math.abs(diffX) > Math.abs(diffY)) {
+            // sliding horizontally
+            if (diffX > 0) {
+               // swiped right
+               this.debouncedSwipe('right');
+            } else {
+                // swiped right
+                this.debouncedSwipe('right');
+                 // swiped left
+                 this.debouncedSwipe('left');
+            }
         }
+
         this.initialX = null;
         this.initialY = null;
         e.preventDefault();
@@ -159,27 +170,29 @@ class CategoryNavigation extends Component {
 
     pressKeyToChangePages = (e) => {
 
+        // eslint-disable-next-line
         if (e.keyCode == 37) {
-           // left arrow
+            // left arrow
 
-              //pointer--
-              this.changePointer('minus');
+            //pointer--
+            this.changePointer('minus');
 
-              //change state
-              this.checkPage();
-  
-              //replay animations
-              this.restartAnimations();
+            //change state
+            this.checkPage();
+
+            //replay animations
+            this.restartAnimations();
         }
+        // eslint-disable-next-line
         else if (e.keyCode == 39) {
-           //pointer++
-           this.changePointer('add');
+            //pointer++
+            this.changePointer('add');
 
-           //update state
-           this.checkPage();
+            //update state
+            this.checkPage();
 
-           //replay animations
-           this.restartAnimations();
+            //replay animations
+            this.restartAnimations();
         }
     }
 
@@ -195,8 +208,7 @@ class CategoryNavigation extends Component {
     }
 
 
-    changePointer = (type) =>
-        type === 'add' ?
+    changePointer = (type) =>{return type === 'add' ?
             this.setState(prevState =>
                 (prevState.navPointer === 4 ?
                     { 'navPointer': 0 } :
@@ -206,7 +218,7 @@ class CategoryNavigation extends Component {
                 this.setState(prevState =>
                     (prevState.navPointer === 0 ?
                         { 'navPointer': 4 } :
-                        { 'navPointer': prevState.navPointer - 1 })) : ''
+                        { 'navPointer': prevState.navPointer - 1 })) : ''}
 
 
 
@@ -369,7 +381,6 @@ class CategoryNavigation extends Component {
 
 
     render() {
-        console.log('hello')
         return (
             <Container id='MainNav' className='fade-in' fluid='true'>
                 <Row>
