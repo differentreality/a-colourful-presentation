@@ -1,5 +1,6 @@
 .About {
   overflow: hidden;
+
   * {
     font-weight: 700;
     color: $paragraphColour;
@@ -24,7 +25,7 @@
     &__stella {
       &__image {
         width: 300px;
-        height:300px;
+        height: 300px;
       }
     }
 
@@ -151,6 +152,7 @@
     .bookList {
       list-style-type: none;
       padding: 0px;
+
       &__author,
       &__title {
         font-weight: 400;
@@ -200,7 +202,7 @@
       &__stella {
         &__image {
           width: 200px;
-          height:200px;
+          height: 200px;
         }
       }
 
@@ -209,7 +211,7 @@
 
         img {
           width: 100px;
-          height:100px;
+          height: 100px;
         }
       }
     }
@@ -249,6 +251,7 @@
           width: 70%;
           text-align: right;
         }
+
         img {
           width: 200px;
         }
@@ -280,10 +283,12 @@
 
     .cooking {
       text-align: center;
+
       img {
         width: 200px;
         margin-bottom: 40px;
       }
+
       p {
         font-size: 16px;
       }
@@ -294,6 +299,15 @@
         font-size: 16px;
         padding: 0%;
       }
+    }
+  }
+}
+
+
+@media (max-width:770px) {
+  .About {
+    .superParagraph {
+      font-size: 20px;
     }
   }
 }

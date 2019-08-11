@@ -52,6 +52,11 @@ class CategoryNavigation extends Component {
 
     }
 
+    componentDidMount()
+    {
+        this.wheelSweepHandler()
+    }
+
     componentDidUpdate(prevProps, prevState) {
 
         //change theme based on page

@@ -3,17 +3,17 @@ import { Link } from 'react-router-dom';
 
 
 const BreadCrumbsLevel1 = (props) => <h3 className={'breadCrumbs-' + props.group}>
-    <Link to='/Categories'>Categories</Link> / topics
+    <Link to='/Categories'>Categories</Link> / {props.group} topics
 </h3>
 
 const BreadCrumbsLevel2 = (props) => <h3 className={'breadCrumbs-' + props.group}>
     <Link to='/Categories'>Categories</Link> /
-    <Link to={'/' + props.group + 's/topics'}> topics</Link> / {props.topic}
+    <Link to={'/' + props.group + 's/topics'}> {props.group} topics</Link> / {props.topic}
 </h3>
 
 const BreadCrumbsLevel3 = (props) => <h3 className={'breadCrumbs-' + props.group}>
     <Link to='/Categories'>Categories</Link> /
-    <Link to={'/' + props.group + 's/topics'}> topics</Link> /
+    <Link to={'/' + props.group + 's/topics'}> {props.group} topics</Link> /
     <Link to={'/' + props.group + 's/topics/' + props.topic}> {props.topic} </Link> / {props.title}
 </h3>
 
