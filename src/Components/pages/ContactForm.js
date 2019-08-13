@@ -44,7 +44,7 @@ export default class ContactForm extends React.Component {
                             <h1 className='animatedText'>Hello there!</h1>
                         </Col>
                         <Col xs='12' lg={{ span: 6 }}>
-                            <form className='contactForm' action="/action">
+                            <form className='contactForm' action="/action" noValidate>
                                 <h1 className='contactForm__title'>The Contact Form</h1>
                                 
                                 <p className='contactForm__about'>Got a question or interested in booking a workshop for your community? Send me 
@@ -52,24 +52,24 @@ export default class ContactForm extends React.Component {
                                 <h3 className='contactForm__subtitle'>Get to know each other</h3>
 
                                 <div className='inputBox-name'>
-                                    <label xfor="name">Name</label>
-                                    <input className='inputText' type="text" id="name" name="name" placeholder="  John Smithson" />
+                                    <label htmlFor="name">Name</label>
+                                    <input className='inputText' type="text" id="name" name="name" placeholder="John Smithson" required/>
                                 </div>
 
                                 <div className='inputBox-mail'>
-                                    <label>E-mail Address</label>
-                                    <input className='inputText' type="text" id="mailadress" name="random@random.mail" placeholder="  you@mail.me" />
+                                    <label htmlFor="mailadress">E-mail Address</label>
+                                    <input className='inputText' type="text" id="mailadress" name="email" placeholder="you@mail.me" required/>
                                 </div>
 
                                 <h3 className='contactForm__subtitle'>Your Message</h3>
 
                                 <div className='inputBox'>
                                     <label for="title">Title</label>
-                                    <input className='inputText' type="text" id="title" placeholder="  Book a git workshop in Thessaloniki" />
+                                    <input className='inputText' type="text" id="title" name="title" placeholder="Book a git workshop in Thessaloniki" required/>
                                 </div>
 
-                                <label for="place">Message</label>
-                                <textarea id="subject" name="subject" placeholder="  Write something.."></textarea>
+                                <label for="message">Message</label>
+                                <textarea id="subject" name="message" placeholder="Write something.." required></textarea>
                                 <input className='contactForm__submit' type="submit" value="Submit" />
                             </form>
                         </Col>
