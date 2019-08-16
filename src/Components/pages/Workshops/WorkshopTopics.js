@@ -6,7 +6,7 @@ const wshopContent = [
     {
         primarySvg: Git,
         Title: 'Git',
-        paragraph: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry',
+        paragraph: 'Version control and code collaboration. Get more productive, more organized and improve the collaboration with teammates.',
         svg1: Heart,
         svg1Text: 'Contributing',
         svg2: Tool,
@@ -19,13 +19,13 @@ const wshopContent = [
     {
         primarySvg: Ruby,
         Title: 'Ruby On Rails',
-        paragraph: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry',
-        svg1: MVC,
-        svg1Text: 'M.V.C.',
-        svg2: HtmlTag,
-        svg2Text: 'Web App',
-        svg3: Cog,
-        svg3Text: 'Framework',
+        paragraph: 'A human-friendly language and a powerful framework for web development',
+        svg1: HtmlTag,
+        svg1Text: 'Web App',
+        svg2: Cog,
+        svg2Text: 'Framework',
+        svg3: MVC,
+        svg3Text: 'M.V.C.',
         buttonText:'Browse Ruby on Rails',
         link:'/workshops/topics/ror'
     }

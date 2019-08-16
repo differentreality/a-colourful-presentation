@@ -13,8 +13,8 @@ const codesnippets=<div>
     {/* eslint-disable-next-line*/}
     <span className='codeSnippet__code-Comment'>// install Docker</span>
     <a href=' https://docs.docker.com/docker-for-windows/install/' className='codeSnippet__code-Link'> https://docs.docker.com/docker-for-windows/install/</a>
-</div>       
-<div>        
+</div>
+<div>
     {/* eslint-disable-next-line*/}
     <span className='codeSnippet__code-Comment'>// Create a new Folder </span>
     <span className='codeSnippet__code-Command'>mkdir </span>
@@ -23,17 +23,17 @@ const codesnippets=<div>
     <span className='codeSnippet__code-Input'>rails_workshop </span>
 </div>
 <div>
-    <span className='codeSnippet__code-Command'>docker run </span> 
+    <span className='codeSnippet__code-Command'>docker run </span>
     <span className='codeSnippet__code-Input'>-ti -v "$PWD":/rails_workshop --name rails_workshop -p 3000:3000 ruby bash</span>
 </div>
 <div>
-    <span className='codeSnippet__code-Command'>cd </span> 
+    <span className='codeSnippet__code-Command'>cd </span>
     <span className='codeSnippet__code-Input'>rails_workshop </span>
 </div>
 <div>
-    <span className='codeSnippet__code-Command'>gem </span> 
+    <span className='codeSnippet__code-Command'>gem </span>
     <span className='codeSnippet__code-Input'>install rails --version 5.0.0 </span>
-     {/* eslint-disable-next-line*/} 
+     {/* eslint-disable-next-line*/}
     <span className='codeSnippet__code-Comment'>//This may take a while!</span>
 </div>
 </div>
@@ -85,19 +85,19 @@ const cheatsheet=[
     }
 ]
 
-const LinkArray = {title:'Title',
+const LinkArray = {title:'Useful Resources',
     links:[
     {
-        url: 'sadaaa',
-        text: 'test test test'
+        url: 'https://docs.google.com/document/d/1kIxuhbnrw0elo-dYsc3UzYIbbowqogbWtAqUuw50JoI/edit?usp=sharing',
+        text: 'Notes'
     },
     {
-        url: 'sadaaa',
-        text: 'test'
+        url: 'https://guides.rubyonrails.org/routing.html',
+        text: 'More about routing'
     },
     {
-        url: 'sadaaa',
-        text: 'test'
+        url: 'https://guides.rubyonrails.org/active_record_querying.html',
+        text: 'Talk with the DB from Rails'
     }]
 }
 
@@ -115,17 +115,17 @@ const stages = [
 
 const imageCaptions = ['lorem','lorem','lorem','lorem','lorem']
 
-const eventData = 
+const eventData =
     {
         title:'Ruby on Rails part2',
         date:'05/05/2019',
-        details:'lorem lorem loremlorem lorem loremlorem lorem loremlorem lorem loremlorem lorem lorem',
+        details:'Diving into the magic of Rails, learning useful Ruby and Rails methods, and developing our own web application.',
         group:'workshop',
         topic:'RoR',
         poster:images[0],
-        slides:'https://docs.google.com/presentation/d/1EQo6aQmxGQ-HV1Q7ZTpbSTBzhoIwOmkffHM9r6ji5lM/edit?usp=sharing',
-        socialEvent:'https://www.facebook.com/events/455650285188880/',
-        links:[LinkArray,LinkArray,LinkArray],
+        slides:'https://drive.google.com/file/d/1sGbshBw8I-FivU5bp4pxhN0ToSTc4PNK/view?usp=sharing',
+        socialEvent:'https://www.facebook.com/events/388372688425553/',
+        links:[LinkArray],
         svg:Git,
         cheatsheet,
         codeSnippets:[codesnippets,codesnippets],
@@ -133,7 +133,7 @@ const eventData =
         imageCaptions,
         downloadLinks,
         stages
-        
+
     }
 
 

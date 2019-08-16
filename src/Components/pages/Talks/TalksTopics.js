@@ -6,7 +6,7 @@ const talkContent = [
     {
         primarySvg: Gsoc,
         Title: 'Google Summer of Code',
-        paragraph: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry',
+        paragraph: 'A mentorship program for university students, and a unique opportunity to learn and grow',
         svg1: OpenSource,
         svg1Text: 'Open Source Community',
         svg2: Student,
@@ -14,7 +14,7 @@ const talkContent = [
         svg3: Globe,
         svg3Text: 'Remote',
         buttonText: 'Browse GSoC',
-        link: '/talks/topics/gsoc'
+        link: '/talks/topics/GSoC'
     }
 ]
 

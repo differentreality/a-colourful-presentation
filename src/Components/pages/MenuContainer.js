@@ -10,18 +10,18 @@ import SocialBar from '../parts/Menu/SocialBar'
 const workshopLinks=[
     {
        title:'Git',
-       url:'/workshops/topics/git' 
+       url:'/workshops/topics/git'
     },
     {
         title:'Ruby on Rails',
-        url:'/workshops/topics/ror' 
+        url:'/workshops/topics/RoR'
      }
 ]
 
 const talkLinks=[
     {
        title:'Google Summer of Code',
-       url:'/talks/topics/gsoc' 
+       url:'/talks/topics/GSoC'
     }
 ]
 
@@ -39,11 +39,11 @@ class MenuContainer extends Component {
             {type: 'trigger_Menu', payload: { isMenuOpen: false}}
         );
     }
-    
+
     render() {
         return <Container className='fade-in' id='MenuNavigation' >
             <Row>
-               
+
             {this.props.mobile?'':
                 <SocialBar/>}
                 <Col className='Navigation' md='6' lg='3'>
@@ -96,7 +96,7 @@ class MenuContainer extends Component {
                 <h4 className='scheduledQuote__author'>
                 -Frank Zappa.
                 </h4>
-               </Col> 
+               </Col>
             </Row>
 
             <Row className='newsLetter'>

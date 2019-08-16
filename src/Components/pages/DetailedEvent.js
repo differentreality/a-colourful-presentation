@@ -84,7 +84,7 @@ const PhotoMedia = (props) => <Row className='postIntroRow PhotosRow'>
 
 const CTAEnding = (props) => <div><Row className='postIntroRow ctaRow'>
     <Col className='ctaBlock' xs='12'>
-        <h2 className='ctaBlock__Title'>Book a git workshop for your community</h2>
+        <h2 className='ctaBlock__Title'>Book a workshop for your community</h2>
         <div className='ctaBlock__Divider' />
         <Link to='/contact/form'><Button group='calltoAction' buttonText='Show me the form!' /></Link>
     </Col>

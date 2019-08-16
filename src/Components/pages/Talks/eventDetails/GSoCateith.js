@@ -13,18 +13,19 @@ import GSoCateith5 from '../../../../Photos/gsocateith/GSoCateith5.JPG';
 
 const LinkArray = {title:'Title',
     links:[
-    {
-        url: 'sadaaa',
-        text: 'test test test'
-    },
-    {
-        url: 'sadaaa',
-        text: 'test'
-    },
-    {
-        url: 'sadaaa',
-        text: 'test'
-    }]
+      {
+        url: 'https://summerofcode.withgoogle.com/',
+        text: 'Official Page'
+      },
+      {
+        url: 'https://summerofcode.withgoogle.com/organizations/',
+        text: 'Organizations'
+      },
+      {
+        url: 'https://discordapp.com/channels/319063243136040962/319063243136040962',
+        text: 'Discord channel for Greek students'
+      }
+    ]
 }
 
 const images = [gsoc_ateith_poster,
@@ -36,20 +37,20 @@ GSoCateith5
 
 const imageCaptions=['lorem','lorem','lorem','lorem','lorem']
 
-const eventData = 
+const eventData =
     {
-        title:'git101',
-        date:'06/05/2019',
-        details:'lorem lorem loremlorem lorem loremlorem lorem loremlorem lorem loremlorem lorem lorem',
+        title:'What is Google Summer of Code?',
+        date:'06/03/2019',
+        details:'Overall information about the program, typical requirements, who is eligible to participate, and how you can make it happen for yourself!',
         group:'talk',
         topic:'GSoC',
         poster:images[0],
-        slides:'https://docs.google.com/presentation/d/1EQo6aQmxGQ-HV1Q7ZTpbSTBzhoIwOmkffHM9r6ji5lM/edit?usp=sharing',
-        socialEvent:'https://www.facebook.com/events/455650285188880/',
-        links:[LinkArray,LinkArray,LinkArray],
+        slides:'https://drive.google.com/open?id=1FJ86IQZ_OSM_hkaCXJNp7quS4qiTrK5Z',
+        socialEvent:'https://www.facebook.com/events/327352731237624/',
+        links:[LinkArray],
         images,
         imageCaptions
-      
+
     }
 
 
