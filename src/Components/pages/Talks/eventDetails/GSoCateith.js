@@ -11,10 +11,11 @@ import GSoCateith5 from '../../../../Photos/gsocateith/GSoCateith5.JPG';
 
 
 
-const LinkArray = [
+const LinkArray = {title:'Title',
+    links:[
     {
         url: 'sadaaa',
-        text: 'test'
+        text: 'test test test'
     },
     {
         url: 'sadaaa',
@@ -23,8 +24,8 @@ const LinkArray = [
     {
         url: 'sadaaa',
         text: 'test'
-    }
-]
+    }]
+}
 
 const images = [gsoc_ateith_poster,
 GSoCateith2,

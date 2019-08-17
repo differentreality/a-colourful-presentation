@@ -26,7 +26,7 @@ const LinksRow = (props) => <Row className='postIntroRow'>
         <div>
             <h1 className='LinksCont__Title'>Links</h1>
         </div>
-        {props.links.map((container, id) => <LinkContainer group='callToAction' title='Useful Links' key={id} Links={container} />)}
+        {props.links.map((container, id) => <LinkContainer group='callToAction' title={container.title} key={id} Links={container.links} />)}
     </Col>
 </Row>
 

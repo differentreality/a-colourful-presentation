@@ -403,12 +403,13 @@ class CategoryNavigation extends Component {
 
                 <Row >
                     <Col className='bubbleGuide' xs='12'>
-                        <h6><FontAwesomeIcon icon={faArrowLeft} /> Keep Swiping & Scrolling! <FontAwesomeIcon icon={faArrowRight} /></h6>
+                        <h6><FontAwesomeIcon icon={faArrowLeft} /> Keep {this.props.mobile?'Swiping' : 'Scrolling'}! <FontAwesomeIcon icon={faArrowRight} /></h6>
                         <span onClick={() => this.updatePointerClick(0)} className={'colourBubble-' + (this.state.group === 'workshop' ? 'workshop' : 'empty')} />
                         <span onClick={() => this.updatePointerClick(1)} className={'colourBubble-' + (this.state.group === 'talk' ? 'talk' : 'empty')} />
                         <span onClick={() => this.updatePointerClick(2)} className={'colourBubble-' + (this.state.group === 'event' ? 'event' : 'empty')} />
                         <span onClick={() => this.updatePointerClick(3)} className={'colourBubble-' + (this.state.group === 'stella' ? 'stella' : 'empty')} />
                         <span onClick={() => this.updatePointerClick(4)} className={'colourBubble-' + (this.state.group === 'contact' ? 'contact' : 'empty')} />
+                        <h6 className='credits'>powered by <a rel="noopener noreferrer" target="_blank" href='https://kalovelo.com'>Kalovelo</a> </h6>
                     </Col>
                 </Row>
             </Container>

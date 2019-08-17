@@ -85,10 +85,11 @@ const cheatsheet=[
     }
 ]
 
-const LinkArray = [
+const LinkArray = {title:'Title',
+    links:[
     {
         url: 'sadaaa',
-        text: 'test'
+        text: 'test test test'
     },
     {
         url: 'sadaaa',
@@ -97,8 +98,8 @@ const LinkArray = [
     {
         url: 'sadaaa',
         text: 'test'
-    }
-]
+    }]
+}
 
 const images = [rorpt1poster,railspt1_img2,railspt1_img3,railspt1_img4,railspt1_img5]
 const imageCaptions = ['lorem','lorem','lorem','lorem','lorem']

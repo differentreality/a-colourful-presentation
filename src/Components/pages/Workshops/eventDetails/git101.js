@@ -88,7 +88,8 @@ const cheatsheet=[
 const stages = [
     'eat guacamole and cheese','drink water','sleep late sleep late'
 ]   
-const LinkArray = [
+const LinkArray = {title:'Titxle',
+    links:[
     {
         url: 'sadaaa',
         text: 'test test test'
@@ -100,8 +101,8 @@ const LinkArray = [
     {
         url: 'sadaaa',
         text: 'test'
-    }
-]
+    }]
+}
 
 const images = [ git101poster,gitNasia,gitMpratsa,gitPeople, gitStella]
 const imageCaptions=['lorem','lorem','lorem','lorem','lorem']
@@ -124,7 +125,6 @@ const eventData =
         downloadLinks,
         stages
     }
-
 
 const Git101 = (props)=><WorkshopDetailedEvent mobile={props.mobile} group='workshop' data={eventData}/>
 
