@@ -3,9 +3,55 @@ import { Container, Row, Col } from 'react-bootstrap';
 import store from '../../store'
 import { SingleBreadCrumbs } from '../parts/BreadCrumbs'
 import anime from 'animejs/lib/anime.es.js';
+import toastr from 'toastr'
+import * as emailjs from 'emailjs-com'
 
 
 export default class ContactForm extends React.Component {
+    constructor(props) {
+      super(props)
+
+      this.state =  {
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      }
+
+    }
+
+    handleInputChange (event) {
+      event.preventDefault()
+      const target = event.target
+      const name = target.name
+      const value = target.value
+
+      this.setState({[name]: value})
+    }
+
+    handleSubmit(event) {
+      event.preventDefault();
+
+      var templateParams = {
+        "to_name": process.env.REACT_APP_TO_EMAIL,
+        "from_name": this.state.name,
+        "subject": this.state.subject,
+        "message_html": this.state.message,
+      }
+
+      emailjs.send("gmail", "template_fg92o5s8", templateParams, process.env.REACT_APP_EMAILJS_KEY )
+        .then( function(resonse) {
+          toastr.success('Sent successfully!')
+        })
+
+      this.setState({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      })
+    }
+
     componentDidMount() {
         this.updateStore();
         this.animate();
@@ -44,33 +90,33 @@ export default class ContactForm extends React.Component {
                             <h1 className='animatedText'>Hello there!</h1>
                         </Col>
                         <Col xs='12' lg={{ span: 6 }}>
-                            <form className='contactForm' action="/action" noValidate>
+                            <form className='contactForm' onSubmit={this.handleSubmit} noValidate>
                                 <h1 className='contactForm__title'>The Contact Form</h1>
-                                
-                                <p className='contactForm__about'>Got a question or interested in booking a workshop for your community? Send me 
+
+                                <p className='contactForm__about'>Got a question or interested in booking a workshop for your community? Send me
                                 message and you will receive an answer as soon as possible!</p>
                                 <h3 className='contactForm__subtitle'>Get to know each other</h3>
 
                                 <div className='inputBox-name'>
-                                    <label htmlFor="name">Name</label>
-                                    <input className='inputText' type="text" id="name" name="name" placeholder="John Smithson" required/>
+                                    <label xfor="name">Name</label>
+                                    <input className='inputText' type="text" id="name" name="name" placeholder="  John Smithson" onChange={this.handleInputChange.bind(this)} value={this.state.name} />
                                 </div>
 
                                 <div className='inputBox-mail'>
                                     <label htmlFor="mailadress">E-mail Address</label>
-                                    <input className='inputText' type="text" id="mailadress" name="email" placeholder="you@mail.me" required/>
+                                    <input className='inputText' type="text" id="mailadress" name="email" placeholder="  you@mail.me" onChange={this.handleInputChange.bind(this)} value={this.state.email}/>
                                 </div>
 
                                 <h3 className='contactForm__subtitle'>Your Message</h3>
 
                                 <div className='inputBox'>
-                                    <label for="title">Title</label>
-                                    <input className='inputText' type="text" id="title" name="title" placeholder="Book a git workshop in Thessaloniki" required/>
+                                    <label xfor="subject">Title</label>
+                                    <input className='inputText' type="text" id="subject" name="subject" placeholder="  Book a git workshop in Thessaloniki" onChange={this.handleInputChange.bind(this)} value={this.state.subject} required/>
                                 </div>
 
-                                <label for="message">Message</label>
-                                <textarea id="subject" name="message" placeholder="Write something.." required></textarea>
-                                <input className='contactForm__submit' type="submit" value="Submit" />
+                                <label xfor="message">Message</label>
+                                <textarea id="message" name="message" placeholder="  Write something.." onChange={this.handleInputChange.bind(this)} value={this.state.message} required></textarea>
+                                <input className='contactForm__submit' type="submit" value="Submit" onClick={this.handleSubmit.bind(this)}/>
                             </form>
                         </Col>
                     </Row>
