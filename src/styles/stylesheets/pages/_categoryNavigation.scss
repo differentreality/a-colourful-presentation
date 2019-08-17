@@ -226,10 +226,22 @@
         font-size: 13px;
         text-align: center;
       }
-
       margin: 10% 0% 0% -2%;
     }
   }
+
+  .credits
+      {
+        font-size:12px;
+        font-style: italic;
+        margin-top:3%;
+
+        @media (max-width:770px)
+        {
+        margin-top:8%;
+        }
+      }
+
 }
 
 @media (max-width: 420px) {

@@ -13,7 +13,7 @@ const EventIntroduction = (props) =>
             <h1 className='EventInfo__Title'>{props.title}</h1>
             <h5 className='EventInfo__Date'>{props.date}</h5>
             <p className='EventInfo__information'>{props.details} </p>
-            <DualButtons group={props.group} firstLink={props.slides} secondLink={props.socialEvent} firstButtonText='Get the Slides' secondButtonText='Facebook Event' />
+            <DualButtons group={props.group} firstLink={props.firstLink} secondLink={props.secondLink} firstButtonText='Get the Slides' secondButtonText='Facebook Event' />
         </Col>
         <Col xs='12' md='4' className='EventPoster'>
             <img src={props.poster} alt={props.title + ' poster'} onClick={() => props.openLightboxOnSlide(1)} className='EventPoster__image' />

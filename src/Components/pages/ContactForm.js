@@ -99,23 +99,23 @@ export default class ContactForm extends React.Component {
 
                                 <div className='inputBox-name'>
                                     <label xfor="name">Name</label>
-                                    <input className='inputText' type="text" id="name" name="name" placeholder="  John Smithson" onChange={this.handleInputChange.bind(this)} value={this.state.name} />
+                                    <input className='inputText' type="text" id="name" name="name" placeholder="John Smithson" onChange={this.handleInputChange.bind(this)} value={this.state.name} />
                                 </div>
 
                                 <div className='inputBox-mail'>
                                     <label htmlFor="mailadress">E-mail Address</label>
-                                    <input className='inputText' type="text" id="mailadress" name="email" placeholder="  you@mail.me" onChange={this.handleInputChange.bind(this)} value={this.state.email}/>
+                                    <input className='inputText' type="text" id="mailadress" name="email" placeholder="you@mail.me" onChange={this.handleInputChange.bind(this)} value={this.state.email}/>
                                 </div>
 
                                 <h3 className='contactForm__subtitle'>Your Message</h3>
 
                                 <div className='inputBox'>
                                     <label xfor="subject">Title</label>
-                                    <input className='inputText' type="text" id="subject" name="subject" placeholder="  Book a git workshop in Thessaloniki" onChange={this.handleInputChange.bind(this)} value={this.state.subject} required/>
+                                    <input className='inputText' type="text" id="subject" name="subject" placeholder="Book a git workshop in Thessaloniki" onChange={this.handleInputChange.bind(this)} value={this.state.subject} required/>
                                 </div>
 
                                 <label xfor="message">Message</label>
-                                <textarea id="message" name="message" placeholder="  Write something.." onChange={this.handleInputChange.bind(this)} value={this.state.message} required></textarea>
+                                <textarea id="message" name="message" placeholder="Write something.." onChange={this.handleInputChange.bind(this)} value={this.state.message} required></textarea>
                                 <input className='contactForm__submit' type="submit" value="Submit" onClick={this.handleSubmit.bind(this)}/>
                             </form>
                         </Col>
