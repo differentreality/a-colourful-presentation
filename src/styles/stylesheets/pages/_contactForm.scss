@@ -1,7 +1,19 @@
 
 .animatedText{
   font-weight: 600;
-  color:#28b781;
+  color:#5288da;
+}
+
+.animatedResponse
+{
+  opacity:0;
+  z-index:10;
+
+  &-success
+  {
+    @extend .animatedResponse;
+    color:#28b781;
+  }
 }
 
 .contactForm {
@@ -64,6 +76,15 @@
     .inputText {
       width: 80%;
     }
+  }
+
+  &__error
+  {
+    color:#ff5252;
+    height:40px;
+    padding-top:10px;
+    font-size:18px;
+    letter-spacing: 1.5px;
   }
   
   .inputBox-mail{
