@@ -40,7 +40,7 @@ const Rails=() =><svg id='aboutRailsSVG' xmlns="http://www.w3.org/2000/svg" widt
     <path id="Path_382" data-name="Path 382" d="M417.619,537.658c0,1.542-.024,3.084.011,4.625.015.665-.144.974-.891.967-3.125-.033-6.251-.026-9.376,0-.642,0-.89-.217-.886-.864.018-3.167-.015-6.334.021-9.5a2.387,2.387,0,0,1,2.281-2.4,23.952,23.952,0,0,1,6.6-.026,2.459,2.459,0,0,1,2.234,2.7C417.631,534.658,417.619,536.158,417.619,537.658Z" transform="translate(-162.353 -379.146)" fill="#fff"/>
   </g>
   <text id="git_commit_-m_portfolio_update_" data-name="git commit -m
- &apos;portfolio update&apos;" transform="matrix(0.94, -0.342, 0.342, 0.94, 236.264, 265.411)" fill="#6b6b6b" fontSize="29" fontFamily="Gilroy-ExtraBold, Gilroy" fontWeight="800"><tspan x="-95.468" y="0">git commit -m</tspan><tspan x="-120.002" y="36" space="preserve"> &apos;portfolio update&apos;</tspan></text>
+ &apos;portfolio update&apos;" transform="matrix(0.94, -0.342, 0.342, 0.94, 236.264, 265.411)" fill="#6b6b6b" fontSize="29" fontFamily="Gilroy-ExtraBold, Gilroy" fontWeight="800"><tspan x="-95.468" y="0">rails generate</tspan><tspan x="-50.002" y="36" space="preserve"> portfolio</tspan></text>
 </svg>
 
 const Git=()=><svg id='aboutGitSVG' xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="0 0 454 454">
@@ -107,7 +107,7 @@ const Ruby=() =><svg id='aboutRubySVG' xmlns="http://www.w3.org/2000/svg" xlink=
     <path id="Path_271" data-name="Path 271" d="M567.485,276.155l-5.509,1.593-.887-3.984,6.451,1.759Z" transform="translate(-54.946 -4.943)" fill="#9b4ea1"/>
     <path id="Path_385" data-name="Path 385" d="M575.344,277.239l-12.278,2.316c-.654-1.917-1.182-3.463-1.977-5.792l14.377,2.558Z" transform="translate(816.825 -185.438) rotate(101)" fill="#9b4ea1"/>
   </g>
-  <text id="git_commit_-m_portfolio_update_" transform="translate(197.8 264.134) rotate(13)" fill="#6b6b6b" fontSize="29" fontFamily="Gilroy-ExtraBold, Gilroy" fontWeight="800"><tspan x="-95.468" y="0">git commit -m</tspan><tspan x="-120.002" y="36" space="preserve"> &apos;portfolio update&apos;</tspan></text>
+  <text id="git_commit_-m_portfolio_update_" transform="translate(197.8 264.134) rotate(13)" fill="#6b6b6b" fontSize="29" fontFamily="Gilroy-ExtraBold, Gilroy" fontWeight="800"><tspan x="-125.468" y="0">puts 'My portfolio!'</tspan></text>
 </svg>
 
 

@@ -52,7 +52,7 @@ class About extends Component {
             targets:['.primaryTechnologies svg','.aboutBooksSvg svg'],
             translateY:50,
             loop:true,
-            duration:2000,
+            duration:5000,
             direction: 'alternate',
             easing:    'easeInOutSine',
             delay: function (el, i) {

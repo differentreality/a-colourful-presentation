@@ -6,7 +6,7 @@ import { LinkContainer, StageContainer } from '../parts/LinkContainer';
 import CodeSnippets from '../parts/CodeSnippets'
 import { EventBreadCrumbsLevel3, BreadCrumbsLevel3 } from '../parts/BreadCrumbs'
 import FsLightbox from 'fslightbox-react';
-
+import {Link} from 'react-router-dom'
 const EventIntroduction = (props) =>
     <Row>
         <Col xs='12' md='8' className='EventInfo'>
@@ -86,7 +86,7 @@ const CTAEnding = (props) => <div><Row className='postIntroRow ctaRow'>
     <Col className='ctaBlock' xs='12'>
         <h2 className='ctaBlock__Title'>Book a git workshop for your community</h2>
         <div className='ctaBlock__Divider' />
-        <Button group='calltoAction' buttonText='Show me the form!' />
+        <Link to='/contact/form'><Button group='calltoAction' buttonText='Show me the form!' /></Link>
     </Col>
     {props.isMobile ? <Col md={{ xs: 12 }} className='tipContainer'>
         <p>Check the Desktop version for extra content such as code snippets.</p>

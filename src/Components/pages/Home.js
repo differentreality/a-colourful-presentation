@@ -89,7 +89,7 @@ class Home extends Component {
             .add({
                 targets: '.leftContent__title .letter',
                 opacity: [0, 1],
-                easing: "easeInOutQuad",
+                easing: "easeInOutSine",
                 duration: 1500,
                 delay: function (el, i) {
                     return 50 * (i + 1)
@@ -98,30 +98,30 @@ class Home extends Component {
             .add({
                 targets: '.leftContent__subtitle-first',
                 opacity: [0, 1],
-                easing: "easeInOutQuad",
+                easing: "easeInOutSine",
                 duration:1200,
-            })
+            },800)
             .add({
                 targets: '.leftContent__subtitle-second',
                 opacity: [0, 1],
-                easing: "easeInOutQuad",
+                easing: "easeInOutSine",
                 duration:1200,
 
-            })
+            },1500)
             .add({
                 targets: '.leftContent__subtitle-last',
                 opacity: [0, 1],
-                easing: "easeInOutQuad",
+                easing: "easeInOutSine",
                 duration:1200,
 
-            })
+            },2000)
             .add({
                 targets: '.rightContent',
                 translateX: -1000,
-                duration: 1200,
+                duration: 2000,
                 easing: 'easeInOutSine',
                 scale: [.05, 1],
-            },2400)
+            },2000)
             .add({
                 targets: '.homeCTA',
                 opacity: [0, 1],

@@ -285,8 +285,8 @@ class CategoryNavigation extends Component {
             translateY: 20,
             loop: true,
             direction: 'alternate',
-            duration: 800,
-            easing: 'linear'
+            duration: 1000,
+            easing: 'easeInOutSine'
         })
     });
 
@@ -358,7 +358,7 @@ class CategoryNavigation extends Component {
                         'buttonLink': '/stellas-facts/about'
                     }) : this.setState({
                         'Title': 'Contact',
-                        'paragraph': <p>  lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</p>,
+                        'paragraph': <p>Interested in booking a workshop or a talk? Check the contact form.<br /><i>Or simply say hi!</i></p>,
                         'topLeft': Papyrus,
                         'topRight': QuestionMark,
                         'center': MessageCloud,
