@@ -60,10 +60,10 @@
         &-workshop
         {
             @extend  .eventLeftCont__info;
-            background: $workshopGradientVerticalDarker;
-            -webkit-box-shadow: 0px 14px 35px -6px rgba(41, 192, 179,.7);
-            -moz-box-shadow: 0px 14px 35px -6px rgba(41, 192, 179,.7);
-            box-shadow: 0px 14px 35px -6px rgba(41, 192, 179,.7);
+            background: $workshopGradientVertical;
+            -webkit-box-shadow: $workshopShadow;
+            -moz-box-shadow: $workshopShadow;
+            box-shadow: $workshopShadow;
     
         }
 
@@ -80,9 +80,9 @@
         {
             @extend  .eventLeftCont__info;
             background: $talkGradientVertical;
-            -webkit-box-shadow: $talkShadow;
-            -moz-box-shadow: $talkShadow;
-            box-shadow: $talkShadow;
+            -webkit-box-shadow: $talkTextShadow;
+            -moz-box-shadow: talkTextShadow;
+            box-shadow: talkTextShadow;
         }
     }
 }
@@ -139,9 +139,6 @@
     
         &__info {
             margin: -5% 0% 0% 8%;
-            -webkit-box-shadow: 0px 14px 35px -6px rgba(41, 192, 179,.7);
-            -moz-box-shadow: 0px 14px 35px -6px rgba(41, 192, 179,.7);
-            box-shadow: 0px 14px 35px -6px rgba(41, 192, 179,.7);
     
             h3 {
                 font-size: 15px;

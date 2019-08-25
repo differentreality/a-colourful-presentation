@@ -34,6 +34,7 @@ class CategoryNavigation extends Component {
             'botRight': Pen,
             'group': 'workshop',
             'buttonLink': '/workshops/topics',
+            'buttonText':'Learn more!',
             navPointer: 0,
             redirect: false
         }

@@ -31,26 +31,26 @@ $max-width: 1180px !default;
 
 $borderColour:rgb(114, 114, 114);
 //buttons
-$workshopGradient: linear-gradient(to right, #488be4, #33e9a3);
-$workshopGradientVertical: linear-gradient( #488be4, #4adda5);
+$eventGradient: linear-gradient(to right, #488be4, #33e9a3);
+$eventGradientVertical: linear-gradient( #488be4, #4adda5);
 $workshopGradientVerticalDarker: linear-gradient( #28a2b7, #29c0b3);
-$workshopShadow:0px 5px 20px 2px rgba(59, 246, 174, 0.402);
-$workshopShadowHover:0px 6px 20px 5px rgba(59, 246, 174, 0.202);
+$eventShadow:0px 5px 20px 2px rgba(59, 246, 174, 0.402);
+$eventShadowHover:0px 6px 20px 5px rgba(59, 246, 174, 0.202);
 
-$talkGradient: linear-gradient(to right, #FF0844, #FFB199);
-$talkGradientVertical: linear-gradient( #FF0844, #FFB199);
-$talkShadow:0px 5px 20px 2px rgba(255, 154, 126, 0.692);
-$talkShadowHover:0px 6px 20px 5px rgba(255, 154, 126, 0.492);
+$workshopGradient: linear-gradient(to right, #FF0844, #FFB199);
+$workshopGradientVertical: linear-gradient( #f53968, #FFB199);
+$workshopShadow:0px 5px 20px 2px rgba(255, 154, 126, 0.692);
+$workshopShadowHover:0px 6px 20px 5px rgba(255, 154, 126, 0.492);
 
 $stellaGradient: linear-gradient(to right, #9B4EA1, #DC51AF);
 $stellaGradientVertical: linear-gradient( #9B4EA1, #DC51AF);
 $stellaShadow:0px 5px 20px 2px rgba(220, 81, 175, 0.5);
 $stellaShadowHover:0px 6px 20px 5px rgba(220, 81, 175, 0.4);
 
-$eventGradient: linear-gradient(to right, #ee8e74, #fcbd60);
-$eventGradientVertical: linear-gradient( #ee8e74, #fcbd60);
-$eventShadow:0px 5px 20px 2px rgba(255, 184, 78, .5);
-$eventShadowHover:0px 6px 20px 5px rgba(255, 184, 78, .5);
+$talkGradient: linear-gradient(to right, #ee8e74, #fcbd60);
+$talkGradientVertical: linear-gradient( #ee8e74, #fcbd60);
+$talkShadow:0px 5px 20px 2px rgba(255, 184, 78, .5);
+$talkShadowHover:0px 6px 20px 5px rgba(255, 184, 78, .5);
 
 $calltoActionGradient: linear-gradient(to right, #28B781, #63D8B4);
 $calltoActionShadow:0px 5px 20px 2px rgba(40, 183, 129, .4);
@@ -63,15 +63,15 @@ $contactShadowHover:0px 5px 20px 2px rgba(78, 67, 118,.5);
 $emptyGradientVertical:linear-gradient(#e9e9e9, #c5c5c5);
 //primary for text
 $paragraphColour: #4d4d4d;
-$talkTextColor : #FF0844;
+$workshopTextColor : #FF0844;
 $stellaTextColor : #9B4EA1;
-$eventTextColor : #FF9A7D;
-$workshopTextColor : #228799;
+$talkTextColor : #FF9A7D;
+$eventTextColor  : #228799;
 $contactTextColor:#4e4376;
-$talkTextShadow : 1px 1px 20px rgba(252, 65, 40, 0.534);
+$talkTextShadow : 1px 1px 20px rgba(248, 170, 25, 0.711);
 $stellaTextShadow : 1px 1px 40px rgba(199, 173, 216, 0.473);
 $stellaTextShadowHarder : 1px 1px 20px rgba(117, 55, 158, 0.473);
-$eventTextShadow : 1px 1px 20px rgba(248, 170, 25, 0.711);
-$workshopTextShadow : 1px 1px 20px rgba(88, 161, 230, 0.541);
+$eventTextShadow : 1px 1px 20px rgba(88, 161, 230, 0.541) ;
+$workshopTextShadow : 1px 1px 20px rgba(252, 65, 40, 0.534);
 
 

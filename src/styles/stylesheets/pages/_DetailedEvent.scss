@@ -101,9 +101,9 @@
 .cheatSheet {
   border-radius: 15px;
   padding: 3% 3% 10% 3%;
-  -webkit-box-shadow: 0px 14px 35px -6px rgba(59, 121, 201, 0.7);
-  -moz-box-shadow: 0px 14px 35px -6px rgba(59, 121, 201, 0.7);
-  box-shadow: 0px 14px 35px -6px rgba(59, 121, 201, 0.4);
+  -webkit-box-shadow: $talkShadow;
+  -moz-box-shadow: $talkShadow;
+  box-shadow: $talkShadow;
 
   .cheatIntro {
     h2 {
@@ -120,7 +120,7 @@
 
   .cheatDetails {
     #gitSvg path {
-      fill: #28a2b7;
+      fill: #FF0844;
       stroke: none;
     }
 

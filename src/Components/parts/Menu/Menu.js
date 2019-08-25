@@ -78,17 +78,17 @@ componentDidMount()
             'code': '#4e4376'
         },
         {
-            'id': 'talk',
+            'id': 'workshop',
             'name': 'Pomegranate',
             'code': '#FF0844'
         },
         {
-            'id': 'workshop',
+            'id': 'event',
             'name': 'Blueberry',
             'code': '#28a2b7'
         },
         {
-            'id': 'event',
+            'id': 'talk',
             'name': 'Grapefruit',
             'code': '#FF9A7D'
         }

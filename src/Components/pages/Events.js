@@ -31,11 +31,11 @@ class Events extends Component {
 
 
     gradientColourImage = (group) => group === 'workshop' ?
-        'linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(40, 162, 183,.4))' :
+        'linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(255, 8, 68,.1))' :
         group === 'event' ?
-            'linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(255, 154, 125,.3))' :
+            'linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(40, 162, 183,.4))' :
             group === 'talk' ?
-                'linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(255, 8, 68,.1))' : ''
+                'linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(255, 154, 125,.3))' : ''
 
 
 
