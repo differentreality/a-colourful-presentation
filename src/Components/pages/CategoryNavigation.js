@@ -320,7 +320,8 @@ class CategoryNavigation extends Component {
             'botLeft': CogOutline,
             'botRight': Pen,
             'group': 'workshop',
-            'buttonLink': '/workshops/topics'
+            'buttonLink': '/workshops/topics',
+            'buttonText':'Learn more!'
         }) :
             this.state.navPointer === 1 ? this.setState({
                 'Title': 'Talks',
@@ -331,7 +332,8 @@ class CategoryNavigation extends Component {
                 'botLeft': MicrophoneOutlineSvg,
                 'botRight': Ruby,
                 'group': 'talk',
-                'buttonLink': '/talks/topics'
+                'buttonLink': '/talks/topics',
+                'buttonText':'Learn more!'
             }) :
                 this.state.navPointer === 2 ? this.setState({
                     'Title': 'Events',
@@ -344,7 +346,8 @@ class CategoryNavigation extends Component {
                     'botLeft': UniversityOutline,
                     'botRight': ConfCard,
                     'group': 'event',
-                    'buttonLink': '/events/archive'
+                    'buttonLink': '/events/archive',
+                    'buttonText':'Browse events!'
                 }) :
                     this.state.navPointer === 3 ? this.setState({
                         'Title': `Stella's Facts`,
@@ -355,7 +358,8 @@ class CategoryNavigation extends Component {
                         'botLeft': IdeaOutline,
                         'botRight': Coffee,
                         'group': 'stella',
-                        'buttonLink': '/stellas-facts/about'
+                        'buttonLink': '/stellas-facts/about',
+                        'buttonText':'Learn about me!'
                     }) : this.setState({
                         'Title': 'Contact',
                         'paragraph': <p>Interested in booking a workshop or a talk? Check the contact form.<br /><i>Or simply say hi!</i></p>,
@@ -365,7 +369,9 @@ class CategoryNavigation extends Component {
                         'botLeft': PapyrusOutline,
                         'botRight': MessageFolder,
                         'group': 'contact',
-                        'buttonLink': '/contact/form'
+                        'buttonLink': '/contact/form',
+                        'buttonText':'Contact me!'
+
                     })
     }
 
@@ -396,7 +402,7 @@ class CategoryNavigation extends Component {
                     <Col lg={{ span: 6, order: 'first' }} className='workshopCon'>
                         <h1 className='workshopCon__Title'>{this.state.Title}</h1>
                         <span className='workshopCon__paragraph'>{this.state.paragraph}</span>
-                        <Link to={this.state.buttonLink}><Button group={this.state.group} buttonText='Learn More!' /></Link>
+                        <Link to={this.state.buttonLink}><Button group={this.state.group} buttonText={this.state.buttonText} /></Link>
                     </Col>
                 </Row>
 
