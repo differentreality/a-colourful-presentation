@@ -6,9 +6,9 @@ import { withRouter } from 'react-router-dom';
 
 const gitWorkshops = [
     {
-       
+
         Title: 'Git 101',
-        paragraph: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry',
+        paragraph: "A comprehensive introduction to git basic usage. If you code, it's a must. ",
         date: '06/05/19',
         Level: 'Beginner',
         Place: 'Thessaloniki',

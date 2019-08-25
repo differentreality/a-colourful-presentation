@@ -155,7 +155,7 @@ export default class ContactForm extends React.Component {
                         <Col xs='12' lg='4'>
                             <SingleBreadCrumbs group='contact' parent='contact' url='/contact' title='contact form' />
                             <h1 className='animatedText'>Hello there!</h1>
-                            {this.state.showResponse ? 
+                            {this.state.showResponse ?
                             <h1 className='animatedResponse animatedResponse-success'>Sent successfully!</h1>
                             : ''}
                         </Col>
@@ -163,8 +163,11 @@ export default class ContactForm extends React.Component {
                             <form className='contactForm' onSubmit={this.handleSubmit} noValidate>
                                 <h1 className='contactForm__title'>The Contact Form</h1>
 
-                                <p className='contactForm__about'>Got a question or interested in booking a workshop for your community? Send me
-                                a message and you will receive an answer as soon as possible!</p>
+                                <p className='contactForm__about'>
+                                  Have questions? Looking for mentorship?
+                                  <br/> Interested in booking a workshop or a team training?
+                                  <br/> Send me
+                                  a message and I will get back to you as soon as possible!</p>
                                 <h3 className='contactForm__subtitle'>Get to know each other</h3>
 
                                 <div className='inputBox-name'>

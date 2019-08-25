@@ -338,7 +338,7 @@ class CategoryNavigation extends Component {
             }) :
                 this.state.navPointer === 2 ? this.setState({
                     'Title': 'Events',
-                    'paragraph': <p>  Conferences & events where I was a coordinator or had an amazing experience meeting new people and
+                    'paragraph': <p>  Conferences & events where I was an organizer/volunteer or had an amazing experience meeting new people and
                         learning new things!
                     </p>,
                     'topLeft': University,
@@ -363,7 +363,7 @@ class CategoryNavigation extends Component {
                         'buttonText':'Learn about me!'
                     }) : this.setState({
                         'Title': 'Contact',
-                        'paragraph': <p>Interested in booking a workshop or a talk? Check the contact form.<br /><i>Or simply say hi!</i></p>,
+                        'paragraph': <p>Ask me things, share your experience, <i>or simply say hi!</i> </p>,
                         'topLeft': Papyrus,
                         'topRight': QuestionMark,
                         'center': MessageCloud,

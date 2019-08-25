@@ -7,19 +7,19 @@ import { withRouter } from 'react-router-dom';
 const railsWorkshops = [
     {
         Title: 'Intro to Ruby On Rails',
-        paragraph: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry',
+        paragraph: 'An introduction to the Ruby language and the Rails framework. We will explore the structure of a Rails web application, MVC pattern, CRUD actions as well as automations offered by Rails to help developers deliver code faster!',
         date: '13/04/19',
         Level: 'Beginner',
         Place: 'Thessaloniki',
-        link: '/workshops/topics/ror/rorpt1ateith'
+        link: '/workshops/topics/RoR/RoRpt1ateith'
     },
     {
         Title: 'Ruby on Rails part2',
-        paragraph: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry',
+        paragraph: 'Diving into the magic of Rails, learning useful Ruby and Rails methods, and developing our own web application.',
         date: '05/05/19',
         Level: 'Beginner',
         Place: 'Thessaloniki',
-        link: '/workshops/topics/ror/rorpt2ateith'
+        link: '/workshops/topics/RoR/RoRpt2ateith'
     }
 ]
 
