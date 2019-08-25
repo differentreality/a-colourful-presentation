@@ -57,7 +57,11 @@
   }
 
   .keyword {
-    color: $stellaTextColor;
+    color: $stellaTextColor !important;
+
+    a {
+      color: $stellaTextColor !important;
+    }
   }
 
   .primaryTechnologies {

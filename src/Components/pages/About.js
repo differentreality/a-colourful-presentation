@@ -67,7 +67,7 @@ class About extends Component {
             duration:2000,
             direction: 'alternate',
             easing:    'easeInOutSine',
-            
+
         })
     }
 
@@ -105,7 +105,6 @@ render() {
 
             <Row className='postRow primaryTechnologies'>
                 <div className='titleContainer'>
-                    <h2>primary</h2>
                     <h1>Technologies</h1>
                 </div>
                 <Col xs='12'>
@@ -167,7 +166,7 @@ render() {
             <Row className='postRow cooking'>
                 <Col className='' xs='12'  md='6'>
                     <img src={spaghetti} alt='a tasty spaghetti plate with sauce and vegetables' />
-                    
+
                 </Col>
                 <Col className='cooking__info' xs={{ span: 12 }} md='6'>
                     <h3 >Cooking</h3>
@@ -177,8 +176,8 @@ render() {
 
             <Row className='postRow contactStella'>
                 <Col xs='12'>
-                <p className='contactStella__paragraph'>That's about it, share your thoughts using the <span className='keyword'>contact form</span> or say hi directly,
-                at <span className='keyword'>stellarouzi@gmail.com</span>
+                <p className='contactStella__paragraph'>That's about it, share your thoughts using the <span className='keyword'><a href='/#/contact/form'>contact form</a></span> or say hi directly,
+                at <span className='keyword'><a href='mailto:stellarouzi@gmail.com'>stellarouzi@gmail.com</a></span>
                 </p>
                 </Col>
             </Row>
