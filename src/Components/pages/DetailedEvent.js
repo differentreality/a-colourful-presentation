@@ -125,6 +125,7 @@ class WorkshopDetailedEvent extends Component {
 
             <BreadCrumbsLevel3 group={this.props.group} topic={this.props.data.topic} title={this.props.data.title} />
 
+
             <EventIntroduction topic={this.props.data.topic} title={this.props.data.title} date={this.props.data.date} details={this.props.data.details}
                 group={this.props.data.group} firstLink={this.props.data.slides}
                 secondLink={this.props.data.socialEvent}
@@ -132,14 +133,24 @@ class WorkshopDetailedEvent extends Component {
                 openLightboxOnSlide={(num) => this.openLightboxOnSlide(num)} />
 
 
-            <LinksRow links={this.props.data.links} />
-
+            {this.props.data.links?
+                <LinksRow links={this.props.data.links} />
+            :''
+            }
 
             {this.props.mobile ?
-                '' : (<div>
-                    <CheatSheet stages={this.props.data.stages} cheatsheet={this.props.data.cheatsheet} svg={this.props.data.svg} />
-                </div>)}
-                    <EventCodeSnippets codeSnippets={this.props.data.codeSnippets} downloadLinks={this.props.data.downloadLinks} />
+                '' 
+                : this.props.data.cheatsheet?
+                    <div>
+                        <CheatSheet stages={this.props.data.stages} cheatsheet={this.props.data.cheatsheet} svg={this.props.data.svg} />
+                    </div>
+                    :''
+            }
+
+            {this.props.data.codeSnippets?
+                <EventCodeSnippets codeSnippets={this.props.data.codeSnippets} downloadLinks={this.props.data.downloadLinks} />
+                :''
+            }
 
 
             <PhotoMedia images={this.props.data.images} altText={this.props.data.imageCaptions} openLightboxOnSlide={(num) => this.openLightboxOnSlide(num)} />
@@ -198,7 +209,10 @@ class TalkEventDetails extends Component {
                 poster={this.props.data.poster}
                 openLightboxOnSlide={(num) => this.openLightboxOnSlide(num)} />
 
-            <LinksRow links={this.props.data.links} />
+            {this.props.data.links?
+                <LinksRow links={this.props.data.links} />
+            :''
+            }
 
             <PhotoMedia images={this.props.data.images} altText={this.props.data.imageCaptions} openLightboxOnSlide={(num) => this.openLightboxOnSlide(num)} />
 
