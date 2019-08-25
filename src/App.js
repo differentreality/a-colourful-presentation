@@ -29,6 +29,7 @@ import Conferences from './Components/pages/Events_Conferences/eventShowcase/Con
 import GSoCTalks from './Components/pages/Talks/eventShowcase/GSoCTalks'
 import GSoCateith from './Components/pages/Talks/eventDetails/GSoCateith'
 import Fosdem19 from './Components/pages/Events_Conferences/eventDetails/Fosdem19'
+import Fosdem20 from './Components/pages/Events_Conferences/eventDetails/Fosdem20'
 import ContactForm from './Components/pages/ContactForm'
 import WorkshopTopics from './Components/pages/Workshops/WorkshopTopics'
 import TalkTopics from './Components/pages/Talks/TalksTopics'
@@ -83,11 +84,11 @@ class App extends Component {
                               <MenuContainer mobile={this.state.mobile} />
                             </Modal.Body>
                           </Modal>
-                          
+
                         <Switch>
                           <Route  exact path='/' render={() => <Home />} />
                           <Route  exact path='/Categories' render={() => <CategoryNavigation mobile={this.state.mobile} />} />
-                          
+
                           {/*workshops*/}
                           <Route  exact path='/workshops/topics' render={() => <WorkshopTopics />} />
                           <Route  exact path='/workshops/topics/git' render={() => <GitEvents />} />
@@ -104,13 +105,14 @@ class App extends Component {
                           {/*events*/}
                           <Route  exact path='/events/archive' render={() => <Conferences />} />
                           <Route  exact path='/events/archive/fosdem19' render={() => <Fosdem19 />} />
+                          <Route  exact path='/events/archive/fosdem20' render={() => <Fosdem20 />} />
 
                           {/*about*/}
                           <Route  exact path='/stellas-facts/about' render={() => <About mobile={this.state.mobile} />} />
 
                           {/*contact*/}
                           <Route  exact path='/contact/form' render={() => <ContactForm />} />
-                            
+
                           {/*not found 404 */}
                           <Route component={notFound404} />
                         </Switch>

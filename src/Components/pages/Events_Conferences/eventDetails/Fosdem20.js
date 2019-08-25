@@ -20,8 +20,8 @@ const images = [fosdem_banner]
 
 const eventData =
     {
-        title:'FOSDEM19',
-        date:'2-3 Feb. 2019',
+        title:'FOSDEM20',
+        date:'1-2 Feb. 2020',
         details:'A free event for software developers to meet, share ideas and collaborate.',
         group:'event',
         topic:'FOSDEM',
@@ -35,6 +35,6 @@ const eventData =
     }
 
 
-const Fosdem19 = (props)=><TalkEventDetails mobile={props.mobile} group={eventData.group} data={eventData}/>
+const Fosdem20 = (props)=><TalkEventDetails mobile={props.mobile} group={eventData.group} data={eventData}/>
 
-export default Fosdem19;
+export default Fosdem20;
