@@ -86,7 +86,7 @@ class App extends Component {
                           </Modal>
 
                         <Switch>
-                          <Route  exact path='/' render={() => <Home />} />
+                          <Route  exact path='/' render={() => <Home mobile={this.state.mobile} />} />
                           <Route  exact path='/Categories' render={() => <CategoryNavigation mobile={this.state.mobile} />} />
 
                           {/*workshops*/}

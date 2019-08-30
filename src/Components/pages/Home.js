@@ -154,7 +154,9 @@ class Home extends Component {
         );
     }
 
+
     render() {
+        
         const redirect = this.state.redirect;
 
         if (redirect) {
@@ -194,7 +196,7 @@ class Home extends Component {
 
                     <Col className='scrollGuide' md='6'>
                         <Link to='/Categories'>
-                            <span className='home__scrollAction'>Try Scrolling or Swipe left!</span> <CallToActionSvg />
+                            <span className='home__scrollAction'>Try {this.props.mobile?'Swiping left':'Scrolling'}!</span> <CallToActionSvg />
                         </Link>
                     </Col>
                 </Row>
