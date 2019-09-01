@@ -1,6 +1,6 @@
 import React from 'react';
 import {TalkEventDetails} from '../../DetailedEvent';
-import poster from '../../../../Photos/railspt2ateith/poster/rorpt2poster.jpg'
+import poster from '../../../../Photos/gsocateith/poster/gsoc_ateith_poster.jpg'
 
 function importAll(r) {
   return r.keys().map(r);

@@ -6,7 +6,11 @@ import { LinkContainer, StageContainer } from '../parts/LinkContainer';
 import CodeSnippets from '../parts/CodeSnippets'
 import { EventBreadCrumbsLevel3, BreadCrumbsLevel3 } from '../parts/BreadCrumbs'
 import FsLightbox from 'fslightbox-react';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+
+
+/*  ----------- START OF COMPONENTS ----------- */
+
 const EventIntroduction = (props) =>
     <Row>
         <Col xs='12' md='8' className='EventInfo'>
@@ -45,10 +49,10 @@ const CheatSheet = (props) => <Row className='postIntroRow'>
             })}
 
             <Col xs='12' className='stages'>
-            <Row>
-                {props.stages.map((stage, id) =>
-                    <StageContainer title={'stage ' + id} text={stage} />)}
-            </Row>
+                <Row>
+                    {props.stages.map((stage, id) =>
+                        <StageContainer title={'stage ' + id} text={stage} />)}
+                </Row>
             </Col>
         </Row>
     </Col>
@@ -69,8 +73,8 @@ const PhotoMedia = (props) => <Row className='postIntroRow PhotosRow'>
         <h1>Moments</h1>
     </Col>
 
-    {props.images.map((image,index)=><Col key={index} md='6'>
-        <img src={image}  alt={formatAlternativeText(image)} onClick={() => props.openLightboxOnSlide(index+1)} className='PhotosRow__image' />
+    {props.images.map((image, index) => <Col key={index} md='6'>
+        <img src={image} alt={formatAlternativeText(image)} onClick={() => props.openLightboxOnSlide(index + 1)} className='PhotosRow__image' />
     </Col>)}
 </Row>
 
@@ -86,9 +90,23 @@ const CTAEnding = (props) => <div><Row className='postIntroRow ctaRow'>
 </Row>
 </div>
 
-const formatAlternativeText = (text)=> {
+/*  ----------- END OF COMPONENTS ----------- */
+
+const formatAlternativeText = (text) => {
     var result = text.match(/(\w*_\w*)+/)[0];
     return result.split("_").join(" ");
+}
+
+const lightBoxImages = (images, poster) => {
+    var lightBoximages = [...images];
+    lightBoximages.push(poster);
+    return lightBoximages;
+}
+
+const updateStore = (group) => {
+    store.dispatch(
+        { type: 'change_Color', payload: { color: group } }
+    );
 }
 
 class WorkshopDetailedEvent extends Component {
@@ -96,14 +114,10 @@ class WorkshopDetailedEvent extends Component {
 
     constructor(props) {
         super(props);
-        this.updateStore(props.group)
+        updateStore(props.group)
     }
 
-    updateStore = (group) => {
-        store.dispatch(
-            { type: 'change_Color', payload: { color: group } }
-        );
-    }
+
 
     openLightboxOnSlide = (number) => {
         this.setState(prevState =>
@@ -113,21 +127,11 @@ class WorkshopDetailedEvent extends Component {
             })
         );
     }
-
     
-    lightBoxImages=()=>
-    {
-        var images=[...this.props.data.images];
-        images.push(this.props.data.poster);
-        return images;
-    }
-
-
     render() {
         const toggler = this.state.toggler;
         const slide = this.state.slide;
         const mobile = this.props.mobile;
-
 
         return <Container className='fade-in' fluid='true'>
 
@@ -139,27 +143,27 @@ class WorkshopDetailedEvent extends Component {
                 group={this.props.data.group} firstLink={this.props.data.slides}
                 secondLink={this.props.data.socialEvent}
                 poster={this.props.data.poster}
-                lightBoxIndex={this.props.data.images.length+1}
+                lightBoxIndex={this.props.data.images.length + 1}
                 openLightboxOnSlide={(num) => this.openLightboxOnSlide(num)} />
 
 
-            {this.props.data.links?
+            {this.props.data.links ?
                 <LinksRow links={this.props.data.links} />
-            :''
+                : ''
             }
 
             {this.props.mobile ?
-                '' 
-                : this.props.data.cheatsheet?
+                ''
+                : this.props.data.cheatsheet ?
                     <div>
                         <CheatSheet stages={this.props.data.stages} cheatsheet={this.props.data.cheatsheet} svg={this.props.data.svg} />
                     </div>
-                    :''
+                    : ''
             }
 
-            {this.props.data.codeSnippets?
+            {this.props.data.codeSnippets ?
                 <EventCodeSnippets codeSnippets={this.props.data.codeSnippets} downloadLinks={this.props.data.downloadLinks} />
-                :''
+                : ''
             }
 
 
@@ -170,7 +174,7 @@ class WorkshopDetailedEvent extends Component {
             <FsLightbox
                 toggler={toggler}
                 slide={slide}
-                sources={this.lightBoxImages()}
+                sources={lightBoxImages(this.props.data.images, this.props.data.poster)}
                 type='image'
             />
         </Container>
@@ -185,7 +189,7 @@ class TalkEventDetails extends Component {
     constructor(props) {
         super(props);
         this.state = { isMobile: props.mobile }
-        this.updateStore(props.group)
+        updateStore(props.group)
     }
 
     openLightboxOnSlide = (number) => {
@@ -197,18 +201,7 @@ class TalkEventDetails extends Component {
         );
     }
 
-    updateStore = (group) => {
-        store.dispatch(
-            { type: 'change_Color', payload: { color: group } }
-        );
-    }
 
-    lightBoxImages=()=>
-    {
-        var images=[...this.props.data.images];
-        images.push(this.props.data.poster);
-        return images;
-    }
 
 
     render() {
@@ -226,12 +219,12 @@ class TalkEventDetails extends Component {
                 group={this.props.data.group} firstLink={this.props.data.slides}
                 secondLink={this.props.data.socialEvent}
                 poster={this.props.data.poster}
-                lightBoxIndex={this.props.data.images.length+1}
+                lightBoxIndex={this.props.data.images.length + 1}
                 openLightboxOnSlide={(num) => this.openLightboxOnSlide(num)} />
 
-            {this.props.data.links?
+            {this.props.data.links ?
                 <LinksRow links={this.props.data.links} />
-            :''
+                : ''
             }
 
             <PhotoMedia images={this.props.data.images} altText={this.props.data.imageCaptions} openLightboxOnSlide={(num) => this.openLightboxOnSlide(num)} />
@@ -242,7 +235,7 @@ class TalkEventDetails extends Component {
             <FsLightbox
                 toggler={toggler}
                 slide={slide}
-                sources={this.lightBoxImages()}
+                sources={lightBoxImages(this.props.data.images, this.props.data.poster)}
                 type='image'
             />
         </Container>
