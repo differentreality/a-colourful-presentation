@@ -1,7 +1,7 @@
 import React from 'react';
 import Events from '../../Events'
-import gitNasia from '../../../../Photos/git101ateith/A-girl-is-showing-her-swag-at-the-camera-and-a-boy-behind-her-is-smilling.JPG'
-import git101ateith from '../../../../Photos/git101ateith/students-behind-computers-focusing-on-git-tasks.JPG'
+import gitNasia from '../../../../Photos/git101ateith/A_girl_is_showing_her_swag_at_the_camera_and_a_boy_behind_her_is_smilling.JPG'
+import git101ateith from '../../../../Photos/git101ateith/students_behind_computers_focusing_on_git_tasks.JPG'
 import { withRouter } from 'react-router-dom';
 
 const gitWorkshops = [

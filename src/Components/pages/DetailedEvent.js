@@ -87,8 +87,8 @@ const CTAEnding = (props) => <div><Row className='postIntroRow ctaRow'>
 </div>
 
 const formatAlternativeText = (text)=> {
-    var result = text.match(/(\w*-\w*)+/)[0];
-    return result.split("-").join(" ");
+    var result = text.match(/(\w*_\w*)+/)[0];
+    return result.split("_").join(" ");
 }
 
 class WorkshopDetailedEvent extends Component {

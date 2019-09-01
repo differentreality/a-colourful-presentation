@@ -1,6 +1,6 @@
 import React from 'react';
 import Events from '../../Events'
-import gsocTalk01 from '../../../../Photos/gsocateith/students-sitting-on-their-desks-smilling.JPG';
+import gsocTalk01 from '../../../../Photos/gsocateith/students_sitting_on_their_desks_smilling.JPG';
 import { withRouter } from 'react-router-dom';
 const GSoCTalksData = [
     {
