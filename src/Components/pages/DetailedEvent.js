@@ -16,7 +16,7 @@ const EventIntroduction = (props) =>
             <DualButtons group={props.group} firstLink={props.firstLink} secondLink={props.secondLink} firstButtonText='Get the Slides' secondButtonText='Facebook Event' />
         </Col>
         <Col xs='12' md='4' className='EventPoster'>
-            <img src={props.poster} alt={props.title + ' poster'} onClick={() => props.openLightboxOnSlide(1)} className='EventPoster__image' />
+            <img src={props.poster} alt={props.title + ' poster'} onClick={() => props.openLightboxOnSlide(props.lightBoxIndex)} className='EventPoster__image' />
             <h5 className='EventPoster__text'>the poster</h5>
         </Col>
     </Row>
@@ -68,18 +68,10 @@ const PhotoMedia = (props) => <Row className='postIntroRow PhotosRow'>
     <Col md='12'>
         <h1>Moments</h1>
     </Col>
-    <Col md='6'>
-        <img src={props.images[1]} alt={props.altText[1]} onClick={() => props.openLightboxOnSlide(2)} className='PhotosRow__image' />
-    </Col>
-    <Col md='6'>
-        <img src={props.images[2]} alt={props.altText[2]} onClick={() => props.openLightboxOnSlide(3)} className='PhotosRow__image' />
-    </Col>
-    <Col md='6'>
-        <img src={props.images[3]} alt={props.altText[3]} onClick={() => props.openLightboxOnSlide(4)} className='PhotosRow__image' />
-    </Col>
-    <Col md='6'>
-        <img src={props.images[4]} alt={props.altText[4]} onClick={() => props.openLightboxOnSlide(5)} className='PhotosRow__image' />
-    </Col>
+
+    {props.images.map((image,index)=><Col key={index} md='6'>
+        <img src={image}  alt={formatAlternativeText(image)} onClick={() => props.openLightboxOnSlide(index+1)} className='PhotosRow__image' />
+    </Col>)}
 </Row>
 
 const CTAEnding = (props) => <div><Row className='postIntroRow ctaRow'>
@@ -93,6 +85,11 @@ const CTAEnding = (props) => <div><Row className='postIntroRow ctaRow'>
     </Col> : ''}
 </Row>
 </div>
+
+const formatAlternativeText = (text)=> {
+    var result = text.match(/(\w*-\w*)+/)[0];
+    return result.split("-").join(" ");
+}
 
 class WorkshopDetailedEvent extends Component {
     state = { toggler: false, slide: 0 }
@@ -117,11 +114,23 @@ class WorkshopDetailedEvent extends Component {
         );
     }
 
+    
+    lightBoxImages=()=>
+    {
+        var images=[...this.props.data.images];
+        images.push(this.props.data.poster);
+        return images;
+    }
+
+
     render() {
         const toggler = this.state.toggler;
         const slide = this.state.slide;
         const mobile = this.props.mobile;
+
+
         return <Container className='fade-in' fluid='true'>
+
 
             <BreadCrumbsLevel3 group={this.props.group} topic={this.props.data.topic} title={this.props.data.title} />
 
@@ -130,6 +139,7 @@ class WorkshopDetailedEvent extends Component {
                 group={this.props.data.group} firstLink={this.props.data.slides}
                 secondLink={this.props.data.socialEvent}
                 poster={this.props.data.poster}
+                lightBoxIndex={this.props.data.images.length+1}
                 openLightboxOnSlide={(num) => this.openLightboxOnSlide(num)} />
 
 
@@ -160,7 +170,7 @@ class WorkshopDetailedEvent extends Component {
             <FsLightbox
                 toggler={toggler}
                 slide={slide}
-                sources={this.props.data.images}
+                sources={this.lightBoxImages()}
                 type='image'
             />
         </Container>
@@ -193,11 +203,20 @@ class TalkEventDetails extends Component {
         );
     }
 
+    lightBoxImages=()=>
+    {
+        var images=[...this.props.data.images];
+        images.push(this.props.data.poster);
+        return images;
+    }
+
+
     render() {
 
         const toggler = this.state.toggler;
         const slide = this.state.slide;
         const mobile = this.props.mobile;
+
         return <Container className='fade-in' fluid='true'>
 
             {this.props.group === 'event' ? <EventBreadCrumbsLevel3 group={this.props.group} title={this.props.data.title} /> :
@@ -207,6 +226,7 @@ class TalkEventDetails extends Component {
                 group={this.props.data.group} firstLink={this.props.data.slides}
                 secondLink={this.props.data.socialEvent}
                 poster={this.props.data.poster}
+                lightBoxIndex={this.props.data.images.length+1}
                 openLightboxOnSlide={(num) => this.openLightboxOnSlide(num)} />
 
             {this.props.data.links?
@@ -222,7 +242,7 @@ class TalkEventDetails extends Component {
             <FsLightbox
                 toggler={toggler}
                 slide={slide}
-                sources={this.props.data.images}
+                sources={this.lightBoxImages()}
                 type='image'
             />
         </Container>

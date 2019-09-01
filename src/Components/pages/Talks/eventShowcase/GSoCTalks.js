@@ -1,6 +1,6 @@
 import React from 'react';
 import Events from '../../Events'
-import GSoCateith1 from '../../../../Photos/gsocateith/GSoCateith1.JPG';
+import gsocTalk01 from '../../../../Photos/gsocateith/students-sitting-on-their-desks-smilling.JPG';
 import { withRouter } from 'react-router-dom';
 const GSoCTalksData = [
     {
@@ -13,7 +13,7 @@ const GSoCTalksData = [
     }
 ]
 
-const images = [GSoCateith1]
+const images = [gsocTalk01]
 
 const GSoCTalks = () =>  <Events group='talk' topic='GSoC' images={images} data={GSoCTalksData}/>
 

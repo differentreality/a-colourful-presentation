@@ -1,12 +1,12 @@
 import React from 'react';
 import {TalkEventDetails} from '../../DetailedEvent';
-import gsoc_ateith_poster from '../../../../Photos/gsocateith/gsoc_ateith_poster.jpg'
-import GSoCateith2 from '../../../../Photos/gsocateith/GSoCateith2.JPG';
-import GSoCateit3 from '../../../../Photos/gsocateith/GSoCateith3.JPG';
-import GSoCateit4 from '../../../../Photos/gsocateith/GSoCateith4.JPG';
-import GSoCateith5 from '../../../../Photos/gsocateith/GSoCateith5.JPG';
+import poster from '../../../../Photos/railspt2ateith/poster/rorpt2poster.jpg'
 
+function importAll(r) {
+  return r.keys().map(r);
+}
 
+const images = importAll(require.context('../../../../Photos/git101ateith/', false, /\.(png|jpe?g|svg|JPE?G)$/));
 
 
 
@@ -28,13 +28,6 @@ const LinkArray = {title:'Title',
     ]
 }
 
-const images = [gsoc_ateith_poster,
-GSoCateith2,
-GSoCateit3,
-GSoCateit4,
-GSoCateith5
-]
-
 const imageCaptions=['lorem','lorem','lorem','lorem','lorem']
 
 const eventData =
@@ -44,13 +37,12 @@ const eventData =
         details:'Overall information about the program, typical requirements, who is eligible to participate, and how you can make it happen for yourself!',
         group:'talk',
         topic:'GSoC',
-        poster:images[0],
+        poster:poster,
         slides:'https://drive.google.com/open?id=1FJ86IQZ_OSM_hkaCXJNp7quS4qiTrK5Z',
         socialEvent:'https://www.facebook.com/events/327352731237624/',
         links:[LinkArray],
         images,
         imageCaptions
-
     }
 
 

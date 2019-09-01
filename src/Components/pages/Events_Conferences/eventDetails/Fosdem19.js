@@ -1,11 +1,5 @@
 import React from 'react';
 import {TalkEventDetails} from '../../DetailedEvent';
-import git101poster from '../../../../Photos/git101ateith/git101poster.jpg'
-import gitMpratsa from '../../../../Photos/git101ateith/gitMpratsa.JPG';
-import gitPeople from '../../../../Photos/git101ateith/gitPeople.JPG';
-import gitStella from '../../../../Photos/git101ateith/gitStella.JPG';
-import gitNasia from '../../../../Photos/git101ateith/gitNasia.JPG';
-import fosdem_banner from '../../../../Photos/fosdem/fosdem_banner.png'
 import { Git } from '../../../../svg/topics/topicsSvg';
 
 
@@ -14,8 +8,13 @@ const LinkArray = {title:'Title',
     links:[]
 }
 
-const images = [fosdem_banner]
-
+function importAll(r) {
+    return r.keys().map(r);
+  }
+  
+  const images = importAll(require.context('../../../../Photos/fosdem/', false, /\.(png|jpe?g|svg|JPE?G)$/));
+  
+  
  const imageCaptions=['','','','','']
 
 const eventData =

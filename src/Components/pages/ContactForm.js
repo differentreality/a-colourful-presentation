@@ -153,7 +153,7 @@ export default class ContactForm extends React.Component {
                 <div >
                     <Row>
                         <Col xs='12' lg='4'>
-                            <SingleBreadCrumbs group='contact' parent='contact' url='/contact' title='contact form' />
+                            <SingleBreadCrumbs group='event' parent='contact' url='/contact' title='contact form' />
                             <h1 className='animatedText'>Hello there!</h1>
                             {this.state.showResponse ?
                             <h1 className='animatedResponse animatedResponse-success'>Sent successfully!</h1>

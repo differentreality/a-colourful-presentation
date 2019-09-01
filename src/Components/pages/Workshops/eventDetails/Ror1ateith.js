@@ -1,12 +1,15 @@
 import React from 'react';
 import {WorkshopDetailedEvent} from '../../DetailedEvent'
-import railspt1_img2 from '../../../../Photos/railspt1ateith/railspt1_img2.JPG'
-import railspt1_img3 from '../../../../Photos/railspt1ateith/railspt1_img3.JPG'
-import railspt1_img4 from '../../../../Photos/railspt1ateith/railspt1_img4.JPG'
-import railspt1_img5 from '../../../../Photos/railspt1ateith/railspt1_img5.JPG'
-import rorpt1poster from '../../../../Photos/railspt1ateith/rorpt1poster.jpg'
+import rorpt1poster from '../../../../Photos/railspt1ateith/poster/rorpt1poster.jpg'
 
 import { Ruby } from '../../../../svg/topics/topicsSvg';
+
+function importAll(r) {
+    return r.keys().map(r);
+}
+
+const images = importAll(require.context('../../../../Photos/railspt1ateith/', false, /\.(png|jpe?g|svg|JPE?G)$/));
+
 
 const codesnippet_docker=<div>
 <div>
@@ -140,7 +143,6 @@ const LinkArray = {title:'Title',
     }]
 }
 
-const images = [rorpt1poster,railspt1_img2,railspt1_img3,railspt1_img4,railspt1_img5]
 const imageCaptions = ['lorem','lorem','lorem','lorem','lorem']
 
 const stages = [
@@ -153,7 +155,7 @@ const eventData =
         details:'Create a fully functional web application in under 5 minutes. Let Rails work its magic for you, and get started with your our own web application.',
         group:'workshop',
         topic:'RoR',
-        poster:images[0],
+        poster:rorpt1poster,
         slides:'https://drive.google.com/open?id=11ySTkZizgAeBH0FaE1DZjAdmXwWUPNqR',
         socialEvent:'https://www.facebook.com/events/403678983517416/',
         links:[LinkArray,LinkArray,LinkArray],

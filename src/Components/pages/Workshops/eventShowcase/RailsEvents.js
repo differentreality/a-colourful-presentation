@@ -1,7 +1,7 @@
 import React from 'react';
 import Events from '../../Events';
-import railspt1_img1 from '../../../../Photos/railspt1ateith/railspt1_img1.JPG'
-import Rorateithpt2_3 from '../../../../Photos/railspt2ateith/Rorateithpt2_3.JPG'
+import railspt1_img1 from '../../../../Photos/railspt1ateith/students-getting-ready-for-the-workshop.JPG'
+import girlFocusing from '../../../../Photos/railspt2ateith/girl-focusing-on-her-computer.JPG'
 import { withRouter } from 'react-router-dom';
 
 const railsWorkshops = [
@@ -25,7 +25,7 @@ const railsWorkshops = [
 
 
 //1 for each event
-const images = [railspt1_img1, Rorateithpt2_3]
+const images = [railspt1_img1, girlFocusing]
 
 const RailsEvents = () => <Events group='workshop' topic='RoR' images={images} data={railsWorkshops} />
 

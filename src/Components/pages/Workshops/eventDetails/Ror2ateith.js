@@ -1,12 +1,13 @@
 import React from 'react';
 import {WorkshopDetailedEvent} from '../../DetailedEvent';
-import railspt2_img2 from '../../../../Photos/railspt2ateith/Rorateithpt2_1.JPG'
-import railspt2_img3 from '../../../../Photos/railspt2ateith/Rorateithpt2_2.JPG'
-import railspt2_img4 from '../../../../Photos/railspt2ateith/Rorateithpt2_3.JPG'
-import railspt2_img5 from '../../../../Photos/railspt2ateith/Rorateithpt2_4.JPG'
-import rorpt2poster from '../../../../Photos/railspt2ateith/rorpt2poster.jpg'
-
+import poster from '../../../../Photos/railspt2ateith/poster/rorpt2poster.jpg'
 import { Git } from '../../../../svg/topics/topicsSvg';
+
+function importAll(r) {
+    return r.keys().map(r);
+}
+
+const images = importAll(require.context('../../../../Photos/railspt2ateith/', false, /\.(png|jpe?g|svg|JPE?G)$/));
 
 const codesnippets=<div>
 <div>
@@ -101,14 +102,6 @@ const LinkArray = {title:'Useful Resources',
     }]
 }
 
-
-const images = [
-    rorpt2poster,
-    railspt2_img2,
-    railspt2_img3,
-    railspt2_img4,
-    railspt2_img5
-]
 const stages = [
     'eat guacamole and cheese','drink water','sleep late sleep late'
 ]
@@ -122,7 +115,7 @@ const eventData =
         details:'Diving into the magic of Rails, learning useful Ruby and Rails methods, and developing our own web application.',
         group:'workshop',
         topic:'RoR',
-        poster:images[0],
+        poster,
         slides:'https://drive.google.com/file/d/1sGbshBw8I-FivU5bp4pxhN0ToSTc4PNK/view?usp=sharing',
         socialEvent:'https://www.facebook.com/events/388372688425553/',
         links:[LinkArray],
