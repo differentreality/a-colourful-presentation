@@ -24,6 +24,14 @@ const SIbooks = [
     {
         author: 'Jorge Bucay',
         title: 'Let me tell you a story'
+    },
+    {
+      author: 'Grant Cardone',
+      title: 'Be obsessed or be average'
+    },
+    {
+      author: 'Tolle Eckhart',
+      title: 'The power of NOW'
     }
 ]
 
