@@ -2,7 +2,7 @@
   "name": "stellas-web",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://me.stellarouzi.com/a-colourful-presentation",
+  "homepage": "https://me.stellarouzi.com",
   "dependencies": {
     "@babel/runtime": "^7.4.5",
     "@fortawesome/fontawesome-svg-core": "^1.2.19",
