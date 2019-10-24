@@ -52,7 +52,7 @@ export default class ContactForm extends React.Component {
 
         //previous template id : template_fg92o5s8
 
-        emailjs.send("gmail", "template_JvufSO9G", templateParams, process.env.REACT_APP_EMAILJS_USERID)
+        emailjs.send("gmail", process.env.REACT_APP_EMAILJS_TEMPLATE, templateParams, process.env.REACT_APP_EMAILJS_USERID)
 
         this.setState({
             name: '',
