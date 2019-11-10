@@ -178,7 +178,7 @@ render() {
                 </Col>
                 <Col className='cooking__info' xs={{ span: 12 }} md='6'>
                     <h3 >Cooking</h3>
-                    <p>Lorem eatting ipsun text Lorem eating ipsun textLorem eating ipsun textLorem eating ipsun textLorem eating ipsun textLorem eating ipsun textLorem eating ipsun textLorem eating ipsun textLorem eating ipsun textLorem eating ipsun textLorem eating ipsun text.</p>
+                    <p>Food is passion. And I am all for passion. And good food.<br />I am open to new culinary adventures and I am a firm believer that food should be shared.</p>
                 </Col>
             </Row>
 
