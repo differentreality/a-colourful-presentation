@@ -28,7 +28,7 @@ const imageCaptions=['lorem','lorem','lorem','lorem','lorem']
 const eventData =
     {
         title:'allGit 102',
-        date:'15/12/2019',
+        date:'15/12/2019 15:00-18:00',
         details:'An introduction to git basic commands and workflows, with an after-flavor of GitHub',
         group:'workshop',
         topic:'git',

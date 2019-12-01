@@ -33,7 +33,7 @@ const imageCaptions=['lorem','lorem','lorem','lorem','lorem']
 const eventData =
     {
         title:'How to be part of Google Summer of Code?',
-        date:'04/12/2019',
+        date:'04/12/2019 18:00-19:30',
         details: "To Google Summer of Code (GSoC) είναι η καλύτερη ευκαιρία για φοιτητές να εξασκήσουν και να αναπτύξουν τις δεξιότητές τους στην ανάπτυξη λογισμικού και να συνεισφέρουν στην open source κοινότητα! Την Τετάρτη 2019-12-04 στις 18:00 στο ΚΕΔΕΑ (ΑΜΦ Ι) θα δούμε αναλυτικά τι είναι το GSoC, πώς μπορεί να συμμετέχει κάποιος, και θα μοιραστούμε την εμπειρία μας ως GSoC mentees",
         group:'talk',
         topic:'GSoC',
