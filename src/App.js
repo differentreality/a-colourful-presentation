@@ -24,6 +24,7 @@ import AllGit2019_101 from './Components/pages/Workshops/eventDetails/AllGit2019
 import AllGit2019_102 from './Components/pages/Workshops/eventDetails/AllGit2019_102'
 import Ror1ateith from './Components/pages/Workshops/eventDetails/Ror1ateith'
 import Ror2ateith from './Components/pages/Workshops/eventDetails/Ror2ateith'
+import RoR_ACM from './Components/pages/Workshops/eventDetails/RoR_ACM'
 import About from './Components/pages/About'
 import notFound404 from './Components/pages/notFound404'
 import MenuContainer from './Components/pages/MenuContainer'
@@ -99,6 +100,8 @@ class App extends Component {
                           <Route  exact path='/workshops/topics/git/git101' render={() => <Git101 mobile={this.state.mobile} group='workshop' />} />
                           <Route  exact path='/workshops/topics/ror/rorpt1ateith' render={() => <Ror1ateith mobile={this.state.mobile} group='workshop' />} />
                           <Route  exact path='/workshops/topics/ror/rorpt2ateith' render={() => <Ror2ateith mobile={this.state.mobile} group='workshop' />} />
+
+                          <Route  exact path='/workshops/topics/ror/RoR_ACM' render={() => <RoR_ACM mobile={this.state.mobile} group='workshop' />} />
 
                           <Route  exact path='/workshops/topics/git/AllGit2019_101' render={() => <AllGit2019_101 mobile={this.state.mobile} group='workshop' />} />
 

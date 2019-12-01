@@ -6,6 +6,14 @@ import { withRouter } from 'react-router-dom';
 
 const railsWorkshops = [
     {
+      Title: 'Ruby on Rails workshops with ACM',
+      paragraph: 'We are building a fully functional web application with Ruby on Rails',
+      date: '13/12/2019 & 16/12/2019',
+      Level: 'Beginner',
+      Place: 'AUTH, Informatics building, Room H6',
+      link: '/workshops/topics/RoR/RoR_ACM'
+    },
+    {
         Title: 'Intro to Ruby On Rails',
         paragraph: 'An introduction to the Ruby language and the Rails framework. We will explore the structure of a Rails web application, MVC pattern, CRUD actions as well as automations offered by Rails to help developers deliver code faster!',
         date: '13/04/19',
@@ -25,7 +33,7 @@ const railsWorkshops = [
 
 
 //1 for each event
-const images = [railspt1_img1, girlFocusing]
+const images = [girlFocusing, railspt1_img1, girlFocusing]
 
 const RailsEvents = () => <Events group='workshop' topic='RoR' images={images} data={railsWorkshops} />
 
