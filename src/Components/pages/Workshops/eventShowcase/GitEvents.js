@@ -6,6 +6,22 @@ import { withRouter } from 'react-router-dom';
 
 const gitWorkshops = [
     {
+      Title: 'All git! Part 1',
+      paragraph: 'Hands on the #1 tool of every development team.',
+      date: '08/12/19',
+      Level: 'Beginner',
+      Place: 'KEDEA - 3is Septemvriou',
+      link: '/workshops/topics/git/AllGit2019_101'
+    },
+    {
+      Title: 'All git! Part 2',
+      paragraph: 'Hands on the #1 tool of every development team.',
+      date: '15/12/19',
+      Level: 'Intermediate',
+      Place: 'KEDEA - 3is Septemvriou',
+      link: '/workshops/topics/git/AllGit2019_102'
+    },
+    {
 
         Title: 'Git 101',
         paragraph: "A comprehensive introduction to git basic usage. If you code, it's a must. ",
@@ -16,7 +32,7 @@ const gitWorkshops = [
     },
 ]
 
-const images = [gitNasia,git101ateith]
+const images = [gitNasia, gitNasia, git101ateith]
 
 const GitEvents = () =>  <Events group='workshop'  topic='git' images={images} data={gitWorkshops}/>
 
