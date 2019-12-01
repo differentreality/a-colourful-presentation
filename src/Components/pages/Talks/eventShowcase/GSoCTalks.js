@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom';
 const GSoCTalksData = [
     {
       Title: 'How to be part of Google Summer of Code',
-      paragraph: 'A presentation by mentees for students who want to particate in GSoC',
+      paragraph: 'GSoC mentees share their experience about GSoC',
       date: 'Wed 4/12/19',
       Level: 'Beginner',
       Place: 'KEDEA - 3is Septemvriou (red building)',
