@@ -28,7 +28,7 @@ const LinkArray = {title:'Title',
 const imageCaptions=['lorem','lorem','lorem','lorem','lorem']
 const eventData =
     {
-        title:'Code Management with Git: from zero to hero!',
+        title:'Git: from Zero to Hero!',
         date: '08 & 15 Dec. 2019',
         details: <div><p>Hands on the #1 tool of every development team. </p>
         <p> <b>Git 101 on 8/12 14:30 - 18:00</b> <br />

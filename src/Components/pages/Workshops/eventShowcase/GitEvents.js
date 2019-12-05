@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom';
 
 const gitWorkshops = [
     {
-      Title: 'Code Management with Git: from zero to hero!',
+      Title: 'Code Management with Git: from Zero to Hero!',
       paragraph: 'Hands on the #1 tool of every development team.',
       date: '08/12/19 & 15/12/19',
       Level: 'Beginner / Intermediate',
