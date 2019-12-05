@@ -191,7 +191,7 @@ class Home extends Component {
                 <Row className='homeCTA'>
                     <Col md='6'>
                         <span className='home__latest'>Latest</span>
-                        <Link to='/workshops/topics/git/git-zero-to-hero'><Button group='workshop' buttonText='Git 101' /></Link>
+                        <Link to='/workshops/topics/git/GitZeroToHero'><Button group='workshop' buttonText='Git from Zero to Hero!' /></Link>
                     </Col>
 
                     <Col className='scrollGuide' md='6'>
