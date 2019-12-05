@@ -76,7 +76,7 @@ class Home extends Component {
     }
 
 
-    //when the animation is completed,hide the skip button 
+    //when the animation is completed,hide the skip button
     animationTimeline = anime.timeline({ complete: () => this.hideSkipButton() });
 
     entranceAnimation = () => {
@@ -156,11 +156,11 @@ class Home extends Component {
 
 
     render() {
-        
+
         const redirect = this.state.redirect;
 
         if (redirect) {
-           return  <Redirect to='/Categories'/> 
+           return  <Redirect to='/Categories'/>
           }
 
         return (
@@ -191,7 +191,7 @@ class Home extends Component {
                 <Row className='homeCTA'>
                     <Col md='6'>
                         <span className='home__latest'>Latest</span>
-                        <Link to='/workshops/topics/git/git101'><Button group='workshop' buttonText='Git 101' /></Link>
+                        <Link to='/workshops/topics/git/git-zero-to-hero'><Button group='workshop' buttonText='Git 101' /></Link>
                     </Col>
 
                     <Col className='scrollGuide' md='6'>

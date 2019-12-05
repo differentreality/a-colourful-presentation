@@ -20,8 +20,7 @@ import GitEvents from './Components/pages/Workshops/eventShowcase/GitEvents'
 import RailsEvents from './Components/pages/Workshops/eventShowcase/RailsEvents'
 import CategoryNavigation from './Components/pages/CategoryNavigation'
 import { Git101 } from './Components/pages/Workshops/eventDetails/git101'
-import AllGit2019_101 from './Components/pages/Workshops/eventDetails/AllGit2019_101'
-import AllGit2019_102 from './Components/pages/Workshops/eventDetails/AllGit2019_102'
+import GitZeroToHero from './Components/pages/Workshops/eventDetails/GitZeroToHero'
 import Ror1ateith from './Components/pages/Workshops/eventDetails/Ror1ateith'
 import Ror2ateith from './Components/pages/Workshops/eventDetails/Ror2ateith'
 import RoR_ACM from './Components/pages/Workshops/eventDetails/RoR_ACM'
@@ -103,9 +102,7 @@ class App extends Component {
 
                           <Route  exact path='/workshops/topics/ror/RoR_ACM' render={() => <RoR_ACM mobile={this.state.mobile} group='workshop' />} />
 
-                          <Route  exact path='/workshops/topics/git/AllGit2019_101' render={() => <AllGit2019_101 mobile={this.state.mobile} group='workshop' />} />
-
-                          <Route  exact path='/workshops/topics/git/AllGit2019_102' render={() => <AllGit2019_102 mobile={this.state.mobile} group='workshop' />} />
+                          <Route  exact path='/workshops/topics/git/GitZeroToHero' render={() => <GitZeroToHero mobile={this.state.mobile} group='workshop' />} />
 
                           {/*talks*/}
                           <Route  exact path='/talks/topics' render={() => <TalkTopics />} />

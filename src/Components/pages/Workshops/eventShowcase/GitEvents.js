@@ -6,20 +6,12 @@ import { withRouter } from 'react-router-dom';
 
 const gitWorkshops = [
     {
-      Title: 'All git! Part 1',
+      Title: 'Code Management with Git: from zero to hero!',
       paragraph: 'Hands on the #1 tool of every development team.',
-      date: '08/12/19',
-      Level: 'Beginner',
+      date: '08/12/19 & 15/12/19',
+      Level: 'Beginner / Intermediate',
       Place: 'KEDEA - 3is Septemvriou',
-      link: '/workshops/topics/git/AllGit2019_101'
-    },
-    {
-      Title: 'All git! Part 2',
-      paragraph: 'Hands on the #1 tool of every development team.',
-      date: '15/12/19',
-      Level: 'Intermediate',
-      Place: 'KEDEA - 3is Septemvriou',
-      link: '/workshops/topics/git/AllGit2019_102'
+      link: '/workshops/topics/git/GitZeroToHero'
     },
     {
 

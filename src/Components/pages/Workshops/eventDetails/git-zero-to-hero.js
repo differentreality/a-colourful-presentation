@@ -7,7 +7,8 @@ function importAll(r) {
     return r.keys().map(r);
 }
 
-const images = importAll(require.context('../../../../Photos/git101ateith/', false, /\.(png|jpe?g|svg|JPE?G)$/));
+const images = [];
+// importAll(require.context('../../../../Photos/git101ateith/', false, /\.(png|jpe?g|svg|JPE?G)$/));
 
 const codesnippets=<div></div>
 
@@ -27,24 +28,24 @@ const LinkArray = {title:'Title',
 const imageCaptions=['lorem','lorem','lorem','lorem','lorem']
 const eventData =
     {
-        title:'allGit 102',
-        date:'15/12/2019 15:00-18:00',
+        title:'allGit 101',
+        date:'08/12/2019 14:30-18:00',
         details:'An introduction to git basic commands and workflows, with an after-flavor of GitHub',
         group:'workshop',
         topic:'git',
         poster:AllGit19_101_poster,
         slides:'',
-        socialEvent:'',
+        socialEvent:'https://www.facebook.com/events/1405170809644106',
         links:[],
         svg:Git,
         cheatsheet,
         codeSnippets:[codesnippets,codesnippets],
-        // images,
+        images,
         imageCaptions,
         downloadLinks,
         stages
     }
 
-const AllGit2019_102 = (props)=><WorkshopDetailedEvent mobile={props.mobile} group='workshop' data={eventData}/>
+const git-zero-to-hero = (props)=><WorkshopDetailedEvent mobile={props.mobile} group='workshop' data={eventData}/>
 
-export default AllGit2019_102;
+export default git-zero-to-hero;
