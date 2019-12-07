@@ -38,7 +38,7 @@ const eventData =
         group:'talk',
         topic:'GSoC',
         poster:poster,
-        slides:'#',
+        slides:'https://drive.google.com/open?id=1Vng0IeIeAZw6e0AD3oZUJQN9pxt4f6dZ',
         socialEvent:'https://www.facebook.com/events/424817748186720',
         links:[LinkArray],
         images,

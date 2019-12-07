@@ -10,19 +10,184 @@ function importAll(r) {
 const images = [];
 // importAll(require.context('../../../../Photos/git101ateith/', false, /\.(png|jpe?g|svg|JPE?G)$/));
 
-const codesnippets=<div></div>
+const codesnippets_undo=<div>
+<div>
+    {/* eslint-disable-next-line*/}
+    <span className='codeSnippet__code-Comment'>// Undo changes of file</span>
+</div>
+<div>
+    {/* eslint-disable-next-line*/}
+    <span className='codeSnippet__code-Command'>git checkout </span>
+    <span className='codeSnippet__code-Input'>filename </span>
+</div>
+<div>
+    {/* eslint-disable-next-line*/}
+    <span className='codeSnippet__code-Comment'>// Undo staged file</span>
+</div>
+<div>
+    {/* eslint-disable-next-line*/}
+    <span className='codeSnippet__code-Command'>git add </span>
+    <span className='codeSnippet__code-Input'>filename </span>
+</div>
+<div>
+    <span className='codeSnippet__code-Command'>git reset </span>
+    <span className='codeSnippet__code-Input'>filename </span>
+</div>
+
+<div>
+    {/* eslint-disable-next-line*/}
+    <span className='codeSnippet__code-Comment'>// Undo local commit</span>
+</div>
+<div>
+    {/* eslint-disable-next-line*/}
+    <span className='codeSnippet__code-Command'>git commit </span>
+    <span className='codeSnippet__code-Input'>-m 'WIP' </span>
+</div>
+<div>
+    <span className='codeSnippet__code-Command'>git reset </span>
+    <span className='codeSnippet__code-Input'>commit_hash_to_keep</span>
+</div>
+
+<div>
+    {/* eslint-disable-next-line*/}
+    <span className='codeSnippet__code-Comment'>// Undo local commit</span>
+</div>
+<div>
+    {/* eslint-disable-next-line*/}
+    <span className='codeSnippet__code-Command'>git commit </span>
+    <span className='codeSnippet__code-Input'>-m 'WIP' </span>
+</div>
+<div>
+    <span className='codeSnippet__code-Command'>git push </span>
+    <span className='codeSnippet__code-Input'>upstream branch_name </span>
+</div>
+<div>
+    <span className='codeSnippet__code-Command'>git revert </span>
+    <span className='codeSnippet__code-Input'>commit_hash</span>
+</div>
+
+</div>
+
+
+const codesnippets_messed_up=<div>
+<div>
+    {/* eslint-disable-next-line*/}
+    <span className='codeSnippet__code-Comment'>// The following commands are dangerous! Use at your own <b>RISK!</b></span>
+</div>
+<div>
+    {/* eslint-disable-next-line*/}
+    <span className='codeSnippet__code-Comment'>// Fix messed up master brach</span>
+</div>
+<div>
+    {/* eslint-disable-next-line*/}
+    <span className='codeSnippet__code-Command'>git reset --hard </span>
+    <span className='codeSnippet__code-Input'>upstream/master</span>
+</div>
+<div>
+    {/* eslint-disable-next-line*/}
+    <span className='codeSnippet__code-Comment'>// Remove unwanted commits</span>
+</div>
+<div>
+    {/* eslint-disable-next-line*/}
+    <span className='codeSnippet__code-Command'>git reset </span>
+    <span className='codeSnippet__code-Input'>commit_hash_to_keep</span>
+</div>
+
+<div>
+    {/* eslint-disable-next-line*/}
+    <span className='codeSnippet__code-Comment'>// Remove untracked files</span>
+</div>
+<div>
+    {/* eslint-disable-next-line*/}
+    <span className='codeSnippet__code-Command'>git clean -f </span>
+</div>
+
+</div>
 
 const downloadLinks=[
 ]
 
-const cheatsheet=[]
+const cheatsheet_messed_up = [
+  {
+    title: 'Messed up branch',
+    command: 'git reset --hard remote/branch_name',
+    use: 'Syncs local branch with remote branch'
+  },
+  {
+    title: 'Unwanted commits',
+    command: 'git reset commit_hash_to_keep',
+    use: 'removes all commits, and their changes, after the commit mentioned'
+  },
+  {
+    title: 'Remove untracked files',
+    command: 'git clean -f',
+    use: '-f is for force'
+  }
+]
+const cheatsheet=[
+  {
+    title:'Reality check',
+    command:'git status',
+    use:'Shows the current status of your branch'
+  },
+  {
+    title: 'All commits',
+    command: 'git log',
+    use: 'Shows the log of the branch'
+  },
+  {
+    title: 'Differences?',
+    command: 'git diff',
+    use: 'Shows the changes you have made (modified state)'
+  },
+  {
+    title: 'Keep some changes',
+    command: 'git add filename',
+    use: 'Stage files'
+  },
+  {
+    title: 'Log your changes',
+    command: "git commit -m 'Commit message'",
+    use: 'Create a commit message with the staged files'
+  },
+  {},
+  {
+    title: 'Get online changes',
+    command: 'git pull upstream/master',
+    use: 'Bring to the current local branch the changes from the online master branch'
+  },
+  {
+    title: 'Upload changes onine',
+    command: 'git push own branch_name',
+    use: 'Send the changes of the local branch to your online fork'
+  },
+  {},
+  {
+    title: 'Change branch',
+    command: 'git checkcout branch_name',
+    use: 'Takes you to another branch'
+  },
+  {
+    title: 'Undo changes',
+    command: 'git checkout filename',
+    use: 'Undo changes to file (from modified state)'
+  }
+]
 
 const stages = [
     // 'eat guacamole and cheese','drink water','sleep late sleep late'
 ]
 
-const LinkArray = {title:'Title',
-    links:[]
+const material_links = { title:'Material',
+                         links:[{
+                             url: 'https://drive.google.com/drive/folders/1alyIVTnTImfD13X_WeAQlKvOUe8bWMJj',
+                             text: 'Workshop files'
+                         },
+                         {
+                           url: 'https://git-scm.com/docs/git',
+                           text: 'Official Documentation'
+                         }
+                       ]
 }
 
 const imageCaptions=['lorem','lorem','lorem','lorem','lorem']
@@ -50,12 +215,12 @@ const eventData =
         group:'workshop',
         topic:'git',
         poster:poster,
-        slides:'',
+        slides:'https://drive.google.com/drive/folders/1alyIVTnTImfD13X_WeAQlKvOUe8bWMJj',
         socialEvent:'https://www.facebook.com/events/1405170809644106',
-        links:[],
+        links:[material_links],
         svg:Git,
         cheatsheet,
-        codeSnippets:[codesnippets,codesnippets],
+        codeSnippets:[codesnippets_undo,codesnippets_messed_up],
         images,
         imageCaptions,
         downloadLinks,
