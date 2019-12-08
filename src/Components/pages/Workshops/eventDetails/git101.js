@@ -38,7 +38,15 @@ const eventData =
         links:[],
         svg:Git,
         cheatsheet,
-        codeSnippets:[codesnippets,codesnippets],
+        codeSnippets:[{
+            title:'TItle01',
+            codesnippets
+        },
+        {
+            title:'TItle05',
+            codesnippets
+        }
+    ],
         images,
         imageCaptions,
         downloadLinks,

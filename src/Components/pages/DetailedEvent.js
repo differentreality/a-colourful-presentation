@@ -65,7 +65,7 @@ const CheatSheet = (props) => <Row className='postIntroRow'>
 
 const EventCodeSnippets = (props) => <Row className='postIntroRow codeSnippetRow'>
     <Col md='7' lg='8'>
-        {props.codeSnippets.map((code, id) => <CodeSnippets key={id} code={code} />)}
+        {props.codeSnippets.map((snippet, id) => <CodeSnippets key={id} title={snippet.title} code={snippet.codesnippets} />)}
     </Col>
     <LinkContainer group='download' title='Get the Files!' Links={props.downloadLinks} />
 </Row>

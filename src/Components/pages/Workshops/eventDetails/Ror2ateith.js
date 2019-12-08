@@ -133,7 +133,10 @@ const eventData =
         links:[LinkArray],
         svg:Git,
         cheatsheet,
-        codeSnippets:[codesnippets,codesnippets],
+        codeSnippets:[{
+            title:'using Docker',
+            codesnippets
+        }],
         images,
         imageCaptions,
         downloadLinks,
