@@ -110,68 +110,102 @@ const downloadLinks=[
 const cheatsheet_messed_up = [
   {
     title: 'Messed up branch',
-    command: 'git reset --hard remote/branch_name',
-    use: 'Syncs local branch with remote branch'
+    commands: [{
+      command: 'git reset --hard remote/branch_name',
+      use: 'Syncs local branch with remote branch'
+    }]
   },
   {
     title: 'Unwanted commits',
-    command: 'git reset commit_hash_to_keep',
-    use: 'removes all commits, and their changes, after the commit mentioned'
+    commands: [{
+      command: 'git reset commit_hash_to_keep',
+      use: 'removes all commits, and their changes, after the commit mentioned'
+    }]
   },
   {
     title: 'Remove untracked files',
-    command: 'git clean -f',
-    use: '-f is for force'
+    commands: [{
+      command: 'git clean -f',
+      use: '-f is for force'
+    }]
   }
 ]
 const cheatsheet=[
   {
-    title:'Reality check',
-    command:'git status',
-    use:'Shows the current status of your branch'
+    title: 'Intialize your repo',
+    commands: [{
+      command: 'git clone link',
+      use: 'Get an online repo locally'
+    },
+    {
+      command: 'git init',
+      use: 'Create a local repo - make the current folder a git repository'
+    }]
   },
   {
-    title: 'All commits',
-    command: 'git log',
-    use: 'Shows the log of the branch'
+    title:'Reality check',
+    commands: [{
+      command:'git status',
+      use:'Shows the current status of your branch'
+    },
+    {
+      command: 'git log',
+      use: 'Show the commits of the current branch'
+    }]
+  },
+
+  {
+    title: 'Get online changes',
+    commands: [{
+      command: 'git pull upstream/master',
+      use: 'Bring to the current local branch the changes from the online master branch'
+    }]
   },
   {
     title: 'Differences?',
-    command: 'git diff',
-    use: 'Shows the changes you have made (modified state)'
+    commands: [{
+      command: 'git diff',
+      use: 'Shows the changes you have made (modified state)'
+    }]
+  },
+
+  {
+    title: 'Change branch',
+    commands: [{
+      command: 'git checkcout branch_name',
+      use: 'Go to another branch'
+    }]
+  },
+  {
+    title: 'Create new branch',
+    commands: [{
+      command: 'git checkout -b branch_name',
+      use: 'Create a new branch and start working in it'
+    }]
   },
   {
     title: 'Keep some changes',
-    command: 'git add filename',
-    use: 'Stage files'
+    commands: [{
+      command: 'git add filename',
+      use: 'Stage files'
+    }]
   },
   {
     title: 'Log your changes',
-    command: "git commit -m 'Commit message'",
-    use: 'Create a commit message with the staged files'
+    commands: [{
+      command: "git commit -m 'Commit message'",
+      use: 'Create a commit message with the staged files'
+    }]
   },
-  {},
-  {
-    title: 'Get online changes',
-    command: 'git pull upstream/master',
-    use: 'Bring to the current local branch the changes from the online master branch'
-  },
+
   {
     title: 'Upload changes onine',
-    command: 'git push own branch_name',
-    use: 'Send the changes of the local branch to your online fork'
+    commands: [{
+      command: 'git push own branch_name',
+      use: 'Send the changes of the local branch to your online fork'
+    }]
   },
-  {},
-  {
-    title: 'Change branch',
-    command: 'git checkcout branch_name',
-    use: 'Takes you to another branch'
-  },
-  {
-    title: 'Undo changes',
-    command: 'git checkout filename',
-    use: 'Undo changes to file (from modified state)'
-  }
+
 ]
 
 const stages = [
@@ -220,7 +254,7 @@ const eventData =
         links:[material_links],
         svg:Git,
         cheatsheet,
-        codeSnippets:[codesnippets_undo,codesnippets_messed_up],
+        codeSnippets:[[codesnippets_undo],codesnippets_messed_up],
         images,
         imageCaptions,
         downloadLinks,
