@@ -57,32 +57,44 @@ const downloadLinks=[
 const cheatsheet=[
     {
         title:'yeet',
+        commands:[{
         command:'git pull',
-        use:'updates the local project'},
-    {
-        title:'yeet',
-        command:'git pull',
-        use:'updates the local project'
+        use:'updates the local project'}]
     },
     {
         title:'yeet',
+        commands:[{
         command:'git pull',
         use:'updates the local project'
+    }]
     },
     {
         title:'yeet',
+        commands:[{
         command:'git pull',
         use:'updates the local project'
+        }]
     },
     {
         title:'yeet',
+        commands:[{
         command:'git pull',
         use:'updates the local project'
+        }]
     },
     {
         title:'yeet',
+        commands:[{
         command:'git pull',
         use:'updates the local project'
+        }]
+    },
+    {
+        title:'yeet',
+        commands:[{
+        command:'git pull',
+        use:'updates the local project'
+        }]
     }
 ]
 

@@ -43,9 +43,11 @@ const CheatSheet = (props) => <Row className='postIntroRow'>
         <Row>
             {props.cheatsheet.map((cheatData, id) => {
                 return <Col key={id} md='6' lg='4' className='cheatDetails'>
-                    <props.svg /><h3>{cheatData.title}</h3>
-                    <span className='cheatDetails__codeLine'><span className='cheatDetails__command'>{cheatData.command}</span> | {cheatData.use}</span>
-                </Col>
+                            <props.svg /><h3>{cheatData.title}</h3>
+                            {cheatData.commands.map((cheatLine, id) => {
+                                return <span key={id} className='cheatDetails__codeLine'><span className='cheatDetails__command'>{cheatLine.command}</span> | {cheatLine.use}</span>
+                            })}
+                        </Col>
             })}
 
             <Col xs='12' className='stages'>
@@ -127,14 +129,13 @@ class WorkshopDetailedEvent extends Component {
             })
         );
     }
-    
+
     render() {
         const toggler = this.state.toggler;
         const slide = this.state.slide;
         const mobile = this.props.mobile;
 
         return <Container className='fade-in' fluid='true'>
-
 
             <BreadCrumbsLevel3 group={this.props.group} topic={this.props.data.topic} title={this.props.data.title} />
 
