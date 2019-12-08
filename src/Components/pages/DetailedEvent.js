@@ -87,7 +87,7 @@ const CTAEnding = (props) => <div><Row className='postIntroRow ctaRow'>
         <Link to='/contact/form'><Button group='calltoAction' buttonText='Show me the form!' /></Link>
     </Col>
     {props.isMobile ? <Col md={{ xs: 12 }} className='tipContainer'>
-        <p>Check the Desktop version for extra content such as code snippets.</p>
+        <p>Check the Desktop version for extra content such as the workshop's cheatsheet.</p>
     </Col> : ''}
 </Row>
 </div>
