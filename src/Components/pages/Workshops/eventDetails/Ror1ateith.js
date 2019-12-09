@@ -95,7 +95,7 @@ const downloadLinks=[
 
 const cheatsheet=[
     {
-        title:'Architectural pattern',
+        title:'Architectural  pattern',
         commands:
         [{command:'MVC',
         use:'Model View Controller'
@@ -181,7 +181,14 @@ const eventData =
         links:[LinkArray,LinkArray,LinkArray],
         svg:Ruby,
         cheatsheet,
-        codeSnippets:[codesnippet_docker,codesnippet_rails],
+        codeSnippets:[{
+            title:'Using Docker',
+            codesnippets:codesnippet_rails
+            },
+            {title:'Using docker',
+            codesnippets:codesnippet_docker
+            }
+        ],
         images,
         stages,
         imageCaptions,

@@ -7,6 +7,9 @@ import CodeSnippets from '../parts/CodeSnippets'
 import { EventBreadCrumbsLevel3, BreadCrumbsLevel3 } from '../parts/BreadCrumbs'
 import FsLightbox from 'fslightbox-react';
 import { Link } from 'react-router-dom'
+import { FacebookShareButton, FacebookIcon } from 'react-share';
+import { withRouter } from 'react-router-dom'
+import { Facebook } from '../../svg/Social/SocialSvg'
 
 
 /*  ----------- START OF COMPONENTS ----------- */
@@ -20,8 +23,11 @@ const EventIntroduction = (props) =>
             <DualButtons group={props.group} firstLink={props.firstLink} secondLink={props.secondLink} firstButtonText='Get the Slides' secondButtonText='Facebook Event' />
         </Col>
         <Col xs='12' md='4' className='EventPoster'>
-            <img src={props.poster} alt={props.title + ' poster'} onClick={() => props.openLightboxOnSlide(props.lightBoxIndex)} className='EventPoster__image' />
             <h5 className='EventPoster__text'>the poster</h5>
+            <img src={props.poster} alt={props.title + ' poster'} onClick={() => props.openLightboxOnSlide(props.lightBoxIndex)} className='EventPoster__image' />
+            <FacebookShareButton quote={props.title} url={window.location.href}>
+                <Button modifier="share" buttonText={<span className="myButton__wrapper"><Facebook group="menuOpenGradient" />Share!</span>} group="event" />
+            </FacebookShareButton>
         </Col>
     </Row>
 
@@ -38,16 +44,17 @@ const CheatSheet = (props) => <Row className='postIntroRow'>
     <Col md='8' lg='9' className='cheatSheet'>
         <div className='cheatIntro'>
             <props.svg /><h2>the Cheatsheet</h2>
-
         </div>
         <Row>
             {props.cheatsheet.map((cheatData, id) => {
                 return <Col key={id} md='6' lg='4' className='cheatDetails'>
-                            <props.svg /><h3>{cheatData.title}</h3>
-                            {cheatData.commands.map((cheatLine, id) => {
-                                return <span key={id} className='cheatDetails__codeLine'><span className='cheatDetails__command'>{cheatLine.command}</span> | {cheatLine.use}</span>
-                            })}
-                        </Col>
+                    <div className="cheatDetails__wrapper">
+                        <props.svg /><h3>{cheatData.title}</h3>
+                    </div>
+                    {cheatData.commands.map((cheatLine, id) => {
+                        return <span key={id} className='cheatDetails__codeLine'><span className='cheatDetails__command'>{cheatLine.command}</span> | {cheatLine.use}</span>
+                    })}
+                </Col>
             })}
 
             <Col xs='12' className='stages'>
@@ -62,10 +69,9 @@ const CheatSheet = (props) => <Row className='postIntroRow'>
         <p><b>Pro tip : </b> Make a bookmark so you can always refer back to it! </p>
     </Col>
 </Row>
-
 const EventCodeSnippets = (props) => <Row className='postIntroRow codeSnippetRow'>
     <Col md='7' lg='8'>
-        {props.codeSnippets.map((code, id) => <CodeSnippets key={id} code={code} />)}
+        {props.codeSnippets.map((snippet, id) => <CodeSnippets key={id} title={snippet.title} code={snippet.codesnippets} />)}
     </Col>
     <LinkContainer group='download' title='Get the Files!' Links={props.downloadLinks} />
 </Row>
@@ -87,7 +93,7 @@ const CTAEnding = (props) => <div><Row className='postIntroRow ctaRow'>
         <Link to='/contact/form'><Button group='calltoAction' buttonText='Show me the form!' /></Link>
     </Col>
     {props.isMobile ? <Col md={{ xs: 12 }} className='tipContainer'>
-        <p>Check the Desktop version for extra content such as code snippets.</p>
+        <p>Check the Desktop version for extra content such as the workshop's cheatsheet.</p>
     </Col> : ''}
 </Row>
 </div>
@@ -111,12 +117,14 @@ const updateStore = (group) => {
     );
 }
 
-class WorkshopDetailedEvent extends Component {
-    state = { toggler: false, slide: 0 }
+class WorkshopDetailed extends Component {
 
     constructor(props) {
         super(props);
         updateStore(props.group)
+        this.state = {
+            toggler: false, slide: 0
+        }
     }
 
 
@@ -182,14 +190,13 @@ class WorkshopDetailedEvent extends Component {
     }
 }
 
-class TalkEventDetails extends Component {
+class TalkEvent extends Component {
 
-    state = { toggler: false, slide: 0 }
 
 
     constructor(props) {
         super(props);
-        this.state = { isMobile: props.mobile }
+        this.state = { isMobile: props.mobile, toggler: false, slide: 0 }
         updateStore(props.group)
     }
 
@@ -242,5 +249,8 @@ class TalkEventDetails extends Component {
         </Container>
     }
 }
+
+const WorkshopDetailedEvent = withRouter(WorkshopDetailed);
+const TalkEventDetails = withRouter(TalkEvent);
 
 export { WorkshopDetailedEvent, TalkEventDetails };

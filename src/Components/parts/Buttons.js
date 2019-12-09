@@ -16,7 +16,12 @@ const DualButtons = (props) => {
 }
 
 const Button = (props) => {
-    return <div className={'myButton myButton--colored myButton--colored--' + props.group}>{props.buttonText}</div>
+    return <div className={'myButton myButton--colored myButton--colored--' + props.group
+        + (props.modifier
+            ? ' myButton--' + props.modifier 
+            : "")}>
+                    {props.buttonText}
+                </div>
 }
 
 const EmptyButton = (props) => <div className={'myButton myButton--colourless myButton--colourless--' + props.group}>{props.buttonText}</div>
