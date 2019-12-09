@@ -95,7 +95,7 @@ const downloadLinks=[
 
 const cheatsheet=[
     {
-        title:'Architectural pattern',
+        title:'Architectural  pattern',
         commands:
         [{command:'MVC',
         use:'Model View Controller'

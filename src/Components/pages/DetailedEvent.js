@@ -38,16 +38,17 @@ const CheatSheet = (props) => <Row className='postIntroRow'>
     <Col md='8' lg='9' className='cheatSheet'>
         <div className='cheatIntro'>
             <props.svg /><h2>the Cheatsheet</h2>
-
         </div>
         <Row>
             {props.cheatsheet.map((cheatData, id) => {
                 return <Col key={id} md='6' lg='4' className='cheatDetails'>
-                            <props.svg /><h3>{cheatData.title}</h3>
-                            {cheatData.commands.map((cheatLine, id) => {
-                                return <span key={id} className='cheatDetails__codeLine'><span className='cheatDetails__command'>{cheatLine.command}</span> | {cheatLine.use}</span>
-                            })}
-                        </Col>
+                    <div className="cheatDetails__wrapper">
+                        <props.svg /><h3>{cheatData.title}</h3>
+                    </div>
+                    {cheatData.commands.map((cheatLine, id) => {
+                        return <span key={id} className='cheatDetails__codeLine'><span className='cheatDetails__command'>{cheatLine.command}</span> | {cheatLine.use}</span>
+                    })}
+                </Col>
             })}
 
             <Col xs='12' className='stages'>
@@ -62,7 +63,6 @@ const CheatSheet = (props) => <Row className='postIntroRow'>
         <p><b>Pro tip : </b> Make a bookmark so you can always refer back to it! </p>
     </Col>
 </Row>
-
 const EventCodeSnippets = (props) => <Row className='postIntroRow codeSnippetRow'>
     <Col md='7' lg='8'>
         {props.codeSnippets.map((snippet, id) => <CodeSnippets key={id} title={snippet.title} code={snippet.codesnippets} />)}

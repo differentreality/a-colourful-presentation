@@ -120,8 +120,13 @@
 
   .cheatDetails {
     #gitSvg path {
-      fill: #FF0844;
+      fill: #ff0844;
       stroke: none;
+    }
+
+    &__wrapper {
+      display: flex;
+      align-items: center;
     }
 
     &__codeLine {
@@ -136,6 +141,7 @@
 
     svg {
       width: 25px;
+      min-width: 25px;
       margin: 0px 2% 0px 0px;
     }
 
@@ -254,11 +260,10 @@
 
 @media (max-width: 770px) {
   .PhotosRow {
-      .col-md-6
-      {
-          padding:0px;
-          width: 50%;
-      }
+    .col-md-6 {
+      padding: 0px;
+      width: 50%;
+    }
     &__image {
       width: 90%;
     }
