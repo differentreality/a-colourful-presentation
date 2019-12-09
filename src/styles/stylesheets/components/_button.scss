@@ -11,24 +11,28 @@
   background-color: #fff;
   text-align: center;
   display: inline-block;
-  
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   &--colourless {
     font-weight: 700;
 
     &--workshop {
       color: $workshopTextColor;
-      border-left:2px solid $workshopTextColor;
+      border-left: 2px solid $workshopTextColor;
 
       &:hover {
         text-shadow: $workshopTextShadow;
-        
       }
     }
 
     &--talk {
       color: $talkTextColor;
-      border-left:2px solid $talkTextColor;
+      border-left: 2px solid $talkTextColor;
 
       &:hover {
         text-shadow: $talkTextShadow;
@@ -37,7 +41,7 @@
 
     &--stella {
       color: $stellaTextColor;
-      border-left:2px solid $stellaTextColor;
+      border-left: 2px solid $stellaTextColor;
 
       &:hover {
         text-shadow: $stellaTextShadow;
@@ -46,7 +50,7 @@
 
     &--event {
       color: $eventTextColor;
-      border-left:2px solid $eventTextColor;
+      border-left: 2px solid $eventTextColor;
 
       &:hover {
         text-shadow: $eventTextShadow;
@@ -60,7 +64,11 @@
     width: 250px;
     border-radius: 24px;
     &--stella {
-      @include coloredButton($stellaGradient, $stellaShadow, $stellaShadowHover);
+      @include coloredButton(
+        $stellaGradient,
+        $stellaShadow,
+        $stellaShadowHover
+      );
     }
 
     &--event {
@@ -72,39 +80,57 @@
     }
 
     &--workshop {
-      @include coloredButton($workshopGradient, $workshopShadow, $workshopShadowHover);
+      @include coloredButton(
+        $workshopGradient,
+        $workshopShadow,
+        $workshopShadowHover
+      );
     }
 
     &--calltoAction {
-      @include coloredButton($calltoActionGradient, $calltoActionShadow, $calltoActionShadowHover);
+      @include coloredButton(
+        $calltoActionGradient,
+        $calltoActionShadow,
+        $calltoActionShadowHover
+      );
     }
 
     &--contact {
-      @include coloredButton($contactGradientVertical, $contactShadow, $contactShadowHover);
+      @include coloredButton(
+        $contactGradientVertical,
+        $contactShadow,
+        $contactShadowHover
+      );
     }
-
-    
   }
 
-  &:hover
-    {
-      transform:scale(1.05);
+  &--share {
+    font-size: 20px;
+    width: 190px;
+    margin-top:5%;
+
+    svg {
+      margin-right: 10px;
+      width: 35px;
     }
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
-.dualButtons
-{
-  .myButton
-  {
-    margin-left:20px;
+.dualButtons {
+  .myButton {
+    margin-left: 20px;
   }
 }
 
 .verticalLine {
   min-height: 40px;
-  margin:0 2% -2% 2%;
+  margin: 0 2% -2% 2%;
   display: inline-block;
-  border-left: 1px solid #28B781;
+  border-left: 1px solid #28b781;
 }
 
 @media (max-width: 720px) {
