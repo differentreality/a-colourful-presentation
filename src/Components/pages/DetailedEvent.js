@@ -7,6 +7,9 @@ import CodeSnippets from '../parts/CodeSnippets'
 import { EventBreadCrumbsLevel3, BreadCrumbsLevel3 } from '../parts/BreadCrumbs'
 import FsLightbox from 'fslightbox-react';
 import { Link } from 'react-router-dom'
+import { FacebookShareButton, FacebookIcon } from 'react-share';
+import { withRouter } from 'react-router-dom'
+import { Facebook } from '../../svg/Social/SocialSvg'
 
 
 /*  ----------- START OF COMPONENTS ----------- */
@@ -20,8 +23,11 @@ const EventIntroduction = (props) =>
             <DualButtons group={props.group} firstLink={props.firstLink} secondLink={props.secondLink} firstButtonText='Get the Slides' secondButtonText='Facebook Event' />
         </Col>
         <Col xs='12' md='4' className='EventPoster'>
-            <img src={props.poster} alt={props.title + ' poster'} onClick={() => props.openLightboxOnSlide(props.lightBoxIndex)} className='EventPoster__image' />
             <h5 className='EventPoster__text'>the poster</h5>
+            <img src={props.poster} alt={props.title + ' poster'} onClick={() => props.openLightboxOnSlide(props.lightBoxIndex)} className='EventPoster__image' />
+            <FacebookShareButton quote={props.title} url={window.location.href}>
+                <Button modifier="share" buttonText={<span className="myButton__wrapper"><Facebook group="menuOpenGradient" />Share!</span>} group="event" />
+            </FacebookShareButton>
         </Col>
     </Row>
 
@@ -111,12 +117,14 @@ const updateStore = (group) => {
     );
 }
 
-class WorkshopDetailedEvent extends Component {
-    state = { toggler: false, slide: 0 }
+class WorkshopDetailed extends Component {
 
     constructor(props) {
         super(props);
         updateStore(props.group)
+        this.state = {
+            toggler: false, slide: 0
+        }
     }
 
 
@@ -182,14 +190,13 @@ class WorkshopDetailedEvent extends Component {
     }
 }
 
-class TalkEventDetails extends Component {
+class TalkEvent extends Component {
 
-    state = { toggler: false, slide: 0 }
 
 
     constructor(props) {
         super(props);
-        this.state = { isMobile: props.mobile }
+        this.state = { isMobile: props.mobile, toggler: false, slide: 0 }
         updateStore(props.group)
     }
 
@@ -242,5 +249,8 @@ class TalkEventDetails extends Component {
         </Container>
     }
 }
+
+const WorkshopDetailedEvent = withRouter(WorkshopDetailed);
+const TalkEventDetails = withRouter(TalkEvent);
 
 export { WorkshopDetailedEvent, TalkEventDetails };
