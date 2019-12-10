@@ -96,34 +96,45 @@ const downloadLinks=[
 const cheatsheet=[
     {
         title:'Architectural pattern',
-        command:'MVC',
-        use:'Model View Controller'},
-    {
-        title:'Get started!',
-        command:'rails server',
-        use:'start the rails server to serve your application'
+        commands: [{command: 'MVC', use:'Model View Controller'}]
     },
     {
-        title:'yeet',
-        command:'git pull',
-        use:'updates the local project'
+        title:'Get started!',
+        commands: [
+          {
+            command: 'rails server',
+            use:'start the rails server to serve your application'
+          }
+        ]
     },
     {
         title:'Basic actions',
-        command:'CRUD',
-        use:'Create Read Update Destroy'
+        commands: [
+          {
+            command: 'CRUD',
+            use:'Create Read Update Destroy'
+          }
+        ]
     },
 
     {
         title:'Try Rails stuff',
-        command:'rails console',
-        use:'Fire up the rails console'
+        commands: [
+          {
+            command:'rails console',
+            use:'Fire up the rails console'
+          }
+        ]
     },
 
     {
         title:'yeet',
-        command:'git pull',
-        use:'updates the local project'
+        commands: [
+          {
+            command:'git pull',
+            use:'updates the local project'
+          }
+        ]
     }
 ]
 
