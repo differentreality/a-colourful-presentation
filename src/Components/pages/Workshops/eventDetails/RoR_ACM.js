@@ -78,25 +78,34 @@ const codesnippet_rails=<div>
 </div>
 </div>
 
-const downloadLinks=[
-    {
-        url: 'sadaaa',
-        text: 'test'
-    },
-    {
-        url: 'sadaaa',
-        text: 'test'
-    },
-    {
-        url: 'sadaaa',
-        text: 'test'
-    }
-]
+// const downloadLinks=[
+//     {
+//         url: 'sadaaa',
+//         text: 'test'
+//     },
+//     {
+//         url: 'sadaaa',
+//         text: 'test'
+//     },
+//     {
+//         url: 'sadaaa',
+//         text: 'test'
+//     }
+// ]
 
 const cheatsheet=[
     {
         title:'Architectural pattern',
-        commands: [{command: 'MVC', use:'Model View Controller'}]
+        commands: [
+          {
+            command: 'MVC',
+            use:'Model View Controller'
+          },
+          {
+            command: 'CRUD',
+            use: 'Create Read Update Destroy'
+          }
+        ]
     },
     {
         title:'Get started!',
@@ -104,51 +113,21 @@ const cheatsheet=[
           {
             command: 'rails server',
             use:'start the rails server to serve your application'
-          }
-        ]
-    },
-    {
-        title:'Basic actions',
-        commands: [
+          },
           {
-            command: 'CRUD',
-            use:'Create Read Update Destroy'
-          }
-        ]
-    },
-
-    {
-        title:'Try Rails stuff',
-        commands: [
-          {
-            command:'rails console',
-            use:'Fire up the rails console'
-          }
-        ]
-    },
-
-    {
-        title:'yeet',
-        commands: [
-          {
-            command:'git pull',
-            use:'updates the local project'
+            command: 'rails console',
+            use: 'Fire up the rails console and try rails stuff!'
           }
         ]
     }
-]
+  ]
 
-const LinkArrayRuby = { title:'Ruby',
+const LinkArrayBasics = { title:'Official guides',
     links:[
     {
         url: 'https://ruby.github.io/TryRuby/',
         text: 'Learn Online!'
     },
-    ]
-}
-
-const LinkArrayRails = { title:'Rails',
-    links:[
     {
         url: 'https://guides.rubyonrails.org/',
         text: 'Official guides'
@@ -166,32 +145,45 @@ const LinkArrayWorkshop = { title:'Workshop',
         url: 'http://events.stellarouzi.com/#/workshops/topics/RoR/RoR_ACM',
         text: 'This page!'
     },
+    {
+      url: 'https://events.stellarouzi.com/#/workshops/topics/git/GitZeroToHero',
+      text: 'Help with git'
+    }
     ]
 }
 
 const imageCaptions = ['lorem','lorem','lorem','lorem','lorem']
 
 const stages = [
-    'eat guacamole and cheese','drink water','sleep late sleep late'
+    // 'eat guacamole and cheese','drink water','sleep late sleep late'
 ]
 const eventData =
     {
         title:'Intro to Ruby On Rails',
         date:'13 & 16 December 2019, 16:00 - 19:00',
-        details:'Create a fully functional web application in under 5 minutes. Let Rails work its magic for you, and get started with your our own web application. We will be building a web application for uploading notes for academic courses.',
+        details:
+        <div> Create a functional web application in under 5 minutes!
+        <p> Let Rails work its magic for you, and get started with your our own web application. We will be building a web application for uploading notes to academic courses.</p></div>,
         group:'workshop',
         topic:'RoR',
         poster:poster,
         slides:'',
         socialEvent:'https://www.facebook.com/events/2479975785560737',
-        links:[LinkArrayRuby,LinkArrayRails,LinkArrayWorkshop],
+        links:[LinkArrayBasics,LinkArrayWorkshop],
         svg:Ruby,
         cheatsheet,
-        codeSnippets:[codesnippet_docker,codesnippet_rails],
+        // codeSnippets:[
+        //   {
+        //     title: '',
+        //     codesnippets: codesnippet_docker
+        //   },
+        //   { title: '',
+        //     codesnippets: codesnippet_rails
+        //   }],
         images,
         stages,
         imageCaptions,
-        downloadLinks
+        // downloadLinks
     }
 
 
