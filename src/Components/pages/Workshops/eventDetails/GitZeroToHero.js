@@ -107,29 +107,6 @@ const codesnippets_messed_up=<div>
 const downloadLinks=[
 ]
 
-const cheatsheet_messed_up = [
-  {
-    title: 'Messed up branch',
-    commands: [{
-      command: 'git reset --hard remote/branch_name',
-      use: 'Syncs local branch with remote branch'
-    }]
-  },
-  {
-    title: 'Unwanted commits',
-    commands: [{
-      command: 'git reset commit_hash_to_keep',
-      use: 'removes all commits, and their changes, after the commit mentioned'
-    }]
-  },
-  {
-    title: 'Remove untracked files',
-    commands: [{
-      command: 'git clean -f',
-      use: '-f is for force'
-    }]
-  }
-]
 const cheatsheet=[
   {
     title: 'Intialize your repo',
@@ -206,10 +183,34 @@ const cheatsheet=[
     }]
   },
 
+  {
+    title: 'Online VS Local',
+    commands: [
+      {
+        command: 'git clone',
+        use: 'Bring locally an online repo (online --> local)'
+      },
+      {
+        command: 'fork',
+        use: 'Copy a repo (online --> online)'
+      },
+      {
+        command: 'git pull',
+        use: 'Get changes/commits locally (online --> local)'
+      },
+      {
+        command: 'git push',
+        use: 'Upload changes to an online repo (local --> online)'
+      }
+    ]
+  }
 ]
 
 const stages = [
-    // 'eat guacamole and cheese','drink water','sleep late sleep late'
+    <div> <p> <b>Untracked</b> </p> <p>Only for newly created files</p> </div>,
+    <div><p> <b>Modified</b> </p> <p>I have made changes to a file </p> </div>,
+    <div> <p> <b>Staged</b> </p> <p> git add </p> </div>,
+    <div> <p> <b>Committed</b> </p> <p> git commit -m 'My Commit mesage!' </p> </div>
 ]
 
 const material_links = { title:'Material',
@@ -254,7 +255,14 @@ const eventData =
         links:[material_links],
         svg:Git,
         cheatsheet,
-        codeSnippets:[[codesnippets_undo],codesnippets_messed_up],
+        codeSnippets:[{
+            title:'Undoing things in git',
+            codesnippets: codesnippets_undo
+        },
+        {
+          title: 'Restore messed up branches',
+          codesnippets: codesnippets_messed_up
+        }],
         images,
         imageCaptions,
         downloadLinks,
