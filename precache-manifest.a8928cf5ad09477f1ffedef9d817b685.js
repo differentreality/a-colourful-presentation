@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e81b37752833ae8f7550a3dbfb683137",
+    "revision": "6ed54775b7af7047ec29135a0afe8060",
     "url": "/index.html"
   },
   {
-    "revision": "a5efa00347c88547f288",
+    "revision": "159317008a45d2456861",
     "url": "/static/css/main.ccb16046.chunk.css"
   },
   {
-    "revision": "5fe943bb548b598adae5",
-    "url": "/static/js/2.2a36d47a.chunk.js"
+    "revision": "bccba2ea56136b1f25ad",
+    "url": "/static/js/2.f97f69ee.chunk.js"
   },
   {
     "revision": "9ae8d22f8595ca0368749dba8553d7fb",
-    "url": "/static/js/2.2a36d47a.chunk.js.LICENSE"
+    "url": "/static/js/2.f97f69ee.chunk.js.LICENSE"
   },
   {
-    "revision": "a5efa00347c88547f288",
-    "url": "/static/js/main.38e8db53.chunk.js"
+    "revision": "159317008a45d2456861",
+    "url": "/static/js/main.75b64528.chunk.js"
   },
   {
     "revision": "00435d3853188d57c6e7",
@@ -52,8 +52,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/girls_focusing_and_laughing.b4e70b85.JPG"
   },
   {
+    "revision": "7eea4e56f64879fd08b77d4942791d2e",
+    "url": "/static/media/git-zero-hero-poster.7eea4e56.png"
+  },
+  {
     "revision": "3e536d1233f7da2b27d2e4602bd7a3f3",
     "url": "/static/media/git101poster.3e536d12.jpg"
+  },
+  {
+    "revision": "0a70a079f43508a1046a98fcf5a3dfa8",
+    "url": "/static/media/gsoc2019_banner.0a70a079.png"
+  },
+  {
+    "revision": "ff524d89460377f44a00ad3e156083a0",
+    "url": "/static/media/gsoc_2019_poster.ff524d89.png"
   },
   {
     "revision": "80b26ef66d2a6a3e520e366d0f393713",
@@ -78,6 +90,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "f1a85bc6fc4c631af70ea36d529a7b5f",
     "url": "/static/media/osem.f1a85bc6.jpg"
+  },
+  {
+    "revision": "c06d4a1e9e564126a7ee10b6451881b9",
+    "url": "/static/media/ror_acm_banner.c06d4a1e.jpg"
   },
   {
     "revision": "d56534c873fd1fc006bfde610928b0f0",
