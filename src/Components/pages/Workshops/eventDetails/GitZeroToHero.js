@@ -180,20 +180,11 @@ const cheatsheet=[
     commands: [{
       command: 'git push own branch_name',
       use: 'Send the changes of the local branch to your online fork'
-    }]
+     }]
   },
-
   {
-    title: 'Online VS Local',
+    title: 'Share branch',
     commands: [
-      {
-        command: 'git clone',
-        use: 'Bring locally an online repo (online --> local)'
-      },
-      {
-        command: 'fork',
-        use: 'Copy a repo (online --> online)'
-      },
       {
         command: 'git pull',
         use: 'Get changes/commits locally (online --> local)'
@@ -201,6 +192,19 @@ const cheatsheet=[
       {
         command: 'git push',
         use: 'Upload changes to an online repo (local --> online)'
+      }
+    ]
+  },
+  {
+    title: 'Share repo',
+    commands: [
+      {
+        command: 'fork',
+        use: 'Copy a repo (online --> online)'
+      },
+      {
+        command: 'git clone',
+        use: 'Bring locally an online repo (online --> local)'
       }
     ]
   }
@@ -223,6 +227,14 @@ const material_links = { title:'Material',
                            text: 'Official Documentation'
                          }
                        ]
+}
+
+const links_git102 = {
+  title: 'Git 102',
+  links: [
+    { url: 'https://github.com/differentreality/todo_lists',
+      text: 'Base repo' }
+  ]
 }
 
 const imageCaptions=['lorem','lorem','lorem','lorem','lorem']
@@ -252,7 +264,7 @@ const eventData =
         poster:poster,
         slides:'https://drive.google.com/drive/folders/1alyIVTnTImfD13X_WeAQlKvOUe8bWMJj',
         socialEvent:'https://www.facebook.com/events/1405170809644106',
-        links:[material_links],
+        links:[material_links, links_git102],
         svg:Git,
         cheatsheet,
         codeSnippets:[{
