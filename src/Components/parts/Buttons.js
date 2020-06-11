@@ -2,17 +2,32 @@ import React from 'react';
 import { Col } from 'react-bootstrap';
 
 const DualButtons = (props) => {
-    return <Col className='dualButtons' xs={12}>
+    
+    const slidesButton = props.firstLink 
+    ? (
+        <a rel="noopener noreferrer" target="_blank" href={props.firstLink}>
+          <div className={'myButton myButton--colourless myButton--colourless--' + props.group}>
+            {props.firstButtonText}          
+          </div>
+        </a>
+      ) 
+    : undefined;
+    
+    const facebookEventButton = props.secondLink
+      ? (
+        <a rel="noopener noreferrer" target="_blank" href={props.secondLink}>
+          <div className={'myButton myButton--colored myButton--colored--' + props.group} >{props.secondButtonText}</div>
+        </a>
+        )
+      : undefined
+  
+    return (
+      <Col className='dualButtons' xs={12}>
         <div style={{ marginTop: '50px' }}>
-            <a rel="noopener noreferrer" target="_blank" href={props.firstLink}>
-                <div className={'myButton myButton--colourless myButton--colourless--' + props.group}>{props.firstButtonText}</div>
-            </a>
-            <a rel="noopener noreferrer" target="_blank" href={props.secondLink}>
-                <div className={'myButton myButton--colored myButton--colored--' + props.group} >{props.secondButtonText}</div>
-            </a>
+            {slidesButton}
+            {facebookEventButton}
         </div>
-
-    </Col>
+    </Col>)
 }
 
 const Button = (props) => {
