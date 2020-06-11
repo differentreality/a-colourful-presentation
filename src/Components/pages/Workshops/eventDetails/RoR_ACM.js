@@ -10,100 +10,123 @@ function importAll(r) {
 
 const images = importAll(require.context('../../../../Photos/ror_acm/', false, /\.(png|jpe?g|svg|JPE?G)$/));
 
+const codesnippet_basics=<div>
+  <div> <span className='codeSnippet__code-Comment'>Serve your application </span> </div>
+  <div>
+    <span className='codeSnippet__code-Command'>rails s</span>
+    <span className='codeSnippet__code-Comment'>erver</span>
+  </div>
+  <div> <span className='codeSnippet__code-Comment'>Use rails console </span> </div>
+  <div>
+    <span className='codeSnippet__code-Command'>rails c</span>
+    <span className='codeSnippet__code-Comment'>onsole</span>
+  </div>
+  <div>
+    <span className='codeSnippet__code-Comment'>Create new entity (all MVC structure)</span>
+  </div>
+  <div>
+    <span className='codeSnippet__code-Command'>rails g scaffold </span>
+    <span className='codeSnippet__code-Input'> User name:string address:text</span>
+  </div>
+  <div>
+    <span className='codeSnippet__code-Comment'>Apply changes to database</span>
+  </div>
+  <div>
+    <span className='codeSnippet__code-Command'>rails db:migrate</span>
+  </div>
+  <div>
+    <span className='codeSnippet__code-Comment'>Add new gems</span>
+    <span className='codeSnippet__code-Comment'>Add gem names in Gemfile and run</span>
+  </div>
+  <div>
+    <span className='codeSnippet__code-Command'>bundle install</span>
+  </div>
+</div>
 
-const codesnippet_docker=<div>
+
+const codesnippet_new_entity=<div>
 <div>
-    {/* eslint-disable-next-line*/}
-    <span className='codeSnippet__code-Comment'>// install Docker</span>
-    <a href=' https://docs.docker.com/docker-for-windows/install/' className='codeSnippet__code-Link'> https://docs.docker.com/docker-for-windows/install/</a>
+    <span className='codeSnippet__code-Comment'>Create a new rails project </span>
 </div>
 <div>
-    {/* eslint-disable-next-line*/}
-    <span className='codeSnippet__code-Comment'>// Create a new Folder </span>
-    <span className='codeSnippet__code-Command'>mkdir </span>
-    <span className='codeSnippet__code-Input'>rails_workshop && </span>
-    <span className='codeSnippet__code-Command'>cd </span>
-    <span className='codeSnippet__code-Input'>rails_workshop </span>
-</div>
-<div>
-    <span className='codeSnippet__code-Command'>docker run </span>
-    <span className='codeSnippet__code-Input'>-ti -v "$PWD":/rails_workshop --name rails_workshop -p 3000:3000 ruby bash</span>
-</div>
-<div>
-    <span className='codeSnippet__code-Command'>cd </span>
-    <span className='codeSnippet__code-Input'>rails_workshop </span>
-</div>
-<div>
-    <span className='codeSnippet__code-Command'>gem </span>
-    <span className='codeSnippet__code-Input'>install rails --version 5.0.0 </span>
-     {/* eslint-disable-next-line*/}
-    <span className='codeSnippet__code-Comment'>//This may take a while!</span>
-</div>
+    <span className='codeSnippet__code-Command'>rails g scaffold </span>
+    <span className='codeSnippet__code-Input'> Course name:string description:text semester:integer</span>
 </div>
 
+<div> <span className='codeSnippet__code-Comment'>Add new attribute color to Course model </span> </div>
+<div>
+  <span className='codeSnippet__code-Command'>rails g migration </span>
+  <span className='codeSnippet__code-Input'>AddColorToCourses color:string</span>
+</div>
+<div> <span className='codeSnippet__code-Comment'>Apply changes to database </span> </div>
+<div> <span className='codeSnippet__code-Command'>rails db:migrate</span> </div>
+
+</div>
 
 const codesnippet_rails=<div>
 <div>
     {/* eslint-disable-next-line*/}
-    <span className='codeSnippet__code-Comment'>// Create a Rails web application</span>
-    <a href=' https://docs.docker.com/docker-for-windows/install/' className='codeSnippet__code-Link'> https://docs.docker.com/docker-for-windows/install/</a>
-</div>
-<div>
-    {/* eslint-disable-next-line*/}
-    <span className='codeSnippet__code-Comment'>// Create a new Folder </span>
-    <span className='codeSnippet__code-Command'>mkdir </span>
-    <span className='codeSnippet__code-Input'>rails_workshop && </span>
-    <span className='codeSnippet__code-Command'>cd </span>
-    <span className='codeSnippet__code-Input'>rails_workshop </span>
+    <span className='codeSnippet__code-Comment'>// Create a new rails project </span>
 </div>
 <div>
     <span className='codeSnippet__code-Command'>rails new </span>
-    <span className='codeSnippet__code-Input'> schedule -T</span>
+    <span className='codeSnippet__code-Input'> learning -T</span>
 </div>
 <div>
     <span className='codeSnippet__code-Command'>cd </span>
-    <span className='codeSnippet__code-Input'>schedule </span>
+    <span className='codeSnippet__code-Input'>learning </span>
 </div>
 <div>
-    <span className='codeSnippet__code-Comment'>edit Gemfile and add </span>
+    <span className='codeSnippet__code-Comment'>// Optionally use HAML</span>
+</div>
+<div>
+    <span className='codeSnippet__code-Comment'>Add the following line inside file Gemfile</span>
+</div>
+<div>
     <span className='codeSnippet__code-Command'>gem </span>
-    <span className='codeSnippet__code-Input'> 'haml-rails' </span>
+    <span className='codeSnippet__code-Input'>'haml-rails'</span>
 </div>
-
-
 <div>
-    <span className='codeSnippet__code-Command'>bundle install </span>
-     {/* eslint-disable-next-line*/}
-    <span className='codeSnippet__code-Comment'>// This may take a while!</span>
+    <span className='codeSnippet__code-Comment'>// Add RSPEC for testing </span>
 </div>
+<div>
+    <span className='codeSnippet__code-Command'>gem </span>
+    <span className='codeSnippet__code-Input'>'rspec'</span>
+</div>
+<div><span className='codeSnippet__code-Comment'>Apply the changes of Gemfile </span></div>
+
+<div><span className='codeSnippet__code-Command'>bundle install </span></div>
+<div><span className='codeSnippet__code-Comment'>Start the rails server </span></div>
+<div><span className='codeSnippet__code-Command'>rails s </span></div>
 </div>
 
-// const downloadLinks=[
-//     {
-//         url: 'sadaaa',
-//         text: 'test'
-//     },
-//     {
-//         url: 'sadaaa',
-//         text: 'test'
-//     },
-//     {
-//         url: 'sadaaa',
-//         text: 'test'
-//     }
-// ]
+const downloadLinks=[]
 
 const cheatsheet=[
+    { title: 'MVC',
+      commands: [
+        {
+          command: 'Model',
+          use: 'Represents the entities of the application and is directly connected to the database'
+        },
+        { command: 'View',
+          use: 'View files hold the HTML code that creates the content we serve on the browser'
+        },
+        { command: 'Controller',
+          use: 'Glues everything together, calls the model, performs actions on the entities, redirects appropriately'
+        }
+      ]
+    },
     {
-        title:'Architectural pattern',
+        title:'Key Concepts',
         commands: [
           {
-            command: 'MVC',
-            use:'Model View Controller'
+            command: 'CRUD',
+            use: 'Default actions - Create Read Update Destroy'
           },
           {
-            command: 'CRUD',
-            use: 'Create Read Update Destroy'
+            command: 'DRY',
+            use: "Don't Repeat Yourself"
           }
         ]
     },
@@ -122,17 +145,31 @@ const cheatsheet=[
     }
   ]
 
-const LinkArrayBasics = { title:'Official guides',
+const LinkArrayBasics = { title:'Learn!',
     links:[
     {
         url: 'https://ruby.github.io/TryRuby/',
-        text: 'Learn Online!'
+        text: 'Ruby Online!'
     },
     {
         url: 'https://guides.rubyonrails.org/',
-        text: 'Official guides'
+        text: 'Rails guides'
     },
     ]
+}
+
+const LinkArrayMore = {
+  title: 'More',
+  links: [
+    {
+        url: 'http://events.stellarouzi.com/#/workshops/topics/RoR/RoR_ACM',
+        text: 'This page!'
+    },
+    {
+      url: 'https://events.stellarouzi.com/#/workshops/topics/git/GitZeroToHero',
+      text: 'Help with git'
+    }
+  ]
 }
 
 const LinkArrayWorkshop = { title:'Workshop',
@@ -142,12 +179,8 @@ const LinkArrayWorkshop = { title:'Workshop',
       text: 'Coding Platform'
     },
     {
-        url: 'http://events.stellarouzi.com/#/workshops/topics/RoR/RoR_ACM',
-        text: 'This page!'
-    },
-    {
-      url: 'https://events.stellarouzi.com/#/workshops/topics/git/GitZeroToHero',
-      text: 'Help with git'
+      url: 'https://gitlab.com/LearnWithStella/learning',
+      text: 'Repo with code'
     }
     ]
 }
@@ -167,23 +200,29 @@ const eventData =
         group:'workshop',
         topic:'RoR',
         poster:poster,
-        slides:'',
+        slides:'https://drive.google.com/file/d/1r-NcsGnHTe34gUiaQZLDT8Tnaw7_CnKs/view?usp=sharing',
         socialEvent:'https://www.facebook.com/events/2479975785560737',
-        links:[LinkArrayBasics,LinkArrayWorkshop],
+        links:[LinkArrayBasics, LinkArrayWorkshop, LinkArrayMore],
         svg:Ruby,
         cheatsheet,
-        // codeSnippets:[
-        //   {
-        //     title: '',
-        //     codesnippets: codesnippet_docker
-        //   },
-        //   { title: '',
-        //     codesnippets: codesnippet_rails
-        //   }],
+        codeSnippets:[
+          { title: 'Basics',
+            codesnippets: codesnippet_basics
+          },
+          {
+            title:'New Rails Application',
+            codesnippets: codesnippet_rails
+          },
+          {
+            title: 'Add Entity',
+            codesnippets: codesnippet_new_entity
+          },
+
+        ],
         images,
         stages,
         imageCaptions,
-        // downloadLinks
+        downloadLinks
     }
 
 
