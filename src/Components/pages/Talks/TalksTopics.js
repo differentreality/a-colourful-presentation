@@ -15,6 +15,19 @@ const talkContent = [
         svg3Text: 'Remote',
         buttonText: 'Browse GSoC',
         link: '/talks/topics/GSoC'
+    },
+    {
+        primarySvg: Gsoc,
+        Title: "Master's Presentations",
+        paragraph: 'Presentations from my Master',
+        svg1: OpenSource,
+        svg1Text: 'Learning',
+        svg2: Student,
+        svg2Text: 'University',
+        svg3: 'Globe',
+        svg3Text: '',
+        buttonText: 'Browse',
+        link: '/talks/topics/master'
     }
 ]
 

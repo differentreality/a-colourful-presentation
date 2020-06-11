@@ -29,6 +29,10 @@ import notFound404 from './Components/pages/notFound404'
 import MenuContainer from './Components/pages/MenuContainer'
 import Conferences from './Components/pages/Events_Conferences/eventShowcase/Conferences'
 import GSoCTalks from './Components/pages/Talks/eventShowcase/GSoCTalks'
+
+import MasterTalks from './Components/pages/Talks/eventShowcase/MasterTalks'
+import MliTechnologyInLabor from './Components/pages/Talks/eventDetails/MliTechnologyInLabor'
+// import  from './Components/pages/Talks/eventDetails/GSoCateith'
 import GSoCateith from './Components/pages/Talks/eventDetails/GSoCateith'
 import GSoC2019 from './Components/pages/Talks/eventDetails/GSoC2019'
 import Fosdem19 from './Components/pages/Events_Conferences/eventDetails/Fosdem19'
@@ -107,8 +111,11 @@ class App extends Component {
                           {/*talks*/}
                           <Route  exact path='/talks/topics' render={() => <TalkTopics />} />
                           <Route  exact path='/talks/topics/gsoc' render={() => <GSoCTalks />} />
+                          <Route  exact path='/talks/topics/master' render={() => <MasterTalks />} />
+
                           <Route  exact path='/talks/topics/gsoc/gsocateith' render={() => <GSoCateith />} />
                           <Route  exact path='/talks/topics/gsoc/GSoC2019' render={() => <GSoC2019 />} />
+                          <Route  exact path='/talks/topics/master/MliTechnologyInLabor' render={() => <MliTechnologyInLabor />} />
 
                           {/*events*/}
                           <Route  exact path='/events/archive' render={() => <Conferences />} />
