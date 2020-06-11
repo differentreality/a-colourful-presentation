@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2ed37e50349dcd36a60ed7afb1d89cb2",
+    "revision": "c7a3219907988b4d4aafcd43aad55b2e",
     "url": "/index.html"
   },
   {
-    "revision": "a42aed5d45ea7afc0dfb",
+    "revision": "8888d06a2e34da866964",
     "url": "/static/css/main.ccb16046.chunk.css"
   },
   {
-    "revision": "bccba2ea56136b1f25ad",
-    "url": "/static/js/2.f97f69ee.chunk.js"
+    "revision": "afa92b2f80dea8adfdad",
+    "url": "/static/js/2.d28e3b22.chunk.js"
   },
   {
     "revision": "9ae8d22f8595ca0368749dba8553d7fb",
-    "url": "/static/js/2.f97f69ee.chunk.js.LICENSE"
+    "url": "/static/js/2.d28e3b22.chunk.js.LICENSE"
   },
   {
-    "revision": "a42aed5d45ea7afc0dfb",
-    "url": "/static/js/main.93eba548.chunk.js"
+    "revision": "8888d06a2e34da866964",
+    "url": "/static/js/main.fc05229a.chunk.js"
   },
   {
     "revision": "00435d3853188d57c6e7",
@@ -26,6 +26,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "11915b84f42eea078ff0925aacc5344f",
     "url": "/static/media/A_girl_is_showing_her_swag_at_the_camera_and_a_boy_behind_her_is_smilling.11915b84.JPG"
+  },
+  {
+    "revision": "0de7c808b16778a11c3cf0bd4717e208",
+    "url": "/static/media/Presentation-MLI_Technology-in-labor_Stella_Rouzi.0de7c808.png"
   },
   {
     "revision": "a6833e59f6de4a7050fafe9da1a1e397",

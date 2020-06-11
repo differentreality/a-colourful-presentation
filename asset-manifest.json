@@ -1,18 +1,19 @@
 {
   "files": {
     "main.css": "/static/css/main.ccb16046.chunk.css",
-    "main.js": "/static/js/main.93eba548.chunk.js",
-    "main.js.map": "/static/js/main.93eba548.chunk.js.map",
+    "main.js": "/static/js/main.fc05229a.chunk.js",
+    "main.js.map": "/static/js/main.fc05229a.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.569987e5.js",
     "runtime-main.js.map": "/static/js/runtime-main.569987e5.js.map",
-    "static/js/2.f97f69ee.chunk.js": "/static/js/2.f97f69ee.chunk.js",
-    "static/js/2.f97f69ee.chunk.js.map": "/static/js/2.f97f69ee.chunk.js.map",
+    "static/js/2.d28e3b22.chunk.js": "/static/js/2.d28e3b22.chunk.js",
+    "static/js/2.d28e3b22.chunk.js.map": "/static/js/2.d28e3b22.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.a27825bdfb0707d9861c685b9c340ab0.js": "/precache-manifest.a27825bdfb0707d9861c685b9c340ab0.js",
+    "precache-manifest.8d3000c987d7e745bccbf332d527cdb9.js": "/precache-manifest.8d3000c987d7e745bccbf332d527cdb9.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.ccb16046.chunk.css.map": "/static/css/main.ccb16046.chunk.css.map",
-    "static/js/2.f97f69ee.chunk.js.LICENSE": "/static/js/2.f97f69ee.chunk.js.LICENSE",
+    "static/js/2.d28e3b22.chunk.js.LICENSE": "/static/js/2.d28e3b22.chunk.js.LICENSE",
     "static/media/A_girl_is_showing_her_swag_at_the_camera_and_a_boy_behind_her_is_smilling.JPG": "/static/media/A_girl_is_showing_her_swag_at_the_camera_and_a_boy_behind_her_is_smilling.11915b84.JPG",
+    "static/media/Presentation-MLI_Technology-in-labor_Stella_Rouzi.png": "/static/media/Presentation-MLI_Technology-in-labor_Stella_Rouzi.0de7c808.png",
     "static/media/boys_focusing_on_their_computers_and_two_of_them_share_a_handshake.JPG": "/static/media/boys_focusing_on_their_computers_and_two_of_them_share_a_handshake.a6833e59.JPG",
     "static/media/boys_talking_and_drinking_coffee.JPG": "/static/media/boys_talking_and_drinking_coffee.a2b25390.JPG",
     "static/media/fosdem_banner.png": "/static/media/fosdem_banner.30023730.png",
@@ -44,8 +45,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.569987e5.js",
-    "static/js/2.f97f69ee.chunk.js",
+    "static/js/2.d28e3b22.chunk.js",
     "static/css/main.ccb16046.chunk.css",
-    "static/js/main.93eba548.chunk.js"
+    "static/js/main.fc05229a.chunk.js"
   ]
 }
