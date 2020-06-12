@@ -27,7 +27,7 @@ const talkContent = [
         svg3: 'Globe',
         svg3Text: '',
         buttonText: 'Browse',
-        link: '/talks/topics/master'
+        link: '/talks/topics/MSc'
     }
 ]
 

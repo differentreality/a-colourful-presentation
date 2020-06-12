@@ -10,14 +10,14 @@ const Data = [
       paragraph: 'Εργασία εξαμήνου',
       date: 'Παρασκευή 12/06/2020',
       Place: 'Online',
-      link: '/talks/topics/master/MliTechnologyInLabor'
+      link: '/talks/topics/MSc/MliTechnologyInLabor'
      },
      {
       Title: 'Ηλεκτρονική Φορτωτική (eCMR)',
       paragraph: 'Εργασία εξαμήνου',
       date: 'Σάββατο 13/06/2020',
       Place: 'Online',
-      link: '/talks/topics/master/eCMR'
+      link: '/talks/topics/MSc/eCMR'
      }
 ]
 

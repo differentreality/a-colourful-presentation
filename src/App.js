@@ -113,13 +113,13 @@ class App extends Component {
                           {/*talks*/}
                           <Route  exact path='/talks/topics' render={() => <TalkTopics />} />
                           <Route  exact path='/talks/topics/gsoc' render={() => <GSoCTalks />} />
-                          <Route  exact path='/talks/topics/master' render={() => <MasterTalks />} />
+                          <Route  exact path='/talks/topics/MSc' render={() => <MasterTalks />} />
 
                           <Route  exact path='/talks/topics/gsoc/gsocateith' render={() => <GSoCateith />} />
                           <Route  exact path='/talks/topics/gsoc/GSoC2019' render={() => <GSoC2019 />} />
-                          <Route  exact path='/talks/topics/master/MliTechnologyInLabor' render={() => <MliTechnologyInLabor />} />
+                          <Route  exact path='/talks/topics/MSc/MliTechnologyInLabor' render={() => <MliTechnologyInLabor />} />
 
-                          <Route  exact path='/talks/topics/master/eCMR' render={() => <MliECmr />} />
+                          <Route  exact path='/talks/topics/MSc/eCMR' render={() => <MliECmr />} />
 
                           {/*events*/}
                           <Route  exact path='/events/archive' render={() => <Conferences />} />
