@@ -1,6 +1,6 @@
 import React from 'react';
 import {TalkEventDetails} from '../../DetailedEvent';
-import poster from '../../../../Photos/gsoc19/gsoc_2019_poster.png'
+import poster from '../../../../Photos/mli/Presentation-MLI_Technology-in-labor_Stella_Rouzi.png'
 
 function importAll(r) {
   return r.keys().map(r);
@@ -23,7 +23,7 @@ const eventData =
         details: "Παρουσίαση στο μάθημα Κοινωνία της Πληροφορίας",
         group:'talk',
         topic:'master',
-        poster:'',
+        poster:poster,
         slides:'https://drive.google.com/file/d/1KBwDdEj8Bm6pVZPAyeU8ScArDhTFLa1S/view?usp=sharing',
 
         links:[LinkArray],

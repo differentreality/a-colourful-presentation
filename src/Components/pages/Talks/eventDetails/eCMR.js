@@ -1,5 +1,6 @@
 import React from 'react';
 import {TalkEventDetails} from '../../DetailedEvent';
+import poster from '../../../../Photos/mli/presentation_eCMR_MLI.png'
 
 function importAll(r) {
   return r.keys().map(r);
@@ -21,8 +22,8 @@ const eventData =
         date:'13/06/2020',
         details: "Παρουσίαση στο μάθημα Εμπορικό Δίκαιο",
         group:'talk',
-        topic:'master',
-        poster:'',
+        topic:'MSc',
+        poster: poster,
         slides:'https://drive.google.com/file/d/1nhrKXHJgvIizp4-R90dCmufhBmR2JUwQ/view?usp=sharing',
 
         links:[LinkArray],
