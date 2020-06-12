@@ -22,7 +22,7 @@ const eventData =
         date:'12/06/2020',
         details: "Παρουσίαση στο μάθημα Κοινωνία της Πληροφορίας",
         group:'talk',
-        topic:'master',
+        topic:'MSc',
         poster:poster,
         slides:'https://drive.google.com/file/d/1KBwDdEj8Bm6pVZPAyeU8ScArDhTFLa1S/view?usp=sharing',
 

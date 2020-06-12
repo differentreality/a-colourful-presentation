@@ -23,6 +23,6 @@ const Data = [
 
 const images = [mli_labor, mli_ecmr]
 
-const GSoCTalks = () =>  <Events group='talk' topic='master' images={images} data={Data}/>
+const GSoCTalks = () =>  <Events group='talk' topic='MSc' images={images} data={Data}/>
 
 export default withRouter(GSoCTalks);
