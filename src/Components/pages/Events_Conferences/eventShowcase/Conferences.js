@@ -20,6 +20,13 @@ const conferenceArchives = [
         Place: 'Brussels',
         link: '/events/archive/FOSDEM19'
     },
+    {
+        Title: 'ACM Speed Mentorship 2020',
+        paragraph: '',
+        date: 'SAT 12/12/2020',
+        Place: 'Online',
+        link: '/events/archive/acm2020'
+    }
 
 ]
 

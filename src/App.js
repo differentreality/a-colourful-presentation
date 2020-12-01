@@ -31,8 +31,10 @@ import Conferences from './Components/pages/Events_Conferences/eventShowcase/Con
 import GSoCTalks from './Components/pages/Talks/eventShowcase/GSoCTalks'
 
 import MasterTalks from './Components/pages/Talks/eventShowcase/MasterTalks'
+
 import MliTechnologyInLabor from './Components/pages/Talks/eventDetails/MliTechnologyInLabor'
 import MliECmr from './Components/pages/Talks/eventDetails/eCMR'
+import Acm2020 from './Components/pages/Events_Conferences/eventDetails/acm2020'
 
 // import  from './Components/pages/Talks/eventDetails/GSoCateith'
 import GSoCateith from './Components/pages/Talks/eventDetails/GSoCateith'
@@ -120,6 +122,7 @@ class App extends Component {
                           <Route  exact path='/talks/topics/MSc/MliTechnologyInLabor' render={() => <MliTechnologyInLabor />} />
 
                           <Route  exact path='/talks/topics/MSc/eCMR' render={() => <MliECmr />} />
+                          <Route  exact path='/events/archive/acm2020' render={() => <Acm2020 />} />
 
                           {/*events*/}
                           <Route  exact path='/events/archive' render={() => <Conferences />} />

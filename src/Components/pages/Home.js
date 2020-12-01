@@ -191,7 +191,7 @@ class Home extends Component {
                 <Row className='homeCTA'>
                     <Col md='6'>
                         <span className='home__latest'>Latest</span>
-                        <Link to='workshops/topics/RoR/RoR_ACM'><Button group='workshop' buttonText='Build a Rails app!' /></Link>
+                        <Link to='events/topics/Mentorship/acm2020'><Button group='workshop' buttonText='ACM - Speed Mentorship!' /></Link>
                     </Col>
 
                     <Col className='scrollGuide' md='6'>
