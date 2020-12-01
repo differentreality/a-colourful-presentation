@@ -75,7 +75,7 @@ class MenuContainer extends Component {
                 </Col>
                 <Col className='Navigation' md='6' lg='3'>
                     <PapyrusOutline />
-                    <Link onClick={this.updateStore} to='/contact'>
+                    <Link onClick={this.updateStore} to='/contact/form'>
                         <h1 className='Navigation__Title'>Contact</h1>
                     </Link>
                     <ul>
