@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.ccb16046.chunk.css",
-    "main.js": "/static/js/main.ba897a17.chunk.js",
-    "main.js.map": "/static/js/main.ba897a17.chunk.js.map",
+    "main.js": "/static/js/main.5ff17b2b.chunk.js",
+    "main.js.map": "/static/js/main.5ff17b2b.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.569987e5.js",
     "runtime-main.js.map": "/static/js/runtime-main.569987e5.js.map",
-    "static/js/2.a3371293.chunk.js": "/static/js/2.a3371293.chunk.js",
-    "static/js/2.a3371293.chunk.js.map": "/static/js/2.a3371293.chunk.js.map",
+    "static/js/2.71372805.chunk.js": "/static/js/2.71372805.chunk.js",
+    "static/js/2.71372805.chunk.js.map": "/static/js/2.71372805.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.6c85e8a64bc279f329d111ce7c15571d.js": "/precache-manifest.6c85e8a64bc279f329d111ce7c15571d.js",
+    "precache-manifest.2a2731aa1328af1a7693e06d701730e8.js": "/precache-manifest.2a2731aa1328af1a7693e06d701730e8.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.ccb16046.chunk.css.map": "/static/css/main.ccb16046.chunk.css.map",
-    "static/js/2.a3371293.chunk.js.LICENSE": "/static/js/2.a3371293.chunk.js.LICENSE",
+    "static/js/2.71372805.chunk.js.LICENSE": "/static/js/2.71372805.chunk.js.LICENSE",
     "static/media/A_girl_is_showing_her_swag_at_the_camera_and_a_boy_behind_her_is_smilling.JPG": "/static/media/A_girl_is_showing_her_swag_at_the_camera_and_a_boy_behind_her_is_smilling.11915b84.JPG",
     "static/media/Presentation-MLI_Technology-in-labor_Stella_Rouzi.png": "/static/media/Presentation-MLI_Technology-in-labor_Stella_Rouzi.b133d216.png",
     "static/media/boys_focusing_on_their_computers_and_two_of_them_share_a_handshake.JPG": "/static/media/boys_focusing_on_their_computers_and_two_of_them_share_a_handshake.a6833e59.JPG",
@@ -29,6 +29,7 @@
     "static/media/me_with_a_marker_in_hand_wearing_a_red_tshirt_with_the_rails_athens_logo.JPG": "/static/media/me_with_a_marker_in_hand_wearing_a_red_tshirt_with_the_rails_athens_logo.98380109.JPG",
     "static/media/me_with_a_student_standing.JPG": "/static/media/me_with_a_student_standing.b5f25865.JPG",
     "static/media/miranda.jpg": "/static/media/miranda.fdc51e94.jpg",
+    "static/media/octocat-speed-mentorship2020.png": "/static/media/octocat-speed-mentorship2020.a892d057.png",
     "static/media/osem.jpg": "/static/media/osem.f1a85bc6.jpg",
     "static/media/presentation_eCMR_MLI.png": "/static/media/presentation_eCMR_MLI.359692d6.png",
     "static/media/ror_acm_banner.jpg": "/static/media/ror_acm_banner.c06d4a1e.jpg",
@@ -47,8 +48,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.569987e5.js",
-    "static/js/2.a3371293.chunk.js",
+    "static/js/2.71372805.chunk.js",
     "static/css/main.ccb16046.chunk.css",
-    "static/js/main.ba897a17.chunk.js"
+    "static/js/main.5ff17b2b.chunk.js"
   ]
 }
